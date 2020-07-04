@@ -12,6 +12,7 @@ namespace QuanLySinhVien
 {
     public partial class ucMon : UserControl
     {
+        public Panel pn { get { return panel1; } }
         public ucMon()
         {
             InitializeComponent();
