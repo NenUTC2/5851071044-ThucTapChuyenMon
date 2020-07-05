@@ -16,8 +16,7 @@ namespace QuanLySinhVien
         {
             InitializeComponent();
             panel1.Width = 60;
-            lblTime.Text = DateTime.Now.ToString("hh:mm");
-            lblDate.Text = DateTime.Now.ToString("dd/MM");
+            lblTime.Text = DateTime.Now.ToString("hh:mm  dd/MM/yyyy");
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -141,8 +140,7 @@ namespace QuanLySinhVien
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            lblTime.Text = DateTime.Now.ToString("hh:mm");
-            lblDate.Text = DateTime.Now.ToString("dd/MM");
+            lblTime.Text = DateTime.Now.ToString("hh:mm  dd/MM/yyyy");
         }
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
@@ -155,8 +153,7 @@ namespace QuanLySinhVien
                 uck.pn.BackColor = Color.FromArgb(21, 24, 31);
                 ucl.pn.BackColor = Color.FromArgb(21, 24, 31);
                 ucgv.pn.BackColor = Color.FromArgb(21, 24, 31);
-                ucgv.pntxt.BackColor = Color.FromArgb(31, 34, 41);
-                ucgv.pnbtn.BackColor = Color.FromArgb(31, 34, 41);
+                pnLogo.BackColor = Color.FromArgb(64,64,64);
             }
             else
             {
@@ -165,9 +162,8 @@ namespace QuanLySinhVien
                 guna2CircleButton1.ForeColor = Color.Gray;
                 uck.pn.BackColor = Color.White;
                 ucl.pn.BackColor = Color.White;
-                ucgv.pn.BackColor = Color.FromArgb(235, 235, 235);
-                ucgv.pntxt.BackColor = Color.White;
-                ucgv.pnbtn.BackColor = Color.White;
+                ucgv.pn.BackColor = Color.White;
+                pnLogo.BackColor = Color.FromArgb(0, 0, 64);
             }
         }
     }

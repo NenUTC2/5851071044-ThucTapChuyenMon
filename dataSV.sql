@@ -33,7 +33,6 @@ CREATE TABLE GiangVien(
 	DiaChi NVARCHAR(MAX),
 	NgayDay DATE
 )
-SELECT * FROM dbo.GiangVien
 INSERT INTO dbo.GiangVien
 (
     MaGV,
@@ -100,37 +99,40 @@ VALUES
     ) 
 	GO 
 ---------------------------------------------MONHOC--------------------------------------------------
-CREATE TABLE HocKy(
-	MaHK VARCHAR(20) PRIMARY KEY,
-	MaSV VARCHAR(50),
-	DiemTichLuy INT 
-)
----------------------------------------------MONHOC--------------------------------------------------
 CREATE TABLE MonHoc(
-	MaMon VARCHAR(50) PRIMARY KEY,
+	MaMon INT PRIMARY KEY IDENTITY,
 	MaKhoa VARCHAR(50) NOT NULL,
-	TinChi INT
-)
----------------------------------------------CTMON--------------------------------------------------
-CREATE TABLE CTMonHoc(
-	MaCT INT PRIMARY KEY IDENTITY,
-	MaMon VARCHAR(50),
 	MaGV VARCHAR(50),
 	MaLop VARCHAR(50),
-	Phong VARCHAR(20)
+	TinChi INT,
+	Phong VARCHAR(20),
+	TrangThai INT,
+	HocKy NVARCHAR(20)
 )
-CREATE TABLE DiemMonHoc(
+INSERT INTO dbo.MonHoc
+(
+    MaKhoa,
+    MaGV,
+    MaLop,
+    Phong
+)
+VALUES
+(   'CNTT', -- MaKhoa - varchar(50)
+    'GV1', -- MaGV - varchar(50)
+    'CNTT-K58', -- MaLop - varchar(50)
+    '102C2'  -- Phong - varchar(20)
+    )
+	GO 
+---------------------------------------------CTMON--------------------------------------------------
+CREATE TABLE CTMonHoc(
+	MaCTMon INT PRIMARY KEY IDENTITY,
 	MaMon VARCHAR(50),
-	MaCT INT,
 	MaSV VARCHAR(50),
-	HocKy VARCHAR(20),
 	ChuyenCan INT,
 	DiemGiuaKy INT,
 	DiemTP INT,
 	DiemThi INT,
 	DiemKT INT,
 	KTxTC INT
-
-	PRIMARY KEY(MaMon,MaCT)
 )
 ---------------------------------------------END TABLE--------------------------------------------------

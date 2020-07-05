@@ -17,7 +17,7 @@ namespace QuanLySinhVien.DAO
             private set { DataProvider.instance = value; }
         }
         private DataProvider() { }
-        private string connectionT = @"Data Source=NenPhan;Initial Catalog=dataSV;Integrated Security=True";
+        private string connectionT = @"Data Source=NenPhan;Initial Catalog=csdlFlyShoes;Integrated Security=True";
         // private object parameter;
         public DataTable ExcuteQuery(string query, object[] parameter = null)
         {
