@@ -13,6 +13,7 @@ namespace QuanLySinhVien
     public partial class ucLop : UserControl
     {
         public Panel pn { get { return panel1; } }
+
         public ucLop()
         {
             InitializeComponent();

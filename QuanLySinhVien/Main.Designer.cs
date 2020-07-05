@@ -32,17 +32,19 @@
             Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.label2 = new System.Windows.Forms.Label();
             this.uc = new System.Windows.Forms.UserControl();
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pnLogo = new System.Windows.Forms.Panel();
+            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.lblTime = new System.Windows.Forms.Label();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.pnLogo = new System.Windows.Forms.Panel();
-            this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -54,8 +56,8 @@
             this.btnGV = new Guna.UI2.WinForms.Guna2Button();
             this.btnSV = new Guna.UI2.WinForms.Guna2Button();
             this.btnDiem = new Guna.UI2.WinForms.Guna2Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblDate = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnLogo.SuspendLayout();
@@ -67,7 +69,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.panel1.Controls.Add(this.lblDate);
             this.panel1.Controls.Add(this.guna2CircleButton1);
+            this.panel1.Controls.Add(this.lblTime);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.line);
             this.panel1.Controls.Add(this.guna2Button6);
@@ -82,6 +86,35 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(321, 682);
             this.panel1.TabIndex = 0;
+            // 
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
+            this.guna2Transition1.SetDecoration(this.guna2CircleButton1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.Black;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.Gray;
+            this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.Location = new System.Drawing.Point(180, 634);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(37, 32);
+            this.guna2CircleButton1.TabIndex = 6;
+            this.guna2CircleButton1.Text = "OFF";
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.label2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(97, 640);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 17);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Dark mode";
             // 
             // uc
             // 
@@ -116,7 +149,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            this.panel2.Controls.Add(this.lblTime);
+            this.panel2.Controls.Add(this.guna2TextBox1);
             this.panel2.Controls.Add(this.guna2ImageButton2);
             this.panel2.Controls.Add(this.guna2ImageButton1);
             this.panel2.Controls.Add(this.label1);
@@ -127,16 +160,56 @@
             this.panel2.Size = new System.Drawing.Size(1298, 46);
             this.panel2.TabIndex = 2;
             // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.lblTime, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(12, 640);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(20, 17);
+            this.lblTime.TabIndex = 3;
+            this.lblTime.Text = "...";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.guna2Transition1.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(511, 13);
+            this.label1.Font = new System.Drawing.Font("VNI-Helve", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(105, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(342, 20);
+            this.label1.Size = new System.Drawing.Size(392, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "University of transports and communications";
+            // 
+            // pnLogo
+            // 
+            this.pnLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.pnLogo.Controls.Add(this.guna2CircleProgressBar1);
+            this.guna2Transition1.SetDecoration(this.pnLogo, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pnLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnLogo.Name = "pnLogo";
+            this.pnLogo.Size = new System.Drawing.Size(80, 87);
+            this.pnLogo.TabIndex = 5;
+            // 
+            // guna2CircleProgressBar1
+            // 
+            this.guna2CircleProgressBar1.Animated = true;
+            this.guna2CircleProgressBar1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CircleProgressBar1.Controls.Add(this.pictureBox1);
+            this.guna2Transition1.SetDecoration(this.guna2CircleProgressBar1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2CircleProgressBar1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleProgressBar1.FillThickness = 5;
+            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(4, 4);
+            this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
+            this.guna2CircleProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            this.guna2CircleProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            this.guna2CircleProgressBar1.ProgressThickness = 5;
+            this.guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleProgressBar1.ShadowDecoration.Parent = this.guna2CircleProgressBar1;
+            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(75, 70);
+            this.guna2CircleProgressBar1.TabIndex = 5;
+            this.guna2CircleProgressBar1.Value = 20;
             // 
             // timer1
             // 
@@ -152,56 +225,17 @@
             // 
             this.guna2DragControl1.TargetControl = this.panel2;
             // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.lblTime, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblTime.Location = new System.Drawing.Point(1036, 16);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(20, 17);
-            this.lblTime.TabIndex = 3;
-            this.lblTime.Text = "...";
-            // 
             // timer3
             // 
             this.timer3.Enabled = true;
             this.timer3.Interval = 10000;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
-            // pnLogo
-            // 
-            this.pnLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.pnLogo.Controls.Add(this.guna2CircleProgressBar1);
-            this.guna2Transition1.SetDecoration(this.pnLogo, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.pnLogo.Location = new System.Drawing.Point(89, 0);
-            this.pnLogo.Name = "pnLogo";
-            this.pnLogo.Size = new System.Drawing.Size(83, 87);
-            this.pnLogo.TabIndex = 5;
-            // 
-            // guna2CircleProgressBar1
-            // 
-            this.guna2CircleProgressBar1.Animated = true;
-            this.guna2CircleProgressBar1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CircleProgressBar1.Controls.Add(this.pictureBox1);
-            this.guna2Transition1.SetDecoration(this.guna2CircleProgressBar1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2CircleProgressBar1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CircleProgressBar1.FillThickness = 5;
-            this.guna2CircleProgressBar1.Location = new System.Drawing.Point(4, 9);
-            this.guna2CircleProgressBar1.Name = "guna2CircleProgressBar1";
-            this.guna2CircleProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            this.guna2CircleProgressBar1.ProgressColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            this.guna2CircleProgressBar1.ProgressThickness = 5;
-            this.guna2CircleProgressBar1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleProgressBar1.ShadowDecoration.Parent = this.guna2CircleProgressBar1;
-            this.guna2CircleProgressBar1.Size = new System.Drawing.Size(75, 70);
-            this.guna2CircleProgressBar1.TabIndex = 5;
-            this.guna2CircleProgressBar1.Value = 20;
-            // 
             // pictureBox1
             // 
             this.guna2Transition1.SetDecoration(this.pictureBox1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.pictureBox1.Image = global::QuanLySinhVien.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(45, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -284,20 +318,19 @@
             this.btnKhoa.FillColor = System.Drawing.Color.Transparent;
             this.btnKhoa.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhoa.ForeColor = System.Drawing.Color.White;
-            this.btnKhoa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.btnKhoa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnKhoa.HoverState.Parent = this.btnKhoa;
             this.btnKhoa.Image = global::QuanLySinhVien.Properties.Resources.school_48px;
             this.btnKhoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnKhoa.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnKhoa.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnKhoa.Location = new System.Drawing.Point(12, 534);
+            this.btnKhoa.Location = new System.Drawing.Point(5, 534);
             this.btnKhoa.Name = "btnKhoa";
             this.btnKhoa.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.btnKhoa.ShadowDecoration.Parent = this.btnKhoa;
-            this.btnKhoa.Size = new System.Drawing.Size(265, 55);
+            this.btnKhoa.Size = new System.Drawing.Size(313, 55);
             this.btnKhoa.TabIndex = 5;
             this.btnKhoa.Text = "Quản lý Khoa";
-            this.btnKhoa.TextOffset = new System.Drawing.Point(35, 0);
+            this.btnKhoa.TextOffset = new System.Drawing.Point(25, 0);
             this.btnKhoa.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // btnLop
@@ -309,20 +342,19 @@
             this.btnLop.FillColor = System.Drawing.Color.Transparent;
             this.btnLop.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLop.ForeColor = System.Drawing.Color.White;
-            this.btnLop.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.btnLop.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLop.HoverState.Parent = this.btnLop;
             this.btnLop.Image = global::QuanLySinhVien.Properties.Resources.class_64px;
             this.btnLop.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLop.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnLop.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnLop.Location = new System.Drawing.Point(12, 459);
+            this.btnLop.Location = new System.Drawing.Point(5, 459);
             this.btnLop.Name = "btnLop";
             this.btnLop.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.btnLop.ShadowDecoration.Parent = this.btnLop;
-            this.btnLop.Size = new System.Drawing.Size(265, 55);
+            this.btnLop.Size = new System.Drawing.Size(313, 55);
             this.btnLop.TabIndex = 4;
             this.btnLop.Text = "Quản lý Lớp";
-            this.btnLop.TextOffset = new System.Drawing.Point(35, 0);
+            this.btnLop.TextOffset = new System.Drawing.Point(25, 0);
             this.btnLop.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // btnMon
@@ -334,20 +366,19 @@
             this.btnMon.FillColor = System.Drawing.Color.Transparent;
             this.btnMon.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMon.ForeColor = System.Drawing.Color.White;
-            this.btnMon.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.btnMon.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnMon.HoverState.Parent = this.btnMon;
             this.btnMon.Image = global::QuanLySinhVien.Properties.Resources.elective_100px;
             this.btnMon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMon.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnMon.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnMon.Location = new System.Drawing.Point(12, 384);
+            this.btnMon.Location = new System.Drawing.Point(5, 384);
             this.btnMon.Name = "btnMon";
             this.btnMon.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.btnMon.ShadowDecoration.Parent = this.btnMon;
-            this.btnMon.Size = new System.Drawing.Size(265, 55);
+            this.btnMon.Size = new System.Drawing.Size(313, 55);
             this.btnMon.TabIndex = 3;
             this.btnMon.Text = "Quản lý Môn học";
-            this.btnMon.TextOffset = new System.Drawing.Point(35, 0);
+            this.btnMon.TextOffset = new System.Drawing.Point(25, 0);
             this.btnMon.Click += new System.EventHandler(this.btnMon_Click);
             // 
             // btnGV
@@ -359,20 +390,19 @@
             this.btnGV.FillColor = System.Drawing.Color.Transparent;
             this.btnGV.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGV.ForeColor = System.Drawing.Color.White;
-            this.btnGV.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.btnGV.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGV.HoverState.Parent = this.btnGV;
             this.btnGV.Image = global::QuanLySinhVien.Properties.Resources.teacher_64px;
             this.btnGV.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnGV.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnGV.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnGV.Location = new System.Drawing.Point(12, 309);
+            this.btnGV.Location = new System.Drawing.Point(5, 309);
             this.btnGV.Name = "btnGV";
             this.btnGV.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.btnGV.ShadowDecoration.Parent = this.btnGV;
-            this.btnGV.Size = new System.Drawing.Size(265, 55);
+            this.btnGV.Size = new System.Drawing.Size(313, 55);
             this.btnGV.TabIndex = 2;
             this.btnGV.Text = "Quản lý giảng viên";
-            this.btnGV.TextOffset = new System.Drawing.Point(35, 0);
+            this.btnGV.TextOffset = new System.Drawing.Point(25, 0);
             this.btnGV.Click += new System.EventHandler(this.btnGV_Click);
             // 
             // btnSV
@@ -384,20 +414,19 @@
             this.btnSV.FillColor = System.Drawing.Color.Transparent;
             this.btnSV.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSV.ForeColor = System.Drawing.Color.White;
-            this.btnSV.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.btnSV.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSV.HoverState.Parent = this.btnSV;
             this.btnSV.Image = global::QuanLySinhVien.Properties.Resources.student_male_48px;
             this.btnSV.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSV.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnSV.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSV.Location = new System.Drawing.Point(12, 234);
+            this.btnSV.Location = new System.Drawing.Point(5, 234);
             this.btnSV.Name = "btnSV";
             this.btnSV.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.btnSV.ShadowDecoration.Parent = this.btnSV;
-            this.btnSV.Size = new System.Drawing.Size(265, 55);
+            this.btnSV.Size = new System.Drawing.Size(313, 55);
             this.btnSV.TabIndex = 1;
             this.btnSV.Text = "Quản lý Sinh viên";
-            this.btnSV.TextOffset = new System.Drawing.Point(35, 0);
+            this.btnSV.TextOffset = new System.Drawing.Point(25, 0);
             this.btnSV.Click += new System.EventHandler(this.btnSV_Click);
             // 
             // btnDiem
@@ -409,50 +438,60 @@
             this.btnDiem.FillColor = System.Drawing.Color.Transparent;
             this.btnDiem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiem.ForeColor = System.Drawing.Color.White;
-            this.btnDiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.btnDiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnDiem.HoverState.Parent = this.btnDiem;
             this.btnDiem.Image = global::QuanLySinhVien.Properties.Resources.scorecard_64px;
             this.btnDiem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnDiem.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnDiem.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDiem.Location = new System.Drawing.Point(12, 159);
+            this.btnDiem.Location = new System.Drawing.Point(5, 159);
             this.btnDiem.Name = "btnDiem";
             this.btnDiem.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.btnDiem.ShadowDecoration.Parent = this.btnDiem;
-            this.btnDiem.Size = new System.Drawing.Size(265, 55);
+            this.btnDiem.Size = new System.Drawing.Size(313, 55);
             this.btnDiem.TabIndex = 0;
             this.btnDiem.Text = "Nhập sửa điểm";
-            this.btnDiem.TextOffset = new System.Drawing.Point(35, 0);
+            this.btnDiem.TextOffset = new System.Drawing.Point(25, 0);
             this.btnDiem.Click += new System.EventHandler(this.btnDiem_Click);
             // 
-            // label2
+            // guna2TextBox1
             // 
-            this.label2.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.label2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(97, 640);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Dark mode";
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.Black;
+            this.guna2TextBox1.BorderRadius = 10;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2Transition1.SetDecoration(this.guna2TextBox1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(34)))), ((int)(((byte)(41)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.Silver;
+            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.White;
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Location = new System.Drawing.Point(639, 4);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.guna2TextBox1.PlaceholderText = "Tìm kiếm";
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Size = new System.Drawing.Size(267, 38);
+            this.guna2TextBox1.TabIndex = 6;
             // 
-            // guna2CircleButton1
+            // lblDate
             // 
-            this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
-            this.guna2Transition1.SetDecoration(this.guna2CircleButton1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2CircleButton1.FillColor = System.Drawing.Color.Black;
-            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2CircleButton1.ForeColor = System.Drawing.Color.Gray;
-            this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(180, 634);
-            this.guna2CircleButton1.Name = "guna2CircleButton1";
-            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Size = new System.Drawing.Size(37, 32);
-            this.guna2CircleButton1.TabIndex = 6;
-            this.guna2CircleButton1.Text = "OFF";
-            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
+            this.lblDate.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.lblDate, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblDate.ForeColor = System.Drawing.Color.White;
+            this.lblDate.Location = new System.Drawing.Point(12, 614);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(20, 17);
+            this.lblDate.TabIndex = 7;
+            this.lblDate.Text = "...";
             // 
             // Main
             // 
@@ -465,6 +504,7 @@
             this.Controls.Add(this.uc);
             this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
@@ -508,5 +548,7 @@
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private System.Windows.Forms.Label lblDate;
     }
 }

@@ -193,6 +193,16 @@ namespace QuanLySinhVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logoqr {
+            get {
+                object obj = ResourceManager.GetObject("logoqr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap school_48px {
             get {
                 object obj = ResourceManager.GetObject("school_48px", resourceCulture);

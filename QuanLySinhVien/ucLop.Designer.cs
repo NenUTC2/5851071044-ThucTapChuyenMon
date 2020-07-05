@@ -88,7 +88,7 @@
             this.idCuaHang});
             this.dtgvLop.EnableHeadersVisualStyles = false;
             this.dtgvLop.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dtgvLop.Location = new System.Drawing.Point(382, 87);
+            this.dtgvLop.Location = new System.Drawing.Point(382, 98);
             this.dtgvLop.Name = "dtgvLop";
             this.dtgvLop.ReadOnly = true;
             this.dtgvLop.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -136,7 +136,7 @@
             this.dtpNgayLap.CalendarMonthBackground = System.Drawing.Color.White;
             this.dtpNgayLap.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
             this.dtpNgayLap.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayLap.Location = new System.Drawing.Point(52, 281);
+            this.dtpNgayLap.Location = new System.Drawing.Point(52, 292);
             this.dtpNgayLap.Name = "dtpNgayLap";
             this.dtpNgayLap.Size = new System.Drawing.Size(311, 30);
             this.dtpNgayLap.TabIndex = 112;
@@ -153,7 +153,7 @@
             this.btnSua.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSua.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnSua.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnSua.Location = new System.Drawing.Point(111, 448);
+            this.btnSua.Location = new System.Drawing.Point(111, 459);
             this.btnSua.Name = "btnSua";
             this.btnSua.ShadowDecoration.Parent = this.btnSua;
             this.btnSua.Size = new System.Drawing.Size(191, 75);
@@ -178,7 +178,7 @@
             this.txtMaKhoa.ForeColor = System.Drawing.Color.White;
             this.txtMaKhoa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaKhoa.HoverState.Parent = this.txtMaKhoa;
-            this.txtMaKhoa.Location = new System.Drawing.Point(80, 92);
+            this.txtMaKhoa.Location = new System.Drawing.Point(80, 103);
             this.txtMaKhoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMaKhoa.Name = "txtMaKhoa";
             this.txtMaKhoa.PasswordChar = '\0';
@@ -206,7 +206,7 @@
             this.txtTenKhoa.ForeColor = System.Drawing.Color.White;
             this.txtTenKhoa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenKhoa.HoverState.Parent = this.txtTenKhoa;
-            this.txtTenKhoa.Location = new System.Drawing.Point(80, 155);
+            this.txtTenKhoa.Location = new System.Drawing.Point(80, 166);
             this.txtTenKhoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenKhoa.Name = "txtTenKhoa";
             this.txtTenKhoa.PasswordChar = '\0';
@@ -229,7 +229,7 @@
             this.btnThem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnThem.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnThem.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnThem.Location = new System.Drawing.Point(111, 361);
+            this.btnThem.Location = new System.Drawing.Point(111, 372);
             this.btnThem.Name = "btnThem";
             this.btnThem.ShadowDecoration.Parent = this.btnThem;
             this.btnThem.Size = new System.Drawing.Size(191, 75);
@@ -249,7 +249,7 @@
             this.btnXoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnXoa.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnXoa.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnXoa.Location = new System.Drawing.Point(111, 532);
+            this.btnXoa.Location = new System.Drawing.Point(111, 543);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
             this.btnXoa.Size = new System.Drawing.Size(191, 75);
@@ -272,7 +272,7 @@
             this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
             this.guna2ComboBox1.ItemHeight = 30;
             this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(80, 226);
+            this.guna2ComboBox1.Location = new System.Drawing.Point(80, 237);
             this.guna2ComboBox1.Name = "guna2ComboBox1";
             this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
             this.guna2ComboBox1.Size = new System.Drawing.Size(252, 36);
@@ -302,11 +302,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GVCN;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCuaHang;
         private System.Windows.Forms.DateTimePicker dtpNgayLap;
-        private Guna.UI2.WinForms.Guna2Button btnSua;
         private Guna.UI2.WinForms.Guna2TextBox txtMaKhoa;
         private Guna.UI2.WinForms.Guna2TextBox txtTenKhoa;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2Button btnSua;
         private Guna.UI2.WinForms.Guna2Button btnThem;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
     }
 }
