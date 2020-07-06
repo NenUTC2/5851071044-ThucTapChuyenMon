@@ -78,5 +78,11 @@ namespace QuanLySinhVien
             loadCBKhoa();
             loadGV();
         }
+
+        private void guna2ImageButton3_Click(object sender, EventArgs e)
+        {
+            loadGV();
+            loadCBKhoa();
+        }
     }
 }

@@ -59,8 +59,8 @@ namespace QuanLySinhVien
         private void btnSua_Click(object sender, EventArgs e)
         {
             DataProvider.Instance.ExcuteNonQuery("Update Lop set" +
-                " N'" + txtTenLop.Text + "'," +
-                " '" + cbGV.SelectedValue + "', '" + cbKhoa.SelectedValue + "' where MaLop='" + txtMaLop.Text + "'");
+                " TenLop= N'" + txtTenLop.Text + "'," +
+                " GVCN='" + cbGV.SelectedValue + "', MaKhoa='" + cbKhoa.SelectedValue + "' where MaLop='" + dtgvLop.CurrentRow.Cells["MaLop"].Value.ToString() + "'");
             loadLop();
         }
 
@@ -81,6 +81,18 @@ namespace QuanLySinhVien
         private void cbKhoa_SelectedValueChanged(object sender, EventArgs e)
         {
             loadCBGV(cbKhoa.SelectedValue.ToString());
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ImageButton3_Click(object sender, EventArgs e)
+        {
+            loadCBGV("*");
+            loadCBKHoa();
+            loadLop();
         }
     }
 }

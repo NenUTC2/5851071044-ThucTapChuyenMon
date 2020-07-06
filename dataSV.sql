@@ -79,6 +79,7 @@ VALUES
 	GO
 
 ---------------------------------------------SINHVIEN--------------------------------------------------
+DROP TABLE dbo.SinhVien
 CREATE TABLE SinhVien(
 	MaSV VARCHAR(50) PRIMARY KEY,
 	TenSV NVARCHAR(50) NOT NULL,
@@ -93,38 +94,42 @@ INSERT INTO dbo.SinhVien
     TenSV,
     SDT,
     MaLop,
-    DiaChi
+    DiaChi,
+	TichLuy
 )
 VALUES
 (   '20201',  -- MaSV - varchar(50)
     N'Phan Thanh Nen', -- TenSV - nvarchar(50)
     '0708853712',  -- SDT - varchar(20)
     N'CNTT-K58', -- MaLop - nvarchar(50)
-    N'999 Le Van Viet'  -- DiaChi - nvarchar(max)
+    N'999 Le Van Viet',  -- DiaChi - nvarchar(max)
+	0
     ) 
 	GO 
----------------------------------------------MONHOC--------------------------------------------------
+---------------------------------------------HocKy--------------------------------------------------
 CREATE TABLE HocKy(
 	MaHK VARCHAR(20) PRIMARY KEY,
 	MaSV VARCHAR(50),
 	DiemTichLuy INT 
 )
+
 ---------------------------------------------MONHOC--------------------------------------------------
 CREATE TABLE MonHoc(
 	MaMon VARCHAR(50) PRIMARY KEY,
 	MaKhoa VARCHAR(50) NOT NULL,
 	TinChi INT
 )
----------------------------------------------CTMON--------------------------------------------------
-CREATE TABLE CTMonHoc(
+
+---------------------------------------------LOPMON--------------------------------------------------
+CREATE TABLE LopHoc(
 	MaCT INT PRIMARY KEY IDENTITY,
 	MaMon VARCHAR(50),
 	MaGV VARCHAR(50),
 	MaLop VARCHAR(50),
 	Phong VARCHAR(20)
 )
-CREATE TABLE DiemMonHoc(
-	MaMon VARCHAR(50),
+---------------------------------------------LOPHOC--------------------------------------------------
+CREATE TABLE DiemLopHoc(
 	MaCT INT,
 	MaSV VARCHAR(50),
 	HocKy VARCHAR(20),
@@ -135,6 +140,15 @@ CREATE TABLE DiemMonHoc(
 	DiemKT INT,
 	KTxTC INT
 
-	PRIMARY KEY(MaMon,MaCT)
+	PRIMARY KEY(MaSV,MaCT)
+)
+
+---------------------------------------------ACCOUNT--------------------------------------------------
+CREATE TABLE Account(
+	TenDN VARCHAR(50) PRIMARY KEY,
+	MatKhau VARCHAR(50),
+	MaGV VARCHAR(50),
+	Quyen NVARCHAR(50),
+	Theme VARCHAR(20)
 )
 ---------------------------------------------END TABLE--------------------------------------------------

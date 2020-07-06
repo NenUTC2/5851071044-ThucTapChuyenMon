@@ -38,6 +38,7 @@ namespace QuanLySinhVien
             line.Top = btnKhoa.Top+4;
             showControl(uck);
             panel1.Width = 60;
+            lblUC.Text = "Quản lý khoa";
         }
 
         public ucLop ucl = new ucLop();
@@ -46,6 +47,7 @@ namespace QuanLySinhVien
             line.Top = btnLop.Top + 4;
             showControl(ucl);
             panel1.Width = 60;
+            lblUC.Text = "Quản Lý Lớp";
         }
         
 
@@ -75,12 +77,16 @@ namespace QuanLySinhVien
         {
             line.Top = btnDiem.Top + 4;
             panel1.Width = 60;
+            lblUC.Text = "Nhập sửa điểm";
         }
 
+        public ucSV ucsv = new ucSV();
         private void btnSV_Click(object sender, EventArgs e)
         {
             line.Top = btnSV.Top + 4;
             panel1.Width = 60;
+            showControl(ucsv);
+            lblUC.Text = "Quản lý sinh viên";
         }
 
         public ucGV ucgv = new ucGV();
@@ -89,12 +95,14 @@ namespace QuanLySinhVien
             line.Top = btnGV.Top + 4;
             panel1.Width = 60;
             showControl(ucgv);
+            lblUC.Text = "Quản lý giảng viên";
         }
 
         private void btnMon_Click(object sender, EventArgs e)
         {
             line.Top = btnMon.Top + 4;
             panel1.Width = 60;
+            lblUC.Text = "Quản lý môn học";
         }
 
         private void guna2Button6_Click(object sender, EventArgs e)
@@ -147,6 +155,12 @@ namespace QuanLySinhVien
         {
             if (guna2CircleButton1.Text.Equals("OFF"))
             {
+                txtTimKiem.FillColor = Color.FromArgb(11, 14, 21);
+                txtTimKiem.ForeColor = Color.White;
+                txtTimKiem.PlaceholderForeColor = Color.Silver;
+                picTK.Image = Properties.Resources.searchw_48px;
+                picTK.BackColor = Color.FromArgb(11, 14, 21);
+
                 guna2CircleButton1.Text = "ON";
                 guna2CircleButton1.FillColor = Color.FromArgb(4, 197, 150);
                 guna2CircleButton1.ForeColor = Color.White;
@@ -162,23 +176,38 @@ namespace QuanLySinhVien
                 ucgv.pn.BackColor = Color.FromArgb(21, 24, 31);
                 ucgv.pn2.BackColor = Color.FromArgb(31, 34, 41);
                 ucgv.pn3.BackColor = Color.FromArgb(31, 34, 41);
+
+                ucsv.pn.BackColor = Color.FromArgb(21, 24, 31);
+                ucsv.pn2.BackColor = Color.FromArgb(31, 34, 41);
+                ucsv.pn3.BackColor = Color.FromArgb(31, 34, 41);
             }
             else
             {
+                txtTimKiem.FillColor = Color.White;
+                txtTimKiem.ForeColor = Color.Black;
+                txtTimKiem.PlaceholderForeColor = Color.Gray;
+                picTK.Image = Properties.Resources.search_48px;
+                picTK.BackColor = Color.White;
+
                 guna2CircleButton1.Text = "OFF";
                 guna2CircleButton1.FillColor = Color.Black;
                 guna2CircleButton1.ForeColor = Color.Gray;
 
-                uck.pn.BackColor = Color.White;
+                uck.pn.BackColor = Color.FromArgb(230, 230, 230);
                 uck.pn2.BackColor = Color.White;
+                uck.pn3.BackColor = Color.White;
 
-                ucl.pn.BackColor = Color.White;
+                ucl.pn.BackColor = Color.FromArgb(230,230,230);
                 ucl.pn2.BackColor = Color.White;
                 ucl.pn3.BackColor = Color.White;
 
-                ucgv.pn.BackColor = Color.White;
+                ucgv.pn.BackColor = Color.FromArgb(230, 230, 230);
                 ucgv.pn2.BackColor = Color.White;
                 ucgv.pn3.BackColor = Color.White;
+
+                ucsv.pn.BackColor = Color.FromArgb(230, 230, 230);
+                ucsv.pn2.BackColor = Color.White;
+                ucsv.pn3.BackColor = Color.White;
             }
         }
     }

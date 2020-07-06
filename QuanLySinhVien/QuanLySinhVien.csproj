@@ -62,8 +62,10 @@
     <Compile Include="DAO\GiangVienDAO.cs" />
     <Compile Include="DAO\KhoaDAO.cs" />
     <Compile Include="DAO\LopDAO.cs" />
+    <Compile Include="DAO\SinhVienDAO.cs" />
     <Compile Include="DTO\GiangVien.cs" />
     <Compile Include="DTO\Lop.cs" />
+    <Compile Include="DTO\SinhVien.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,7 +190,9 @@
   <ItemGroup>
     <None Include="Resources\close_black.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\search_48px.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\scorecard_64px.png" />
   </ItemGroup>
@@ -230,6 +234,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchw_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset_48px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -45,6 +45,9 @@
             this.uc = new System.Windows.Forms.UserControl();
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.picTK = new System.Windows.Forms.PictureBox();
+            this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblUC = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -59,6 +62,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.line)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTK)).BeginInit();
             this.pnLogo.SuspendLayout();
             this.guna2CircleProgressBar1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,7 +96,7 @@
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.Gray;
             this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
-            this.guna2CircleButton1.Location = new System.Drawing.Point(180, 634);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(180, 639);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
@@ -106,7 +110,7 @@
             this.label2.AutoSize = true;
             this.guna2Transition1.SetDecoration(this.label2, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(97, 640);
+            this.label2.Location = new System.Drawing.Point(97, 645);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 17);
             this.label2.TabIndex = 6;
@@ -116,7 +120,7 @@
             // 
             this.guna2Transition1.SetDecoration(this.line, Guna.UI2.AnimatorNS.DecorationType.None);
             this.line.Image = global::QuanLySinhVien.Properties.Resources.line;
-            this.line.Location = new System.Drawing.Point(-5, 163);
+            this.line.Location = new System.Drawing.Point(-5, 132);
             this.line.Name = "line";
             this.line.Size = new System.Drawing.Size(13, 44);
             this.line.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -132,19 +136,19 @@
             this.guna2Button6.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.guna2Button6.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
             this.guna2Button6.HoverState.Parent = this.guna2Button6;
             this.guna2Button6.Image = global::QuanLySinhVien.Properties.Resources.bulleted_list_64px;
             this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2Button6.ImageOffset = new System.Drawing.Point(-5, 0);
             this.guna2Button6.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2Button6.Location = new System.Drawing.Point(12, 81);
+            this.guna2Button6.Location = new System.Drawing.Point(12, 50);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
-            this.guna2Button6.Size = new System.Drawing.Size(57, 55);
+            this.guna2Button6.Size = new System.Drawing.Size(309, 55);
             this.guna2Button6.TabIndex = 6;
-            this.guna2Button6.TextOffset = new System.Drawing.Point(35, 0);
+            this.guna2Button6.TextOffset = new System.Drawing.Point(25, 0);
             this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
             // btnKhoa
@@ -156,20 +160,20 @@
             this.btnKhoa.FillColor = System.Drawing.Color.Transparent;
             this.btnKhoa.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhoa.ForeColor = System.Drawing.Color.White;
-            this.btnKhoa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.btnKhoa.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
             this.btnKhoa.HoverState.Parent = this.btnKhoa;
             this.btnKhoa.Image = global::QuanLySinhVien.Properties.Resources.school_48px;
             this.btnKhoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnKhoa.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnKhoa.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnKhoa.Location = new System.Drawing.Point(12, 534);
+            this.btnKhoa.Location = new System.Drawing.Point(12, 503);
             this.btnKhoa.Name = "btnKhoa";
             this.btnKhoa.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.btnKhoa.ShadowDecoration.Parent = this.btnKhoa;
-            this.btnKhoa.Size = new System.Drawing.Size(265, 55);
+            this.btnKhoa.Size = new System.Drawing.Size(309, 55);
             this.btnKhoa.TabIndex = 5;
             this.btnKhoa.Text = "Quản lý Khoa";
-            this.btnKhoa.TextOffset = new System.Drawing.Point(35, 0);
+            this.btnKhoa.TextOffset = new System.Drawing.Point(20, 0);
             this.btnKhoa.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // btnLop
@@ -181,20 +185,20 @@
             this.btnLop.FillColor = System.Drawing.Color.Transparent;
             this.btnLop.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLop.ForeColor = System.Drawing.Color.White;
-            this.btnLop.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.btnLop.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
             this.btnLop.HoverState.Parent = this.btnLop;
             this.btnLop.Image = global::QuanLySinhVien.Properties.Resources.class_64px;
             this.btnLop.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLop.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnLop.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnLop.Location = new System.Drawing.Point(12, 459);
+            this.btnLop.Location = new System.Drawing.Point(12, 428);
             this.btnLop.Name = "btnLop";
             this.btnLop.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.btnLop.ShadowDecoration.Parent = this.btnLop;
-            this.btnLop.Size = new System.Drawing.Size(265, 55);
+            this.btnLop.Size = new System.Drawing.Size(309, 55);
             this.btnLop.TabIndex = 4;
             this.btnLop.Text = "Quản lý Lớp";
-            this.btnLop.TextOffset = new System.Drawing.Point(35, 0);
+            this.btnLop.TextOffset = new System.Drawing.Point(20, 0);
             this.btnLop.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // btnMon
@@ -206,20 +210,20 @@
             this.btnMon.FillColor = System.Drawing.Color.Transparent;
             this.btnMon.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMon.ForeColor = System.Drawing.Color.White;
-            this.btnMon.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.btnMon.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
             this.btnMon.HoverState.Parent = this.btnMon;
             this.btnMon.Image = global::QuanLySinhVien.Properties.Resources.elective_100px;
             this.btnMon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMon.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnMon.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnMon.Location = new System.Drawing.Point(12, 384);
+            this.btnMon.Location = new System.Drawing.Point(12, 353);
             this.btnMon.Name = "btnMon";
             this.btnMon.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.btnMon.ShadowDecoration.Parent = this.btnMon;
-            this.btnMon.Size = new System.Drawing.Size(265, 55);
+            this.btnMon.Size = new System.Drawing.Size(309, 55);
             this.btnMon.TabIndex = 3;
             this.btnMon.Text = "Quản lý Môn học";
-            this.btnMon.TextOffset = new System.Drawing.Point(35, 0);
+            this.btnMon.TextOffset = new System.Drawing.Point(20, 0);
             this.btnMon.Click += new System.EventHandler(this.btnMon_Click);
             // 
             // btnGV
@@ -231,20 +235,20 @@
             this.btnGV.FillColor = System.Drawing.Color.Transparent;
             this.btnGV.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGV.ForeColor = System.Drawing.Color.White;
-            this.btnGV.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.btnGV.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
             this.btnGV.HoverState.Parent = this.btnGV;
             this.btnGV.Image = global::QuanLySinhVien.Properties.Resources.teacher_64px;
             this.btnGV.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGV.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnGV.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnGV.Location = new System.Drawing.Point(12, 309);
+            this.btnGV.Location = new System.Drawing.Point(12, 278);
             this.btnGV.Name = "btnGV";
             this.btnGV.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.btnGV.ShadowDecoration.Parent = this.btnGV;
-            this.btnGV.Size = new System.Drawing.Size(265, 55);
+            this.btnGV.Size = new System.Drawing.Size(309, 55);
             this.btnGV.TabIndex = 2;
             this.btnGV.Text = "Quản lý giảng viên";
-            this.btnGV.TextOffset = new System.Drawing.Point(35, 0);
+            this.btnGV.TextOffset = new System.Drawing.Point(20, 0);
             this.btnGV.Click += new System.EventHandler(this.btnGV_Click);
             // 
             // btnSV
@@ -256,20 +260,20 @@
             this.btnSV.FillColor = System.Drawing.Color.Transparent;
             this.btnSV.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSV.ForeColor = System.Drawing.Color.White;
-            this.btnSV.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.btnSV.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
             this.btnSV.HoverState.Parent = this.btnSV;
             this.btnSV.Image = global::QuanLySinhVien.Properties.Resources.student_male_48px;
             this.btnSV.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSV.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnSV.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSV.Location = new System.Drawing.Point(12, 234);
+            this.btnSV.Location = new System.Drawing.Point(12, 203);
             this.btnSV.Name = "btnSV";
             this.btnSV.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.btnSV.ShadowDecoration.Parent = this.btnSV;
-            this.btnSV.Size = new System.Drawing.Size(265, 55);
+            this.btnSV.Size = new System.Drawing.Size(309, 55);
             this.btnSV.TabIndex = 1;
             this.btnSV.Text = "Quản lý Sinh viên";
-            this.btnSV.TextOffset = new System.Drawing.Point(35, 0);
+            this.btnSV.TextOffset = new System.Drawing.Point(20, 0);
             this.btnSV.Click += new System.EventHandler(this.btnSV_Click);
             // 
             // btnDiem
@@ -281,20 +285,20 @@
             this.btnDiem.FillColor = System.Drawing.Color.Transparent;
             this.btnDiem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDiem.ForeColor = System.Drawing.Color.White;
-            this.btnDiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(24)))), ((int)(((byte)(31)))));
+            this.btnDiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
             this.btnDiem.HoverState.Parent = this.btnDiem;
             this.btnDiem.Image = global::QuanLySinhVien.Properties.Resources.scorecard_64px;
             this.btnDiem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDiem.ImageOffset = new System.Drawing.Point(-5, 0);
             this.btnDiem.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDiem.Location = new System.Drawing.Point(12, 159);
+            this.btnDiem.Location = new System.Drawing.Point(12, 128);
             this.btnDiem.Name = "btnDiem";
             this.btnDiem.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.btnDiem.ShadowDecoration.Parent = this.btnDiem;
-            this.btnDiem.Size = new System.Drawing.Size(265, 55);
+            this.btnDiem.Size = new System.Drawing.Size(309, 55);
             this.btnDiem.TabIndex = 0;
             this.btnDiem.Text = "Nhập sửa điểm";
-            this.btnDiem.TextOffset = new System.Drawing.Point(35, 0);
+            this.btnDiem.TextOffset = new System.Drawing.Point(20, 0);
             this.btnDiem.Click += new System.EventHandler(this.btnDiem_Click);
             // 
             // uc
@@ -330,16 +334,69 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            this.panel2.Controls.Add(this.picTK);
+            this.panel2.Controls.Add(this.txtTimKiem);
+            this.panel2.Controls.Add(this.lblUC);
             this.panel2.Controls.Add(this.lblTime);
             this.panel2.Controls.Add(this.guna2ImageButton2);
             this.panel2.Controls.Add(this.guna2ImageButton1);
-            this.panel2.Controls.Add(this.label1);
             this.guna2Transition1.SetDecoration(this.panel2, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1298, 46);
             this.panel2.TabIndex = 2;
+            // 
+            // picTK
+            // 
+            this.picTK.BackColor = System.Drawing.Color.White;
+            this.guna2Transition1.SetDecoration(this.picTK, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.picTK.Image = global::QuanLySinhVien.Properties.Resources.search_48px;
+            this.picTK.Location = new System.Drawing.Point(463, 12);
+            this.picTK.Name = "picTK";
+            this.picTK.Size = new System.Drawing.Size(25, 25);
+            this.picTK.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picTK.TabIndex = 7;
+            this.picTK.TabStop = false;
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.BorderRadius = 5;
+            this.txtTimKiem.BorderThickness = 0;
+            this.txtTimKiem.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2Transition1.SetDecoration(this.txtTimKiem, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.txtTimKiem.DefaultText = "";
+            this.txtTimKiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTimKiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTimKiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimKiem.DisabledState.Parent = this.txtTimKiem;
+            this.txtTimKiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimKiem.FocusedState.Parent = this.txtTimKiem;
+            this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimKiem.HoverState.Parent = this.txtTimKiem;
+            this.txtTimKiem.Location = new System.Drawing.Point(214, 3);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.PasswordChar = '\0';
+            this.txtTimKiem.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtTimKiem.PlaceholderText = "Tìm kiếm";
+            this.txtTimKiem.SelectedText = "";
+            this.txtTimKiem.ShadowDecoration.Parent = this.txtTimKiem;
+            this.txtTimKiem.Size = new System.Drawing.Size(280, 40);
+            this.txtTimKiem.TabIndex = 6;
+            // 
+            // lblUC
+            // 
+            this.lblUC.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.lblUC, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUC.Location = new System.Drawing.Point(615, 9);
+            this.lblUC.Name = "lblUC";
+            this.lblUC.Size = new System.Drawing.Size(27, 25);
+            this.lblUC.TabIndex = 5;
+            this.lblUC.Text = "...";
             // 
             // lblTime
             // 
@@ -388,7 +445,8 @@
             this.label1.AutoSize = true;
             this.guna2Transition1.SetDecoration(this.label1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(511, 13);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            this.label1.Location = new System.Drawing.Point(487, 727);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(342, 20);
             this.label1.TabIndex = 3;
@@ -458,11 +516,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1298, 723);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.ClientSize = new System.Drawing.Size(1298, 756);
             this.Controls.Add(this.pnLogo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.uc);
+            this.Controls.Add(this.label1);
             this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -475,10 +535,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.line)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picTK)).EndInit();
             this.pnLogo.ResumeLayout(false);
             this.guna2CircleProgressBar1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -509,5 +571,8 @@
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUC;
+        private System.Windows.Forms.PictureBox picTK;
+        private Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
     }
 }

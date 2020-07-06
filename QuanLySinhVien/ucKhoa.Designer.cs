@@ -43,11 +43,11 @@
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblError = new XanderUI.XUIBanner();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtp = new System.Windows.Forms.DateTimePicker();
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
-            this.lblError = new XanderUI.XUIBanner();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvKhoa)).BeginInit();
             this.panel1.SuspendLayout();
@@ -146,7 +146,7 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             this.dtgvKhoa.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgvKhoa.RowTemplate.Height = 24;
+            this.dtgvKhoa.RowTemplate.Height = 40;
             this.dtgvKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvKhoa.Size = new System.Drawing.Size(819, 520);
             this.dtgvKhoa.TabIndex = 98;
@@ -252,6 +252,21 @@
             this.panel1.Size = new System.Drawing.Size(1232, 682);
             this.panel1.TabIndex = 99;
             // 
+            // lblError
+            // 
+            this.lblError.BackColor = System.Drawing.Color.Transparent;
+            this.lblError.BannerColor = System.Drawing.Color.SlateBlue;
+            this.lblError.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Transition1.SetDecoration(this.lblError, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.White;
+            this.lblError.Location = new System.Drawing.Point(382, 21);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(469, 46);
+            this.lblError.TabIndex = 6;
+            this.lblError.Text = "Lỗi";
+            this.lblError.Visible = false;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
@@ -293,7 +308,7 @@
             animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
             animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
             animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.Padding = new System.Windows.Forms.Padding(0);
             animation1.RotateCoeff = 0F;
             animation1.RotateLimit = 0F;
             animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
@@ -302,21 +317,6 @@
             animation1.TransparencyCoeff = 1F;
             this.guna2Transition1.DefaultAnimation = animation1;
             this.guna2Transition1.Interval = 20;
-            // 
-            // lblError
-            // 
-            this.lblError.BackColor = System.Drawing.Color.Transparent;
-            this.lblError.BannerColor = System.Drawing.Color.SlateBlue;
-            this.lblError.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Transition1.SetDecoration(this.lblError, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.White;
-            this.lblError.Location = new System.Drawing.Point(382, 21);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(469, 46);
-            this.lblError.TabIndex = 6;
-            this.lblError.Text = "Lỗi";
-            this.lblError.Visible = false;
             // 
             // timer1
             // 

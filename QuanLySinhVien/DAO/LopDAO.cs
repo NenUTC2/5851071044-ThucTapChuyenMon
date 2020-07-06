@@ -18,6 +18,13 @@ namespace QuanLySinhVien.DAO
 
         public LopDAO() { }
 
-        
+        public string getMaKhoabyMaLop(string id)
+        {
+            try
+            {
+                return DataProvider.Instance.ExcuteQuery("Select MaKhoa from Lop where MaLop='" + id + "'").Rows[0][0].ToString();
+            }
+            catch { return ""; }
+        }
     }
 }
