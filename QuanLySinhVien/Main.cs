@@ -150,20 +150,35 @@ namespace QuanLySinhVien
                 guna2CircleButton1.Text = "ON";
                 guna2CircleButton1.FillColor = Color.FromArgb(4, 197, 150);
                 guna2CircleButton1.ForeColor = Color.White;
+
                 uck.pn.BackColor = Color.FromArgb(21, 24, 31);
+                uck.pn2.BackColor = Color.FromArgb(31, 34, 41);
+                uck.pn3.BackColor = Color.FromArgb(31, 34, 41);
+
                 ucl.pn.BackColor = Color.FromArgb(21, 24, 31);
+                ucl.pn2.BackColor = Color.FromArgb(31, 34, 41);
+                ucl.pn3.BackColor = Color.FromArgb(31, 34, 41);
+
                 ucgv.pn.BackColor = Color.FromArgb(21, 24, 31);
-                pnLogo.BackColor = Color.FromArgb(64,64,64);
+                ucgv.pn2.BackColor = Color.FromArgb(31, 34, 41);
+                ucgv.pn3.BackColor = Color.FromArgb(31, 34, 41);
             }
             else
             {
                 guna2CircleButton1.Text = "OFF";
                 guna2CircleButton1.FillColor = Color.Black;
                 guna2CircleButton1.ForeColor = Color.Gray;
+
                 uck.pn.BackColor = Color.White;
+                uck.pn2.BackColor = Color.White;
+
                 ucl.pn.BackColor = Color.White;
+                ucl.pn2.BackColor = Color.White;
+                ucl.pn3.BackColor = Color.White;
+
                 ucgv.pn.BackColor = Color.White;
-                pnLogo.BackColor = Color.FromArgb(0, 0, 64);
+                ucgv.pn2.BackColor = Color.White;
+                ucgv.pn3.BackColor = Color.White;
             }
         }
     }
