@@ -26,5 +26,10 @@ namespace QuanLySinhVien.DAO
             }
             catch { return ""; }
         }
+
+        public string getKhoafromLop(string idlop)
+        {
+            return DataProvider.Instance.ExcuteQuery("Select MaKhoa from Lop where MaLop='" + idlop + "'").Rows[0][0].ToString();
+        }
     }
 }

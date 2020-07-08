@@ -83,6 +83,26 @@ namespace QuanLySinhVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap change_60px {
+            get {
+                object obj = ResourceManager.GetObject("change_60px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checked_checkbox_60px {
+            get {
+                object obj = ResourceManager.GetObject("checked_checkbox_60px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap class_64px {
             get {
                 object obj = ResourceManager.GetObject("class_64px", resourceCulture);
@@ -186,6 +206,16 @@ namespace QuanLySinhVien.Properties {
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus_60px {
+            get {
+                object obj = ResourceManager.GetObject("plus_60px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

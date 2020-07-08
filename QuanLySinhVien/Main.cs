@@ -16,7 +16,8 @@ namespace QuanLySinhVien
         {
             InitializeComponent();
             panel1.Width = 60;
-            lblTime.Text = DateTime.Now.ToString("hh:mm  dd/MM/yyyy");
+            lblTime.Text = DateTime.Now.ToString("hh:mm");
+            lblDay.Text = DateTime.Now.ToString("dd/MM");
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -98,10 +99,12 @@ namespace QuanLySinhVien
             lblUC.Text = "Quản lý giảng viên";
         }
 
+        public ucMon ucm = new ucMon();
         private void btnMon_Click(object sender, EventArgs e)
         {
             line.Top = btnMon.Top + 4;
             panel1.Width = 60;
+            showControl(ucm);
             lblUC.Text = "Quản lý môn học";
         }
 
@@ -148,7 +151,8 @@ namespace QuanLySinhVien
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            lblTime.Text = DateTime.Now.ToString("hh:mm  dd/MM/yyyy");
+            lblTime.Text = DateTime.Now.ToString("hh:mm");
+            lblDay.Text = DateTime.Now.ToString("dd/MM");
         }
 
         private void guna2CircleButton1_Click(object sender, EventArgs e)
@@ -180,6 +184,10 @@ namespace QuanLySinhVien
                 ucsv.pn.BackColor = Color.FromArgb(21, 24, 31);
                 ucsv.pn2.BackColor = Color.FromArgb(31, 34, 41);
                 ucsv.pn3.BackColor = Color.FromArgb(31, 34, 41);
+
+                ucm.pn.BackColor = Color.FromArgb(21, 24, 31);
+                ucm.pn2.BackColor = Color.FromArgb(31, 34, 41);
+                ucm.pn3.BackColor = Color.FromArgb(31, 34, 41);
             }
             else
             {
@@ -208,6 +216,10 @@ namespace QuanLySinhVien
                 ucsv.pn.BackColor = Color.FromArgb(230, 230, 230);
                 ucsv.pn2.BackColor = Color.White;
                 ucsv.pn3.BackColor = Color.White;
+
+                ucm.pn.BackColor = Color.FromArgb(230, 230, 230);
+                ucm.pn2.BackColor = Color.White;
+                ucm.pn3.BackColor = Color.White;
             }
         }
     }

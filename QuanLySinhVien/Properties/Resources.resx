@@ -118,17 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="plus_60px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plus_60px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="teacher_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\teacher_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="elective_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elective_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="student_male_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\student_male_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="class_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\class_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="utc2logochu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\utc2logochu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="close_nonbrg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_nonbrg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,8 +157,8 @@
   <data name="utc2logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\utc2logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="searchw_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\searchw_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="change_60px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\change_60px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,19 +178,22 @@
   <data name="close_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="reset_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reset_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="school_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\school_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="elective_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\elective_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="utc2logochu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\utc2logochu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="student_male_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\student_male_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="searchw_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\searchw_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="reset_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\reset_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="checked_checkbox_60px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checked_checkbox_60px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

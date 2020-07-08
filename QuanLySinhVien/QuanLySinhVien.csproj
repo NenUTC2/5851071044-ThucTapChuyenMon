@@ -241,5 +241,14 @@
   <ItemGroup>
     <None Include="Resources\reset_48px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\change_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_60px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked_checkbox_60px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

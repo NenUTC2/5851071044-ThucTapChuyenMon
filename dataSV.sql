@@ -107,32 +107,58 @@ VALUES
     ) 
 	GO 
 ---------------------------------------------HocKy--------------------------------------------------
+
 CREATE TABLE HocKy(
 	MaHK VARCHAR(20) PRIMARY KEY,
+	TenHocKy NVARCHAR(50)
+)
+
+CREATE TABLE CTHocKy(
+	MaHK VARCHAR(20),
 	MaSV VARCHAR(50),
 	DiemTichLuy INT 
+
+	PRIMARY KEY(MaHK,MaSV)
 )
 
 ---------------------------------------------MONHOC--------------------------------------------------
+--DROP TABLE dbo.MonHoc
 CREATE TABLE MonHoc(
 	MaMon VARCHAR(50) PRIMARY KEY,
+	TenMon NVARCHAR(50),
 	MaKhoa VARCHAR(50) NOT NULL,
 	TinChi INT
 )
-
+INSERT INTO dbo.MonHoc
+(
+    MaMon,
+    TenMon,
+    MaKhoa,
+    TinChi
+)
+VALUES
+(   'CNTT-ThucTapChuyenMon',  -- MaMon - varchar(50)
+    N'Thực tập chuyên môn', -- TenMon - nvarchar(50)
+    'CNTT',  -- MaKhoa - varchar(50)
+    3    -- TinChi - int
+    )
 ---------------------------------------------LOPMON--------------------------------------------------
+--DROP TABLE LopHoc
 CREATE TABLE LopHoc(
-	MaCT INT PRIMARY KEY IDENTITY,
+	MaCTMon VARCHAR(60) PRIMARY KEY,
 	MaMon VARCHAR(50),
 	MaGV VARCHAR(50),
 	MaLop VARCHAR(50),
-	Phong VARCHAR(20)
-)
----------------------------------------------LOPHOC--------------------------------------------------
-CREATE TABLE DiemLopHoc(
-	MaCT INT,
-	MaSV VARCHAR(50),
+	Phong VARCHAR(20),
 	HocKy VARCHAR(20),
+	TrangThai INT
+)
+
+---------------------------------------------LOPHOC--------------------------------------------------
+
+CREATE TABLE DiemLopHoc(
+	MaCTMon INT,
+	MaSV VARCHAR(50),
 	ChuyenCan INT,
 	DiemGiuaKy INT,
 	DiemTP INT,
@@ -140,7 +166,7 @@ CREATE TABLE DiemLopHoc(
 	DiemKT INT,
 	KTxTC INT
 
-	PRIMARY KEY(MaSV,MaCT)
+	PRIMARY KEY(MaSV,MaCTMon)
 )
 
 ---------------------------------------------ACCOUNT--------------------------------------------------

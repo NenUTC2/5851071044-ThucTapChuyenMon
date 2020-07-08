@@ -17,12 +17,12 @@ namespace QuanLySinhVien.DAO
             private set { DataProvider.instance = value; }
         }
         private DataProvider() { }
-        private string connectionT = @"Data Source=NenPhan;Initial Catalog=dataSV;Integrated Security=True";
+        private string con = @"Data Source=NenPhan;Initial Catalog=dataSV;Integrated Security=True";
         // private object parameter;
         public DataTable ExcuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
-            using (SqlConnection connection = new SqlConnection(connectionT))
+            using (SqlConnection connection = new SqlConnection(con))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
@@ -48,7 +48,7 @@ namespace QuanLySinhVien.DAO
         public int ExcuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
-            using (SqlConnection connection = new SqlConnection(connectionT))
+            using (SqlConnection connection = new SqlConnection(con))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);
@@ -73,7 +73,7 @@ namespace QuanLySinhVien.DAO
         public object ExcuteScalar(string query, object[] parameter = null)
         {
             object data = 0;
-            using (SqlConnection connection = new SqlConnection(connectionT))
+            using (SqlConnection connection = new SqlConnection(con))
             {
                 connection.Open();
                 SqlCommand command = new SqlCommand(query, connection);

@@ -22,6 +22,7 @@ namespace QuanLySinhVien
             loadSV();
             loadCBKhoa();
             loadCBLop(cbKhoa.SelectedValue.ToString());
+            loadCBMonHoc("*");
         }
 
         public void loadSV()
@@ -44,6 +45,16 @@ namespace QuanLySinhVien
             cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa");
             cbKhoa.DisplayMember = "TenKhoa";
             cbKhoa.ValueMember = "MaKhoa";
+        }
+
+        public void loadCBMonHoc(string khoa)
+        {
+            if (khoa.Equals("*"))
+                cbMonHoc.DataSource = DataProvider.Instance.ExcuteQuery("Select * from MonHoc");
+            else
+                cbMonHoc.DataSource = DataProvider.Instance.ExcuteQuery("Select * from MonHoc where MaKhoa='" + khoa + "'");
+            cbMonHoc.DisplayMember = "TenMon";
+            cbMonHoc.ValueMember = "MaMon";
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -77,6 +88,14 @@ namespace QuanLySinhVien
             txtDiaChi.Text = dtgvSV.CurrentRow.Cells["DiaChi"].Value.ToString();
             cbKhoa.SelectedValue = LopDAO.Instance.getMaKhoabyMaLop(dtgvSV.CurrentRow.Cells["MaLop"].Value.ToString());
             cbLop.SelectedValue = dtgvSV.CurrentRow.Cells["MaLop"].Value.ToString();
+            loadCBMonHoc(LopDAO.Instance.getKhoafromLop(dtgvSV.CurrentRow.Cells["MaLop"].Value.ToString()));
+        }
+
+        private void cbMonHoc_SelectedValueChanged(object sender, EventArgs e)
+        {
+            cbLopHoc.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHoc where MaMon='" + cbMonHoc.SelectedValue + "'");
+            cbLopHoc.DisplayMember = "MaCTMon";
+            cbLopHoc.ValueMember = "MaCTMon";
         }
     }
 }
