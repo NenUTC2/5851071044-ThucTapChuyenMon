@@ -31,5 +31,10 @@ namespace QuanLySinhVien.DAO
         {
             return DataProvider.Instance.ExcuteQuery("Select MaKhoa from Lop where MaLop='" + idlop + "'").Rows[0][0].ToString();
         }
+
+        public string getTenfromID(string idlop)
+        {
+            return DataProvider.Instance.ExcuteQuery("Select TenLop from Lop where MaLop='" + idlop + "'").Rows[0][0].ToString();
+        }
     }
 }

@@ -76,7 +76,7 @@
             this.guna2ImageButton3.CheckedState.Parent = this.guna2ImageButton3;
             this.guna2ImageButton3.HoverState.Parent = this.guna2ImageButton3;
             this.guna2ImageButton3.Image = global::QuanLySinhVien.Properties.Resources.reset_48px;
-            this.guna2ImageButton3.Location = new System.Drawing.Point(1128, 30);
+            this.guna2ImageButton3.Location = new System.Drawing.Point(44, 30);
             this.guna2ImageButton3.Name = "guna2ImageButton3";
             this.guna2ImageButton3.PressedState.Parent = this.guna2ImageButton3;
             this.guna2ImageButton3.Size = new System.Drawing.Size(63, 28);

@@ -74,10 +74,12 @@ namespace QuanLySinhVien
             
         }
 
+        public ucDiem ucd = new ucDiem();
         private void btnDiem_Click(object sender, EventArgs e)
         {
             line.Top = btnDiem.Top + 4;
             panel1.Width = 60;
+            showControl(ucd);
             lblUC.Text = "Nhập sửa điểm";
         }
 
@@ -184,6 +186,7 @@ namespace QuanLySinhVien
                 ucsv.pn.BackColor = Color.FromArgb(21, 24, 31);
                 ucsv.pn2.BackColor = Color.FromArgb(31, 34, 41);
                 ucsv.pn3.BackColor = Color.FromArgb(31, 34, 41);
+                ucsv.lbl1.ForeColor = Color.White;
 
                 ucm.pn.BackColor = Color.FromArgb(21, 24, 31);
                 ucm.pn2.BackColor = Color.FromArgb(31, 34, 41);
@@ -216,6 +219,7 @@ namespace QuanLySinhVien
                 ucsv.pn.BackColor = Color.FromArgb(230, 230, 230);
                 ucsv.pn2.BackColor = Color.White;
                 ucsv.pn3.BackColor = Color.White;
+                ucsv.lbl1.ForeColor = Color.Black;
 
                 ucm.pn.BackColor = Color.FromArgb(230, 230, 230);
                 ucm.pn2.BackColor = Color.White;

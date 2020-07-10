@@ -153,22 +153,22 @@ CREATE TABLE LopHoc(
 	HocKy VARCHAR(20),
 	TrangThai INT
 )
-
----------------------------------------------LOPHOC--------------------------------------------------
-
+---------------------------------------------DIEM LOPHOC--------------------------------------------------
+DROP TABLE dbo.DiemLopHoc
 CREATE TABLE DiemLopHoc(
-	MaCTMon INT,
+	MaCTMon VARCHAR(50),
 	MaSV VARCHAR(50),
-	ChuyenCan INT,
-	DiemGiuaKy INT,
-	DiemTP INT,
-	DiemThi INT,
-	DiemKT INT,
-	KTxTC INT
+	ChuyenCan FLOAT,
+	DiemGiuaKy FLOAT,
+	DiemTP FLOAT,
+	DiemThi FLOAT,
+	DiemKT FLOAT,
+	KTxTC FLOAT
 
 	PRIMARY KEY(MaSV,MaCTMon)
 )
 
+SELECT TinChi FROM dbo.MonHoc, dbo.LopHoc, dbo.DiemLopHoc WHERE LopHoc.MaCTMon=DiemLopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND MaSV
 ---------------------------------------------ACCOUNT--------------------------------------------------
 CREATE TABLE Account(
 	TenDN VARCHAR(50) PRIMARY KEY,
