@@ -33,7 +33,7 @@ CREATE TABLE GiangVien(
 	DiaChi NVARCHAR(MAX),
 	NgayDay DATE
 )
-SELECT * FROM dbo.GiangVien
+--SELECT * FROM dbo.GiangVien
 INSERT INTO dbo.GiangVien
 (
     MaGV,
@@ -44,7 +44,7 @@ INSERT INTO dbo.GiangVien
     NgayDay
 )
 VALUES
-(   'GV1',       -- MaGV - varchar(50)
+(   'CNTT-1',       -- MaGV - varchar(50)
     N'Tran Phong Nha',      -- TenGV - nvarchar(50)
     '123123123',       -- SDT - varchar(20)
     'CNTT',       -- MaKhoa - varchar(50)
@@ -79,14 +79,14 @@ VALUES
 	GO
 
 ---------------------------------------------SINHVIEN--------------------------------------------------
-DROP TABLE dbo.SinhVien
+--DROP TABLE dbo.SinhVien
 CREATE TABLE SinhVien(
 	MaSV VARCHAR(50) PRIMARY KEY,
 	TenSV NVARCHAR(50) NOT NULL,
 	SDT VARCHAR(20),
 	MaLop NVARCHAR(50) NOT NULL,
 	DiaChi NVARCHAR(MAX),
-	TichLuy INT
+	TichLuy FLOAT
 )
 INSERT INTO dbo.SinhVien
 (
@@ -106,6 +106,7 @@ VALUES
 	0
     ) 
 	GO 
+	--SELECT * FROM dbo.SinhVien
 ---------------------------------------------HocKy--------------------------------------------------
 
 CREATE TABLE HocKy(
@@ -116,11 +117,14 @@ CREATE TABLE HocKy(
 CREATE TABLE CTHocKy(
 	MaHK VARCHAR(20),
 	MaSV VARCHAR(50),
-	DiemTichLuy INT 
+	DiemTichLuy FLOAT 
 
 	PRIMARY KEY(MaHK,MaSV)
 )
 
+--SELECT * FROM dbo.CTHocKy
+--SELECT SUM(DiemTichLuy) FROM dbo.CTHocKy WHERE MaSV='20201'
+--SELECT COUNT(*) FROM dbo.CTHocKy WHERE MaSV='20201'
 ---------------------------------------------MONHOC--------------------------------------------------
 --DROP TABLE dbo.MonHoc
 CREATE TABLE MonHoc(
@@ -142,6 +146,8 @@ VALUES
     'CNTT',  -- MaKhoa - varchar(50)
     3    -- TinChi - int
     )
+	GO
+    
 ---------------------------------------------LOPMON--------------------------------------------------
 --DROP TABLE LopHoc
 CREATE TABLE LopHoc(
@@ -154,7 +160,7 @@ CREATE TABLE LopHoc(
 	TrangThai INT
 )
 ---------------------------------------------DIEM LOPHOC--------------------------------------------------
-DROP TABLE dbo.DiemLopHoc
+--DROP TABLE dbo.DiemLopHoc
 CREATE TABLE DiemLopHoc(
 	MaCTMon VARCHAR(50),
 	MaSV VARCHAR(50),
@@ -167,8 +173,9 @@ CREATE TABLE DiemLopHoc(
 
 	PRIMARY KEY(MaSV,MaCTMon)
 )
-
-SELECT TinChi FROM dbo.MonHoc, dbo.LopHoc, dbo.DiemLopHoc WHERE LopHoc.MaCTMon=DiemLopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND MaSV
+--SELECT * FROM dbo.DiemLopHoc
+--SELECT SUM(KTxTC) FROM dbo.DiemLopHoc WHERE MaSV='20201'
+--SELECT SUM(TinChi) FROM dbo.MonHoc, dbo.LopHoc, dbo.DiemLopHoc WHERE LopHoc.MaCTMon=DiemLopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND MaSV='20201'
 ---------------------------------------------ACCOUNT--------------------------------------------------
 CREATE TABLE Account(
 	TenDN VARCHAR(50) PRIMARY KEY,

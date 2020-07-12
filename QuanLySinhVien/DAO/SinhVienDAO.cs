@@ -47,5 +47,9 @@ namespace QuanLySinhVien.DAO
         {
             return DataProvider.Instance.ExcuteQuery("Select MaLop from SinhVien where MaSV='" + id + "'").Rows[0][0].ToString();
         }
+        public string getdiemTL(string id)
+        {
+            return DataProvider.Instance.ExcuteQuery("Select TichLuy from SinhVien where MaSV='" + id + "'").Rows[0][0].ToString();
+        }
     }
 }

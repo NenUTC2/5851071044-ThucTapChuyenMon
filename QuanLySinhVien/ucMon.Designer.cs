@@ -28,17 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSuaLop = new Guna.UI2.WinForms.Guna2Button();
-            this.btnXoaLop = new Guna.UI2.WinForms.Guna2Button();
-            this.btnMoLop = new Guna.UI2.WinForms.Guna2Button();
+            this.pnMon = new System.Windows.Forms.Panel();
+            this.btnSuaMon = new Guna.UI2.WinForms.Guna2Button();
+            this.nbrTinChi = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.btnXoaMon = new Guna.UI2.WinForms.Guna2Button();
+            this.cbKhoa = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnTaoMon = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.txtMaMonTao = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTenMon = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnLopHoc = new System.Windows.Forms.Panel();
+            this.btnSuaLop = new Guna.UI2.WinForms.Guna2Button();
             this.btnHuyHK = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnXoaLop = new Guna.UI2.WinForms.Guna2Button();
             this.btnThemHK = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnMoLop = new Guna.UI2.WinForms.Guna2Button();
             this.txtHocKy = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnShowtxt = new Guna.UI2.WinForms.Guna2ImageButton();
             this.cbHocKy = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -47,15 +56,6 @@
             this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.txtMaMon = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPhong = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnSuaMon = new Guna.UI2.WinForms.Guna2Button();
-            this.btnXoaMon = new Guna.UI2.WinForms.Guna2Button();
-            this.btnTaoMon = new Guna.UI2.WinForms.Guna2Button();
-            this.pnMon = new System.Windows.Forms.Panel();
-            this.nbrTinChi = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.cbKhoa = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.txtMaMonTao = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtTenMon = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.dtgvMonHoc = new System.Windows.Forms.DataGridView();
             this.MaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,9 +70,9 @@
             this.Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            this.pnLopHoc.SuspendLayout();
             this.pnMon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbrTinChi)).BeginInit();
+            this.pnLopHoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLopHoc)).BeginInit();
             this.SuspendLayout();
@@ -91,68 +91,198 @@
             this.panel1.Size = new System.Drawing.Size(1232, 682);
             this.panel1.TabIndex = 0;
             // 
-            // btnSuaLop
+            // pnMon
             // 
-            this.btnSuaLop.CheckedState.Parent = this.btnSuaLop;
-            this.btnSuaLop.CustomImages.Parent = this.btnSuaLop;
-            this.btnSuaLop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.btnSuaLop.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaLop.ForeColor = System.Drawing.Color.Aquamarine;
-            this.btnSuaLop.HoverState.Parent = this.btnSuaLop;
-            this.btnSuaLop.Image = global::QuanLySinhVien.Properties.Resources.edit_48px;
-            this.btnSuaLop.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSuaLop.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnSuaLop.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnSuaLop.Location = new System.Drawing.Point(938, 85);
-            this.btnSuaLop.Name = "btnSuaLop";
-            this.btnSuaLop.ShadowDecoration.Parent = this.btnSuaLop;
-            this.btnSuaLop.Size = new System.Drawing.Size(199, 43);
-            this.btnSuaLop.TabIndex = 110;
-            this.btnSuaLop.Text = "Sửa";
-            this.btnSuaLop.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnSuaLop.Click += new System.EventHandler(this.btnSuaLop_Click);
+            this.pnMon.BackColor = System.Drawing.Color.White;
+            this.pnMon.Controls.Add(this.btnSuaMon);
+            this.pnMon.Controls.Add(this.nbrTinChi);
+            this.pnMon.Controls.Add(this.btnXoaMon);
+            this.pnMon.Controls.Add(this.cbKhoa);
+            this.pnMon.Controls.Add(this.btnTaoMon);
+            this.pnMon.Controls.Add(this.guna2ImageButton1);
+            this.pnMon.Controls.Add(this.txtMaMonTao);
+            this.pnMon.Controls.Add(this.txtTenMon);
+            this.pnMon.Location = new System.Drawing.Point(37, 192);
+            this.pnMon.Name = "pnMon";
+            this.pnMon.Size = new System.Drawing.Size(1159, 210);
+            this.pnMon.TabIndex = 142;
+            this.pnMon.Visible = false;
             // 
-            // btnXoaLop
+            // btnSuaMon
             // 
-            this.btnXoaLop.CheckedState.Parent = this.btnXoaLop;
-            this.btnXoaLop.CustomImages.Parent = this.btnXoaLop;
-            this.btnXoaLop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.btnXoaLop.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(121)))), ((int)(((byte)(137)))));
-            this.btnXoaLop.HoverState.Parent = this.btnXoaLop;
-            this.btnXoaLop.Image = global::QuanLySinhVien.Properties.Resources.delete_48px;
-            this.btnXoaLop.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnXoaLop.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnXoaLop.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnXoaLop.Location = new System.Drawing.Point(938, 141);
-            this.btnXoaLop.Name = "btnXoaLop";
-            this.btnXoaLop.ShadowDecoration.Parent = this.btnXoaLop;
-            this.btnXoaLop.Size = new System.Drawing.Size(199, 43);
-            this.btnXoaLop.TabIndex = 111;
-            this.btnXoaLop.Text = "Xoá";
-            this.btnXoaLop.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnXoaLop.Click += new System.EventHandler(this.btnXoaLop_Click);
+            this.btnSuaMon.CheckedState.Parent = this.btnSuaMon;
+            this.btnSuaMon.CustomImages.Parent = this.btnSuaMon;
+            this.btnSuaMon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnSuaMon.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaMon.ForeColor = System.Drawing.Color.Aquamarine;
+            this.btnSuaMon.HoverState.Parent = this.btnSuaMon;
+            this.btnSuaMon.Image = global::QuanLySinhVien.Properties.Resources.edit_48px;
+            this.btnSuaMon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSuaMon.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnSuaMon.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnSuaMon.Location = new System.Drawing.Point(895, 85);
+            this.btnSuaMon.Name = "btnSuaMon";
+            this.btnSuaMon.ShadowDecoration.Parent = this.btnSuaMon;
+            this.btnSuaMon.Size = new System.Drawing.Size(199, 43);
+            this.btnSuaMon.TabIndex = 110;
+            this.btnSuaMon.Text = "Sửa";
+            this.btnSuaMon.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnSuaMon.Click += new System.EventHandler(this.btnSuaMon_Click);
             // 
-            // btnMoLop
+            // nbrTinChi
             // 
-            this.btnMoLop.CheckedState.Parent = this.btnMoLop;
-            this.btnMoLop.CustomImages.Parent = this.btnMoLop;
-            this.btnMoLop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.btnMoLop.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMoLop.ForeColor = System.Drawing.Color.Aquamarine;
-            this.btnMoLop.HoverState.Parent = this.btnMoLop;
-            this.btnMoLop.Image = global::QuanLySinhVien.Properties.Resources.add_48px;
-            this.btnMoLop.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnMoLop.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnMoLop.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnMoLop.Location = new System.Drawing.Point(938, 29);
-            this.btnMoLop.Name = "btnMoLop";
-            this.btnMoLop.ShadowDecoration.Parent = this.btnMoLop;
-            this.btnMoLop.Size = new System.Drawing.Size(199, 43);
-            this.btnMoLop.TabIndex = 107;
-            this.btnMoLop.Text = "Mở lớp";
-            this.btnMoLop.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnMoLop.Click += new System.EventHandler(this.btnMoLop_Click);
+            this.nbrTinChi.BackColor = System.Drawing.Color.Transparent;
+            this.nbrTinChi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nbrTinChi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.nbrTinChi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.nbrTinChi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.nbrTinChi.DisabledState.Parent = this.nbrTinChi;
+            this.nbrTinChi.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.nbrTinChi.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.nbrTinChi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.nbrTinChi.FocusedState.Parent = this.nbrTinChi;
+            this.nbrTinChi.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nbrTinChi.ForeColor = System.Drawing.Color.Black;
+            this.nbrTinChi.Location = new System.Drawing.Point(703, 75);
+            this.nbrTinChi.Margin = new System.Windows.Forms.Padding(4);
+            this.nbrTinChi.Name = "nbrTinChi";
+            this.nbrTinChi.ShadowDecoration.Parent = this.nbrTinChi;
+            this.nbrTinChi.Size = new System.Drawing.Size(102, 52);
+            this.nbrTinChi.TabIndex = 142;
+            this.nbrTinChi.TextOffset = new System.Drawing.Point(15, 0);
+            // 
+            // btnXoaMon
+            // 
+            this.btnXoaMon.CheckedState.Parent = this.btnXoaMon;
+            this.btnXoaMon.CustomImages.Parent = this.btnXoaMon;
+            this.btnXoaMon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnXoaMon.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(121)))), ((int)(((byte)(137)))));
+            this.btnXoaMon.HoverState.Parent = this.btnXoaMon;
+            this.btnXoaMon.Image = global::QuanLySinhVien.Properties.Resources.delete_48px;
+            this.btnXoaMon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnXoaMon.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnXoaMon.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnXoaMon.Location = new System.Drawing.Point(895, 141);
+            this.btnXoaMon.Name = "btnXoaMon";
+            this.btnXoaMon.ShadowDecoration.Parent = this.btnXoaMon;
+            this.btnXoaMon.Size = new System.Drawing.Size(199, 43);
+            this.btnXoaMon.TabIndex = 111;
+            this.btnXoaMon.Text = "Xoá";
+            this.btnXoaMon.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnXoaMon.Click += new System.EventHandler(this.btnXoaMon_Click);
+            // 
+            // cbKhoa
+            // 
+            this.cbKhoa.BackColor = System.Drawing.Color.Transparent;
+            this.cbKhoa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbKhoa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.cbKhoa.FocusedColor = System.Drawing.Color.Empty;
+            this.cbKhoa.FocusedState.Parent = this.cbKhoa;
+            this.cbKhoa.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbKhoa.ForeColor = System.Drawing.Color.White;
+            this.cbKhoa.FormattingEnabled = true;
+            this.cbKhoa.HoverState.Parent = this.cbKhoa;
+            this.cbKhoa.ItemHeight = 35;
+            this.cbKhoa.ItemsAppearance.Parent = this.cbKhoa;
+            this.cbKhoa.Location = new System.Drawing.Point(254, 9);
+            this.cbKhoa.Name = "cbKhoa";
+            this.cbKhoa.ShadowDecoration.Parent = this.cbKhoa;
+            this.cbKhoa.Size = new System.Drawing.Size(394, 41);
+            this.cbKhoa.TabIndex = 115;
+            this.cbKhoa.SelectedValueChanged += new System.EventHandler(this.cbKhoa_SelectedValueChanged);
+            // 
+            // btnTaoMon
+            // 
+            this.btnTaoMon.CheckedState.Parent = this.btnTaoMon;
+            this.btnTaoMon.CustomImages.Parent = this.btnTaoMon;
+            this.btnTaoMon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnTaoMon.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaoMon.ForeColor = System.Drawing.Color.Aquamarine;
+            this.btnTaoMon.HoverState.Parent = this.btnTaoMon;
+            this.btnTaoMon.Image = global::QuanLySinhVien.Properties.Resources.add_48px;
+            this.btnTaoMon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTaoMon.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnTaoMon.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnTaoMon.Location = new System.Drawing.Point(895, 29);
+            this.btnTaoMon.Name = "btnTaoMon";
+            this.btnTaoMon.ShadowDecoration.Parent = this.btnTaoMon;
+            this.btnTaoMon.Size = new System.Drawing.Size(199, 43);
+            this.btnTaoMon.TabIndex = 107;
+            this.btnTaoMon.Text = "Tạo môn";
+            this.btnTaoMon.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnTaoMon.Click += new System.EventHandler(this.btnTaoMon_Click);
+            // 
+            // guna2ImageButton1
+            // 
+            this.guna2ImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.Image = global::QuanLySinhVien.Properties.Resources.reset_48px;
+            this.guna2ImageButton1.Location = new System.Drawing.Point(78, 9);
+            this.guna2ImageButton1.Name = "guna2ImageButton1";
+            this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.Size = new System.Drawing.Size(63, 28);
+            this.guna2ImageButton1.TabIndex = 141;
+            this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
+            // 
+            // txtMaMonTao
+            // 
+            this.txtMaMonTao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtMaMonTao.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtMaMonTao.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMaMonTao.DefaultText = "";
+            this.txtMaMonTao.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMaMonTao.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMaMonTao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaMonTao.DisabledState.Parent = this.txtMaMonTao;
+            this.txtMaMonTao.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMaMonTao.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtMaMonTao.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaMonTao.FocusedState.Parent = this.txtMaMonTao;
+            this.txtMaMonTao.ForeColor = System.Drawing.Color.White;
+            this.txtMaMonTao.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMaMonTao.HoverState.Parent = this.txtMaMonTao;
+            this.txtMaMonTao.Location = new System.Drawing.Point(79, 75);
+            this.txtMaMonTao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaMonTao.Name = "txtMaMonTao";
+            this.txtMaMonTao.PasswordChar = '\0';
+            this.txtMaMonTao.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtMaMonTao.PlaceholderText = "Mã môn";
+            this.txtMaMonTao.SelectedText = "";
+            this.txtMaMonTao.ShadowDecoration.Parent = this.txtMaMonTao;
+            this.txtMaMonTao.Size = new System.Drawing.Size(443, 52);
+            this.txtMaMonTao.TabIndex = 108;
+            // 
+            // txtTenMon
+            // 
+            this.txtTenMon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtTenMon.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtTenMon.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenMon.DefaultText = "";
+            this.txtTenMon.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenMon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenMon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenMon.DisabledState.Parent = this.txtTenMon;
+            this.txtTenMon.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenMon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtTenMon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenMon.FocusedState.Parent = this.txtTenMon;
+            this.txtTenMon.ForeColor = System.Drawing.Color.White;
+            this.txtTenMon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenMon.HoverState.Parent = this.txtTenMon;
+            this.txtTenMon.Location = new System.Drawing.Point(78, 138);
+            this.txtTenMon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTenMon.Name = "txtTenMon";
+            this.txtTenMon.PasswordChar = '\0';
+            this.txtTenMon.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtTenMon.PlaceholderText = "Tên môn học";
+            this.txtTenMon.SelectedText = "";
+            this.txtTenMon.ShadowDecoration.Parent = this.txtTenMon;
+            this.txtTenMon.Size = new System.Drawing.Size(727, 52);
+            this.txtTenMon.TabIndex = 109;
             // 
             // pnLopHoc
             // 
@@ -175,6 +305,27 @@
             this.pnLopHoc.Size = new System.Drawing.Size(1159, 210);
             this.pnLopHoc.TabIndex = 139;
             // 
+            // btnSuaLop
+            // 
+            this.btnSuaLop.CheckedState.Parent = this.btnSuaLop;
+            this.btnSuaLop.CustomImages.Parent = this.btnSuaLop;
+            this.btnSuaLop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnSuaLop.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaLop.ForeColor = System.Drawing.Color.Aquamarine;
+            this.btnSuaLop.HoverState.Parent = this.btnSuaLop;
+            this.btnSuaLop.Image = global::QuanLySinhVien.Properties.Resources.edit_48px;
+            this.btnSuaLop.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnSuaLop.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnSuaLop.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnSuaLop.Location = new System.Drawing.Point(938, 85);
+            this.btnSuaLop.Name = "btnSuaLop";
+            this.btnSuaLop.ShadowDecoration.Parent = this.btnSuaLop;
+            this.btnSuaLop.Size = new System.Drawing.Size(199, 43);
+            this.btnSuaLop.TabIndex = 110;
+            this.btnSuaLop.Text = "Sửa";
+            this.btnSuaLop.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnSuaLop.Click += new System.EventHandler(this.btnSuaLop_Click);
+            // 
             // btnHuyHK
             // 
             this.btnHuyHK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
@@ -190,6 +341,27 @@
             this.btnHuyHK.Visible = false;
             this.btnHuyHK.Click += new System.EventHandler(this.btnHuyHK_Click);
             // 
+            // btnXoaLop
+            // 
+            this.btnXoaLop.CheckedState.Parent = this.btnXoaLop;
+            this.btnXoaLop.CustomImages.Parent = this.btnXoaLop;
+            this.btnXoaLop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnXoaLop.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(121)))), ((int)(((byte)(137)))));
+            this.btnXoaLop.HoverState.Parent = this.btnXoaLop;
+            this.btnXoaLop.Image = global::QuanLySinhVien.Properties.Resources.delete_48px;
+            this.btnXoaLop.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnXoaLop.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnXoaLop.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnXoaLop.Location = new System.Drawing.Point(938, 141);
+            this.btnXoaLop.Name = "btnXoaLop";
+            this.btnXoaLop.ShadowDecoration.Parent = this.btnXoaLop;
+            this.btnXoaLop.Size = new System.Drawing.Size(199, 43);
+            this.btnXoaLop.TabIndex = 111;
+            this.btnXoaLop.Text = "Xoá";
+            this.btnXoaLop.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnXoaLop.Click += new System.EventHandler(this.btnXoaLop_Click);
+            // 
             // btnThemHK
             // 
             this.btnThemHK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
@@ -204,6 +376,27 @@
             this.btnThemHK.TabIndex = 145;
             this.btnThemHK.Visible = false;
             this.btnThemHK.Click += new System.EventHandler(this.btnThemHK_Click);
+            // 
+            // btnMoLop
+            // 
+            this.btnMoLop.CheckedState.Parent = this.btnMoLop;
+            this.btnMoLop.CustomImages.Parent = this.btnMoLop;
+            this.btnMoLop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnMoLop.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoLop.ForeColor = System.Drawing.Color.Aquamarine;
+            this.btnMoLop.HoverState.Parent = this.btnMoLop;
+            this.btnMoLop.Image = global::QuanLySinhVien.Properties.Resources.add_48px;
+            this.btnMoLop.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMoLop.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnMoLop.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnMoLop.Location = new System.Drawing.Point(938, 29);
+            this.btnMoLop.Name = "btnMoLop";
+            this.btnMoLop.ShadowDecoration.Parent = this.btnMoLop;
+            this.btnMoLop.Size = new System.Drawing.Size(199, 43);
+            this.btnMoLop.TabIndex = 107;
+            this.btnMoLop.Text = "Mở lớp";
+            this.btnMoLop.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnMoLop.Click += new System.EventHandler(this.btnMoLop_Click);
             // 
             // txtHocKy
             // 
@@ -380,198 +573,6 @@
             this.txtPhong.Size = new System.Drawing.Size(430, 52);
             this.txtPhong.TabIndex = 109;
             // 
-            // btnSuaMon
-            // 
-            this.btnSuaMon.CheckedState.Parent = this.btnSuaMon;
-            this.btnSuaMon.CustomImages.Parent = this.btnSuaMon;
-            this.btnSuaMon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.btnSuaMon.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaMon.ForeColor = System.Drawing.Color.Aquamarine;
-            this.btnSuaMon.HoverState.Parent = this.btnSuaMon;
-            this.btnSuaMon.Image = global::QuanLySinhVien.Properties.Resources.edit_48px;
-            this.btnSuaMon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnSuaMon.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnSuaMon.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnSuaMon.Location = new System.Drawing.Point(895, 85);
-            this.btnSuaMon.Name = "btnSuaMon";
-            this.btnSuaMon.ShadowDecoration.Parent = this.btnSuaMon;
-            this.btnSuaMon.Size = new System.Drawing.Size(199, 43);
-            this.btnSuaMon.TabIndex = 110;
-            this.btnSuaMon.Text = "Sửa";
-            this.btnSuaMon.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnSuaMon.Click += new System.EventHandler(this.btnSuaMon_Click);
-            // 
-            // btnXoaMon
-            // 
-            this.btnXoaMon.CheckedState.Parent = this.btnXoaMon;
-            this.btnXoaMon.CustomImages.Parent = this.btnXoaMon;
-            this.btnXoaMon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.btnXoaMon.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(121)))), ((int)(((byte)(137)))));
-            this.btnXoaMon.HoverState.Parent = this.btnXoaMon;
-            this.btnXoaMon.Image = global::QuanLySinhVien.Properties.Resources.delete_48px;
-            this.btnXoaMon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnXoaMon.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnXoaMon.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnXoaMon.Location = new System.Drawing.Point(895, 141);
-            this.btnXoaMon.Name = "btnXoaMon";
-            this.btnXoaMon.ShadowDecoration.Parent = this.btnXoaMon;
-            this.btnXoaMon.Size = new System.Drawing.Size(199, 43);
-            this.btnXoaMon.TabIndex = 111;
-            this.btnXoaMon.Text = "Xoá";
-            this.btnXoaMon.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnXoaMon.Click += new System.EventHandler(this.btnXoaMon_Click);
-            // 
-            // btnTaoMon
-            // 
-            this.btnTaoMon.CheckedState.Parent = this.btnTaoMon;
-            this.btnTaoMon.CustomImages.Parent = this.btnTaoMon;
-            this.btnTaoMon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.btnTaoMon.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaoMon.ForeColor = System.Drawing.Color.Aquamarine;
-            this.btnTaoMon.HoverState.Parent = this.btnTaoMon;
-            this.btnTaoMon.Image = global::QuanLySinhVien.Properties.Resources.add_48px;
-            this.btnTaoMon.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnTaoMon.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnTaoMon.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnTaoMon.Location = new System.Drawing.Point(895, 29);
-            this.btnTaoMon.Name = "btnTaoMon";
-            this.btnTaoMon.ShadowDecoration.Parent = this.btnTaoMon;
-            this.btnTaoMon.Size = new System.Drawing.Size(199, 43);
-            this.btnTaoMon.TabIndex = 107;
-            this.btnTaoMon.Text = "Tạo môn";
-            this.btnTaoMon.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnTaoMon.Click += new System.EventHandler(this.btnTaoMon_Click);
-            // 
-            // pnMon
-            // 
-            this.pnMon.BackColor = System.Drawing.Color.White;
-            this.pnMon.Controls.Add(this.btnSuaMon);
-            this.pnMon.Controls.Add(this.nbrTinChi);
-            this.pnMon.Controls.Add(this.btnXoaMon);
-            this.pnMon.Controls.Add(this.cbKhoa);
-            this.pnMon.Controls.Add(this.btnTaoMon);
-            this.pnMon.Controls.Add(this.guna2ImageButton1);
-            this.pnMon.Controls.Add(this.txtMaMonTao);
-            this.pnMon.Controls.Add(this.txtTenMon);
-            this.pnMon.Location = new System.Drawing.Point(37, 192);
-            this.pnMon.Name = "pnMon";
-            this.pnMon.Size = new System.Drawing.Size(1159, 210);
-            this.pnMon.TabIndex = 142;
-            this.pnMon.Visible = false;
-            // 
-            // nbrTinChi
-            // 
-            this.nbrTinChi.BackColor = System.Drawing.Color.Transparent;
-            this.nbrTinChi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.nbrTinChi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.nbrTinChi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.nbrTinChi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.nbrTinChi.DisabledState.Parent = this.nbrTinChi;
-            this.nbrTinChi.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.nbrTinChi.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.nbrTinChi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.nbrTinChi.FocusedState.Parent = this.nbrTinChi;
-            this.nbrTinChi.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nbrTinChi.ForeColor = System.Drawing.Color.Black;
-            this.nbrTinChi.Location = new System.Drawing.Point(703, 75);
-            this.nbrTinChi.Margin = new System.Windows.Forms.Padding(4);
-            this.nbrTinChi.Name = "nbrTinChi";
-            this.nbrTinChi.ShadowDecoration.Parent = this.nbrTinChi;
-            this.nbrTinChi.Size = new System.Drawing.Size(102, 52);
-            this.nbrTinChi.TabIndex = 142;
-            this.nbrTinChi.TextOffset = new System.Drawing.Point(15, 0);
-            // 
-            // cbKhoa
-            // 
-            this.cbKhoa.BackColor = System.Drawing.Color.Transparent;
-            this.cbKhoa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbKhoa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKhoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.cbKhoa.FocusedColor = System.Drawing.Color.Empty;
-            this.cbKhoa.FocusedState.Parent = this.cbKhoa;
-            this.cbKhoa.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbKhoa.ForeColor = System.Drawing.Color.White;
-            this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.HoverState.Parent = this.cbKhoa;
-            this.cbKhoa.ItemHeight = 35;
-            this.cbKhoa.ItemsAppearance.Parent = this.cbKhoa;
-            this.cbKhoa.Location = new System.Drawing.Point(254, 9);
-            this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.ShadowDecoration.Parent = this.cbKhoa;
-            this.cbKhoa.Size = new System.Drawing.Size(394, 41);
-            this.cbKhoa.TabIndex = 115;
-            this.cbKhoa.SelectedValueChanged += new System.EventHandler(this.cbKhoa_SelectedValueChanged);
-            // 
-            // guna2ImageButton1
-            // 
-            this.guna2ImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Image = global::QuanLySinhVien.Properties.Resources.reset_48px;
-            this.guna2ImageButton1.Location = new System.Drawing.Point(78, 9);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Size = new System.Drawing.Size(63, 28);
-            this.guna2ImageButton1.TabIndex = 141;
-            // 
-            // txtMaMonTao
-            // 
-            this.txtMaMonTao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.txtMaMonTao.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtMaMonTao.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaMonTao.DefaultText = "";
-            this.txtMaMonTao.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMaMonTao.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMaMonTao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaMonTao.DisabledState.Parent = this.txtMaMonTao;
-            this.txtMaMonTao.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMaMonTao.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.txtMaMonTao.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaMonTao.FocusedState.Parent = this.txtMaMonTao;
-            this.txtMaMonTao.ForeColor = System.Drawing.Color.White;
-            this.txtMaMonTao.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaMonTao.HoverState.Parent = this.txtMaMonTao;
-            this.txtMaMonTao.Location = new System.Drawing.Point(79, 75);
-            this.txtMaMonTao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMaMonTao.Name = "txtMaMonTao";
-            this.txtMaMonTao.PasswordChar = '\0';
-            this.txtMaMonTao.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtMaMonTao.PlaceholderText = "Mã môn";
-            this.txtMaMonTao.SelectedText = "";
-            this.txtMaMonTao.ShadowDecoration.Parent = this.txtMaMonTao;
-            this.txtMaMonTao.Size = new System.Drawing.Size(443, 52);
-            this.txtMaMonTao.TabIndex = 108;
-            // 
-            // txtTenMon
-            // 
-            this.txtTenMon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.txtTenMon.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtTenMon.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTenMon.DefaultText = "";
-            this.txtTenMon.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTenMon.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTenMon.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenMon.DisabledState.Parent = this.txtTenMon;
-            this.txtTenMon.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTenMon.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.txtTenMon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenMon.FocusedState.Parent = this.txtTenMon;
-            this.txtTenMon.ForeColor = System.Drawing.Color.White;
-            this.txtTenMon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenMon.HoverState.Parent = this.txtTenMon;
-            this.txtTenMon.Location = new System.Drawing.Point(78, 138);
-            this.txtTenMon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTenMon.Name = "txtTenMon";
-            this.txtTenMon.PasswordChar = '\0';
-            this.txtTenMon.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtTenMon.PlaceholderText = "Tên môn học";
-            this.txtTenMon.SelectedText = "";
-            this.txtTenMon.ShadowDecoration.Parent = this.txtTenMon;
-            this.txtTenMon.Size = new System.Drawing.Size(727, 52);
-            this.txtTenMon.TabIndex = 109;
-            // 
             // guna2ImageButton2
             // 
             this.guna2ImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
@@ -594,14 +595,14 @@
             this.dtgvMonHoc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvMonHoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvMonHoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvMonHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvMonHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvMonHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaMon,
@@ -614,12 +615,12 @@
             this.dtgvMonHoc.Name = "dtgvMonHoc";
             this.dtgvMonHoc.ReadOnly = true;
             this.dtgvMonHoc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgvMonHoc.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgvMonHoc.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvMonHoc.RowTemplate.Height = 35;
             this.dtgvMonHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvMonHoc.Size = new System.Drawing.Size(876, 163);
@@ -662,14 +663,14 @@
             this.dtgvLopHoc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvLopHoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvLopHoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvLopHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvLopHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvLopHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvLopHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaCTMon,
@@ -684,12 +685,12 @@
             this.dtgvLopHoc.Name = "dtgvLopHoc";
             this.dtgvLopHoc.ReadOnly = true;
             this.dtgvLopHoc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgvLopHoc.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgvLopHoc.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgvLopHoc.RowTemplate.Height = 40;
             this.dtgvLopHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvLopHoc.Size = new System.Drawing.Size(1160, 257);
@@ -747,9 +748,9 @@
             this.Name = "ucMon";
             this.Size = new System.Drawing.Size(1232, 682);
             this.panel1.ResumeLayout(false);
-            this.pnLopHoc.ResumeLayout(false);
             this.pnMon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nbrTinChi)).EndInit();
+            this.pnLopHoc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMonHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLopHoc)).EndInit();
             this.ResumeLayout(false);

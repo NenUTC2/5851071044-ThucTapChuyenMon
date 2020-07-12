@@ -193,5 +193,10 @@ namespace QuanLySinhVien
             txtMaMon.Text = dtgvLopHoc.CurrentRow.Cells["MaMonHoc"].Value.ToString();
             txtPhong.Text = dtgvLopHoc.CurrentRow.Cells["Phong"].Value.ToString();
         }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            loadCBKhoa("*");
+        }
     }
 }

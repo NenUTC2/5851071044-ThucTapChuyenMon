@@ -27,6 +27,35 @@ namespace QuanLySinhVien.DAO
             DataProvider.Instance.ExcuteNonQuery("Update DiemLopHoc set ChuyenCan=" +cc + "," +
                 " DiemGiuaKy=" + gk + ", DiemTP=" + tp + "," +
                 " DiemThi=" + thi + ", DiemKT=" + kt + ", KTxTC="+kt*tc+ " where DiemLopHoc.MaCTMon='" + mactmon + "' AND MaSV='" + msv + "'");
+            if (kt > 0)
+            {
+                decimal KTxTC = Convert.ToDecimal(DataProvider.Instance.ExcuteQuery("SELECT SUM(KTxTC) FROM dbo.DiemLopHoc WHERE MaSV='" + msv + "'").Rows[0][0].ToString());
+                decimal ttc = Convert.ToDecimal(DataProvider.Instance.ExcuteQuery("SELECT SUM(TinChi) FROM dbo.MonHoc, dbo.LopHoc, dbo.DiemLopHoc " +
+                    "WHERE LopHoc.MaCTMon=DiemLopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND MaSV='" + msv + "'").Rows[0][0].ToString());
+                string hk = getHKfromCTMon(mactmon);
+                decimal tlhk = KTxTC / ttc;
+                DataProvider.Instance.ExcuteNonQuery("Update CTHocKy set DiemTichLuy= "+tlhk+" where MaHK='"+hk+"' and MaSV='"+msv+"'");
+                decimal tongtichluy = Convert.ToDecimal(DataProvider.Instance.ExcuteQuery("SELECT SUM(DiemTichLuy) FROM dbo.CTHocKy WHERE MaSV='"+msv+"'").Rows[0][0].ToString());
+                decimal sohk = Convert.ToDecimal(DataProvider.Instance.ExcuteQuery("SELECT COUNT(*) FROM dbo.CTHocKy WHERE MaSV='"+msv+"'").Rows[0][0].ToString());
+                decimal tl = tongtichluy / sohk;
+                DataProvider.Instance.ExcuteNonQuery("Update SinhVien set TichLuy= "+tl+" where MaSV='"+msv+"'");
+            }
+        }
+
+        public string getHKfromCTMon(string mact)
+        {
+            return DataProvider.Instance.ExcuteQuery("Select HocKy from LopHoc where MaCTMon='" + mact + "'").Rows[0][0].ToString();
+        }
+
+        public void themCTHocKy(string mact, string msv)
+        {
+            string hk = DataProvider.Instance.ExcuteQuery("Select HocKy from LopHoc where MaCTMon='" + mact + "'").Rows[0][0].ToString();
+
+            DataTable dthk = DataProvider.Instance.ExcuteQuery("Select * from CTHocKy where MaHK='" + hk + "' and MaSV='" + msv + "'");
+            if (dthk.Rows.Count <= 0)
+            {
+                DataProvider.Instance.ExcuteNonQuery("Insert into CTHocKy values('" + hk + "', '" + msv + "', 0)");
+            }
         }
     }
 }

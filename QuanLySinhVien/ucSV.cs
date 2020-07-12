@@ -170,6 +170,21 @@ namespace QuanLySinhVien
             if (SinhVienDAO.Instance.checkSV(msv) == 1)
             {
                 DataProvider.Instance.ExcuteNonQuery("Insert into DiemLopHoc values('" + cbLopHoc.SelectedValue + "', '" + msv + "', 0,0,0,0,0,0)");
+                DiemDAO.Instance.themCTHocKy(cbLopHoc.SelectedValue.ToString(), msv);
+            }
+
+        }
+
+        private void cbMonHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

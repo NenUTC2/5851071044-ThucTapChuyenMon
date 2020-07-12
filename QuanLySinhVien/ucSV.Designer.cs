@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnThoatExcel = new Guna.UI2.WinForms.Guna2Button();
-            this.cbSheet = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dtgv = new System.Windows.Forms.DataGridView();
             this.dtgvSV = new System.Windows.Forms.DataGridView();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +40,9 @@
             this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TichLuy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgv = new System.Windows.Forms.DataGridView();
+            this.btnThoatExcel = new Guna.UI2.WinForms.Guna2Button();
+            this.cbSheet = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblDKM = new System.Windows.Forms.Label();
             this.cbLopHoc = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -59,8 +59,8 @@
             this.cbLop = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -77,86 +77,6 @@
             this.panel1.Size = new System.Drawing.Size(1232, 682);
             this.panel1.TabIndex = 0;
             // 
-            // btnThoatExcel
-            // 
-            this.btnThoatExcel.CheckedState.Parent = this.btnThoatExcel;
-            this.btnThoatExcel.CustomImages.Parent = this.btnThoatExcel;
-            this.btnThoatExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.btnThoatExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoatExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(121)))), ((int)(((byte)(137)))));
-            this.btnThoatExcel.HoverState.Parent = this.btnThoatExcel;
-            this.btnThoatExcel.Image = global::QuanLySinhVien.Properties.Resources.delete_48px;
-            this.btnThoatExcel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnThoatExcel.ImageOffset = new System.Drawing.Point(-10, 0);
-            this.btnThoatExcel.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnThoatExcel.Location = new System.Drawing.Point(1161, 318);
-            this.btnThoatExcel.Name = "btnThoatExcel";
-            this.btnThoatExcel.ShadowDecoration.Parent = this.btnThoatExcel;
-            this.btnThoatExcel.Size = new System.Drawing.Size(35, 35);
-            this.btnThoatExcel.TabIndex = 120;
-            this.btnThoatExcel.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnThoatExcel.Visible = false;
-            this.btnThoatExcel.Click += new System.EventHandler(this.btnThoatExcel_Click);
-            // 
-            // cbSheet
-            // 
-            this.cbSheet.BackColor = System.Drawing.Color.Transparent;
-            this.cbSheet.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbSheet.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbSheet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSheet.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.cbSheet.FocusedColor = System.Drawing.Color.Empty;
-            this.cbSheet.FocusedState.Parent = this.cbSheet;
-            this.cbSheet.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbSheet.ForeColor = System.Drawing.Color.White;
-            this.cbSheet.FormattingEnabled = true;
-            this.cbSheet.HoverState.Parent = this.cbSheet;
-            this.cbSheet.ItemHeight = 20;
-            this.cbSheet.ItemsAppearance.Parent = this.cbSheet;
-            this.cbSheet.Location = new System.Drawing.Point(37, 634);
-            this.cbSheet.Name = "cbSheet";
-            this.cbSheet.ShadowDecoration.Parent = this.cbSheet;
-            this.cbSheet.Size = new System.Drawing.Size(213, 26);
-            this.cbSheet.TabIndex = 120;
-            this.cbSheet.Visible = false;
-            this.cbSheet.SelectedIndexChanged += new System.EventHandler(this.cbSheet_SelectedIndexChanged);
-            // 
-            // dtgv
-            // 
-            this.dtgv.AllowUserToAddRows = false;
-            this.dtgv.AllowUserToDeleteRows = false;
-            this.dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgv.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv.EnableHeadersVisualStyles = false;
-            this.dtgv.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dtgv.Location = new System.Drawing.Point(36, 318);
-            this.dtgv.Name = "dtgv";
-            this.dtgv.ReadOnly = true;
-            this.dtgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgv.RowsDefaultCellStyle = dataGridViewCellStyle14;
-            this.dtgv.RowTemplate.Height = 40;
-            this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgv.Size = new System.Drawing.Size(1160, 348);
-            this.dtgv.TabIndex = 138;
-            this.dtgv.Visible = false;
-            this.dtgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_CellClick);
-            // 
             // dtgvSV
             // 
             this.dtgvSV.AllowUserToAddRows = false;
@@ -165,14 +85,14 @@
             this.dtgvSV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvSV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvSV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvSV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvSV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dtgvSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvSV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSV,
@@ -187,12 +107,12 @@
             this.dtgvSV.Name = "dtgvSV";
             this.dtgvSV.ReadOnly = true;
             this.dtgvSV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgvSV.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgvSV.RowsDefaultCellStyle = dataGridViewCellStyle18;
             this.dtgvSV.RowTemplate.Height = 40;
             this.dtgvSV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvSV.Size = new System.Drawing.Size(1160, 348);
@@ -240,6 +160,86 @@
             this.TichLuy.HeaderText = "Tích luỹ";
             this.TichLuy.Name = "TichLuy";
             this.TichLuy.ReadOnly = true;
+            // 
+            // dtgv
+            // 
+            this.dtgv.AllowUserToAddRows = false;
+            this.dtgv.AllowUserToDeleteRows = false;
+            this.dtgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.dtgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv.EnableHeadersVisualStyles = false;
+            this.dtgv.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dtgv.Location = new System.Drawing.Point(36, 318);
+            this.dtgv.Name = "dtgv";
+            this.dtgv.ReadOnly = true;
+            this.dtgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgv.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.dtgv.RowTemplate.Height = 40;
+            this.dtgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgv.Size = new System.Drawing.Size(1160, 348);
+            this.dtgv.TabIndex = 138;
+            this.dtgv.Visible = false;
+            this.dtgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_CellClick);
+            // 
+            // btnThoatExcel
+            // 
+            this.btnThoatExcel.CheckedState.Parent = this.btnThoatExcel;
+            this.btnThoatExcel.CustomImages.Parent = this.btnThoatExcel;
+            this.btnThoatExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnThoatExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoatExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(121)))), ((int)(((byte)(137)))));
+            this.btnThoatExcel.HoverState.Parent = this.btnThoatExcel;
+            this.btnThoatExcel.Image = global::QuanLySinhVien.Properties.Resources.delete_48px;
+            this.btnThoatExcel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnThoatExcel.ImageOffset = new System.Drawing.Point(-10, 0);
+            this.btnThoatExcel.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnThoatExcel.Location = new System.Drawing.Point(1161, 318);
+            this.btnThoatExcel.Name = "btnThoatExcel";
+            this.btnThoatExcel.ShadowDecoration.Parent = this.btnThoatExcel;
+            this.btnThoatExcel.Size = new System.Drawing.Size(35, 35);
+            this.btnThoatExcel.TabIndex = 120;
+            this.btnThoatExcel.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnThoatExcel.Visible = false;
+            this.btnThoatExcel.Click += new System.EventHandler(this.btnThoatExcel_Click);
+            // 
+            // cbSheet
+            // 
+            this.cbSheet.BackColor = System.Drawing.Color.Transparent;
+            this.cbSheet.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbSheet.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSheet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSheet.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.cbSheet.FocusedColor = System.Drawing.Color.Empty;
+            this.cbSheet.FocusedState.Parent = this.cbSheet;
+            this.cbSheet.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbSheet.ForeColor = System.Drawing.Color.White;
+            this.cbSheet.FormattingEnabled = true;
+            this.cbSheet.HoverState.Parent = this.cbSheet;
+            this.cbSheet.ItemHeight = 20;
+            this.cbSheet.ItemsAppearance.Parent = this.cbSheet;
+            this.cbSheet.Location = new System.Drawing.Point(37, 634);
+            this.cbSheet.Name = "cbSheet";
+            this.cbSheet.ShadowDecoration.Parent = this.cbSheet;
+            this.cbSheet.Size = new System.Drawing.Size(213, 26);
+            this.cbSheet.TabIndex = 120;
+            this.cbSheet.Visible = false;
+            this.cbSheet.SelectedIndexChanged += new System.EventHandler(this.cbSheet_SelectedIndexChanged);
             // 
             // panel3
             // 
@@ -325,6 +325,7 @@
             this.cbMonHoc.ShadowDecoration.Parent = this.cbMonHoc;
             this.cbMonHoc.Size = new System.Drawing.Size(249, 41);
             this.cbMonHoc.TabIndex = 119;
+            this.cbMonHoc.SelectedIndexChanged += new System.EventHandler(this.cbMonHoc_SelectedIndexChanged);
             this.cbMonHoc.SelectedValueChanged += new System.EventHandler(this.cbMonHoc_SelectedValueChanged);
             // 
             // btnSua
@@ -393,6 +394,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.txtSDT);
             this.panel2.Controls.Add(this.btnNhapExel);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnSua);
@@ -401,7 +403,6 @@
             this.panel2.Controls.Add(this.btnThem);
             this.panel2.Controls.Add(this.txtTenSV);
             this.panel2.Controls.Add(this.cbLop);
-            this.panel2.Controls.Add(this.txtSDT);
             this.panel2.Location = new System.Drawing.Point(36, 54);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(876, 251);
@@ -543,14 +544,16 @@
             this.txtSDT.HoverState.Parent = this.txtSDT;
             this.txtSDT.Location = new System.Drawing.Point(34, 126);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSDT.MaxLength = 11;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PasswordChar = '\0';
             this.txtSDT.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtSDT.PlaceholderText = "Số điện thoại";
+            this.txtSDT.PlaceholderText = "SDT";
             this.txtSDT.SelectedText = "";
             this.txtSDT.ShadowDecoration.Parent = this.txtSDT;
             this.txtSDT.Size = new System.Drawing.Size(356, 52);
-            this.txtSDT.TabIndex = 109;
+            this.txtSDT.TabIndex = 120;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // ucSV
             // 
@@ -563,8 +566,8 @@
             this.Name = "ucSV";
             this.Size = new System.Drawing.Size(1232, 682);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvSV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -581,7 +584,6 @@
         private Guna.UI2.WinForms.Guna2Button btnThem;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2ComboBox cbLop;
-        private Guna.UI2.WinForms.Guna2TextBox txtSDT;
         private System.Windows.Forms.DataGridView dtgvSV;
         private Guna.UI2.WinForms.Guna2TextBox txtDiaChi;
         private Guna.UI2.WinForms.Guna2TextBox txtTenSV;
@@ -600,5 +602,6 @@
         private Guna.UI2.WinForms.Guna2Button btnNhapExel;
         private Guna.UI2.WinForms.Guna2ComboBox cbSheet;
         private Guna.UI2.WinForms.Guna2Button btnThoatExcel;
+        private Guna.UI2.WinForms.Guna2TextBox txtSDT;
     }
 }

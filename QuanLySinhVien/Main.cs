@@ -191,6 +191,13 @@ namespace QuanLySinhVien
                 ucm.pn.BackColor = Color.FromArgb(21, 24, 31);
                 ucm.pn2.BackColor = Color.FromArgb(31, 34, 41);
                 ucm.pn3.BackColor = Color.FromArgb(31, 34, 41);
+
+                ucd.pn.BackColor = Color.FromArgb(21, 24, 31);
+                ucd.pn2.BackColor = Color.FromArgb(31, 34, 41);
+                ucd.pn3.BackColor = Color.FromArgb(31, 34, 41);
+                ucd.lbl1.ForeColor = Color.White;
+                ucd.lbl2.ForeColor = Color.White;
+                ucd.lbl3.ForeColor = Color.White;
             }
             else
             {
@@ -224,6 +231,13 @@ namespace QuanLySinhVien
                 ucm.pn.BackColor = Color.FromArgb(230, 230, 230);
                 ucm.pn2.BackColor = Color.White;
                 ucm.pn3.BackColor = Color.White;
+
+                ucd.pn.BackColor = Color.FromArgb(230, 230, 230);
+                ucd.pn2.BackColor = Color.White;
+                ucd.pn3.BackColor = Color.White;
+                ucd.lbl1.ForeColor = Color.Black;
+                ucd.lbl2.ForeColor = Color.Black;
+                ucd.lbl3.ForeColor = Color.Black;
             }
         }
     }
