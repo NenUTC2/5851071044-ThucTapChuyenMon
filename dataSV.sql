@@ -173,6 +173,9 @@ CREATE TABLE DiemLopHoc(
 
 	PRIMARY KEY(MaSV,MaCTMon)
 )
+--SELECT HocKy, TenMon, DiemKT FROM dbo.DiemLopHoc, dbo.LopHoc, dbo.MonHoc WHERE DiemLopHoc.MaCTMon=LopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND MaSV='20201'
+--SELECT TenMon, TinChi,TenGV, Phong FROM dbo.DiemLopHoc, dbo.LopHoc, dbo.MonHoc, dbo.GiangVien 
+--WHERE DiemLopHoc.MaCTMon=LopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND LopHoc.MaGV=GiangVien.MaGV AND MaSV='20201'
 --SELECT * FROM dbo.DiemLopHoc
 --SELECT SUM(KTxTC) FROM dbo.DiemLopHoc WHERE MaSV='20201'
 --SELECT SUM(TinChi) FROM dbo.MonHoc, dbo.LopHoc, dbo.DiemLopHoc WHERE LopHoc.MaCTMon=DiemLopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND MaSV='20201'

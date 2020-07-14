@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvDiem = new System.Windows.Forms.DataGridView();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaCTMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,10 +57,13 @@
             this.txtTP = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtGiuaKy = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtChuyenCan = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDiem)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgvDiem
@@ -71,14 +74,14 @@
             this.dtgvDiem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvDiem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvDiem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvDiem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvDiem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSV,
@@ -95,12 +98,12 @@
             this.dtgvDiem.Name = "dtgvDiem";
             this.dtgvDiem.ReadOnly = true;
             this.dtgvDiem.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgvDiem.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgvDiem.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvDiem.RowTemplate.Height = 40;
             this.dtgvDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDiem.Size = new System.Drawing.Size(1180, 348);
@@ -170,15 +173,16 @@
             this.btnReset.CheckedState.Parent = this.btnReset;
             this.btnReset.HoverState.Parent = this.btnReset;
             this.btnReset.Image = global::QuanLySinhVien.Properties.Resources.reset_48px;
-            this.btnReset.Location = new System.Drawing.Point(23, 67);
+            this.btnReset.Location = new System.Drawing.Point(20, 225);
             this.btnReset.Name = "btnReset";
             this.btnReset.PressedState.Parent = this.btnReset;
-            this.btnReset.Size = new System.Drawing.Size(109, 43);
+            this.btnReset.Size = new System.Drawing.Size(65, 43);
             this.btnReset.TabIndex = 137;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.dtgvDiem);
             this.panel1.Controls.Add(this.panel2);
@@ -194,9 +198,9 @@
             this.panel3.Controls.Add(this.lblTenSV);
             this.panel3.Controls.Add(this.lblLop);
             this.panel3.Controls.Add(this.lblDiemTL);
-            this.panel3.Location = new System.Drawing.Point(26, 23);
+            this.panel3.Location = new System.Drawing.Point(375, 19);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(540, 150);
+            this.panel3.Size = new System.Drawing.Size(831, 159);
             this.panel3.TabIndex = 141;
             // 
             // lblTenSV
@@ -236,17 +240,14 @@
             this.panel2.Controls.Add(this.txtPTTP);
             this.panel2.Controls.Add(this.txtPTGK);
             this.panel2.Controls.Add(this.txtPTCC);
-            this.panel2.Controls.Add(this.btnLuuDIem);
-            this.panel2.Controls.Add(this.btnReset);
-            this.panel2.Controls.Add(this.cbLop);
             this.panel2.Controls.Add(this.txtKT);
             this.panel2.Controls.Add(this.txtThi);
             this.panel2.Controls.Add(this.txtTP);
             this.panel2.Controls.Add(this.txtGiuaKy);
             this.panel2.Controls.Add(this.txtChuyenCan);
-            this.panel2.Location = new System.Drawing.Point(26, 184);
+            this.panel2.Location = new System.Drawing.Point(367, 184);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1180, 125);
+            this.panel2.Size = new System.Drawing.Size(839, 125);
             this.panel2.TabIndex = 0;
             // 
             // txtPTDT
@@ -267,7 +268,7 @@
             this.txtPTDT.ForeColor = System.Drawing.Color.White;
             this.txtPTDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPTDT.HoverState.Parent = this.txtPTDT;
-            this.txtPTDT.Location = new System.Drawing.Point(855, 30);
+            this.txtPTDT.Location = new System.Drawing.Point(509, 23);
             this.txtPTDT.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtPTDT.MaxLength = 2;
             this.txtPTDT.Name = "txtPTDT";
@@ -300,7 +301,7 @@
             this.txtPTTP.ForeColor = System.Drawing.Color.White;
             this.txtPTTP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPTTP.HoverState.Parent = this.txtPTTP;
-            this.txtPTTP.Location = new System.Drawing.Point(692, 30);
+            this.txtPTTP.Location = new System.Drawing.Point(346, 23);
             this.txtPTTP.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtPTTP.MaxLength = 2;
             this.txtPTTP.Name = "txtPTTP";
@@ -333,7 +334,7 @@
             this.txtPTGK.ForeColor = System.Drawing.Color.White;
             this.txtPTGK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPTGK.HoverState.Parent = this.txtPTGK;
-            this.txtPTGK.Location = new System.Drawing.Point(529, 30);
+            this.txtPTGK.Location = new System.Drawing.Point(183, 23);
             this.txtPTGK.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtPTGK.MaxLength = 2;
             this.txtPTGK.Name = "txtPTGK";
@@ -366,7 +367,7 @@
             this.txtPTCC.ForeColor = System.Drawing.Color.White;
             this.txtPTCC.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPTCC.HoverState.Parent = this.txtPTCC;
-            this.txtPTCC.Location = new System.Drawing.Point(366, 30);
+            this.txtPTCC.Location = new System.Drawing.Point(20, 23);
             this.txtPTCC.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtPTCC.MaxLength = 2;
             this.txtPTCC.Name = "txtPTCC";
@@ -393,7 +394,7 @@
             this.btnLuuDIem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLuuDIem.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnLuuDIem.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLuuDIem.Location = new System.Drawing.Point(157, 67);
+            this.btnLuuDIem.Location = new System.Drawing.Point(91, 225);
             this.btnLuuDIem.Name = "btnLuuDIem";
             this.btnLuuDIem.ShadowDecoration.Parent = this.btnLuuDIem;
             this.btnLuuDIem.Size = new System.Drawing.Size(179, 43);
@@ -417,7 +418,7 @@
             this.cbLop.HoverState.Parent = this.cbLop;
             this.cbLop.ItemHeight = 35;
             this.cbLop.ItemsAppearance.Parent = this.cbLop;
-            this.cbLop.Location = new System.Drawing.Point(23, 13);
+            this.cbLop.Location = new System.Drawing.Point(20, 165);
             this.cbLop.Name = "cbLop";
             this.cbLop.ShadowDecoration.Parent = this.cbLop;
             this.cbLop.Size = new System.Drawing.Size(313, 41);
@@ -442,7 +443,7 @@
             this.txtKT.ForeColor = System.Drawing.Color.White;
             this.txtKT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtKT.HoverState.Parent = this.txtKT;
-            this.txtKT.Location = new System.Drawing.Point(1018, 58);
+            this.txtKT.Location = new System.Drawing.Point(672, 51);
             this.txtKT.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtKT.Name = "txtKT";
             this.txtKT.PasswordChar = '\0';
@@ -473,7 +474,7 @@
             this.txtThi.ForeColor = System.Drawing.Color.White;
             this.txtThi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtThi.HoverState.Parent = this.txtThi;
-            this.txtThi.Location = new System.Drawing.Point(855, 58);
+            this.txtThi.Location = new System.Drawing.Point(509, 51);
             this.txtThi.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtThi.Name = "txtThi";
             this.txtThi.PasswordChar = '\0';
@@ -505,7 +506,7 @@
             this.txtTP.ForeColor = System.Drawing.Color.White;
             this.txtTP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTP.HoverState.Parent = this.txtTP;
-            this.txtTP.Location = new System.Drawing.Point(692, 58);
+            this.txtTP.Location = new System.Drawing.Point(346, 51);
             this.txtTP.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtTP.Name = "txtTP";
             this.txtTP.PasswordChar = '\0';
@@ -537,7 +538,7 @@
             this.txtGiuaKy.ForeColor = System.Drawing.Color.White;
             this.txtGiuaKy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtGiuaKy.HoverState.Parent = this.txtGiuaKy;
-            this.txtGiuaKy.Location = new System.Drawing.Point(529, 58);
+            this.txtGiuaKy.Location = new System.Drawing.Point(183, 51);
             this.txtGiuaKy.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtGiuaKy.Name = "txtGiuaKy";
             this.txtGiuaKy.PasswordChar = '\0';
@@ -569,7 +570,7 @@
             this.txtChuyenCan.ForeColor = System.Drawing.Color.White;
             this.txtChuyenCan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtChuyenCan.HoverState.Parent = this.txtChuyenCan;
-            this.txtChuyenCan.Location = new System.Drawing.Point(366, 58);
+            this.txtChuyenCan.Location = new System.Drawing.Point(20, 51);
             this.txtChuyenCan.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtChuyenCan.Name = "txtChuyenCan";
             this.txtChuyenCan.PasswordChar = '\0';
@@ -582,6 +583,30 @@
             this.txtChuyenCan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChuyenCan.TextChanged += new System.EventHandler(this.txtChuyenCan_TextChanged);
             this.txtChuyenCan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPTCC_KeyPress);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.guna2ImageButton1);
+            this.panel4.Controls.Add(this.cbLop);
+            this.panel4.Controls.Add(this.btnReset);
+            this.panel4.Controls.Add(this.btnLuuDIem);
+            this.panel4.Location = new System.Drawing.Point(26, 19);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(343, 290);
+            this.panel4.TabIndex = 142;
+            // 
+            // guna2ImageButton1
+            // 
+            this.guna2ImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.Image = global::QuanLySinhVien.Properties.Resources.reset_48px;
+            this.guna2ImageButton1.Location = new System.Drawing.Point(276, 225);
+            this.guna2ImageButton1.Name = "guna2ImageButton1";
+            this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.Size = new System.Drawing.Size(59, 43);
+            this.guna2ImageButton1.TabIndex = 139;
             // 
             // ucDiem
             // 
@@ -596,6 +621,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -629,5 +655,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtPTTP;
         private Guna.UI2.WinForms.Guna2TextBox txtPTGK;
         private Guna.UI2.WinForms.Guna2TextBox txtPTCC;
+        private System.Windows.Forms.Panel panel4;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
     }
 }

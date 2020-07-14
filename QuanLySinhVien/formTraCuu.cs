@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLySinhVien.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,40 +17,142 @@ namespace QuanLySinhVien
         {
             InitializeComponent();
         }
-        //bool IsTheSameCellValue(int column, int row)
-        //{
-        //    DataGridViewCell cell1 = dtgvDiem[column, row];
-        //    DataGridViewCell cell2 = dtgvDiem[column, row - 1];
-        //    if (cell1.Value == null || cell2.Value == null)
-        //    {
-        //        return false;
-        //    }
-        //    return cell1.Value.ToString() == cell2.Value.ToString();
-        //}
-        private void dtgv_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+
+        bool IsTheSameCellValue(int column, int row)
         {
-            //e.AdvancedBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
-            //if (e.RowIndex < 1 || e.ColumnIndex < 0)
-            //    return;
-            //if (IsTheSameCellValue(e.ColumnIndex, e.RowIndex))
-            //{
-            //    e.AdvancedBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
-            //}
-            //else
-            //{
-            //    e.AdvancedBorderStyle.Top = dtgvDiem.AdvancedCellBorderStyle.Top;
-            //}
+            DataGridViewCell cell1 = dtgvDiem[column, row];
+            DataGridViewCell cell2 = dtgvDiem[column, row - 1];
+            if (cell1.Value == null || cell2.Value == null)
+            {
+                return false;
+            }
+            return cell1.Value.ToString() == cell2.Value.ToString();
         }
 
-        private void dtgv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void formTraCuu_Load(object sender, EventArgs e)
         {
-            //if (e.RowIndex == 0)
-            //    return;
-            //if (IsTheSameCellValue(e.ColumnIndex, e.RowIndex))
-            //{
-            //    e.Value = "";
-            //    e.FormattingApplied = true;
-            //}
+            guna2ShadowPanel1.Width = 320;
+        }
+
+        private void dtgvDiem_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            e.AdvancedBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
+            if (e.RowIndex < 1 || e.ColumnIndex < 0)
+                return;
+            if (IsTheSameCellValue(e.ColumnIndex, e.RowIndex))
+            {
+                e.AdvancedBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
+            }
+            else
+            {
+                e.AdvancedBorderStyle.Top = dtgvDiem.AdvancedCellBorderStyle.Top;
+            }
+        }
+
+        private void dtgvDiem_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == 0)
+                return;
+            if (IsTheSameCellValue(e.ColumnIndex, e.RowIndex))
+            {
+                e.Value = "";
+                e.FormattingApplied = true;
+            }
+        }
+
+        public void loadDiem(string msv)
+        {
+            dtgvDiem.DataSource = DataProvider.Instance.ExcuteQuery("SELECT HocKy, TenMon, DiemKT FROM dbo.DiemLopHoc, dbo.LopHoc, dbo.MonHoc " +
+                "WHERE DiemLopHoc.MaCTMon=LopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND MaSV='" + msv + "'");
+        }
+
+        public void loadMon(string msv)
+        {
+            dtgvMon.DataSource = DataProvider.Instance.ExcuteQuery("SELECT TenMon, TinChi,TenGV, Phong FROM dbo.DiemLopHoc, dbo.LopHoc, dbo.MonHoc, dbo.GiangVien " +
+                "WHERE DiemLopHoc.MaCTMon = LopHoc.MaCTMon AND LopHoc.MaMon = MonHoc.MaMon AND LopHoc.MaGV = GiangVien.MaGV AND MaSV = '" + msv + "'");
+        }
+
+        private void txtMSV_TextChanged(object sender, EventArgs e)
+        {
+            string msv = txtMSV.Text;
+            if (SinhVienDAO.Instance.checkSV(msv) == 1)
+            {
+                picCheckSV.Image = Properties.Resources.checked_checkbox_60px;
+                lblTen.Text = SinhVienDAO.Instance.getTenformMa(msv);
+                lblLop.Text = SinhVienDAO.Instance.getLopformMa(msv);
+                lblTL.Text = SinhVienDAO.Instance.getdiemTL(msv);
+                try
+                {
+                    loadDiem(msv);
+                    loadMon(msv);
+                }
+                catch { }
+            }
+        }
+
+        private void guna2ImageButton1_MouseHover(object sender, EventArgs e)
+        {
+            guna2ImageButton1.BackColor = Color.OrangeRed;
+        }
+
+        private void guna2ImageButton1_MouseLeave(object sender, EventArgs e)
+        {
+            guna2ImageButton1.BackColor = Color.Transparent;
+        }
+
+        private void guna2ImageButton2_MouseHover(object sender, EventArgs e)
+        {
+            guna2ImageButton2.BackColor = Color.FromArgb(224, 180, 0);
+        }
+
+        private void guna2ImageButton2_MouseLeave(object sender, EventArgs e)
+        {
+            guna2ImageButton2.BackColor = Color.Transparent;
+        }
+
+        private void guna2ImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void guna2ImageButton2_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Minimized;
+            }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            guna2ShadowPanel1.Width = 598;
+            guna2ShadowPanel1.Left -= 140;
+        }
+
+        private void btnShowLogin_Click(object sender, EventArgs e)
+        {
+            if (pnLogin.Visible == true)
+            {
+                pnLogin.Visible = false;
+                btnShowLogin.Text = "Đăng nhập";
+            }
+            else
+            {
+                btnShowLogin.Text = "Quay lại";
+                pnLogin.Visible = true;
+            }
+        }
+
+        private void guna2ImageButton3_Click(object sender, EventArgs e)
+        {
+            guna2ShadowPanel1.Width = 320;
+            guna2ShadowPanel1.Left += 140;
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            guna2ShadowPanel1.Width = 320;
+            guna2ShadowPanel1.Left += 140;
         }
     }
 }

@@ -259,5 +259,8 @@
   <ItemGroup>
     <None Include="Resources\checked_checkbox_60px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_52px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

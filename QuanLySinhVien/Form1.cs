@@ -19,12 +19,12 @@ namespace QuanLySinhVien
         int idanh = 1;
         private void LoadNextImage()
         {
-            if (idanh == 6)
-            {
-                idanh = 1;
-            }
-            pictureBox1.ImageLocation = string.Format(@"Images\{0}.jpg", idanh);
-            idanh++;
+            //if (idanh == 6)
+            //{
+            //    idanh = 1;
+            //}
+            //pictureBox1.ImageLocation = string.Format(@"Images\{0}.jpg", idanh);
+            //idanh++;
         }
 
         private void Form1_Load(object sender, EventArgs e)
