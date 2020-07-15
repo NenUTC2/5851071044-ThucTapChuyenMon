@@ -125,8 +125,16 @@ namespace QuanLySinhVien
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            guna2ShadowPanel1.Width = 598;
-            guna2ShadowPanel1.Left -= 140;
+
+            if (AccountDAO.Instance.checkLogin(txtUser.Text, txtPass.Text)==1){
+                Main m = new Main(txtUser.Text);
+                this.Hide();
+                m.Show();
+            }
+            else
+            {
+
+            }
         }
 
         private void btnShowLogin_Click(object sender, EventArgs e)
@@ -151,8 +159,34 @@ namespace QuanLySinhVien
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            guna2ShadowPanel1.Width = 320;
-            guna2ShadowPanel1.Left += 140;
+
+            if(txtResUser.Text == "") { lblResError.Text = "Bạn phải nhập tên đăng nhập!";lblResError.Visible = true; }
+            else if(txtResPass.Text == "") { lblResError.Text = "Bạn phải nhập mật khẩu!"; lblResError.Visible = true; }
+            else if(txtResPass2.Text == "") { lblResError.Text = "Vui lòng nhập lại mật khẩu!"; lblResError.Visible = true; }
+            else if (txtResPass.Text.Equals(txtResPass2.Text))
+            {
+                if (GiangVienDAO.Instance.checkMGV(txtResUser.Text) == 1)
+                {
+                    if (AccountDAO.Instance.checkTenDN(txtResUser.Text) == 0)
+                    {
+                        if (GiangVienDAO.Instance.getTKbyMGV(txtResUser.Text).Equals("None"))
+                            DataProvider.Instance.ExcuteNonQuery("Insert into Account values('" + txtResUser.Text + "', '" + txtResPass.Text + "','gv', 'white')");
+                        else
+                            DataProvider.Instance.ExcuteNonQuery("Insert into Account values('" + txtResUser.Text + "', '" + txtResPass.Text + "','tk', 'white')");
+                        lblResError.Visible = false;
+                        guna2ShadowPanel1.Width = 320;
+                        guna2ShadowPanel1.Left += 140;
+                    }
+                    else { lblResError.Text = "Mã giáo viên đã được đăng ký tài khoản!"; lblResError.Visible = true; }
+                }else { lblResError.Text = "Mã giảng viên không tồn tại!"; lblResError.Visible = true; }
+            }
+            else { lblResError.Text = "Nhập lại mật khẩu không đúng!"; lblResError.Visible = true; }
+        }
+
+        private void lblRes_Click(object sender, EventArgs e)
+        {
+            guna2ShadowPanel1.Width = 598;
+            guna2ShadowPanel1.Left -= 140;
         }
     }
 }

@@ -37,9 +37,24 @@ namespace QuanLySinhVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            string truongkhoa = "None";
+            if (chkTruongKhoa.Checked == true)
+            {
+                if (GiangVienDAO.Instance.checkTruongKhoa(cbKhoa.SelectedValue.ToString()) == 1)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Khoa này đã có trưởng khoa. Bạn có muốn đổi trưởng khoa?", "Thông báo", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        string gv = GiangVienDAO.Instance.getTKbyMaKHoa(cbKhoa.SelectedValue.ToString());
+                        DataProvider.Instance.ExcuteNonQuery("Update GiangVien set TruongKhoa='None' where MaGV='"+gv+"'");
+                        truongkhoa = cbKhoa.SelectedValue.ToString();
+                    }
+                }
+                
+            }
             DataProvider.Instance.ExcuteNonQuery("Insert into GiangVien values" +
-               "('" + cbKhoa.SelectedValue.ToString() + (GiangVienDAO.Instance.getMaxGV()+1).ToString() + "', N'" + txtTenGV.Text + "'," +
-               "'"+txtSDT.Text+"', '"+cbKhoa.SelectedValue.ToString()+"', N'"+txtDiaChi.Text+"' , '" + dtpNgayDay.Value.ToString("yyyy/MM/dd") + "')");
+               "('" + cbKhoa.SelectedValue.ToString() + (GiangVienDAO.Instance.getMaxGV(cbKhoa.SelectedValue.ToString())+1).ToString() + "', N'" + txtTenGV.Text + "'," +
+               "'"+txtSDT.Text+"', '"+cbKhoa.SelectedValue.ToString()+"', '"+truongkhoa+"', N'"+txtDiaChi.Text+"' , '" + dtpNgayDay.Value.ToString("yyyy/MM/dd") + "')");
 
             //lblError.Text = "Thêm thành công khoa " + txtTenKhoa.Text;
             //thongbao();
@@ -48,7 +63,26 @@ namespace QuanLySinhVien
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Update GiangVien set TenGV=N'"+txtTenGV.Text+"', SDT='"+txtSDT.Text+"', DiaChi=N'"+txtDiaChi.Text+"' " +
+            string truongkhoa = "None";
+            if (dtgvGV.CurrentRow.Cells["TK"].Value.ToString().Equals("None"))
+            {
+                if (chkTruongKhoa.Checked == true)
+                {
+                    if (GiangVienDAO.Instance.checkTruongKhoa(cbKhoa.SelectedValue.ToString()) == 1)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Khoa này đã có trưởng khoa. Bạn có muốn đổi trưởng khoa?", "Thông báo", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            string gv = GiangVienDAO.Instance.getTKbyMaKHoa(cbKhoa.SelectedValue.ToString());
+                            DataProvider.Instance.ExcuteNonQuery("Update GiangVien set TruongKhoa='None' where MaGV='" + gv + "'");
+                            truongkhoa = cbKhoa.SelectedValue.ToString();
+                        }
+                    }else truongkhoa = cbKhoa.SelectedValue.ToString();
+                }
+            }
+            else if (chkTruongKhoa.Checked == true)
+                truongkhoa = cbKhoa.SelectedValue.ToString();
+            DataProvider.Instance.ExcuteNonQuery("Update GiangVien set TenGV=N'"+txtTenGV.Text+"', SDT='"+txtSDT.Text+"', TruongKhoa='"+truongkhoa+"', DiaChi=N'"+txtDiaChi.Text+"' " +
                 "where MaGV='"+ dtgvGV.CurrentRow.Cells["MaGV"].Value.ToString() + "'");
 
             //lblError.Text = "Thêm thành công khoa " + txtTenKhoa.Text;
@@ -71,6 +105,10 @@ namespace QuanLySinhVien
             txtSDT.Text = dtgvGV.CurrentRow.Cells["SDT"].Value.ToString();
             txtDiaChi.Text = dtgvGV.CurrentRow.Cells["DiaChi"].Value.ToString();
             cbKhoa.SelectedValue = dtgvGV.CurrentRow.Cells["MaKhoa"].Value.ToString();
+            if (dtgvGV.CurrentRow.Cells["TK"].Value.ToString().Equals("None"))
+                chkTruongKhoa.Checked = false;
+            else
+                chkTruongKhoa.Checked = true;
         }
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)

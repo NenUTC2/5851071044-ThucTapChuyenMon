@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLySinhVien.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,10 @@ namespace QuanLySinhVien
 {
     public partial class Main : Form
     {
-        public Main()
+        public string mgv;
+        public Main(string gv)
         {
+            mgv = gv;
             InitializeComponent();
             panel1.Width = 60;
             lblTime.Text = DateTime.Now.ToString("hh:mm");
@@ -22,8 +25,24 @@ namespace QuanLySinhVien
 
         private void Main_Load(object sender, EventArgs e)
         {
-            showControl(uck);
-            line.Top = btnKhoa.Top + 4;
+            showControl(ucd);
+            line.Top = btnDiem.Top + 4;
+            
+            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin")) { lblUser.Text = mgv; }
+
+            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
+            {
+                lblUser.Text = GiangVienDAO.Instance.getTenGV(mgv) + "-Trưởng khoa " + KhoaDAO.Instance.getTenbyID(GiangVienDAO.Instance.getTKbyMGV(mgv));
+                btnKhoa.Visible = false;
+            }
+            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("gv"))
+            {
+                lblUser.Text = GiangVienDAO.Instance.getTenGV(mgv);
+                btnKhoa.Visible = false;
+                btnGV.Visible = false;
+                btnLop.Visible = false;
+                btnMon.Visible = false;
+            }
         }
 
         public void showControl(System.Windows.Forms.Control obj)
@@ -120,7 +139,7 @@ namespace QuanLySinhVien
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void guna2ImageButton1_MouseHover(object sender, EventArgs e)
@@ -239,6 +258,19 @@ namespace QuanLySinhVien
                 ucd.lbl2.ForeColor = Color.Black;
                 ucd.lbl3.ForeColor = Color.Black;
             }
+        }
+
+        private void lblPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void lblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            formTraCuu tc = new formTraCuu();
+            tc.Show();
+            this.Close();
+            
         }
     }
 }

@@ -25,33 +25,38 @@ VALUES
 GO 
 
 ---------------------------------------------GIANGVIEN--------------------------------------------------
+--DROP TABLE dbo.GiangVien
 CREATE TABLE GiangVien(
 	MaGV VARCHAR(50) PRIMARY KEY,
 	TenGV NVARCHAR(50) NOT NULL,
 	SDT VARCHAR(20),
 	MaKhoa VARCHAR(50) NOT NULL,
+	TruongKhoa VARCHAR(50),
 	DiaChi NVARCHAR(MAX),
 	NgayDay DATE
 )
 --SELECT * FROM dbo.GiangVien
 INSERT INTO dbo.GiangVien
 (
-    MaGV,
-    TenGV,
-    SDT,
-    MaKhoa,
-    DiaChi,
-    NgayDay
+	MaGV,
+	TenGV,
+	SDT,
+	MaKhoa,
+	TruongKhoa,
+	DiaChi,
+	NgayDay
 )
 VALUES
 (   'CNTT-1',       -- MaGV - varchar(50)
-    N'Tran Phong Nha',      -- TenGV - nvarchar(50)
-    '123123123',       -- SDT - varchar(20)
-    'CNTT',       -- MaKhoa - varchar(50)
-    N'abcxyz',      -- DiaChi - nvarchar(max)
-    GETDATE() -- NgayDay - date
-    )
-	GO 
+	N'Nguyễn Văn A',      -- TenGV - nvarchar(50)
+	'0808088776',       -- SDT - varchar(20)
+	'CNTT',       -- MaKhoa - varchar(50)
+	'CNTT',       -- TruongKhoa - varchar(50)
+	N'909 abcvvđ',      -- DiaChi - nvarchar(max)
+	GETDATE() -- NgayDay - date
+	)
+GO 
+SELECT TenGV FROM 
 ---------------------------------------------LOP--------------------------------------------------
 --DROP TABLE dbo.Lop
 CREATE TABLE Lop(
@@ -180,11 +185,25 @@ CREATE TABLE DiemLopHoc(
 --SELECT SUM(KTxTC) FROM dbo.DiemLopHoc WHERE MaSV='20201'
 --SELECT SUM(TinChi) FROM dbo.MonHoc, dbo.LopHoc, dbo.DiemLopHoc WHERE LopHoc.MaCTMon=DiemLopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND MaSV='20201'
 ---------------------------------------------ACCOUNT--------------------------------------------------
+--DROP TABLE dbo.Account
 CREATE TABLE Account(
 	TenDN VARCHAR(50) PRIMARY KEY,
 	MatKhau VARCHAR(50),
-	MaGV VARCHAR(50),
-	Quyen NVARCHAR(50),
+	Quyen VARCHAR(50),
 	Theme VARCHAR(20)
 )
+INSERT INTO dbo.Account
+(
+    TenDN,
+    MatKhau,
+    Quyen,
+    Theme
+)
+VALUES
+(   'admin',  -- TenDN - varchar(50)
+    '123',  -- MatKhau - varchar(50)
+    N'admin', -- Quyen - nvarchar(50)
+    'white'   -- Theme - varchar(20)
+    )
+GO 
 ---------------------------------------------END TABLE--------------------------------------------------

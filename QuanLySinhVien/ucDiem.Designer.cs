@@ -41,6 +41,10 @@
             this.KTxTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReset = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.cbLop = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnLuuDIem = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTenSV = new System.Windows.Forms.Label();
             this.lblLop = new System.Windows.Forms.Label();
@@ -50,20 +54,16 @@
             this.txtPTTP = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPTGK = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPTCC = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnLuuDIem = new Guna.UI2.WinForms.Guna2Button();
-            this.cbLop = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtKT = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtThi = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTP = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtGiuaKy = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtChuyenCan = new Guna.UI2.WinForms.Guna2TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDiem)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgvDiem
@@ -192,15 +192,82 @@
             this.panel1.Size = new System.Drawing.Size(1232, 682);
             this.panel1.TabIndex = 138;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.guna2ImageButton1);
+            this.panel4.Controls.Add(this.cbLop);
+            this.panel4.Controls.Add(this.btnReset);
+            this.panel4.Controls.Add(this.btnLuuDIem);
+            this.panel4.Location = new System.Drawing.Point(26, 19);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(343, 290);
+            this.panel4.TabIndex = 142;
+            // 
+            // guna2ImageButton1
+            // 
+            this.guna2ImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.Image = global::QuanLySinhVien.Properties.Resources.reset_48px;
+            this.guna2ImageButton1.Location = new System.Drawing.Point(276, 225);
+            this.guna2ImageButton1.Name = "guna2ImageButton1";
+            this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
+            this.guna2ImageButton1.Size = new System.Drawing.Size(59, 43);
+            this.guna2ImageButton1.TabIndex = 139;
+            // 
+            // cbLop
+            // 
+            this.cbLop.BackColor = System.Drawing.Color.Transparent;
+            this.cbLop.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbLop.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.cbLop.FocusedColor = System.Drawing.Color.Empty;
+            this.cbLop.FocusedState.Parent = this.cbLop;
+            this.cbLop.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbLop.ForeColor = System.Drawing.Color.White;
+            this.cbLop.FormattingEnabled = true;
+            this.cbLop.HoverState.Parent = this.cbLop;
+            this.cbLop.ItemHeight = 35;
+            this.cbLop.ItemsAppearance.Parent = this.cbLop;
+            this.cbLop.Location = new System.Drawing.Point(20, 165);
+            this.cbLop.Name = "cbLop";
+            this.cbLop.ShadowDecoration.Parent = this.cbLop;
+            this.cbLop.Size = new System.Drawing.Size(313, 41);
+            this.cbLop.TabIndex = 137;
+            this.cbLop.SelectedValueChanged += new System.EventHandler(this.cbLop_SelectedValueChanged);
+            // 
+            // btnLuuDIem
+            // 
+            this.btnLuuDIem.CheckedState.Parent = this.btnLuuDIem;
+            this.btnLuuDIem.CustomImages.Parent = this.btnLuuDIem;
+            this.btnLuuDIem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnLuuDIem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuuDIem.ForeColor = System.Drawing.Color.Aquamarine;
+            this.btnLuuDIem.HoverState.Parent = this.btnLuuDIem;
+            this.btnLuuDIem.Image = global::QuanLySinhVien.Properties.Resources.add_48px;
+            this.btnLuuDIem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLuuDIem.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnLuuDIem.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnLuuDIem.Location = new System.Drawing.Point(91, 225);
+            this.btnLuuDIem.Name = "btnLuuDIem";
+            this.btnLuuDIem.ShadowDecoration.Parent = this.btnLuuDIem;
+            this.btnLuuDIem.Size = new System.Drawing.Size(179, 43);
+            this.btnLuuDIem.TabIndex = 138;
+            this.btnLuuDIem.Text = "Lưu Điểm";
+            this.btnLuuDIem.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnLuuDIem.Click += new System.EventHandler(this.btnLuuDIem_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.lblTenSV);
             this.panel3.Controls.Add(this.lblLop);
             this.panel3.Controls.Add(this.lblDiemTL);
-            this.panel3.Location = new System.Drawing.Point(375, 19);
+            this.panel3.Location = new System.Drawing.Point(387, 19);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(831, 159);
+            this.panel3.Size = new System.Drawing.Size(819, 146);
             this.panel3.TabIndex = 141;
             // 
             // lblTenSV
@@ -382,49 +449,6 @@
             this.txtPTCC.TextChanged += new System.EventHandler(this.txtPTCC_TextChanged);
             this.txtPTCC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPTCC_KeyPress);
             // 
-            // btnLuuDIem
-            // 
-            this.btnLuuDIem.CheckedState.Parent = this.btnLuuDIem;
-            this.btnLuuDIem.CustomImages.Parent = this.btnLuuDIem;
-            this.btnLuuDIem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.btnLuuDIem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuDIem.ForeColor = System.Drawing.Color.Aquamarine;
-            this.btnLuuDIem.HoverState.Parent = this.btnLuuDIem;
-            this.btnLuuDIem.Image = global::QuanLySinhVien.Properties.Resources.add_48px;
-            this.btnLuuDIem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLuuDIem.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnLuuDIem.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLuuDIem.Location = new System.Drawing.Point(91, 225);
-            this.btnLuuDIem.Name = "btnLuuDIem";
-            this.btnLuuDIem.ShadowDecoration.Parent = this.btnLuuDIem;
-            this.btnLuuDIem.Size = new System.Drawing.Size(179, 43);
-            this.btnLuuDIem.TabIndex = 138;
-            this.btnLuuDIem.Text = "Lưu Điểm";
-            this.btnLuuDIem.TextOffset = new System.Drawing.Point(20, 0);
-            this.btnLuuDIem.Click += new System.EventHandler(this.btnLuuDIem_Click);
-            // 
-            // cbLop
-            // 
-            this.cbLop.BackColor = System.Drawing.Color.Transparent;
-            this.cbLop.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbLop.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.cbLop.FocusedColor = System.Drawing.Color.Empty;
-            this.cbLop.FocusedState.Parent = this.cbLop;
-            this.cbLop.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbLop.ForeColor = System.Drawing.Color.White;
-            this.cbLop.FormattingEnabled = true;
-            this.cbLop.HoverState.Parent = this.cbLop;
-            this.cbLop.ItemHeight = 35;
-            this.cbLop.ItemsAppearance.Parent = this.cbLop;
-            this.cbLop.Location = new System.Drawing.Point(20, 165);
-            this.cbLop.Name = "cbLop";
-            this.cbLop.ShadowDecoration.Parent = this.cbLop;
-            this.cbLop.Size = new System.Drawing.Size(313, 41);
-            this.cbLop.TabIndex = 137;
-            this.cbLop.SelectedValueChanged += new System.EventHandler(this.cbLop_SelectedValueChanged);
-            // 
             // txtKT
             // 
             this.txtKT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
@@ -584,30 +608,6 @@
             this.txtChuyenCan.TextChanged += new System.EventHandler(this.txtChuyenCan_TextChanged);
             this.txtChuyenCan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPTCC_KeyPress);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.guna2ImageButton1);
-            this.panel4.Controls.Add(this.cbLop);
-            this.panel4.Controls.Add(this.btnReset);
-            this.panel4.Controls.Add(this.btnLuuDIem);
-            this.panel4.Location = new System.Drawing.Point(26, 19);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(343, 290);
-            this.panel4.TabIndex = 142;
-            // 
-            // guna2ImageButton1
-            // 
-            this.guna2ImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.guna2ImageButton1.CheckedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.HoverState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Image = global::QuanLySinhVien.Properties.Resources.reset_48px;
-            this.guna2ImageButton1.Location = new System.Drawing.Point(276, 225);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
-            this.guna2ImageButton1.Size = new System.Drawing.Size(59, 43);
-            this.guna2ImageButton1.TabIndex = 139;
-            // 
             // ucDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -618,10 +618,10 @@
             this.Size = new System.Drawing.Size(1232, 682);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDiem)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -44,12 +44,14 @@
             this.dtpNgayDay = new System.Windows.Forms.DateTimePicker();
             this.txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtgvGV = new System.Windows.Forms.DataGridView();
+            this.chkTruongKhoa = new Guna.UI2.WinForms.Guna2CheckBox();
             this.MaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TK = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -99,9 +101,9 @@
             this.panel3.Controls.Add(this.btnThem);
             this.panel3.Controls.Add(this.btnXoa);
             this.panel3.Controls.Add(this.btnSua);
-            this.panel3.Location = new System.Drawing.Point(977, 58);
+            this.panel3.Location = new System.Drawing.Point(993, 58);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(214, 173);
+            this.panel3.Size = new System.Drawing.Size(214, 197);
             this.panel3.TabIndex = 133;
             // 
             // btnThem
@@ -137,7 +139,7 @@
             this.btnXoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnXoa.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnXoa.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnXoa.Location = new System.Drawing.Point(15, 117);
+            this.btnXoa.Location = new System.Drawing.Point(15, 143);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
             this.btnXoa.Size = new System.Drawing.Size(179, 40);
@@ -158,7 +160,7 @@
             this.btnSua.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSua.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnSua.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnSua.Location = new System.Drawing.Point(15, 66);
+            this.btnSua.Location = new System.Drawing.Point(15, 79);
             this.btnSua.Name = "btnSua";
             this.btnSua.ShadowDecoration.Parent = this.btnSua;
             this.btnSua.Size = new System.Drawing.Size(179, 40);
@@ -170,6 +172,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.chkTruongKhoa);
             this.panel2.Controls.Add(this.cbKhoa);
             this.panel2.Controls.Add(this.txtTenGV);
             this.panel2.Controls.Add(this.txtSDT);
@@ -177,7 +180,7 @@
             this.panel2.Controls.Add(this.txtDiaChi);
             this.panel2.Location = new System.Drawing.Point(41, 58);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(920, 173);
+            this.panel2.Size = new System.Drawing.Size(924, 197);
             this.panel2.TabIndex = 132;
             // 
             // cbKhoa
@@ -198,10 +201,10 @@
             "abc",
             "bcda"});
             this.cbKhoa.ItemsAppearance.Parent = this.cbKhoa;
-            this.cbKhoa.Location = new System.Drawing.Point(315, 29);
+            this.cbKhoa.Location = new System.Drawing.Point(332, 17);
             this.cbKhoa.Name = "cbKhoa";
             this.cbKhoa.ShadowDecoration.Parent = this.cbKhoa;
-            this.cbKhoa.Size = new System.Drawing.Size(563, 36);
+            this.cbKhoa.Size = new System.Drawing.Size(422, 36);
             this.cbKhoa.TabIndex = 126;
             // 
             // txtTenGV
@@ -221,7 +224,7 @@
             this.txtTenGV.ForeColor = System.Drawing.Color.White;
             this.txtTenGV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenGV.HoverState.Parent = this.txtTenGV;
-            this.txtTenGV.Location = new System.Drawing.Point(27, 29);
+            this.txtTenGV.Location = new System.Drawing.Point(27, 17);
             this.txtTenGV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenGV.Name = "txtTenGV";
             this.txtTenGV.PasswordChar = '\0';
@@ -229,7 +232,7 @@
             this.txtTenGV.PlaceholderText = "Tên Giảng viên";
             this.txtTenGV.SelectedText = "";
             this.txtTenGV.ShadowDecoration.Parent = this.txtTenGV;
-            this.txtTenGV.Size = new System.Drawing.Size(268, 52);
+            this.txtTenGV.Size = new System.Drawing.Size(288, 52);
             this.txtTenGV.TabIndex = 123;
             // 
             // txtSDT
@@ -249,7 +252,7 @@
             this.txtSDT.ForeColor = System.Drawing.Color.White;
             this.txtSDT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSDT.HoverState.Parent = this.txtSDT;
-            this.txtSDT.Location = new System.Drawing.Point(27, 92);
+            this.txtSDT.Location = new System.Drawing.Point(27, 80);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.PasswordChar = '\0';
@@ -257,7 +260,7 @@
             this.txtSDT.PlaceholderText = "Số điện thoại";
             this.txtSDT.SelectedText = "";
             this.txtSDT.ShadowDecoration.Parent = this.txtSDT;
-            this.txtSDT.Size = new System.Drawing.Size(268, 52);
+            this.txtSDT.Size = new System.Drawing.Size(288, 52);
             this.txtSDT.TabIndex = 130;
             // 
             // dtpNgayDay
@@ -266,9 +269,9 @@
             this.dtpNgayDay.CalendarMonthBackground = System.Drawing.Color.White;
             this.dtpNgayDay.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
             this.dtpNgayDay.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayDay.Location = new System.Drawing.Point(582, 103);
+            this.dtpNgayDay.Location = new System.Drawing.Point(332, 153);
             this.dtpNgayDay.Name = "dtpNgayDay";
-            this.dtpNgayDay.Size = new System.Drawing.Size(296, 30);
+            this.dtpNgayDay.Size = new System.Drawing.Size(407, 30);
             this.dtpNgayDay.TabIndex = 124;
             // 
             // txtDiaChi
@@ -288,7 +291,7 @@
             this.txtDiaChi.ForeColor = System.Drawing.Color.White;
             this.txtDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiaChi.HoverState.Parent = this.txtDiaChi;
-            this.txtDiaChi.Location = new System.Drawing.Point(315, 92);
+            this.txtDiaChi.Location = new System.Drawing.Point(332, 80);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PasswordChar = '\0';
@@ -296,7 +299,7 @@
             this.txtDiaChi.PlaceholderText = "Địa chỉ";
             this.txtDiaChi.SelectedText = "";
             this.txtDiaChi.ShadowDecoration.Parent = this.txtDiaChi;
-            this.txtDiaChi.Size = new System.Drawing.Size(252, 52);
+            this.txtDiaChi.Size = new System.Drawing.Size(564, 52);
             this.txtDiaChi.TabIndex = 131;
             // 
             // dtgvGV
@@ -322,10 +325,11 @@
             this.SDT,
             this.MaKhoa,
             this.DiaChi,
-            this.NgayDay});
+            this.NgayDay,
+            this.TK});
             this.dtgvGV.EnableHeadersVisualStyles = false;
             this.dtgvGV.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dtgvGV.Location = new System.Drawing.Point(41, 261);
+            this.dtgvGV.Location = new System.Drawing.Point(41, 274);
             this.dtgvGV.Name = "dtgvGV";
             this.dtgvGV.ReadOnly = true;
             this.dtgvGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -337,9 +341,28 @@
             this.dtgvGV.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvGV.RowTemplate.Height = 40;
             this.dtgvGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvGV.Size = new System.Drawing.Size(1150, 377);
+            this.dtgvGV.Size = new System.Drawing.Size(1166, 377);
             this.dtgvGV.TabIndex = 125;
             this.dtgvGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvGV_CellClick);
+            // 
+            // chkTruongKhoa
+            // 
+            this.chkTruongKhoa.AutoSize = true;
+            this.chkTruongKhoa.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkTruongKhoa.CheckedState.BorderRadius = 2;
+            this.chkTruongKhoa.CheckedState.BorderThickness = 0;
+            this.chkTruongKhoa.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkTruongKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTruongKhoa.Location = new System.Drawing.Point(773, 22);
+            this.chkTruongKhoa.Name = "chkTruongKhoa";
+            this.chkTruongKhoa.Size = new System.Drawing.Size(123, 24);
+            this.chkTruongKhoa.TabIndex = 132;
+            this.chkTruongKhoa.Text = "Trưởng khoa";
+            this.chkTruongKhoa.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkTruongKhoa.UncheckedState.BorderRadius = 2;
+            this.chkTruongKhoa.UncheckedState.BorderThickness = 0;
+            this.chkTruongKhoa.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkTruongKhoa.UseVisualStyleBackColor = true;
             // 
             // MaGV
             // 
@@ -383,6 +406,13 @@
             this.NgayDay.Name = "NgayDay";
             this.NgayDay.ReadOnly = true;
             // 
+            // TK
+            // 
+            this.TK.DataPropertyName = "TruongKhoa";
+            this.TK.HeaderText = "Trưởng khoa";
+            this.TK.Name = "TK";
+            this.TK.ReadOnly = true;
+            // 
             // ucGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -394,6 +424,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvGV)).EndInit();
             this.ResumeLayout(false);
 
@@ -413,13 +444,15 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTenGV;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
+        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
+        private Guna.UI2.WinForms.Guna2CheckBox chkTruongKhoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKhoa;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayDay;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TK;
     }
 }
