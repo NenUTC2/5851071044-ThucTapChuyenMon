@@ -152,7 +152,7 @@ VALUES
     3    -- TinChi - int
     )
 	GO
-    
+    SELECT MaCTMon,LopHoc.MaMon,MaGV,MaLop,phong,HocKy,TrangThai FROM dbo.LopHoc, dbo.MonHoc WHERE LopHoc.MaMon=MonHoc.MaMon AND MaKhoa='cntt'
 ---------------------------------------------LOPMON--------------------------------------------------
 --DROP TABLE LopHoc
 CREATE TABLE LopHoc(

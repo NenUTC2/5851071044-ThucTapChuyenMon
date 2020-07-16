@@ -16,21 +16,40 @@ namespace QuanLySinhVien
         public Panel pn { get { return panel1; } }
         public Panel pn2 { get { return panel2; } }
         public Panel pn3 { get { return panel3; } }
-        public ucGV()
+
+        public string mgv;
+        public ucGV(string gv)
         {
+            mgv = gv;
             InitializeComponent();
-            loadGV();
-            loadCBKhoa();
+
+            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+            {
+                loadCBKhoa("*");
+                loadGV(cbKhoa.SelectedValue.ToString());
+            }
+
+            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
+            {
+                loadCBKhoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                loadGV(cbKhoa.SelectedValue.ToString());
+            }
         }
         
-        public void loadGV()
+        public void loadGV(string khoa)
         {
-            dtgvGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien");
+            if (khoa.Equals("*"))
+                dtgvGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien");
+            else
+                dtgvGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien where MaKhoa='" + khoa + "'");
         }
 
-        public void loadCBKhoa()
+        public void loadCBKhoa(string khoa)
         {
-            cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa");
+            if (khoa.Equals("*"))
+                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa");
+            else
+                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa where MaKhoa='" + khoa + "'");
             cbKhoa.DisplayMember = "TenKhoa";
             cbKhoa.ValueMember = "MaKhoa";
         }
@@ -58,7 +77,7 @@ namespace QuanLySinhVien
 
             //lblError.Text = "Thêm thành công khoa " + txtTenKhoa.Text;
             //thongbao();
-            loadGV();
+            loadGV(cbKhoa.SelectedValue.ToString());
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -87,7 +106,7 @@ namespace QuanLySinhVien
 
             //lblError.Text = "Thêm thành công khoa " + txtTenKhoa.Text;
             //thongbao();
-            loadGV();
+            loadGV(cbKhoa.SelectedValue.ToString());
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -96,7 +115,7 @@ namespace QuanLySinhVien
 
             //lblError.Text = "Thêm thành công khoa " + txtTenKhoa.Text;
             //thongbao();
-            loadGV();
+            loadGV(cbKhoa.SelectedValue.ToString());
         }
 
         private void dtgvGV_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -111,16 +130,24 @@ namespace QuanLySinhVien
                 chkTruongKhoa.Checked = true;
         }
 
-        private void guna2ImageButton1_Click(object sender, EventArgs e)
-        {
-            loadCBKhoa();
-            loadGV();
-        }
-
         private void guna2ImageButton3_Click(object sender, EventArgs e)
         {
-            loadGV();
-            loadCBKhoa();
+            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+            {
+                loadCBKhoa("*");
+                loadGV(cbKhoa.SelectedValue.ToString());
+            }
+
+            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
+            {
+                loadCBKhoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                loadGV(cbKhoa.SelectedValue.ToString());
+            }
+        }
+
+        private void cbKhoa_SelectedValueChanged(object sender, EventArgs e)
+        {
+            loadGV(cbKhoa.SelectedValue.ToString());
         }
     }
 }

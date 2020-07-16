@@ -21,10 +21,17 @@ namespace QuanLySinhVien
             panel1.Width = 60;
             lblTime.Text = DateTime.Now.ToString("hh:mm");
             lblDay.Text = DateTime.Now.ToString("dd/MM");
+
+            ucsv = new ucSV(mgv);
+            ucd = new ucDiem(mgv);
+            ucgv = new ucGV(mgv);
+            ucm = new ucMon(mgv);
+            ucl = new ucLop(mgv);
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
+            
             showControl(ucd);
             line.Top = btnDiem.Top + 4;
             
@@ -32,7 +39,7 @@ namespace QuanLySinhVien
 
             else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
             {
-                lblUser.Text = GiangVienDAO.Instance.getTenGV(mgv) + "-Trưởng khoa " + KhoaDAO.Instance.getTenbyID(GiangVienDAO.Instance.getTKbyMGV(mgv));
+                lblUser.Text = GiangVienDAO.Instance.getTenGV(mgv);
                 btnKhoa.Visible = false;
             }
             else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("gv"))
@@ -61,7 +68,7 @@ namespace QuanLySinhVien
             lblUC.Text = "Quản lý khoa";
         }
 
-        public ucLop ucl = new ucLop();
+        public ucLop ucl;
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             line.Top = btnLop.Top + 4;
@@ -93,7 +100,7 @@ namespace QuanLySinhVien
             
         }
 
-        public ucDiem ucd = new ucDiem();
+        public ucDiem ucd;
         private void btnDiem_Click(object sender, EventArgs e)
         {
             line.Top = btnDiem.Top + 4;
@@ -102,16 +109,17 @@ namespace QuanLySinhVien
             lblUC.Text = "Nhập sửa điểm";
         }
 
-        public ucSV ucsv = new ucSV();
+        public ucSV ucsv;
         private void btnSV_Click(object sender, EventArgs e)
         {
+            
             line.Top = btnSV.Top + 4;
             panel1.Width = 60;
             showControl(ucsv);
             lblUC.Text = "Quản lý sinh viên";
         }
 
-        public ucGV ucgv = new ucGV();
+        public ucGV ucgv;
         private void btnGV_Click(object sender, EventArgs e)
         {
             line.Top = btnGV.Top + 4;
@@ -120,7 +128,7 @@ namespace QuanLySinhVien
             lblUC.Text = "Quản lý giảng viên";
         }
 
-        public ucMon ucm = new ucMon();
+        public ucMon ucm;
         private void btnMon_Click(object sender, EventArgs e)
         {
             line.Top = btnMon.Top + 4;
@@ -268,9 +276,8 @@ namespace QuanLySinhVien
         private void lblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             formTraCuu tc = new formTraCuu();
-            tc.Show();
             this.Close();
-            
+            tc.Show();
         }
     }
 }

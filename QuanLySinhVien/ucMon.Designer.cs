@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnMon = new System.Windows.Forms.Panel();
             this.btnSuaMon = new Guna.UI2.WinForms.Guna2Button();
@@ -69,6 +69,7 @@
             this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbKhoa2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel1.SuspendLayout();
             this.pnMon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbrTinChi)).BeginInit();
@@ -80,11 +81,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.panel1.Controls.Add(this.pnMon);
-            this.panel1.Controls.Add(this.pnLopHoc);
             this.panel1.Controls.Add(this.guna2ImageButton2);
             this.panel1.Controls.Add(this.dtgvMonHoc);
             this.panel1.Controls.Add(this.dtgvLopHoc);
+            this.panel1.Controls.Add(this.pnMon);
+            this.panel1.Controls.Add(this.pnLopHoc);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -287,17 +288,18 @@
             // pnLopHoc
             // 
             this.pnLopHoc.BackColor = System.Drawing.Color.White;
+            this.pnLopHoc.Controls.Add(this.cbKhoa2);
             this.pnLopHoc.Controls.Add(this.btnSuaLop);
             this.pnLopHoc.Controls.Add(this.btnHuyHK);
             this.pnLopHoc.Controls.Add(this.btnXoaLop);
             this.pnLopHoc.Controls.Add(this.btnThemHK);
+            this.pnLopHoc.Controls.Add(this.guna2ImageButton3);
             this.pnLopHoc.Controls.Add(this.btnMoLop);
             this.pnLopHoc.Controls.Add(this.txtHocKy);
             this.pnLopHoc.Controls.Add(this.btnShowtxt);
             this.pnLopHoc.Controls.Add(this.cbHocKy);
             this.pnLopHoc.Controls.Add(this.cbLop);
             this.pnLopHoc.Controls.Add(this.cbGV);
-            this.pnLopHoc.Controls.Add(this.guna2ImageButton3);
             this.pnLopHoc.Controls.Add(this.txtMaMon);
             this.pnLopHoc.Controls.Add(this.txtPhong);
             this.pnLopHoc.Location = new System.Drawing.Point(37, 192);
@@ -482,6 +484,7 @@
             this.cbLop.ShadowDecoration.Parent = this.cbLop;
             this.cbLop.Size = new System.Drawing.Size(334, 26);
             this.cbLop.TabIndex = 115;
+            this.cbLop.SelectedValueChanged += new System.EventHandler(this.cbLop_SelectedValueChanged);
             // 
             // cbGV
             // 
@@ -510,7 +513,7 @@
             this.guna2ImageButton3.CheckedState.Parent = this.guna2ImageButton3;
             this.guna2ImageButton3.HoverState.Parent = this.guna2ImageButton3;
             this.guna2ImageButton3.Image = global::QuanLySinhVien.Properties.Resources.reset_48px;
-            this.guna2ImageButton3.Location = new System.Drawing.Point(35, 12);
+            this.guna2ImageButton3.Location = new System.Drawing.Point(439, 22);
             this.guna2ImageButton3.Name = "guna2ImageButton3";
             this.guna2ImageButton3.PressedState.Parent = this.guna2ImageButton3;
             this.guna2ImageButton3.Size = new System.Drawing.Size(63, 28);
@@ -534,7 +537,7 @@
             this.txtMaMon.ForeColor = System.Drawing.Color.White;
             this.txtMaMon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaMon.HoverState.Parent = this.txtMaMon;
-            this.txtMaMon.Location = new System.Drawing.Point(419, 55);
+            this.txtMaMon.Location = new System.Drawing.Point(439, 75);
             this.txtMaMon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMaMon.Name = "txtMaMon";
             this.txtMaMon.PasswordChar = '\0';
@@ -562,7 +565,7 @@
             this.txtPhong.ForeColor = System.Drawing.Color.White;
             this.txtPhong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPhong.HoverState.Parent = this.txtPhong;
-            this.txtPhong.Location = new System.Drawing.Point(419, 118);
+            this.txtPhong.Location = new System.Drawing.Point(439, 146);
             this.txtPhong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPhong.Name = "txtPhong";
             this.txtPhong.PasswordChar = '\0';
@@ -595,14 +598,14 @@
             this.dtgvMonHoc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvMonHoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvMonHoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvMonHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvMonHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dtgvMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvMonHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaMon,
@@ -615,15 +618,15 @@
             this.dtgvMonHoc.Name = "dtgvMonHoc";
             this.dtgvMonHoc.ReadOnly = true;
             this.dtgvMonHoc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgvMonHoc.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgvMonHoc.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dtgvMonHoc.RowTemplate.Height = 35;
             this.dtgvMonHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvMonHoc.Size = new System.Drawing.Size(876, 163);
+            this.dtgvMonHoc.Size = new System.Drawing.Size(1075, 163);
             this.dtgvMonHoc.TabIndex = 142;
             this.dtgvMonHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvMonHoc_CellClick);
             // 
@@ -663,14 +666,14 @@
             this.dtgvLopHoc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvLopHoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvLopHoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvLopHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvLopHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dtgvLopHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvLopHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaCTMon,
@@ -685,12 +688,12 @@
             this.dtgvLopHoc.Name = "dtgvLopHoc";
             this.dtgvLopHoc.ReadOnly = true;
             this.dtgvLopHoc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgvLopHoc.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgvLopHoc.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dtgvLopHoc.RowTemplate.Height = 40;
             this.dtgvLopHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvLopHoc.Size = new System.Drawing.Size(1160, 257);
@@ -738,6 +741,28 @@
             this.TrangThai.HeaderText = "Trạng thái";
             this.TrangThai.Name = "TrangThai";
             this.TrangThai.ReadOnly = true;
+            // 
+            // cbKhoa2
+            // 
+            this.cbKhoa2.BackColor = System.Drawing.Color.Transparent;
+            this.cbKhoa2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbKhoa2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbKhoa2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhoa2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.cbKhoa2.FocusedColor = System.Drawing.Color.Empty;
+            this.cbKhoa2.FocusedState.Parent = this.cbKhoa2;
+            this.cbKhoa2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbKhoa2.ForeColor = System.Drawing.Color.White;
+            this.cbKhoa2.FormattingEnabled = true;
+            this.cbKhoa2.HoverState.Parent = this.cbKhoa2;
+            this.cbKhoa2.ItemHeight = 20;
+            this.cbKhoa2.ItemsAppearance.Parent = this.cbKhoa2;
+            this.cbKhoa2.Location = new System.Drawing.Point(35, 9);
+            this.cbKhoa2.Name = "cbKhoa2";
+            this.cbKhoa2.ShadowDecoration.Parent = this.cbKhoa2;
+            this.cbKhoa2.Size = new System.Drawing.Size(334, 26);
+            this.cbKhoa2.TabIndex = 147;
+            this.cbKhoa2.SelectedValueChanged += new System.EventHandler(this.cbKhoa2_SelectedValueChanged);
             // 
             // ucMon
             // 
@@ -796,5 +821,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
+        private Guna.UI2.WinForms.Guna2ComboBox cbKhoa2;
     }
 }

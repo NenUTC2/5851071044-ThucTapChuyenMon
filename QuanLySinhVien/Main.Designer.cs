@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation6 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDay = new System.Windows.Forms.Label();
@@ -47,6 +47,9 @@
             this.uc = new System.Windows.Forms.UserControl();
             this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblPass = new System.Windows.Forms.LinkLabel();
+            this.lblLogout = new System.Windows.Forms.LinkLabel();
+            this.lblUser = new System.Windows.Forms.Label();
             this.picTK = new System.Windows.Forms.PictureBox();
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblUC = new System.Windows.Forms.Label();
@@ -60,9 +63,6 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.lblUser = new System.Windows.Forms.Label();
-            this.lblLogout = new System.Windows.Forms.LinkLabel();
-            this.lblPass = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.line)).BeginInit();
             this.panel2.SuspendLayout();
@@ -178,6 +178,7 @@
             this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
             this.guna2Button6.Size = new System.Drawing.Size(318, 55);
             this.guna2Button6.TabIndex = 6;
+            this.guna2Button6.Text = " ";
             this.guna2Button6.TextOffset = new System.Drawing.Point(25, 0);
             this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
             // 
@@ -334,6 +335,7 @@
             // uc
             // 
             this.uc.BackColor = System.Drawing.Color.White;
+            this.uc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.guna2Transition1.SetDecoration(this.uc, Guna.UI2.AnimatorNS.DecorationType.None);
             this.uc.Location = new System.Drawing.Point(66, 41);
             this.uc.Name = "uc";
@@ -344,26 +346,27 @@
             // guna2Transition1
             // 
             this.guna2Transition1.Cursor = null;
-            animation6.AnimateOnlyDifferences = true;
-            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
-            animation6.LeafCoeff = 0F;
-            animation6.MaxTime = 1F;
-            animation6.MinTime = 0F;
-            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
-            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
-            animation6.MosaicSize = 0;
-            animation6.Padding = new System.Windows.Forms.Padding(0);
-            animation6.RotateCoeff = 0F;
-            animation6.RotateLimit = 0F;
-            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
-            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
-            animation6.TimeCoeff = 0F;
-            animation6.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation6;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation1;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lblPass);
             this.panel2.Controls.Add(this.lblLogout);
             this.panel2.Controls.Add(this.lblUser);
@@ -378,6 +381,45 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1298, 46);
             this.panel2.TabIndex = 2;
+            // 
+            // lblPass
+            // 
+            this.lblPass.AutoSize = true;
+            this.lblPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.lblPass, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblPass.LinkColor = System.Drawing.Color.Maroon;
+            this.lblPass.Location = new System.Drawing.Point(173, 21);
+            this.lblPass.Name = "lblPass";
+            this.lblPass.Size = new System.Drawing.Size(91, 17);
+            this.lblPass.TabIndex = 10;
+            this.lblPass.TabStop = true;
+            this.lblPass.Text = "Đổi mật khẩu";
+            this.lblPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPass_LinkClicked);
+            // 
+            // lblLogout
+            // 
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guna2Transition1.SetDecoration(this.lblLogout, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblLogout.LinkColor = System.Drawing.Color.Black;
+            this.lblLogout.Location = new System.Drawing.Point(90, 21);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(72, 17);
+            this.lblLogout.TabIndex = 9;
+            this.lblLogout.TabStop = true;
+            this.lblLogout.Text = "Đăng xuất";
+            this.lblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLogout_LinkClicked);
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.lblUser, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Location = new System.Drawing.Point(89, 3);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(23, 18);
+            this.lblUser.TabIndex = 8;
+            this.lblUser.Text = "...";
             // 
             // picTK
             // 
@@ -424,11 +466,11 @@
             this.lblUC.AutoSize = true;
             this.guna2Transition1.SetDecoration(this.lblUC, Guna.UI2.AnimatorNS.DecorationType.None);
             this.lblUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUC.Location = new System.Drawing.Point(616, 9);
+            this.lblUC.Location = new System.Drawing.Point(592, 9);
             this.lblUC.Name = "lblUC";
-            this.lblUC.Size = new System.Drawing.Size(27, 25);
+            this.lblUC.Size = new System.Drawing.Size(143, 25);
             this.lblUC.TabIndex = 5;
-            this.lblUC.Text = "...";
+            this.lblUC.Text = "Nhập sửa điểm";
             // 
             // guna2ImageButton2
             // 
@@ -533,45 +575,6 @@
             this.timer3.Enabled = true;
             this.timer3.Interval = 10000;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.lblUser, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.Location = new System.Drawing.Point(99, 3);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(23, 18);
-            this.lblUser.TabIndex = 8;
-            this.lblUser.Text = "...";
-            // 
-            // lblLogout
-            // 
-            this.lblLogout.AutoSize = true;
-            this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.lblLogout, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblLogout.LinkColor = System.Drawing.Color.Black;
-            this.lblLogout.Location = new System.Drawing.Point(99, 21);
-            this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(72, 17);
-            this.lblLogout.TabIndex = 9;
-            this.lblLogout.TabStop = true;
-            this.lblLogout.Text = "Đăng xuất";
-            this.lblLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLogout_LinkClicked);
-            // 
-            // lblPass
-            // 
-            this.lblPass.AutoSize = true;
-            this.lblPass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Transition1.SetDecoration(this.lblPass, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.lblPass.LinkColor = System.Drawing.Color.Maroon;
-            this.lblPass.Location = new System.Drawing.Point(182, 21);
-            this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(91, 17);
-            this.lblPass.TabIndex = 10;
-            this.lblPass.TabStop = true;
-            this.lblPass.Text = "Đổi mật khẩu";
-            this.lblPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblPass_LinkClicked);
             // 
             // Main
             // 

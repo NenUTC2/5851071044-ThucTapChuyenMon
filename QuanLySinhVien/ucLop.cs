@@ -16,24 +16,42 @@ namespace QuanLySinhVien
         public Panel pn { get { return panel1; } }
         public Panel pn2 { get { return panel2; } }
         public Panel pn3 { get { return panel3; } }
-        public ucLop()
+        public string mgv;
+        public ucLop(string gv)
         {
+            mgv = gv;
             InitializeComponent();
+
+            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+            {
+                loadCBKHoa("*");
+            }
+            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
+            {
+                loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+            }
         }
 
         private void ucLop_Load(object sender, EventArgs e)
         {
-            loadLop();loadCBGV("*");loadCBKHoa();
+            
         }
 
-        public void loadLop()
+        public void loadLop(string khoa)
         {
-            dtgvLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop");
+            if (khoa.Equals("*"))
+                dtgvLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop");
+            else
+                dtgvLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where MaKhoa='" + khoa + "'");
         }
 
-        public void loadCBKHoa()
+        public void loadCBKHoa(string khoa)
         {
-            cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa");
+            
+            if (khoa.Equals("*"))
+                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa");
+            else
+                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa where MaKhoa='" + khoa + "'");
             cbKhoa.DisplayMember = "TenKhoa";
             cbKhoa.ValueMember = "MaKhoa";
         }
@@ -53,7 +71,15 @@ namespace QuanLySinhVien
             DataProvider.Instance.ExcuteNonQuery("Insert into Lop values(" +
                 "'" + txtMaLop.Text + "', N'" + txtTenLop.Text + "', '" + dtpNgayLap.Value.ToString("yyyy/MM/dd") + "'," +
                 " '" + cbGV.SelectedValue + "', '" + cbKhoa.SelectedValue + "')");
-            loadLop();
+            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+            {
+                loadCBKHoa("*"); loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+            }
+            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
+            {
+                loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -61,13 +87,29 @@ namespace QuanLySinhVien
             DataProvider.Instance.ExcuteNonQuery("Update Lop set" +
                 " TenLop= N'" + txtTenLop.Text + "'," +
                 " GVCN='" + cbGV.SelectedValue + "', MaKhoa='" + cbKhoa.SelectedValue + "' where MaLop='" + dtgvLop.CurrentRow.Cells["MaLop"].Value.ToString() + "'");
-            loadLop();
+            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+            {
+                loadCBKHoa("*"); loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+            }
+            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
+            {
+                loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             DataProvider.Instance.ExcuteNonQuery("Delete from Lop where MaLop='"+dtgvLop.CurrentRow.Cells["MaLop"].Value.ToString()+"'");
-            loadLop();
+            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+            {
+                loadCBKHoa("*"); loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+            }
+            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
+            {
+                loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+            }
         }
 
         private void dtgvLop_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -80,7 +122,12 @@ namespace QuanLySinhVien
 
         private void cbKhoa_SelectedValueChanged(object sender, EventArgs e)
         {
-            loadCBGV(cbKhoa.SelectedValue.ToString());
+            try
+            {
+                loadCBGV(cbKhoa.SelectedValue.ToString());
+                loadLop(cbKhoa.SelectedValue.ToString());
+            }
+            catch { }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -90,9 +137,15 @@ namespace QuanLySinhVien
 
         private void guna2ImageButton3_Click(object sender, EventArgs e)
         {
-            loadCBGV("*");
-            loadCBKHoa();
-            loadLop();
+            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+            {
+                loadCBKHoa("*"); loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+            }
+            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
+            {
+                loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+            }
         }
     }
 }

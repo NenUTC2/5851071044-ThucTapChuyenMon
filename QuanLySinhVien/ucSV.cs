@@ -21,13 +21,41 @@ namespace QuanLySinhVien
         public Label lbl1 { get { return lblDKM; } }
 
         public DataSet dsSV;
-        public ucSV()
+        public string mgv;
+        public ucSV(string gv)
         {
+            mgv = gv;
             InitializeComponent();
-            loadSV();
-            loadCBKhoa();
-            loadCBLop(cbKhoa.SelectedValue.ToString());
-            loadCBMonHoc("*");
+            
+            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+            {
+                loadSV();
+                loadCBKhoa();
+                loadCBLop(cbKhoa.SelectedValue.ToString());
+                loadCBMonHoc(cbKhoa.SelectedValue.ToString());
+            }
+
+            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
+            {
+                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa " +
+                    "where makhoa='" + GiangVienDAO.Instance.getKhoabyMGV(mgv) + "'");
+                cbKhoa.DisplayMember = "TenKhoa";
+                cbKhoa.ValueMember = "MaKhoa";
+
+                loadCBLop(cbKhoa.SelectedValue.ToString());
+                loadCBMonHoc(cbKhoa.SelectedValue.ToString());
+            }
+            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("gv"))
+            {
+                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa " +
+                    "where makhoa='" + GiangVienDAO.Instance.getKhoabyMGV(mgv) + "'");
+                cbKhoa.DisplayMember = "TenKhoa";
+                cbKhoa.ValueMember = "MaKhoa";
+                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where GVCN='" + mgv + "'");
+                cbLop.DisplayMember = "TenLop";
+                cbLop.ValueMember = "MaLop";
+                loadCBMonHoc(cbKhoa.SelectedValue.ToString());
+            }
         }
         public void loadSV()
         {
@@ -72,6 +100,7 @@ namespace QuanLySinhVien
         private void cbKhoa_SelectedValueChanged(object sender, EventArgs e)
         {
             loadCBLop(cbKhoa.SelectedValue.ToString());
+            loadCBMonHoc(cbKhoa.SelectedValue.ToString());
         }
 
         private void btnSua_Click(object sender, EventArgs e)

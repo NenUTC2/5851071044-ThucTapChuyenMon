@@ -52,6 +52,7 @@
             this.GV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnShowLogin = new Guna.UI2.WinForms.Guna2Button();
             this.lblUC = new System.Windows.Forms.Label();
             this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -60,9 +61,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.chkMon = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.picCheckSV = new System.Windows.Forms.PictureBox();
             this.pnLogin = new System.Windows.Forms.Panel();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.lblResError = new System.Windows.Forms.Label();
             this.btnRes = new Guna.UI2.WinForms.Guna2Button();
             this.txtResPass2 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -75,18 +78,18 @@
             this.lblErrorLogin = new System.Windows.Forms.Label();
             this.txtPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtUser = new Guna.UI2.WinForms.Guna2TextBox();
-            this.picCheckSV = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDiem)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMon)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCheckSV)).BeginInit();
             this.pnLogin.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCheckSV)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtMSV
@@ -321,6 +324,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.btnShowLogin);
             this.panel2.Controls.Add(this.lblUC);
             this.panel2.Controls.Add(this.guna2ImageButton2);
@@ -330,6 +335,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1280, 46);
             this.panel2.TabIndex = 144;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::QuanLySinhVien.Properties.Resources.logo;
+            this.pictureBox2.Location = new System.Drawing.Point(16, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 162;
+            this.pictureBox2.TabStop = false;
             // 
             // btnShowLogin
             // 
@@ -347,6 +362,7 @@
             this.btnShowLogin.ShadowDecoration.Parent = this.btnShowLogin;
             this.btnShowLogin.Size = new System.Drawing.Size(162, 46);
             this.btnShowLogin.TabIndex = 149;
+            this.btnShowLogin.TabStop = false;
             this.btnShowLogin.Text = "Đăng nhập";
             this.btnShowLogin.Click += new System.EventHandler(this.btnShowLogin_Click);
             // 
@@ -354,7 +370,7 @@
             // 
             this.lblUC.AutoSize = true;
             this.lblUC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUC.Location = new System.Drawing.Point(37, 9);
+            this.lblUC.Location = new System.Drawing.Point(73, 11);
             this.lblUC.Name = "lblUC";
             this.lblUC.Size = new System.Drawing.Size(178, 25);
             this.lblUC.TabIndex = 5;
@@ -371,6 +387,7 @@
             this.guna2ImageButton2.PressedState.Parent = this.guna2ImageButton2;
             this.guna2ImageButton2.Size = new System.Drawing.Size(60, 43);
             this.guna2ImageButton2.TabIndex = 4;
+            this.guna2ImageButton2.TabStop = false;
             this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
             this.guna2ImageButton2.MouseLeave += new System.EventHandler(this.guna2ImageButton2_MouseLeave);
             this.guna2ImageButton2.MouseHover += new System.EventHandler(this.guna2ImageButton2_MouseHover);
@@ -386,6 +403,7 @@
             this.guna2ImageButton1.PressedState.Parent = this.guna2ImageButton1;
             this.guna2ImageButton1.Size = new System.Drawing.Size(60, 43);
             this.guna2ImageButton1.TabIndex = 3;
+            this.guna2ImageButton1.TabStop = false;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             this.guna2ImageButton1.MouseLeave += new System.EventHandler(this.guna2ImageButton1_MouseLeave);
             this.guna2ImageButton1.MouseHover += new System.EventHandler(this.guna2ImageButton1_MouseHover);
@@ -437,6 +455,31 @@
             // 
             this.guna2DragControl1.TargetControl = this.panel2;
             // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.chkMon);
+            this.panel4.Controls.Add(this.dtgvDiem);
+            this.panel4.Controls.Add(this.picCheckSV);
+            this.panel4.Controls.Add(this.panel3);
+            this.panel4.Controls.Add(this.dtgvMon);
+            this.panel4.Controls.Add(this.txtMSV);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1280, 709);
+            this.panel4.TabIndex = 151;
+            // 
+            // picCheckSV
+            // 
+            this.picCheckSV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.picCheckSV.Location = new System.Drawing.Point(511, 73);
+            this.picCheckSV.Name = "picCheckSV";
+            this.picCheckSV.Size = new System.Drawing.Size(40, 40);
+            this.picCheckSV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCheckSV.TabIndex = 148;
+            this.picCheckSV.TabStop = false;
+            // 
             // pnLogin
             // 
             this.pnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnLogin.BackgroundImage")));
@@ -451,7 +494,8 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.guna2ImageButton3);
+            this.guna2ShadowPanel1.Controls.Add(this.checkBox1);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2Button1);
             this.guna2ShadowPanel1.Controls.Add(this.lblResError);
             this.guna2ShadowPanel1.Controls.Add(this.btnRes);
             this.guna2ShadowPanel1.Controls.Add(this.txtResPass2);
@@ -467,30 +511,36 @@
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(429, 74);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.Radius = 5;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel1.ShadowDepth = 150;
+            this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(774, 483);
             this.guna2ShadowPanel1.TabIndex = 149;
             // 
-            // guna2ImageButton3
+            // guna2Button1
             // 
-            this.guna2ImageButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            this.guna2ImageButton3.CheckedState.Parent = this.guna2ImageButton3;
-            this.guna2ImageButton3.HoverState.Parent = this.guna2ImageButton3;
-            this.guna2ImageButton3.Image = global::QuanLySinhVien.Properties.Resources.back_52px;
-            this.guna2ImageButton3.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton3.Location = new System.Drawing.Point(677, 24);
-            this.guna2ImageButton3.Name = "guna2ImageButton3";
-            this.guna2ImageButton3.PressedState.Parent = this.guna2ImageButton3;
-            this.guna2ImageButton3.Size = new System.Drawing.Size(52, 43);
-            this.guna2ImageButton3.TabIndex = 150;
-            this.guna2ImageButton3.Click += new System.EventHandler(this.guna2ImageButton3_Click);
+            this.guna2Button1.BorderRadius = 10;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Image = global::QuanLySinhVien.Properties.Resources.back_52px;
+            this.guna2Button1.Location = new System.Drawing.Point(656, 373);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(42, 41);
+            this.guna2Button1.TabIndex = 162;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
             // lblResError
             // 
             this.lblResError.AutoSize = true;
             this.lblResError.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResError.ForeColor = System.Drawing.Color.Red;
-            this.lblResError.Location = new System.Drawing.Point(470, 306);
+            this.lblResError.Location = new System.Drawing.Point(470, 325);
             this.lblResError.Name = "lblResError";
             this.lblResError.Size = new System.Drawing.Size(226, 17);
             this.lblResError.TabIndex = 161;
@@ -506,7 +556,7 @@
             this.btnRes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
             this.btnRes.HoverState.Parent = this.btnRes;
-            this.btnRes.Location = new System.Drawing.Point(495, 356);
+            this.btnRes.Location = new System.Drawing.Point(464, 366);
             this.btnRes.Name = "btnRes";
             this.btnRes.ShadowDecoration.Parent = this.btnRes;
             this.btnRes.Size = new System.Drawing.Size(180, 54);
@@ -532,7 +582,7 @@
             this.txtResPass2.ForeColor = System.Drawing.Color.White;
             this.txtResPass2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtResPass2.HoverState.Parent = this.txtResPass2;
-            this.txtResPass2.Location = new System.Drawing.Point(440, 237);
+            this.txtResPass2.Location = new System.Drawing.Point(440, 229);
             this.txtResPass2.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.txtResPass2.Name = "txtResPass2";
             this.txtResPass2.PasswordChar = '\0';
@@ -542,6 +592,7 @@
             this.txtResPass2.ShadowDecoration.Parent = this.txtResPass2;
             this.txtResPass2.Size = new System.Drawing.Size(289, 53);
             this.txtResPass2.TabIndex = 159;
+            this.txtResPass2.Enter += new System.EventHandler(this.txtResPass_Enter);
             // 
             // txtResPass
             // 
@@ -561,7 +612,7 @@
             this.txtResPass.ForeColor = System.Drawing.Color.White;
             this.txtResPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtResPass.HoverState.Parent = this.txtResPass;
-            this.txtResPass.Location = new System.Drawing.Point(440, 157);
+            this.txtResPass.Location = new System.Drawing.Point(440, 149);
             this.txtResPass.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.txtResPass.Name = "txtResPass";
             this.txtResPass.PasswordChar = '\0';
@@ -571,6 +622,7 @@
             this.txtResPass.ShadowDecoration.Parent = this.txtResPass;
             this.txtResPass.Size = new System.Drawing.Size(289, 53);
             this.txtResPass.TabIndex = 158;
+            this.txtResPass.Enter += new System.EventHandler(this.txtResPass_Enter);
             // 
             // txtResUser
             // 
@@ -590,7 +642,7 @@
             this.txtResUser.ForeColor = System.Drawing.Color.White;
             this.txtResUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtResUser.HoverState.Parent = this.txtResUser;
-            this.txtResUser.Location = new System.Drawing.Point(440, 77);
+            this.txtResUser.Location = new System.Drawing.Point(440, 69);
             this.txtResUser.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.txtResUser.Name = "txtResUser";
             this.txtResUser.PasswordChar = '\0';
@@ -604,9 +656,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLySinhVien.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(149, 14);
+            this.pictureBox1.Location = new System.Drawing.Point(148, 17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 120);
+            this.pictureBox1.Size = new System.Drawing.Size(130, 120);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 156;
             this.pictureBox1.TabStop = false;
@@ -617,7 +669,7 @@
             this.lblRes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblRes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.lblRes.Location = new System.Drawing.Point(212, 431);
+            this.lblRes.Location = new System.Drawing.Point(212, 441);
             this.lblRes.Name = "lblRes";
             this.lblRes.Size = new System.Drawing.Size(128, 18);
             this.lblRes.TabIndex = 155;
@@ -629,7 +681,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.label2.Location = new System.Drawing.Point(88, 431);
+            this.label2.Location = new System.Drawing.Point(88, 441);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 18);
             this.label2.TabIndex = 154;
@@ -644,7 +696,7 @@
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
             this.btnLogin.HoverState.Parent = this.btnLogin;
-            this.btnLogin.Location = new System.Drawing.Point(123, 356);
+            this.btnLogin.Location = new System.Drawing.Point(123, 366);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.ShadowDecoration.Parent = this.btnLogin;
             this.btnLogin.Size = new System.Drawing.Size(180, 54);
@@ -657,7 +709,7 @@
             this.lblErrorLogin.AutoSize = true;
             this.lblErrorLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorLogin.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorLogin.Location = new System.Drawing.Point(100, 306);
+            this.lblErrorLogin.Location = new System.Drawing.Point(100, 325);
             this.lblErrorLogin.Name = "lblErrorLogin";
             this.lblErrorLogin.Size = new System.Drawing.Size(226, 17);
             this.lblErrorLogin.TabIndex = 152;
@@ -682,7 +734,7 @@
             this.txtPass.ForeColor = System.Drawing.Color.White;
             this.txtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPass.HoverState.Parent = this.txtPass;
-            this.txtPass.Location = new System.Drawing.Point(69, 237);
+            this.txtPass.Location = new System.Drawing.Point(69, 229);
             this.txtPass.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '\0';
@@ -692,6 +744,7 @@
             this.txtPass.ShadowDecoration.Parent = this.txtPass;
             this.txtPass.Size = new System.Drawing.Size(289, 53);
             this.txtPass.TabIndex = 151;
+            this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
             // 
             // txtUser
             // 
@@ -711,7 +764,7 @@
             this.txtUser.ForeColor = System.Drawing.Color.White;
             this.txtUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUser.HoverState.Parent = this.txtUser;
-            this.txtUser.Location = new System.Drawing.Point(69, 157);
+            this.txtUser.Location = new System.Drawing.Point(69, 149);
             this.txtUser.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.txtUser.Name = "txtUser";
             this.txtUser.PasswordChar = '\0';
@@ -722,32 +775,20 @@
             this.txtUser.Size = new System.Drawing.Size(289, 53);
             this.txtUser.TabIndex = 150;
             // 
-            // picCheckSV
+            // checkBox1
             // 
-            this.picCheckSV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.picCheckSV.Location = new System.Drawing.Point(511, 73);
-            this.picCheckSV.Name = "picCheckSV";
-            this.picCheckSV.Size = new System.Drawing.Size(40, 40);
-            this.picCheckSV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCheckSV.TabIndex = 148;
-            this.picCheckSV.TabStop = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.chkMon);
-            this.panel4.Controls.Add(this.dtgvDiem);
-            this.panel4.Controls.Add(this.picCheckSV);
-            this.panel4.Controls.Add(this.panel3);
-            this.panel4.Controls.Add(this.dtgvMon);
-            this.panel4.Controls.Add(this.txtMSV);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1280, 709);
-            this.panel4.TabIndex = 151;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(69, 289);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(140, 21);
+            this.checkBox1.TabIndex = 163;
+            this.checkBox1.Text = "Hiển thị mật khẩu";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // formTraCuu
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
@@ -768,15 +809,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMon)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCheckSV)).EndInit();
             this.pnLogin.ResumeLayout(false);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCheckSV)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -819,11 +861,13 @@
         private Guna.UI2.WinForms.Guna2TextBox txtResPass2;
         private Guna.UI2.WinForms.Guna2TextBox txtResPass;
         private Guna.UI2.WinForms.Guna2TextBox txtResUser;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn TC;
         private System.Windows.Forms.DataGridViewTextBoxColumn GV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phong;
         private System.Windows.Forms.Panel panel4;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

@@ -70,5 +70,10 @@ namespace QuanLySinhVien.DAO
         {
             return DataProvider.Instance.ExcuteQuery("Select TruongKhoa from GiangVien where MaGV='" + mgv + "'").Rows[0][0].ToString();
         }
+
+        public string getKhoabyMGV(string mgv)
+        {
+            return DataProvider.Instance.ExcuteQuery("Select MaKhoa from GiangVien where MaGV='" + mgv + "'").Rows[0][0].ToString();
+        }
     }
 }

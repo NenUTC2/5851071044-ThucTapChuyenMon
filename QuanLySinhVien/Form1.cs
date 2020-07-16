@@ -16,7 +16,7 @@ namespace QuanLySinhVien
         {
             InitializeComponent();
         }
-        int idanh = 1;
+        //int idanh = 1;
         private void LoadNextImage()
         {
             //if (idanh == 6)

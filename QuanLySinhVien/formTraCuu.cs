@@ -112,7 +112,7 @@ namespace QuanLySinhVien
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void guna2ImageButton2_Click(object sender, EventArgs e)
@@ -125,7 +125,6 @@ namespace QuanLySinhVien
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-
             if (AccountDAO.Instance.checkLogin(txtUser.Text, txtPass.Text)==1){
                 Main m = new Main(txtUser.Text);
                 this.Hide();
@@ -133,7 +132,8 @@ namespace QuanLySinhVien
             }
             else
             {
-
+                lblErrorLogin.Text = "Sai tên đăng nhập hoặc mật khẩu";
+                lblErrorLogin.Visible = true;
             }
         }
 
@@ -149,12 +149,6 @@ namespace QuanLySinhVien
                 btnShowLogin.Text = "Quay lại";
                 pnLogin.Visible = true;
             }
-        }
-
-        private void guna2ImageButton3_Click(object sender, EventArgs e)
-        {
-            guna2ShadowPanel1.Width = 320;
-            guna2ShadowPanel1.Left += 140;
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -187,6 +181,31 @@ namespace QuanLySinhVien
         {
             guna2ShadowPanel1.Width = 598;
             guna2ShadowPanel1.Left -= 140;
+        }
+
+        private void txtPass_Enter(object sender, EventArgs e)
+        {
+            txtPass.UseSystemPasswordChar = true;
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            guna2ShadowPanel1.Width = 320;
+            guna2ShadowPanel1.Left += 140;
+        }
+
+        private void txtResPass_Enter(object sender, EventArgs e)
+        {
+            txtResPass.UseSystemPasswordChar = true;
+            txtResPass2.UseSystemPasswordChar = true;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+                txtPass.UseSystemPasswordChar = false;
+            else
+                txtPass.UseSystemPasswordChar = true;
         }
     }
 }

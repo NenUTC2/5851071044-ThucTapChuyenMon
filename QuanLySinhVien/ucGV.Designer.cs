@@ -38,13 +38,13 @@
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.chkTruongKhoa = new Guna.UI2.WinForms.Guna2CheckBox();
             this.cbKhoa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtTenGV = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSDT = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtpNgayDay = new System.Windows.Forms.DateTimePicker();
             this.txtDiaChi = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtgvGV = new System.Windows.Forms.DataGridView();
-            this.chkTruongKhoa = new Guna.UI2.WinForms.Guna2CheckBox();
             this.MaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -183,6 +183,25 @@
             this.panel2.Size = new System.Drawing.Size(924, 197);
             this.panel2.TabIndex = 132;
             // 
+            // chkTruongKhoa
+            // 
+            this.chkTruongKhoa.AutoSize = true;
+            this.chkTruongKhoa.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkTruongKhoa.CheckedState.BorderRadius = 2;
+            this.chkTruongKhoa.CheckedState.BorderThickness = 0;
+            this.chkTruongKhoa.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkTruongKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkTruongKhoa.Location = new System.Drawing.Point(773, 22);
+            this.chkTruongKhoa.Name = "chkTruongKhoa";
+            this.chkTruongKhoa.Size = new System.Drawing.Size(123, 24);
+            this.chkTruongKhoa.TabIndex = 132;
+            this.chkTruongKhoa.Text = "Trưởng khoa";
+            this.chkTruongKhoa.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkTruongKhoa.UncheckedState.BorderRadius = 2;
+            this.chkTruongKhoa.UncheckedState.BorderThickness = 0;
+            this.chkTruongKhoa.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkTruongKhoa.UseVisualStyleBackColor = true;
+            // 
             // cbKhoa
             // 
             this.cbKhoa.BackColor = System.Drawing.Color.Transparent;
@@ -206,6 +225,7 @@
             this.cbKhoa.ShadowDecoration.Parent = this.cbKhoa;
             this.cbKhoa.Size = new System.Drawing.Size(422, 36);
             this.cbKhoa.TabIndex = 126;
+            this.cbKhoa.SelectedValueChanged += new System.EventHandler(this.cbKhoa_SelectedValueChanged);
             // 
             // txtTenGV
             // 
@@ -344,25 +364,6 @@
             this.dtgvGV.Size = new System.Drawing.Size(1166, 377);
             this.dtgvGV.TabIndex = 125;
             this.dtgvGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvGV_CellClick);
-            // 
-            // chkTruongKhoa
-            // 
-            this.chkTruongKhoa.AutoSize = true;
-            this.chkTruongKhoa.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkTruongKhoa.CheckedState.BorderRadius = 2;
-            this.chkTruongKhoa.CheckedState.BorderThickness = 0;
-            this.chkTruongKhoa.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkTruongKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkTruongKhoa.Location = new System.Drawing.Point(773, 22);
-            this.chkTruongKhoa.Name = "chkTruongKhoa";
-            this.chkTruongKhoa.Size = new System.Drawing.Size(123, 24);
-            this.chkTruongKhoa.TabIndex = 132;
-            this.chkTruongKhoa.Text = "Trưởng khoa";
-            this.chkTruongKhoa.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chkTruongKhoa.UncheckedState.BorderRadius = 2;
-            this.chkTruongKhoa.UncheckedState.BorderThickness = 0;
-            this.chkTruongKhoa.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chkTruongKhoa.UseVisualStyleBackColor = true;
             // 
             // MaGV
             // 
