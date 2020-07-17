@@ -58,35 +58,9 @@ namespace QuanLySinhVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string truongkhoa = "None";
-            if (chkTruongKhoa.Checked == true)
+            if (txtTenGV.Text != "" && txtSDT.Text != "" && txtDiaChi.Text != "")
             {
-                if (GiangVienDAO.Instance.checkTruongKhoa(cbKhoa.SelectedValue.ToString()) == 1)
-                {
-                    DialogResult dialogResult = MessageBox.Show("Khoa này đã có trưởng khoa. Bạn có muốn đổi trưởng khoa?", "Thông báo", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        string gv = GiangVienDAO.Instance.getTKbyMaKHoa(cbKhoa.SelectedValue.ToString());
-                        DataProvider.Instance.ExcuteNonQuery("Update GiangVien set TruongKhoa='None' where MaGV='"+gv+"'");
-                        truongkhoa = cbKhoa.SelectedValue.ToString();
-                    }
-                }
-                
-            }
-            DataProvider.Instance.ExcuteNonQuery("Insert into GiangVien values" +
-               "('" + cbKhoa.SelectedValue.ToString() + (GiangVienDAO.Instance.getMaxGV(cbKhoa.SelectedValue.ToString())+1).ToString() + "', N'" + txtTenGV.Text + "'," +
-               "'"+txtSDT.Text+"', '"+cbKhoa.SelectedValue.ToString()+"', '"+truongkhoa+"', N'"+txtDiaChi.Text+"' , '" + dtpNgayDay.Value.ToString("yyyy/MM/dd") + "')");
-
-            //lblError.Text = "Thêm thành công khoa " + txtTenKhoa.Text;
-            //thongbao();
-            loadGV(cbKhoa.SelectedValue.ToString());
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            string truongkhoa = "None";
-            if (dtgvGV.CurrentRow.Cells["TK"].Value.ToString().Equals("None"))
-            {
+                string truongkhoa = "None";
                 if (chkTruongKhoa.Checked == true)
                 {
                     if (GiangVienDAO.Instance.checkTruongKhoa(cbKhoa.SelectedValue.ToString()) == 1)
@@ -98,17 +72,48 @@ namespace QuanLySinhVien
                             DataProvider.Instance.ExcuteNonQuery("Update GiangVien set TruongKhoa='None' where MaGV='" + gv + "'");
                             truongkhoa = cbKhoa.SelectedValue.ToString();
                         }
-                    }else truongkhoa = cbKhoa.SelectedValue.ToString();
-                }
-            }
-            else if (chkTruongKhoa.Checked == true)
-                truongkhoa = cbKhoa.SelectedValue.ToString();
-            DataProvider.Instance.ExcuteNonQuery("Update GiangVien set TenGV=N'"+txtTenGV.Text+"', SDT='"+txtSDT.Text+"', TruongKhoa='"+truongkhoa+"', DiaChi=N'"+txtDiaChi.Text+"' " +
-                "where MaGV='"+ dtgvGV.CurrentRow.Cells["MaGV"].Value.ToString() + "'");
+                    }
 
-            //lblError.Text = "Thêm thành công khoa " + txtTenKhoa.Text;
-            //thongbao();
-            loadGV(cbKhoa.SelectedValue.ToString());
+                }
+                DataProvider.Instance.ExcuteNonQuery("Insert into GiangVien values" +
+                   "('" + cbKhoa.SelectedValue.ToString() + (GiangVienDAO.Instance.getMaxGV(cbKhoa.SelectedValue.ToString()) + 1).ToString() + "', N'" + txtTenGV.Text + "'," +
+                   "'" + txtSDT.Text + "', '" + cbKhoa.SelectedValue.ToString() + "', '" + truongkhoa + "', N'" + txtDiaChi.Text + "' , '" + dtpNgayDay.Value.ToString("yyyy/MM/dd") + "')");
+
+                loadGV(cbKhoa.SelectedValue.ToString());
+            }
+            else { lblLoi.Visible = true; lblLoi.Text = "Hãy nhập đủ thông tin Giảng viên"; timer1.Enabled = true; }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (txtTenGV.Text != "" && txtSDT.Text != "" && txtDiaChi.Text != "")
+            {
+                string truongkhoa = "None";
+                if (dtgvGV.CurrentRow.Cells["TK"].Value.ToString().Equals("None"))
+                {
+                    if (chkTruongKhoa.Checked == true)
+                    {
+                        if (GiangVienDAO.Instance.checkTruongKhoa(cbKhoa.SelectedValue.ToString()) == 1)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Khoa này đã có trưởng khoa. Bạn có muốn đổi trưởng khoa?", "Thông báo", MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                string gv = GiangVienDAO.Instance.getTKbyMaKHoa(cbKhoa.SelectedValue.ToString());
+                                DataProvider.Instance.ExcuteNonQuery("Update GiangVien set TruongKhoa='None' where MaGV='" + gv + "'");
+                                truongkhoa = cbKhoa.SelectedValue.ToString();
+                            }
+                        }
+                        else truongkhoa = cbKhoa.SelectedValue.ToString();
+                    }
+                }
+                else if (chkTruongKhoa.Checked == true)
+                    truongkhoa = cbKhoa.SelectedValue.ToString();
+                DataProvider.Instance.ExcuteNonQuery("Update GiangVien set TenGV=N'" + txtTenGV.Text + "', SDT='" + txtSDT.Text + "', TruongKhoa='" + truongkhoa + "', DiaChi=N'" + txtDiaChi.Text + "' " +
+                    "where MaGV='" + dtgvGV.CurrentRow.Cells["MaGV"].Value.ToString() + "'");
+
+                loadGV(cbKhoa.SelectedValue.ToString());
+            }
+            else { lblLoi.Visible = true; lblLoi.Text = "Hãy nhập đủ thông tin giảng viên"; timer1.Enabled = true; }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -150,6 +155,12 @@ namespace QuanLySinhVien
         private void cbKhoa_SelectedValueChanged(object sender, EventArgs e)
         {
             loadGV(cbKhoa.SelectedValue.ToString());
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblLoi.Visible = false;
+            timer1.Enabled = false;
         }
     }
 }

@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation5 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.line = new System.Windows.Forms.PictureBox();
+            this.btnThongKe = new Guna.UI2.WinForms.Guna2Button();
             this.lblDay = new System.Windows.Forms.Label();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.line = new System.Windows.Forms.PictureBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.btnKhoa = new Guna.UI2.WinForms.Guna2Button();
@@ -63,6 +64,12 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.pnDoiPass = new System.Windows.Forms.Panel();
+            this.txtPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnDoiPass = new Guna.UI2.WinForms.Guna2Button();
+            this.txtRePass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.lblErrorLogin = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.line)).BeginInit();
             this.panel2.SuspendLayout();
@@ -70,15 +77,17 @@
             this.pnLogo.SuspendLayout();
             this.guna2CircleProgressBar1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnDoiPass.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.panel1.Controls.Add(this.line);
+            this.panel1.Controls.Add(this.btnThongKe);
             this.panel1.Controls.Add(this.lblDay);
             this.panel1.Controls.Add(this.guna2CircleButton1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.line);
             this.panel1.Controls.Add(this.lblTime);
             this.panel1.Controls.Add(this.guna2Button6);
             this.panel1.Controls.Add(this.btnKhoa);
@@ -90,8 +99,44 @@
             this.guna2Transition1.SetDecoration(this.panel1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.panel1.Location = new System.Drawing.Point(0, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(321, 682);
+            this.panel1.Size = new System.Drawing.Size(80, 682);
             this.panel1.TabIndex = 0;
+            // 
+            // line
+            // 
+            this.guna2Transition1.SetDecoration(this.line, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.line.Image = global::QuanLySinhVien.Properties.Resources.line;
+            this.line.Location = new System.Drawing.Point(-5, 126);
+            this.line.Name = "line";
+            this.line.Size = new System.Drawing.Size(13, 44);
+            this.line.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.line.TabIndex = 2;
+            this.line.TabStop = false;
+            // 
+            // btnThongKe
+            // 
+            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnThongKe.CheckedState.Parent = this.btnThongKe;
+            this.btnThongKe.CustomImages.Parent = this.btnThongKe;
+            this.guna2Transition1.SetDecoration(this.btnThongKe, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnThongKe.FillColor = System.Drawing.Color.Transparent;
+            this.btnThongKe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKe.ForeColor = System.Drawing.Color.White;
+            this.btnThongKe.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
+            this.btnThongKe.HoverState.Parent = this.btnThongKe;
+            this.btnThongKe.Image = global::QuanLySinhVien.Properties.Resources.edit_graph_report_100px;
+            this.btnThongKe.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnThongKe.ImageOffset = new System.Drawing.Point(5, 0);
+            this.btnThongKe.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnThongKe.Location = new System.Drawing.Point(0, 472);
+            this.btnThongKe.Name = "btnThongKe";
+            this.btnThongKe.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnThongKe.ShadowDecoration.Parent = this.btnThongKe;
+            this.btnThongKe.Size = new System.Drawing.Size(321, 55);
+            this.btnThongKe.TabIndex = 8;
+            this.btnThongKe.Text = "Thống kê điểm";
+            this.btnThongKe.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // lblDay
             // 
@@ -133,17 +178,6 @@
             this.label2.Size = new System.Drawing.Size(77, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Dark mode";
-            // 
-            // line
-            // 
-            this.guna2Transition1.SetDecoration(this.line, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.line.Image = global::QuanLySinhVien.Properties.Resources.line;
-            this.line.Location = new System.Drawing.Point(-5, 126);
-            this.line.Name = "line";
-            this.line.Size = new System.Drawing.Size(13, 44);
-            this.line.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.line.TabIndex = 2;
-            this.line.TabStop = false;
             // 
             // lblTime
             // 
@@ -346,22 +380,22 @@
             // guna2Transition1
             // 
             this.guna2Transition1.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation1;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 0;
+            animation5.Padding = new System.Windows.Forms.Padding(0);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation5;
             // 
             // panel2
             // 
@@ -577,12 +611,137 @@
             this.timer3.Interval = 10000;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
+            // pnDoiPass
+            // 
+            this.pnDoiPass.BackColor = System.Drawing.Color.White;
+            this.pnDoiPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnDoiPass.Controls.Add(this.lblErrorLogin);
+            this.pnDoiPass.Controls.Add(this.guna2Button1);
+            this.pnDoiPass.Controls.Add(this.txtRePass);
+            this.pnDoiPass.Controls.Add(this.btnDoiPass);
+            this.pnDoiPass.Controls.Add(this.txtPass);
+            this.guna2Transition1.SetDecoration(this.pnDoiPass, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.pnDoiPass.Location = new System.Drawing.Point(177, 46);
+            this.pnDoiPass.Name = "pnDoiPass";
+            this.pnDoiPass.Size = new System.Drawing.Size(309, 243);
+            this.pnDoiPass.TabIndex = 6;
+            this.pnDoiPass.Visible = false;
+            // 
+            // txtPass
+            // 
+            this.txtPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtPass.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2Transition1.SetDecoration(this.txtPass, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.txtPass.DefaultText = "";
+            this.txtPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPass.DisabledState.Parent = this.txtPass;
+            this.txtPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPass.FocusedState.Parent = this.txtPass;
+            this.txtPass.ForeColor = System.Drawing.Color.White;
+            this.txtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPass.HoverState.Parent = this.txtPass;
+            this.txtPass.Location = new System.Drawing.Point(9, 25);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '\0';
+            this.txtPass.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtPass.PlaceholderText = "Nhập mật khẩu cũ";
+            this.txtPass.SelectedText = "";
+            this.txtPass.ShadowDecoration.Parent = this.txtPass;
+            this.txtPass.Size = new System.Drawing.Size(288, 52);
+            this.txtPass.TabIndex = 124;
+            // 
+            // btnDoiPass
+            // 
+            this.btnDoiPass.CheckedState.Parent = this.btnDoiPass;
+            this.btnDoiPass.CustomImages.Parent = this.btnDoiPass;
+            this.guna2Transition1.SetDecoration(this.btnDoiPass, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btnDoiPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnDoiPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoiPass.ForeColor = System.Drawing.Color.Cyan;
+            this.btnDoiPass.HoverState.Parent = this.btnDoiPass;
+            this.btnDoiPass.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDoiPass.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnDoiPass.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnDoiPass.Location = new System.Drawing.Point(36, 181);
+            this.btnDoiPass.Name = "btnDoiPass";
+            this.btnDoiPass.ShadowDecoration.Parent = this.btnDoiPass;
+            this.btnDoiPass.Size = new System.Drawing.Size(179, 40);
+            this.btnDoiPass.TabIndex = 128;
+            this.btnDoiPass.Text = "Đổi mật khẩu";
+            this.btnDoiPass.Click += new System.EventHandler(this.btnDoiPass_Click);
+            // 
+            // txtRePass
+            // 
+            this.txtRePass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtRePass.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtRePass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2Transition1.SetDecoration(this.txtRePass, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.txtRePass.DefaultText = "";
+            this.txtRePass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtRePass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtRePass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRePass.DisabledState.Parent = this.txtRePass;
+            this.txtRePass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRePass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtRePass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRePass.FocusedState.Parent = this.txtRePass;
+            this.txtRePass.ForeColor = System.Drawing.Color.White;
+            this.txtRePass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRePass.HoverState.Parent = this.txtRePass;
+            this.txtRePass.Location = new System.Drawing.Point(9, 109);
+            this.txtRePass.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtRePass.Name = "txtRePass";
+            this.txtRePass.PasswordChar = '\0';
+            this.txtRePass.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtRePass.PlaceholderText = "Nhập mật khẩu mới";
+            this.txtRePass.SelectedText = "";
+            this.txtRePass.ShadowDecoration.Parent = this.txtRePass;
+            this.txtRePass.Size = new System.Drawing.Size(288, 52);
+            this.txtRePass.TabIndex = 129;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.guna2Transition1.SetDecoration(this.guna2Button1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Image = global::QuanLySinhVien.Properties.Resources.back_52px;
+            this.guna2Button1.Location = new System.Drawing.Point(221, 181);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(42, 41);
+            this.guna2Button1.TabIndex = 163;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
+            // 
+            // lblErrorLogin
+            // 
+            this.lblErrorLogin.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.lblErrorLogin, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.lblErrorLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorLogin.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorLogin.Location = new System.Drawing.Point(6, 80);
+            this.lblErrorLogin.Name = "lblErrorLogin";
+            this.lblErrorLogin.Size = new System.Drawing.Size(114, 17);
+            this.lblErrorLogin.TabIndex = 164;
+            this.lblErrorLogin.Text = "*Sai mật khẩu cũ";
+            this.lblErrorLogin.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(1298, 756);
+            this.Controls.Add(this.pnDoiPass);
             this.Controls.Add(this.pnLogo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -604,6 +763,8 @@
             this.pnLogo.ResumeLayout(false);
             this.guna2CircleProgressBar1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnDoiPass.ResumeLayout(false);
+            this.pnDoiPass.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -643,5 +804,12 @@
         private System.Windows.Forms.LinkLabel lblLogout;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.LinkLabel lblPass;
+        private Guna.UI2.WinForms.Guna2Button btnThongKe;
+        private System.Windows.Forms.Panel pnDoiPass;
+        private Guna.UI2.WinForms.Guna2TextBox txtPass;
+        private Guna.UI2.WinForms.Guna2TextBox txtRePass;
+        private Guna.UI2.WinForms.Guna2Button btnDoiPass;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.Label lblErrorLogin;
     }
 }

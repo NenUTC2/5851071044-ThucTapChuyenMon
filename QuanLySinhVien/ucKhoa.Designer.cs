@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtTenKhoa = new Guna.UI2.WinForms.Guna2TextBox();
@@ -41,19 +42,21 @@
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dtp = new System.Windows.Forms.DateTimePicker();
-            this.lblTenKhoa = new System.Windows.Forms.Label();
-            this.lblSoLop = new System.Windows.Forms.Label();
-            this.lblSoSV = new System.Windows.Forms.Label();
-            this.lblSoGV = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblSoGV = new System.Windows.Forms.Label();
+            this.lblSoSV = new System.Windows.Forms.Label();
+            this.lblSoLop = new System.Windows.Forms.Label();
+            this.lblTenKhoa = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dtp = new System.Windows.Forms.DateTimePicker();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblLoi = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvKhoa)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtTenKhoa
@@ -135,7 +138,7 @@
             this.ngaylap});
             this.dtgvKhoa.EnableHeadersVisualStyles = false;
             this.dtgvKhoa.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dtgvKhoa.Location = new System.Drawing.Point(365, 179);
+            this.dtgvKhoa.Location = new System.Drawing.Point(365, 228);
             this.dtgvKhoa.Name = "dtgvKhoa";
             this.dtgvKhoa.ReadOnly = true;
             this.dtgvKhoa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -147,7 +150,7 @@
             this.dtgvKhoa.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtgvKhoa.RowTemplate.Height = 40;
             this.dtgvKhoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvKhoa.Size = new System.Drawing.Size(836, 471);
+            this.dtgvKhoa.Size = new System.Drawing.Size(836, 422);
             this.dtgvKhoa.TabIndex = 98;
             this.dtgvKhoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvKhoa_CellClick);
             // 
@@ -238,6 +241,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.lblLoi);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -254,10 +258,69 @@
             this.panel3.Controls.Add(this.lblSoSV);
             this.panel3.Controls.Add(this.lblSoLop);
             this.panel3.Controls.Add(this.lblTenKhoa);
-            this.panel3.Location = new System.Drawing.Point(365, 15);
+            this.panel3.Location = new System.Drawing.Point(365, 63);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(836, 142);
             this.panel3.TabIndex = 5;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(836, 25);
+            this.panel4.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(14, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Thông tin";
+            // 
+            // lblSoGV
+            // 
+            this.lblSoGV.AutoSize = true;
+            this.lblSoGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoGV.Location = new System.Drawing.Point(264, 93);
+            this.lblSoGV.Name = "lblSoGV";
+            this.lblSoGV.Size = new System.Drawing.Size(140, 24);
+            this.lblSoGV.TabIndex = 9;
+            this.lblSoGV.Text = "Số giảng viên:  ";
+            // 
+            // lblSoSV
+            // 
+            this.lblSoSV.AutoSize = true;
+            this.lblSoSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoSV.Location = new System.Drawing.Point(552, 93);
+            this.lblSoSV.Name = "lblSoSV";
+            this.lblSoSV.Size = new System.Drawing.Size(118, 24);
+            this.lblSoSV.TabIndex = 8;
+            this.lblSoSV.Text = "Số sinh viên:";
+            // 
+            // lblSoLop
+            // 
+            this.lblSoLop.AutoSize = true;
+            this.lblSoLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoLop.Location = new System.Drawing.Point(31, 93);
+            this.lblSoLop.Name = "lblSoLop";
+            this.lblSoLop.Size = new System.Drawing.Size(74, 24);
+            this.lblSoLop.TabIndex = 7;
+            this.lblSoLop.Text = "Số lớp: ";
+            // 
+            // lblTenKhoa
+            // 
+            this.lblTenKhoa.AutoSize = true;
+            this.lblTenKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenKhoa.Location = new System.Drawing.Point(31, 44);
+            this.lblTenKhoa.Name = "lblTenKhoa";
+            this.lblTenKhoa.Size = new System.Drawing.Size(110, 24);
+            this.lblTenKhoa.TabIndex = 6;
+            this.lblTenKhoa.Text = "Tên khoa: ";
             // 
             // panel2
             // 
@@ -280,64 +343,42 @@
             this.dtp.Size = new System.Drawing.Size(252, 22);
             this.dtp.TabIndex = 3;
             // 
-            // lblTenKhoa
+            // timer1
             // 
-            this.lblTenKhoa.AutoSize = true;
-            this.lblTenKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenKhoa.Location = new System.Drawing.Point(31, 44);
-            this.lblTenKhoa.Name = "lblTenKhoa";
-            this.lblTenKhoa.Size = new System.Drawing.Size(110, 24);
-            this.lblTenKhoa.TabIndex = 6;
-            this.lblTenKhoa.Text = "Tên khoa: ";
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // lblSoLop
+            // lblLoi
             // 
-            this.lblSoLop.AutoSize = true;
-            this.lblSoLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoLop.Location = new System.Drawing.Point(31, 93);
-            this.lblSoLop.Name = "lblSoLop";
-            this.lblSoLop.Size = new System.Drawing.Size(74, 24);
-            this.lblSoLop.TabIndex = 7;
-            this.lblSoLop.Text = "Số lớp: ";
-            // 
-            // lblSoSV
-            // 
-            this.lblSoSV.AutoSize = true;
-            this.lblSoSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoSV.Location = new System.Drawing.Point(552, 93);
-            this.lblSoSV.Name = "lblSoSV";
-            this.lblSoSV.Size = new System.Drawing.Size(118, 24);
-            this.lblSoSV.TabIndex = 8;
-            this.lblSoSV.Text = "Số sinh viên:";
-            // 
-            // lblSoGV
-            // 
-            this.lblSoGV.AutoSize = true;
-            this.lblSoGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSoGV.Location = new System.Drawing.Point(264, 93);
-            this.lblSoGV.Name = "lblSoGV";
-            this.lblSoGV.Size = new System.Drawing.Size(140, 24);
-            this.lblSoGV.TabIndex = 9;
-            this.lblSoGV.Text = "Số giảng viên:  ";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(836, 25);
-            this.panel4.TabIndex = 10;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Thông tin";
+            this.lblLoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.lblLoi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblLoi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblLoi.DefaultText = "Lỗi";
+            this.lblLoi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lblLoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lblLoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblLoi.DisabledState.Parent = this.lblLoi;
+            this.lblLoi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblLoi.FillColor = System.Drawing.Color.OrangeRed;
+            this.lblLoi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblLoi.FocusedState.Parent = this.lblLoi;
+            this.lblLoi.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoi.ForeColor = System.Drawing.Color.White;
+            this.lblLoi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblLoi.HoverState.Parent = this.lblLoi;
+            this.lblLoi.Location = new System.Drawing.Point(578, 15);
+            this.lblLoi.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.lblLoi.Name = "lblLoi";
+            this.lblLoi.PasswordChar = '\0';
+            this.lblLoi.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.lblLoi.PlaceholderText = "";
+            this.lblLoi.ReadOnly = true;
+            this.lblLoi.SelectedText = "";
+            this.lblLoi.ShadowDecoration.Parent = this.lblLoi;
+            this.lblLoi.Size = new System.Drawing.Size(393, 38);
+            this.lblLoi.TabIndex = 145;
+            this.lblLoi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblLoi.Visible = false;
             // 
             // ucKhoa
             // 
@@ -352,9 +393,9 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -380,5 +421,7 @@
         private System.Windows.Forms.Label lblSoGV;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
+        private Guna.UI2.WinForms.Guna2TextBox lblLoi;
     }
 }

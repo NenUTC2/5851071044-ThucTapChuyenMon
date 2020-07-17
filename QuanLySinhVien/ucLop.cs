@@ -70,34 +70,42 @@ namespace QuanLySinhVien
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Insert into Lop values(" +
-                "'" + txtMaLop.Text + "', N'" + txtTenLop.Text + "', '" + dtpNgayLap.Value.ToString("yyyy/MM/dd") + "'," +
-                " '" + cbGV.SelectedValue + "', '" + cbKhoa.SelectedValue + "')");
-            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+            if (txtMaLop.Text != "" && txtTenLop.Text != "")
             {
-                loadCBKHoa("*"); loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+                DataProvider.Instance.ExcuteNonQuery("Insert into Lop values(" +
+                    "'" + txtMaLop.Text + "', N'" + txtTenLop.Text + "', '" + dtpNgayLap.Value.ToString("yyyy/MM/dd") + "'," +
+                    " '" + cbGV.SelectedValue + "', '" + cbKhoa.SelectedValue + "')");
+                if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+                {
+                    loadCBKHoa("*"); loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+                }
+                else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
+                {
+                    loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                    loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+                }
             }
-            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
-            {
-                loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
-                loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
-            }
+            else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin lớp"; timer1.Enabled = true; }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Update Lop set" +
-                " TenLop= N'" + txtTenLop.Text + "'," +
-                " GVCN='" + cbGV.SelectedValue + "', MaKhoa='" + cbKhoa.SelectedValue + "' where MaLop='" + dtgvLop.CurrentRow.Cells["MaLop"].Value.ToString() + "'");
-            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+            if (txtTenLop.Text != "")
             {
-                loadCBKHoa("*"); loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+                DataProvider.Instance.ExcuteNonQuery("Update Lop set" +
+                    " TenLop= N'" + txtTenLop.Text + "'," +
+                    " GVCN='" + cbGV.SelectedValue + "', MaKhoa='" + cbKhoa.SelectedValue + "' where MaLop='" + dtgvLop.CurrentRow.Cells["MaLop"].Value.ToString() + "'");
+                if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+                {
+                    loadCBKHoa("*"); loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+                }
+                else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
+                {
+                    loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                    loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+                }
             }
-            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
-            {
-                loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
-                loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
-            }
+            else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin lớp"; timer1.Enabled = true; }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -151,6 +159,12 @@ namespace QuanLySinhVien
                 loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
                 loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblLoi.Visible = false;
+            timer1.Enabled = false;
         }
     }
 }

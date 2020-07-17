@@ -69,7 +69,7 @@ namespace QuanLySinhVien
         public void loadMon(string msv)
         {
             dtgvMon.DataSource = DataProvider.Instance.ExcuteQuery("SELECT TenMon, TinChi,TenGV, Phong FROM dbo.DiemLopHoc, dbo.LopHoc, dbo.MonHoc, dbo.GiangVien " +
-                "WHERE DiemLopHoc.MaCTMon = LopHoc.MaCTMon AND LopHoc.MaMon = MonHoc.MaMon AND LopHoc.MaGV = GiangVien.MaGV AND MaSV = '" + msv + "'");
+                "WHERE DiemLopHoc.MaCTMon = LopHoc.MaCTMon AND LopHoc.MaMon = MonHoc.MaMon AND LopHoc.MaGV = GiangVien.MaGV and TrangThai=0 AND MaSV = '" + msv + "'");
         }
 
         private void txtMSV_TextChanged(object sender, EventArgs e)

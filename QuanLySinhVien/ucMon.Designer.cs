@@ -28,34 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnMon = new System.Windows.Forms.Panel();
-            this.btnSuaMon = new Guna.UI2.WinForms.Guna2Button();
-            this.nbrTinChi = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.btnXoaMon = new Guna.UI2.WinForms.Guna2Button();
-            this.cbKhoa = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnTaoMon = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.txtMaMonTao = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtTenMon = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pnLopHoc = new System.Windows.Forms.Panel();
-            this.btnSuaLop = new Guna.UI2.WinForms.Guna2Button();
-            this.btnHuyHK = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnXoaLop = new Guna.UI2.WinForms.Guna2Button();
-            this.btnThemHK = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.btnMoLop = new Guna.UI2.WinForms.Guna2Button();
-            this.txtHocKy = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnShowtxt = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.cbHocKy = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbLop = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbGV = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.txtMaMon = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtPhong = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.dtgvMonHoc = new System.Windows.Forms.DataGridView();
             this.MaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,28 +47,220 @@
             this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnMon = new System.Windows.Forms.Panel();
+            this.btnSuaMon = new Guna.UI2.WinForms.Guna2Button();
+            this.nbrTinChi = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.btnXoaMon = new Guna.UI2.WinForms.Guna2Button();
+            this.cbKhoa = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnTaoMon = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.txtMaMonTao = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTenMon = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pnLopHoc = new System.Windows.Forms.Panel();
             this.cbKhoa2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnSuaLop = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHuyHK = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnXoaLop = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThemHK = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.btnMoLop = new Guna.UI2.WinForms.Guna2Button();
+            this.txtHocKy = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnShowtxt = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.cbHocKy = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbLop = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbGV = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtMaMon = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPhong = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblLoi = new Guna.UI2.WinForms.Guna2TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvMonHoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvLopHoc)).BeginInit();
             this.pnMon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nbrTinChi)).BeginInit();
             this.pnLopHoc.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvMonHoc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvLopHoc)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.panel1.Controls.Add(this.lblLoi);
             this.panel1.Controls.Add(this.guna2ImageButton2);
             this.panel1.Controls.Add(this.dtgvMonHoc);
             this.panel1.Controls.Add(this.dtgvLopHoc);
-            this.panel1.Controls.Add(this.pnMon);
             this.panel1.Controls.Add(this.pnLopHoc);
+            this.panel1.Controls.Add(this.pnMon);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1232, 682);
             this.panel1.TabIndex = 0;
+            // 
+            // guna2ImageButton2
+            // 
+            this.guna2ImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.guna2ImageButton2.CheckedState.Parent = this.guna2ImageButton2;
+            this.guna2ImageButton2.HoverState.Parent = this.guna2ImageButton2;
+            this.guna2ImageButton2.Image = global::QuanLySinhVien.Properties.Resources.change_60px;
+            this.guna2ImageButton2.ImageSize = new System.Drawing.Size(25, 25);
+            this.guna2ImageButton2.Location = new System.Drawing.Point(1133, 185);
+            this.guna2ImageButton2.Name = "guna2ImageButton2";
+            this.guna2ImageButton2.PressedState.Parent = this.guna2ImageButton2;
+            this.guna2ImageButton2.Size = new System.Drawing.Size(63, 40);
+            this.guna2ImageButton2.TabIndex = 142;
+            this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
+            // 
+            // dtgvMonHoc
+            // 
+            this.dtgvMonHoc.AllowUserToAddRows = false;
+            this.dtgvMonHoc.AllowUserToDeleteRows = false;
+            this.dtgvMonHoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvMonHoc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgvMonHoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgvMonHoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvMonHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dtgvMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvMonHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaMon,
+            this.TenMon,
+            this.MaKhoa,
+            this.TinChi});
+            this.dtgvMonHoc.EnableHeadersVisualStyles = false;
+            this.dtgvMonHoc.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dtgvMonHoc.Location = new System.Drawing.Point(36, 50);
+            this.dtgvMonHoc.Name = "dtgvMonHoc";
+            this.dtgvMonHoc.ReadOnly = true;
+            this.dtgvMonHoc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgvMonHoc.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dtgvMonHoc.RowTemplate.Height = 35;
+            this.dtgvMonHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvMonHoc.Size = new System.Drawing.Size(1075, 163);
+            this.dtgvMonHoc.TabIndex = 142;
+            this.dtgvMonHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvMonHoc_CellClick);
+            // 
+            // MaMon
+            // 
+            this.MaMon.DataPropertyName = "MaMon";
+            this.MaMon.HeaderText = "Mã Môn";
+            this.MaMon.Name = "MaMon";
+            this.MaMon.ReadOnly = true;
+            // 
+            // TenMon
+            // 
+            this.TenMon.DataPropertyName = "TenMon";
+            this.TenMon.HeaderText = "Tên Môn";
+            this.TenMon.Name = "TenMon";
+            this.TenMon.ReadOnly = true;
+            // 
+            // MaKhoa
+            // 
+            this.MaKhoa.DataPropertyName = "MaKhoa";
+            this.MaKhoa.HeaderText = "Khoa";
+            this.MaKhoa.Name = "MaKhoa";
+            this.MaKhoa.ReadOnly = true;
+            // 
+            // TinChi
+            // 
+            this.TinChi.DataPropertyName = "TinChi";
+            this.TinChi.HeaderText = "Số tín chỉ";
+            this.TinChi.Name = "TinChi";
+            this.TinChi.ReadOnly = true;
+            // 
+            // dtgvLopHoc
+            // 
+            this.dtgvLopHoc.AllowUserToAddRows = false;
+            this.dtgvLopHoc.AllowUserToDeleteRows = false;
+            this.dtgvLopHoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvLopHoc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgvLopHoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgvLopHoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvLopHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dtgvLopHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvLopHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaCTMon,
+            this.MaMonHoc,
+            this.MaGV,
+            this.MaLop,
+            this.Phong,
+            this.TrangThai});
+            this.dtgvLopHoc.EnableHeadersVisualStyles = false;
+            this.dtgvLopHoc.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dtgvLopHoc.Location = new System.Drawing.Point(36, 440);
+            this.dtgvLopHoc.Name = "dtgvLopHoc";
+            this.dtgvLopHoc.ReadOnly = true;
+            this.dtgvLopHoc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgvLopHoc.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dtgvLopHoc.RowTemplate.Height = 40;
+            this.dtgvLopHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvLopHoc.Size = new System.Drawing.Size(1160, 231);
+            this.dtgvLopHoc.TabIndex = 138;
+            this.dtgvLopHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLopHoc_CellClick);
+            // 
+            // MaCTMon
+            // 
+            this.MaCTMon.DataPropertyName = "MaCTMon";
+            this.MaCTMon.HeaderText = "Mã lớp học";
+            this.MaCTMon.Name = "MaCTMon";
+            this.MaCTMon.ReadOnly = true;
+            // 
+            // MaMonHoc
+            // 
+            this.MaMonHoc.DataPropertyName = "MaMon";
+            this.MaMonHoc.HeaderText = "Mã Môn";
+            this.MaMonHoc.Name = "MaMonHoc";
+            this.MaMonHoc.ReadOnly = true;
+            // 
+            // MaGV
+            // 
+            this.MaGV.DataPropertyName = "MaGV";
+            this.MaGV.HeaderText = "Giảng viên";
+            this.MaGV.Name = "MaGV";
+            this.MaGV.ReadOnly = true;
+            // 
+            // MaLop
+            // 
+            this.MaLop.DataPropertyName = "MaLop";
+            this.MaLop.HeaderText = "Mã lớp";
+            this.MaLop.Name = "MaLop";
+            this.MaLop.ReadOnly = true;
+            // 
+            // Phong
+            // 
+            this.Phong.DataPropertyName = "Phong";
+            this.Phong.HeaderText = "Phòng";
+            this.Phong.Name = "Phong";
+            this.Phong.ReadOnly = true;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
             // 
             // pnMon
             // 
@@ -103,7 +273,7 @@
             this.pnMon.Controls.Add(this.guna2ImageButton1);
             this.pnMon.Controls.Add(this.txtMaMonTao);
             this.pnMon.Controls.Add(this.txtTenMon);
-            this.pnMon.Location = new System.Drawing.Point(37, 192);
+            this.pnMon.Location = new System.Drawing.Point(37, 224);
             this.pnMon.Name = "pnMon";
             this.pnMon.Size = new System.Drawing.Size(1159, 210);
             this.pnMon.TabIndex = 142;
@@ -302,10 +472,32 @@
             this.pnLopHoc.Controls.Add(this.cbGV);
             this.pnLopHoc.Controls.Add(this.txtMaMon);
             this.pnLopHoc.Controls.Add(this.txtPhong);
-            this.pnLopHoc.Location = new System.Drawing.Point(37, 192);
+            this.pnLopHoc.Location = new System.Drawing.Point(37, 224);
             this.pnLopHoc.Name = "pnLopHoc";
             this.pnLopHoc.Size = new System.Drawing.Size(1159, 210);
             this.pnLopHoc.TabIndex = 139;
+            // 
+            // cbKhoa2
+            // 
+            this.cbKhoa2.BackColor = System.Drawing.Color.Transparent;
+            this.cbKhoa2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbKhoa2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbKhoa2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhoa2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.cbKhoa2.FocusedColor = System.Drawing.Color.Empty;
+            this.cbKhoa2.FocusedState.Parent = this.cbKhoa2;
+            this.cbKhoa2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbKhoa2.ForeColor = System.Drawing.Color.White;
+            this.cbKhoa2.FormattingEnabled = true;
+            this.cbKhoa2.HoverState.Parent = this.cbKhoa2;
+            this.cbKhoa2.ItemHeight = 20;
+            this.cbKhoa2.ItemsAppearance.Parent = this.cbKhoa2;
+            this.cbKhoa2.Location = new System.Drawing.Point(35, 9);
+            this.cbKhoa2.Name = "cbKhoa2";
+            this.cbKhoa2.ShadowDecoration.Parent = this.cbKhoa2;
+            this.cbKhoa2.Size = new System.Drawing.Size(334, 26);
+            this.cbKhoa2.TabIndex = 147;
+            this.cbKhoa2.SelectedValueChanged += new System.EventHandler(this.cbKhoa2_SelectedValueChanged);
             // 
             // btnSuaLop
             // 
@@ -378,6 +570,19 @@
             this.btnThemHK.TabIndex = 145;
             this.btnThemHK.Visible = false;
             this.btnThemHK.Click += new System.EventHandler(this.btnThemHK_Click);
+            // 
+            // guna2ImageButton3
+            // 
+            this.guna2ImageButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.guna2ImageButton3.CheckedState.Parent = this.guna2ImageButton3;
+            this.guna2ImageButton3.HoverState.Parent = this.guna2ImageButton3;
+            this.guna2ImageButton3.Image = global::QuanLySinhVien.Properties.Resources.reset_48px;
+            this.guna2ImageButton3.Location = new System.Drawing.Point(439, 22);
+            this.guna2ImageButton3.Name = "guna2ImageButton3";
+            this.guna2ImageButton3.PressedState.Parent = this.guna2ImageButton3;
+            this.guna2ImageButton3.Size = new System.Drawing.Size(63, 28);
+            this.guna2ImageButton3.TabIndex = 141;
+            this.guna2ImageButton3.Click += new System.EventHandler(this.guna2ImageButton3_Click);
             // 
             // btnMoLop
             // 
@@ -507,19 +712,6 @@
             this.cbGV.Size = new System.Drawing.Size(334, 26);
             this.cbGV.TabIndex = 114;
             // 
-            // guna2ImageButton3
-            // 
-            this.guna2ImageButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.guna2ImageButton3.CheckedState.Parent = this.guna2ImageButton3;
-            this.guna2ImageButton3.HoverState.Parent = this.guna2ImageButton3;
-            this.guna2ImageButton3.Image = global::QuanLySinhVien.Properties.Resources.reset_48px;
-            this.guna2ImageButton3.Location = new System.Drawing.Point(439, 22);
-            this.guna2ImageButton3.Name = "guna2ImageButton3";
-            this.guna2ImageButton3.PressedState.Parent = this.guna2ImageButton3;
-            this.guna2ImageButton3.Size = new System.Drawing.Size(63, 28);
-            this.guna2ImageButton3.TabIndex = 141;
-            this.guna2ImageButton3.Click += new System.EventHandler(this.guna2ImageButton3_Click);
-            // 
             // txtMaMon
             // 
             this.txtMaMon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
@@ -576,193 +768,42 @@
             this.txtPhong.Size = new System.Drawing.Size(430, 52);
             this.txtPhong.TabIndex = 109;
             // 
-            // guna2ImageButton2
+            // lblLoi
             // 
-            this.guna2ImageButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.guna2ImageButton2.CheckedState.Parent = this.guna2ImageButton2;
-            this.guna2ImageButton2.HoverState.Parent = this.guna2ImageButton2;
-            this.guna2ImageButton2.Image = global::QuanLySinhVien.Properties.Resources.change_60px;
-            this.guna2ImageButton2.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2ImageButton2.Location = new System.Drawing.Point(1133, 153);
-            this.guna2ImageButton2.Name = "guna2ImageButton2";
-            this.guna2ImageButton2.PressedState.Parent = this.guna2ImageButton2;
-            this.guna2ImageButton2.Size = new System.Drawing.Size(63, 40);
-            this.guna2ImageButton2.TabIndex = 142;
-            this.guna2ImageButton2.Click += new System.EventHandler(this.guna2ImageButton2_Click);
+            this.lblLoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.lblLoi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblLoi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblLoi.DefaultText = "Lỗi";
+            this.lblLoi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lblLoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lblLoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblLoi.DisabledState.Parent = this.lblLoi;
+            this.lblLoi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblLoi.FillColor = System.Drawing.Color.OrangeRed;
+            this.lblLoi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblLoi.FocusedState.Parent = this.lblLoi;
+            this.lblLoi.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoi.ForeColor = System.Drawing.Color.White;
+            this.lblLoi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblLoi.HoverState.Parent = this.lblLoi;
+            this.lblLoi.Location = new System.Drawing.Point(431, 7);
+            this.lblLoi.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.lblLoi.Name = "lblLoi";
+            this.lblLoi.PasswordChar = '\0';
+            this.lblLoi.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.lblLoi.PlaceholderText = "";
+            this.lblLoi.ReadOnly = true;
+            this.lblLoi.SelectedText = "";
+            this.lblLoi.ShadowDecoration.Parent = this.lblLoi;
+            this.lblLoi.Size = new System.Drawing.Size(393, 38);
+            this.lblLoi.TabIndex = 148;
+            this.lblLoi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblLoi.Visible = false;
             // 
-            // dtgvMonHoc
+            // timer1
             // 
-            this.dtgvMonHoc.AllowUserToAddRows = false;
-            this.dtgvMonHoc.AllowUserToDeleteRows = false;
-            this.dtgvMonHoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvMonHoc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgvMonHoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtgvMonHoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvMonHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dtgvMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvMonHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaMon,
-            this.TenMon,
-            this.MaKhoa,
-            this.TinChi});
-            this.dtgvMonHoc.EnableHeadersVisualStyles = false;
-            this.dtgvMonHoc.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dtgvMonHoc.Location = new System.Drawing.Point(36, 18);
-            this.dtgvMonHoc.Name = "dtgvMonHoc";
-            this.dtgvMonHoc.ReadOnly = true;
-            this.dtgvMonHoc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgvMonHoc.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dtgvMonHoc.RowTemplate.Height = 35;
-            this.dtgvMonHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvMonHoc.Size = new System.Drawing.Size(1075, 163);
-            this.dtgvMonHoc.TabIndex = 142;
-            this.dtgvMonHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvMonHoc_CellClick);
-            // 
-            // MaMon
-            // 
-            this.MaMon.DataPropertyName = "MaMon";
-            this.MaMon.HeaderText = "Mã Môn";
-            this.MaMon.Name = "MaMon";
-            this.MaMon.ReadOnly = true;
-            // 
-            // TenMon
-            // 
-            this.TenMon.DataPropertyName = "TenMon";
-            this.TenMon.HeaderText = "Tên Môn";
-            this.TenMon.Name = "TenMon";
-            this.TenMon.ReadOnly = true;
-            // 
-            // MaKhoa
-            // 
-            this.MaKhoa.DataPropertyName = "MaKhoa";
-            this.MaKhoa.HeaderText = "Khoa";
-            this.MaKhoa.Name = "MaKhoa";
-            this.MaKhoa.ReadOnly = true;
-            // 
-            // TinChi
-            // 
-            this.TinChi.DataPropertyName = "TinChi";
-            this.TinChi.HeaderText = "Số tín chỉ";
-            this.TinChi.Name = "TinChi";
-            this.TinChi.ReadOnly = true;
-            // 
-            // dtgvLopHoc
-            // 
-            this.dtgvLopHoc.AllowUserToAddRows = false;
-            this.dtgvLopHoc.AllowUserToDeleteRows = false;
-            this.dtgvLopHoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvLopHoc.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgvLopHoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtgvLopHoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvLopHoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dtgvLopHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvLopHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaCTMon,
-            this.MaMonHoc,
-            this.MaGV,
-            this.MaLop,
-            this.Phong,
-            this.TrangThai});
-            this.dtgvLopHoc.EnableHeadersVisualStyles = false;
-            this.dtgvLopHoc.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dtgvLopHoc.Location = new System.Drawing.Point(36, 414);
-            this.dtgvLopHoc.Name = "dtgvLopHoc";
-            this.dtgvLopHoc.ReadOnly = true;
-            this.dtgvLopHoc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgvLopHoc.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dtgvLopHoc.RowTemplate.Height = 40;
-            this.dtgvLopHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvLopHoc.Size = new System.Drawing.Size(1160, 257);
-            this.dtgvLopHoc.TabIndex = 138;
-            this.dtgvLopHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLopHoc_CellClick);
-            // 
-            // MaCTMon
-            // 
-            this.MaCTMon.DataPropertyName = "MaCTMon";
-            this.MaCTMon.HeaderText = "Mã lớp học";
-            this.MaCTMon.Name = "MaCTMon";
-            this.MaCTMon.ReadOnly = true;
-            // 
-            // MaMonHoc
-            // 
-            this.MaMonHoc.DataPropertyName = "MaMon";
-            this.MaMonHoc.HeaderText = "Mã Môn";
-            this.MaMonHoc.Name = "MaMonHoc";
-            this.MaMonHoc.ReadOnly = true;
-            // 
-            // MaGV
-            // 
-            this.MaGV.DataPropertyName = "MaGV";
-            this.MaGV.HeaderText = "Giảng viên";
-            this.MaGV.Name = "MaGV";
-            this.MaGV.ReadOnly = true;
-            // 
-            // MaLop
-            // 
-            this.MaLop.DataPropertyName = "MaLop";
-            this.MaLop.HeaderText = "Mã lớp";
-            this.MaLop.Name = "MaLop";
-            this.MaLop.ReadOnly = true;
-            // 
-            // Phong
-            // 
-            this.Phong.DataPropertyName = "Phong";
-            this.Phong.HeaderText = "Phòng";
-            this.Phong.Name = "Phong";
-            this.Phong.ReadOnly = true;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Trạng thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
-            // 
-            // cbKhoa2
-            // 
-            this.cbKhoa2.BackColor = System.Drawing.Color.Transparent;
-            this.cbKhoa2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbKhoa2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbKhoa2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKhoa2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.cbKhoa2.FocusedColor = System.Drawing.Color.Empty;
-            this.cbKhoa2.FocusedState.Parent = this.cbKhoa2;
-            this.cbKhoa2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbKhoa2.ForeColor = System.Drawing.Color.White;
-            this.cbKhoa2.FormattingEnabled = true;
-            this.cbKhoa2.HoverState.Parent = this.cbKhoa2;
-            this.cbKhoa2.ItemHeight = 20;
-            this.cbKhoa2.ItemsAppearance.Parent = this.cbKhoa2;
-            this.cbKhoa2.Location = new System.Drawing.Point(35, 9);
-            this.cbKhoa2.Name = "cbKhoa2";
-            this.cbKhoa2.ShadowDecoration.Parent = this.cbKhoa2;
-            this.cbKhoa2.Size = new System.Drawing.Size(334, 26);
-            this.cbKhoa2.TabIndex = 147;
-            this.cbKhoa2.SelectedValueChanged += new System.EventHandler(this.cbKhoa2_SelectedValueChanged);
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // ucMon
             // 
@@ -773,11 +814,11 @@
             this.Name = "ucMon";
             this.Size = new System.Drawing.Size(1232, 682);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvMonHoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvLopHoc)).EndInit();
             this.pnMon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nbrTinChi)).EndInit();
             this.pnLopHoc.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvMonHoc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvLopHoc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -822,5 +863,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Phong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private Guna.UI2.WinForms.Guna2ComboBox cbKhoa2;
+        private Guna.UI2.WinForms.Guna2TextBox lblLoi;
+        private System.Windows.Forms.Timer timer1;
     }
 }

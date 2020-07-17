@@ -91,10 +91,14 @@ namespace QuanLySinhVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteQuery("Insert into SinhVien values(" +
-                " '" + cbLop.SelectedValue + "-" + SinhVienDAO.Instance.getMaxGV() + "'," +
-                " N'" + txtTenSV.Text + "', '"+txtSDT.Text+"', '"+txtEmail.Text+"', '"+cbLop.SelectedValue+"', N'"+txtDiaChi.Text+"', 0)");
-            loadSV();
+            if (txtTenSV.Text != "" && txtSDT.Text != "" && txtDiaChi.Text != "" && txtEmail.Text != "")
+            {
+                DataProvider.Instance.ExcuteQuery("Insert into SinhVien values(" +
+                    " '" + cbLop.SelectedValue + "-" + SinhVienDAO.Instance.getMaxGV() + "'," +
+                    " N'" + txtTenSV.Text + "', '" + txtSDT.Text + "', '" + txtEmail.Text + "', '" + cbLop.SelectedValue + "', N'" + txtDiaChi.Text + "', 0)");
+                loadSV();
+            }
+            else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin điểm"; timer1.Enabled = true; }
         }
 
         private void cbKhoa_SelectedValueChanged(object sender, EventArgs e)
@@ -105,10 +109,14 @@ namespace QuanLySinhVien
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteQuery("Update SinhVien set " +
-                " TenSV=N'" + txtTenSV.Text + "', SDT='" + txtSDT.Text + "', Email='" + txtEmail.Text + "', DiaCHi=N'" + txtDiaChi.Text + "' " +
-                "where MaSV='"+ dtgvSV.CurrentRow.Cells["MaSV"].Value.ToString()+"'");
-            loadSV();
+            if (txtTenSV.Text != "" && txtSDT.Text != "" && txtDiaChi.Text != "" && txtEmail.Text != "")
+            {
+                DataProvider.Instance.ExcuteQuery("Update SinhVien set " +
+                    " TenSV=N'" + txtTenSV.Text + "', SDT='" + txtSDT.Text + "', Email='" + txtEmail.Text + "', DiaCHi=N'" + txtDiaChi.Text + "' " +
+                    "where MaSV='" + dtgvSV.CurrentRow.Cells["MaSV"].Value.ToString() + "'");
+                loadSV();
+            }
+            else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin điểm"; timer1.Enabled = true; }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -216,6 +224,45 @@ namespace QuanLySinhVien
             {
                 e.Handled = true;
             }
+        }
+
+        private void guna2ImageButton3_Click(object sender, EventArgs e)
+        {
+            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+            {
+                loadSV();
+                loadCBKhoa();
+                loadCBLop(cbKhoa.SelectedValue.ToString());
+                loadCBMonHoc(cbKhoa.SelectedValue.ToString());
+            }
+
+            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
+            {
+                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa " +
+                    "where makhoa='" + GiangVienDAO.Instance.getKhoabyMGV(mgv) + "'");
+                cbKhoa.DisplayMember = "TenKhoa";
+                cbKhoa.ValueMember = "MaKhoa";
+
+                loadCBLop(cbKhoa.SelectedValue.ToString());
+                loadCBMonHoc(cbKhoa.SelectedValue.ToString());
+            }
+            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("gv"))
+            {
+                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa " +
+                    "where makhoa='" + GiangVienDAO.Instance.getKhoabyMGV(mgv) + "'");
+                cbKhoa.DisplayMember = "TenKhoa";
+                cbKhoa.ValueMember = "MaKhoa";
+                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where GVCN='" + mgv + "'");
+                cbLop.DisplayMember = "TenLop";
+                cbLop.ValueMember = "MaLop";
+                loadCBMonHoc(cbKhoa.SelectedValue.ToString());
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblLoi.Visible = false;
+            timer1.Enabled = false;
         }
     }
 }

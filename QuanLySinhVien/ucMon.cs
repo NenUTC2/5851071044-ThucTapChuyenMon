@@ -138,16 +138,24 @@ namespace QuanLySinhVien
 
         private void btnTaoMon_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Insert into MonHoc values(" +
-                " '" + txtMaMonTao.Text + "', N'" + txtTenMon.Text + "', '" + cbKhoa.SelectedValue + "', " + nbrTinChi.Value + ")");
-            loadMon("*");
+            if (txtMaMonTao.Text != "" && txtTenMon.Text != "" && nbrTinChi.Value>0)
+            {
+                DataProvider.Instance.ExcuteNonQuery("Insert into MonHoc values(" +
+                    " '" + txtMaMonTao.Text + "', N'" + txtTenMon.Text + "', '" + cbKhoa.SelectedValue + "', " + nbrTinChi.Value + ")");
+                loadMon("*");
+            }
+            else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin môn"; timer1.Enabled = true; }
         }
 
         private void btnSuaMon_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Update MonHoc set " +
-                "TenMon = N'" + txtTenMon.Text + "', MaKhoa = '" + cbKhoa.SelectedValue + "', TinChi = " + nbrTinChi.Value + " where MaMon = '" + txtMaMonTao.Text + "'");
-            loadMon("*");
+            if (txtTenMon.Text != "" && txtMaMonTao.Text != "" && nbrTinChi.Value > 0)
+            {
+                DataProvider.Instance.ExcuteNonQuery("Update MonHoc set " +
+                    "TenMon = N'" + txtTenMon.Text + "', MaKhoa = '" + cbKhoa.SelectedValue + "', TinChi = " + nbrTinChi.Value + " where MaMon = '" + txtMaMonTao.Text + "'");
+                loadMon("*");
+            }
+            else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin môn"; timer1.Enabled = true; }
         }
 
         private void btnXoaMon_Click(object sender, EventArgs e)
@@ -176,11 +184,15 @@ namespace QuanLySinhVien
 
         private void btnMoLop_Click(object sender, EventArgs e)
         {
-            int count = Convert.ToInt32(DataProvider.Instance.ExcuteQuery("Select Count(*) from LopHoc where MaCTMon like '%" + txtMaMon.Text + "%' ").Rows[0][0].ToString());
-            count += 1;
-            DataProvider.Instance.ExcuteNonQuery("insert into LopHoc values('" + txtMaMon.Text +"-"+ count + "', " +
-                "'" + txtMaMon.Text + "', '" + cbGV.SelectedValue + "', '" + cbLop.SelectedValue + "', '" + txtPhong.Text + "', '"+cbHocKy.SelectedValue+"', 0)");
-            loadLopHoc("*");
+            if (txtMaMon.Text != "" && txtPhong.Text != "")
+            {
+                int count = Convert.ToInt32(DataProvider.Instance.ExcuteQuery("Select Count(*) from LopHoc where MaCTMon like '%" + txtMaMon.Text + "%' ").Rows[0][0].ToString());
+                count += 1;
+                DataProvider.Instance.ExcuteNonQuery("insert into LopHoc values('" + txtMaMon.Text + "-" + count + "', " +
+                    "'" + txtMaMon.Text + "', '" + cbGV.SelectedValue + "', '" + cbLop.SelectedValue + "', '" + txtPhong.Text + "', '" + cbHocKy.SelectedValue + "', 0)");
+                loadLopHoc("*");
+            }
+            else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin lớp học phần"; timer1.Enabled = true; }
         }
 
         private void btnShowtxt_Click(object sender, EventArgs e)
@@ -214,10 +226,14 @@ namespace QuanLySinhVien
 
         private void btnSuaLop_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Update LopHoc set" +
-                " MaGV= '" + cbGV.SelectedValue + "', Phong= '" + txtPhong.Text + "' " +
-                "where MaCTMon='" + dtgvLopHoc.CurrentRow.Cells["MaCTMon"].Value.ToString() + "'");
-            loadLopHoc("*");
+            if (txtPhong.Text != "")
+            {
+                DataProvider.Instance.ExcuteNonQuery("Update LopHoc set" +
+                    " MaGV= '" + cbGV.SelectedValue + "', Phong= '" + txtPhong.Text + "' " +
+                    "where MaCTMon='" + dtgvLopHoc.CurrentRow.Cells["MaCTMon"].Value.ToString() + "'");
+                loadLopHoc("*");
+            }
+            else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin phòng học"; timer1.Enabled = true; }
         }
 
         private void dtgvLopHoc_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -263,6 +279,12 @@ namespace QuanLySinhVien
         {
             loadMon(cbKhoa2.SelectedValue.ToString());
             loadCBLop(cbKhoa2.SelectedValue.ToString());
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblLoi.Visible = false;
+            timer1.Enabled = false;
         }
     }
 }

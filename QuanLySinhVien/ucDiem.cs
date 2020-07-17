@@ -23,6 +23,8 @@ namespace QuanLySinhVien
         public Label lbl3 { get { return lblDiemTL; } }
         public Panel pn4 { get { return panel4; } }
         public DataGridView dtgv { get { return dtgvDiem; } }
+        public CheckBox chk1 { get { return chkKT; } }
+        public CheckBox chk2 { get { return chkGuiEmail; } }
         public string mgv;
         public ucDiem(string gv)
         {
@@ -34,21 +36,22 @@ namespace QuanLySinhVien
             if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
             {
                 loadCBKhoa("*");
-                //try
-                //{
-                //    loadCBGV(cbKhoa.SelectedValue.ToString());
-                //    loadCBLop(cbGV.SelectedValue.ToString());
-                //}
-                //catch { }
             }
             else
             {
-                loadCBLop(mgv);
+                loadLop(mgv);
                 loadCBGV(mgv);
                 loadCBKhoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
             }
         }
-
+        public void loadLop(string a)
+        {
+            if (chkKT.Checked == true)
+            {
+                loadCBLopKT(a);
+            }
+            else loadCBLop(a);
+        }
         public void loadDiem(string mon)
         {
             dtgvDiem.DataSource = DataProvider.Instance.ExcuteQuery("Select * from DiemLopHoc");
@@ -61,9 +64,19 @@ namespace QuanLySinhVien
         public void loadCBLop(string gv)
         {
             if (gv.Equals("*"))
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHoc");
+                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHoc where TrangThai=0");
             else
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHoc where MaGV='" + gv + "'");
+                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHoc where TrangThai=0 and MaGV='" + gv + "'");
+            cbLop.DisplayMember = "MaCTMon";
+            cbLop.ValueMember = "MaCTMon";
+        }
+
+        public void loadCBLopKT(string gv)
+        {
+            if (gv.Equals("*"))
+                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHoc TrangThai=1");
+            else
+                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHoc where TrangThai=1 and MaGV='" + gv + "'");
             cbLop.DisplayMember = "MaCTMon";
             cbLop.ValueMember = "MaCTMon";
         }
@@ -90,7 +103,6 @@ namespace QuanLySinhVien
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            loadCBLop("*");
             loadDiem(cbLop.SelectedValue.ToString());
             txtChuyenCan.ResetText();
             txtGiuaKy.ResetText();
@@ -100,12 +112,12 @@ namespace QuanLySinhVien
 
             if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
             {
-                loadCBLop("*");
+                loadLop("*");
                 loadDiem(cbLop.SelectedValue.ToString());
             }
             else
             {
-                loadCBLop(mgv);
+                loadLop(mgv);
                 loadDiem(cbLop.SelectedValue.ToString());
             }
         }
@@ -263,7 +275,7 @@ namespace QuanLySinhVien
         {
             try
             {
-                loadCBLop(cbGV.SelectedValue.ToString());
+                loadLop(cbGV.SelectedValue.ToString());
             }
             catch { }
         }
@@ -328,6 +340,33 @@ namespace QuanLySinhVien
         {
             lblLoi.Visible = false;
             timer1.Enabled = false;
+        }
+
+        private void btnKTHP_Click(object sender, EventArgs e)
+        {
+            DataProvider.Instance.ExcuteNonQuery("update LopHoc set TrangThai=1 where MaCTMon='" + cbLop.SelectedValue.ToString() + "'");
+            loadDiem(cbLop.SelectedValue.ToString());
+            txtChuyenCan.ResetText();
+            txtGiuaKy.ResetText();
+            txtTP.ResetText();
+            txtThi.ResetText();
+            txtKT.ResetText();
+
+            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+            {
+                loadLop("*");
+                loadDiem(cbLop.SelectedValue.ToString());
+            }
+            else
+            {
+                loadLop(mgv);
+                loadDiem(cbLop.SelectedValue.ToString());
+            }
+        }
+
+        private void chkKT_Click(object sender, EventArgs e)
+        {
+            loadLop(cbGV.SelectedValue.ToString());
         }
     }
 }

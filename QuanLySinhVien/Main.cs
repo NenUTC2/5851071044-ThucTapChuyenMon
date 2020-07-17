@@ -80,6 +80,11 @@ namespace QuanLySinhVien
                 ucd.lbl1.ForeColor = Color.White;
                 ucd.lbl2.ForeColor = Color.White;
                 ucd.lbl3.ForeColor = Color.White;
+                ucd.chk1.ForeColor = Color.White;
+                ucd.chk2.ForeColor = Color.White;
+
+                uctk.pn.BackColor = Color.FromArgb(21, 24, 31);
+                pnDoiPass.BackColor = Color.White;
             }
             else
             {
@@ -127,6 +132,11 @@ namespace QuanLySinhVien
                 ucd.lbl1.ForeColor = Color.Black;
                 ucd.lbl2.ForeColor = Color.Black;
                 ucd.lbl3.ForeColor = Color.Black;
+                ucd.chk1.ForeColor = Color.Black;
+                ucd.chk2.ForeColor = Color.Black;
+
+                uctk.pn.BackColor = Color.FromArgb(230,230,230);
+                pnDoiPass.BackColor = Color.FromArgb(31, 34, 41);
             }
 
             showControl(ucd);
@@ -335,6 +345,12 @@ namespace QuanLySinhVien
                 ucd.lbl1.ForeColor = Color.White;
                 ucd.lbl2.ForeColor = Color.White;
                 ucd.lbl3.ForeColor = Color.White;
+                ucd.chk1.ForeColor = Color.White;
+                ucd.chk2.ForeColor = Color.White;
+
+                uctk.pn.BackColor = Color.FromArgb(21, 24, 31);
+
+                pnDoiPass.BackColor = Color.White;
 
                 DataProvider.Instance.ExcuteNonQuery("Update Account set theme = 'black' where TenDN='" + mgv + "'");
             }
@@ -384,6 +400,12 @@ namespace QuanLySinhVien
                 ucd.lbl1.ForeColor = Color.Black;
                 ucd.lbl2.ForeColor = Color.Black;
                 ucd.lbl3.ForeColor = Color.Black;
+                ucd.chk1.ForeColor = Color.Black;
+                ucd.chk2.ForeColor = Color.Black;
+
+                uctk.pn.BackColor = Color.FromArgb(230, 230, 230);
+
+                pnDoiPass.BackColor = Color.FromArgb(31, 34, 41);
 
                 DataProvider.Instance.ExcuteNonQuery("Update Account set theme = 'white' where TenDN='" + mgv + "'");
             }
@@ -391,7 +413,9 @@ namespace QuanLySinhVien
 
         private void lblPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            if (pnDoiPass.Visible == true)
+                pnDoiPass.Visible = false;
+            else pnDoiPass.Visible = true;
         }
 
         private void lblLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -410,6 +434,31 @@ namespace QuanLySinhVien
             ucm.dtgvMon.DataSource = DataProvider.Instance.ExcuteQuery("select * from MonHoc where concat(MaMon,MaKhoa,TenMon,TinChi) like '%" + txtTimKiem.Text + "%'");
             ucm.dtgvHP.DataSource = DataProvider.Instance.ExcuteQuery("select * from LopHoc where concat(MaMon,MaGV,MaLop,Phong,HocKy,MaCTMon) like '%" + txtTimKiem.Text + "%'");
             uck.dtgv.DataSource = DataProvider.Instance.ExcuteQuery("select * from Khoa where concat(MaKhoa,TenKhoa) like '%" + txtTimKiem.Text + "%'");
+        }
+        public ucThongKe uctk = new ucThongKe();
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            line.Top = btnThongKe.Top + 4;
+            showControl(uctk);
+            panel1.Width = 60;
+            lblUC.Text = "Thống kê điểm";
+            txtTimKiem.ResetText();
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            pnDoiPass.Visible = false;
+        }
+
+        private void btnDoiPass_Click(object sender, EventArgs e)
+        {
+            if(AccountDAO.Instance.checkLogin(mgv, txtPass.Text) == 1)
+            {
+                DataProvider.Instance.ExcuteNonQuery("Update account set MatKhau='" + txtRePass.Text + "' where TenDN='" + mgv + "'");
+                lblErrorLogin.Visible = false;
+                pnDoiPass.Visible = false;
+            }
+            else { lblErrorLogin.Visible = true; }
         }
     }
 }

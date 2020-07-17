@@ -183,6 +183,16 @@ namespace QuanLySinhVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_graph_report_100px {
+            get {
+                object obj = ResourceManager.GetObject("edit_graph_report_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap elective_100px {
             get {
                 object obj = ResourceManager.GetObject("elective_100px", resourceCulture);

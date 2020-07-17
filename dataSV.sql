@@ -99,6 +99,7 @@ INSERT INTO dbo.SinhVien
     MaSV,
     TenSV,
     SDT,
+	Email,
     MaLop,
     DiaChi,
 	TichLuy
@@ -107,6 +108,7 @@ VALUES
 (   '20201',  -- MaSV - varchar(50)
     N'Phan Thanh Nen', -- TenSV - nvarchar(50)
     '0708853712',  -- SDT - varchar(20)
+	'5851071044@st.utc2.edu.vn',
     N'CNTT-K58', -- MaLop - nvarchar(50)
     N'999 Le Van Viet',  -- DiaChi - nvarchar(max)
 	0
@@ -168,6 +170,7 @@ CREATE TABLE LopHoc(
 	HocKy VARCHAR(20),
 	TrangThai INT
 )
+SELECT * FROM dbo.LopHoc
 ---------------------------------------------DIEM LOPHOC--------------------------------------------------
 --DROP TABLE dbo.DiemLopHoc
 CREATE TABLE DiemLopHoc(
@@ -211,3 +214,7 @@ VALUES
     )
 GO 
 ---------------------------------------------END TABLE--------------------------------------------------
+
+Select TenSV, Email, DiemTP, DiemKT, TenMon from DiemLopHoc, SinhVien, dbo.MonHoc,dbo.LopHoc WHERE DiemLopHoc.MaCTMon=LopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon and DiemLopHoc.MaSV=SinhVien.MaSV and DiemLopHoc.MaCTMon='CNTT-API-1'
+Select TenMon FROM dbo.MonHoc,dbo.LopHoc WHERE LopHoc.MaMon=MonHoc.MaMon AND LopHoc.MaCTMon='CNTT-API-1'
+Select MaHK, DiemTichLuy from CTHocKy where MaSV='20201'

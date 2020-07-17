@@ -73,36 +73,39 @@ namespace QuanLySinhVien
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Insert into Khoa values" +
-                "('" + txtMaKhoa.Text + "', N'" + txtTenKhoa.Text + "', '" + dtp.Value.ToString("yyyy/MM/dd") + "')");
-            
-            //lblError.Text = "Thêm thành công khoa " + txtTenKhoa.Text;
-            //thongbao();
-            loadKhoa();
+
+            if (txtMaKhoa.Text != "" && txtTenKhoa.Text != "")
+            {
+                DataProvider.Instance.ExcuteNonQuery("Insert into Khoa values" +
+                    "('" + txtMaKhoa.Text + "', N'" + txtTenKhoa.Text + "', '" + dtp.Value.ToString("yyyy/MM/dd") + "')");
+
+                loadKhoa();
+            }
+            else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin khoa"; timer1.Enabled = true; }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Update Khoa " +
-                "set TenKhoa=N'"+txtTenKhoa.Text+"' where MaKhoa='"+ dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString() + "'");
-            //lblError.Text = "Sửa thành công khoa " + txtTenKhoa.Text;
-            //thongbao();
-            loadKhoa();
+            if (txtTenKhoa.Text != "")
+            {
+                DataProvider.Instance.ExcuteNonQuery("Update Khoa " +
+                    "set TenKhoa=N'" + txtTenKhoa.Text + "' where MaKhoa='" + dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString() + "'");
+                loadKhoa();
+            }
+            else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin khoa"; timer1.Enabled = true; }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             DataProvider.Instance.ExcuteNonQuery("Delete from Khoa " +
                 "where MaKhoa='"+ dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString() + "'");
-            //lblError.Text = "Xoá thành công khoa " + txtTenKhoa.Text;
-            //thongbao();
             loadKhoa();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer1_Tick_1(object sender, EventArgs e)
         {
-        //    timer1.Enabled = false;
-        //    guna2Transition1.HideSync(lblError);
+            lblLoi.Visible = false;
+            timer1.Enabled = false;
         }
     }
 }
