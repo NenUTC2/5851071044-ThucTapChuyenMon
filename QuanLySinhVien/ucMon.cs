@@ -17,6 +17,8 @@ namespace QuanLySinhVien
         public Panel pn2 { get { return pnLopHoc; } }
         public Panel pn3 { get { return pnMon; } }
         public DataGridView dtgv1 { get { return dtgvMonHoc; } }
+        public DataGridView dtgvMon { get { return dtgvMonHoc; } }
+        public DataGridView dtgvHP { get { return dtgvLopHoc; } }
 
         public string mgv;
         public ucMon(string gv)

@@ -81,6 +81,10 @@ namespace QuanLySinhVien
                 lblTen.Text = SinhVienDAO.Instance.getTenformMa(msv);
                 lblLop.Text = SinhVienDAO.Instance.getLopformMa(msv);
                 lblTL.Text = SinhVienDAO.Instance.getdiemTL(msv);
+                chrDiemHK.DataSource = DataProvider.Instance.ExcuteQuery("Select MaHK, DiemTichLuy from CTHocKy where MaSV='" + txtMSV.Text + "'");
+                chrDiemHK.Series[0].XValueMember = "MaHK";
+                chrDiemHK.Series[0].YValueMembers = "DiemTichLuy";
+                chrDiemHK.DataBind();
                 try
                 {
                     loadDiem(msv);

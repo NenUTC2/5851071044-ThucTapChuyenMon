@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLySinhVien.DAO;
+using System.Net.Mail;
+using System.Net;
 
 namespace QuanLySinhVien
 {
@@ -17,25 +19,27 @@ namespace QuanLySinhVien
         public Panel pn2 { get { return panel2; } }
         public Panel pn3 { get { return panel3; } }
         public Label lbl1 { get { return lblTenSV; } }
-        public Label lbl2 { get { return lblLop ; } }
+        public Label lbl2 { get { return lblLop; } }
         public Label lbl3 { get { return lblDiemTL; } }
+        public Panel pn4 { get { return panel4; } }
+        public DataGridView dtgv { get { return dtgvDiem; } }
         public string mgv;
         public ucDiem(string gv)
         {
             mgv = gv;
 
             InitializeComponent();
-            
+
 
             if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
             {
                 loadCBKhoa("*");
-                try
-                {
-                    loadCBGV(cbKhoa.SelectedValue.ToString());
-                    loadCBLop(cbGV.SelectedValue.ToString());
-                }
-                catch { }
+                //try
+                //{
+                //    loadCBGV(cbKhoa.SelectedValue.ToString());
+                //    loadCBLop(cbGV.SelectedValue.ToString());
+                //}
+                //catch { }
             }
             else
             {
@@ -51,7 +55,7 @@ namespace QuanLySinhVien
             if (mon.Equals("*"))
                 dtgvDiem.DataSource = DataProvider.Instance.ExcuteQuery("Select * from DiemLopHoc");
             else
-                dtgvDiem.DataSource = DataProvider.Instance.ExcuteQuery("Select * from DiemLopHoc where MaCTMon='"+mon+"'");
+                dtgvDiem.DataSource = DataProvider.Instance.ExcuteQuery("Select * from DiemLopHoc where MaCTMon='" + mon + "'");
         }
 
         public void loadCBLop(string gv)
@@ -59,7 +63,7 @@ namespace QuanLySinhVien
             if (gv.Equals("*"))
                 cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHoc");
             else
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHoc where MaGV='"+gv+"'");
+                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHoc where MaGV='" + gv + "'");
             cbLop.DisplayMember = "MaCTMon";
             cbLop.ValueMember = "MaCTMon";
         }
@@ -108,7 +112,7 @@ namespace QuanLySinhVien
 
         private void cbLop_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dtgvDiem_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -172,10 +176,15 @@ namespace QuanLySinhVien
 
         private void btnLuuDIem_Click(object sender, EventArgs e)
         {
-            DiemDAO.Instance.suaDiem(Convert.ToDecimal(txtChuyenCan.Text), Convert.ToDecimal(txtGiuaKy.Text), Convert.ToDecimal(txtTP.Text),
-                Convert.ToDecimal(txtThi.Text), Convert.ToDecimal(txtKT.Text), 
-                dtgvDiem.CurrentRow.Cells["MaCTMon"].Value.ToString(), dtgvDiem.CurrentRow.Cells["MaSV"].Value.ToString());
-            loadDiem("*");
+            if (txtChuyenCan.Text != "" && txtGiuaKy.Text != "" && txtTP.Text != "" && txtThi.Text != "")
+            {
+                DiemDAO.Instance.suaDiem(Convert.ToDecimal(txtChuyenCan.Text), Convert.ToDecimal(txtGiuaKy.Text), Convert.ToDecimal(txtTP.Text),
+                    Convert.ToDecimal(txtThi.Text), Convert.ToDecimal(txtKT.Text),
+                    dtgvDiem.CurrentRow.Cells["MaCTMon"].Value.ToString(), dtgvDiem.CurrentRow.Cells["MaSV"].Value.ToString());
+                loadDiem(cbLop.SelectedValue.ToString());
+                
+            }
+            else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin điểm"; timer1.Enabled = true; }
         }
 
         private void txtPTCC_TextChanged(object sender, EventArgs e)
@@ -257,6 +266,68 @@ namespace QuanLySinhVien
                 loadCBLop(cbGV.SelectedValue.ToString());
             }
             catch { }
+        }
+
+        public void sendMail(string address, string hoten, string tp, string kt, string mon)
+        {
+            try
+            {
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                smtp.EnableSsl = true;
+                string to, from, pass, content;
+                to = address;
+                from = "thanhnen1360@gmail.com";
+                pass = "01208853712sz";
+                content = "UTC2 Xin Chào!\n" +
+                    "Thông báo điểm của sinh viên " + hoten + "\n Môn học: " + mon + "\n" +
+                    "Điểm thành phần: " + tp + ", Điểm kết thúc môn: " + kt + "\n" +
+                    "Chúc em học tốt và đạt kết quả cao.";
+                MailMessage message = new MailMessage();
+                message.To.Add(to);
+                message.From = new MailAddress(from);
+                message.Body = content;
+                message.Subject = "UTC2 thông báo điểm";
+                smtp.Port = 587;
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential(from, pass);
+                smtp.EnableSsl = true;
+                smtp.Send(message);
+            }
+            catch { MessageBox.Show("Vui lòng kiểm tra kết nối mạng và thử lại"); }
+        }
+
+        private void btnGuiDiem_Click(object sender, EventArgs e)
+        {
+            if (chkGuiEmail.Checked == true)
+            {
+                DataTable dt = DataProvider.Instance.ExcuteQuery("Select TenSV, Email, DiemTP, DiemKT, TenMon " +
+                    "from DiemLopHoc, SinhVien, dbo.MonHoc,dbo.LopHoc " +
+                    "WHERE DiemLopHoc.MaCTMon=LopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon and DiemLopHoc.MaSV=SinhVien.MaSV " +
+                    "and DiemLopHoc.MaCTMon='" + cbLop.SelectedValue.ToString() + "'");
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    sendMail(dt.Rows[i][1].ToString(), dt.Rows[i][0].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][3].ToString(), dt.Rows[i][4].ToString());
+                }
+                MessageBox.Show("Đã gửi điểm đến tất cả sinh viên trong lớp học phần "+ cbLop.SelectedValue.ToString());
+            }
+            else
+            {
+                string email = DataProvider.Instance.ExcuteQuery("select Email from sinhvien where masv='" + dtgvDiem.CurrentRow.Cells["MaSV"].Value.ToString() + "'").Rows[0][0].ToString();
+                string hoten = DataProvider.Instance.ExcuteQuery("select TenSV from sinhvien where masv='" + dtgvDiem.CurrentRow.Cells["MaSV"].Value.ToString() + "'").Rows[0][0].ToString();
+                string tp = dtgvDiem.CurrentRow.Cells["DiemTP"].Value.ToString();
+                string kt = dtgvDiem.CurrentRow.Cells["DiemKT"].Value.ToString();
+                string mon = DataProvider.Instance.ExcuteQuery("Select TenMon FROM dbo.MonHoc,dbo.LopHoc " +
+                    "WHERE LopHoc.MaMon=MonHoc.MaMon AND LopHoc.MaCTMon='" + dtgvDiem.CurrentRow.Cells["MaCTMon"].Value.ToString() + "'").Rows[0][0].ToString();
+                sendMail(email, hoten, tp, kt, mon);
+                MessageBox.Show("Đã gửi điểm đến mail sinh viên " + hoten);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblLoi.Visible = false;
+            timer1.Enabled = false;
         }
     }
 }

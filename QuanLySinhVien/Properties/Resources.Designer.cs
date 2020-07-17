@@ -253,6 +253,16 @@ namespace QuanLySinhVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap save_48px {
+            get {
+                object obj = ResourceManager.GetObject("save_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap school_48px {
             get {
                 object obj = ResourceManager.GetObject("school_48px", resourceCulture);
@@ -286,6 +296,16 @@ namespace QuanLySinhVien.Properties {
         internal static System.Drawing.Bitmap searchw_48px {
             get {
                 object obj = ResourceManager.GetObject("searchw_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap send_48px {
+            get {
+                object obj = ResourceManager.GetObject("send_48px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -48,10 +48,14 @@
             this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblSoSV = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLop)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -157,6 +161,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.lblSoSV);
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.cbKhoa);
             this.panel2.Controls.Add(this.cbGV);
             this.panel2.Controls.Add(this.dtpNgayLap);
@@ -182,7 +188,7 @@
             this.cbKhoa.HoverState.Parent = this.cbKhoa;
             this.cbKhoa.ItemHeight = 35;
             this.cbKhoa.ItemsAppearance.Parent = this.cbKhoa;
-            this.cbKhoa.Location = new System.Drawing.Point(19, 56);
+            this.cbKhoa.Location = new System.Drawing.Point(33, 44);
             this.cbKhoa.Name = "cbKhoa";
             this.cbKhoa.ShadowDecoration.Parent = this.cbKhoa;
             this.cbKhoa.Size = new System.Drawing.Size(334, 41);
@@ -204,7 +210,7 @@
             this.cbGV.HoverState.Parent = this.cbGV;
             this.cbGV.ItemHeight = 35;
             this.cbGV.ItemsAppearance.Parent = this.cbGV;
-            this.cbGV.Location = new System.Drawing.Point(19, 119);
+            this.cbGV.Location = new System.Drawing.Point(33, 107);
             this.cbGV.Name = "cbGV";
             this.cbGV.ShadowDecoration.Parent = this.cbGV;
             this.cbGV.Size = new System.Drawing.Size(334, 41);
@@ -217,7 +223,7 @@
             this.dtpNgayLap.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
             this.dtpNgayLap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayLap.Location = new System.Drawing.Point(689, 56);
+            this.dtpNgayLap.Location = new System.Drawing.Point(703, 44);
             this.dtpNgayLap.Name = "dtpNgayLap";
             this.dtpNgayLap.Size = new System.Drawing.Size(133, 27);
             this.dtpNgayLap.TabIndex = 112;
@@ -239,7 +245,7 @@
             this.txtMaLop.ForeColor = System.Drawing.Color.White;
             this.txtMaLop.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaLop.HoverState.Parent = this.txtMaLop;
-            this.txtMaLop.Location = new System.Drawing.Point(392, 55);
+            this.txtMaLop.Location = new System.Drawing.Point(406, 43);
             this.txtMaLop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMaLop.Name = "txtMaLop";
             this.txtMaLop.PasswordChar = '\0';
@@ -267,7 +273,7 @@
             this.txtTenLop.ForeColor = System.Drawing.Color.White;
             this.txtTenLop.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenLop.HoverState.Parent = this.txtTenLop;
-            this.txtTenLop.Location = new System.Drawing.Point(392, 118);
+            this.txtTenLop.Location = new System.Drawing.Point(406, 106);
             this.txtTenLop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTenLop.Name = "txtTenLop";
             this.txtTenLop.PasswordChar = '\0';
@@ -303,7 +309,7 @@
             this.MaKhoa});
             this.dtgvLop.EnableHeadersVisualStyles = false;
             this.dtgvLop.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dtgvLop.Location = new System.Drawing.Point(41, 306);
+            this.dtgvLop.Location = new System.Drawing.Point(41, 288);
             this.dtgvLop.Name = "dtgvLop";
             this.dtgvLop.ReadOnly = true;
             this.dtgvLop.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -315,7 +321,7 @@
             this.dtgvLop.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvLop.RowTemplate.Height = 40;
             this.dtgvLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvLop.Size = new System.Drawing.Size(1160, 348);
+            this.dtgvLop.Size = new System.Drawing.Size(1160, 366);
             this.dtgvLop.TabIndex = 113;
             this.dtgvLop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLop_CellClick);
             // 
@@ -354,6 +360,35 @@
             this.MaKhoa.Name = "MaKhoa";
             this.MaKhoa.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(14, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Thông tin";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Location = new System.Drawing.Point(0, 1);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(876, 25);
+            this.panel4.TabIndex = 138;
+            // 
+            // lblSoSV
+            // 
+            this.lblSoSV.AutoSize = true;
+            this.lblSoSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSoSV.Location = new System.Drawing.Point(29, 173);
+            this.lblSoSV.Name = "lblSoSV";
+            this.lblSoSV.Size = new System.Drawing.Size(143, 24);
+            this.lblSoSV.TabIndex = 139;
+            this.lblSoSV.Text = "Số sinh viên:  ";
+            // 
             // ucLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -366,7 +401,10 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLop)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -391,5 +429,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKhoa;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
+        private System.Windows.Forms.Label lblSoSV;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label1;
     }
 }

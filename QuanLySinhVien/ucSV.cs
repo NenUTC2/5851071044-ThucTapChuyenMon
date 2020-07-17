@@ -18,7 +18,7 @@ namespace QuanLySinhVien
         public Panel pn { get { return panel1; } }
         public Panel pn2 { get { return panel2; } }
         public Panel pn3 { get { return panel3; } }
-        public Label lbl1 { get { return lblDKM; } }
+        public DataGridView dtgv { get { return dtgvSV; } }
 
         public DataSet dsSV;
         public string mgv;
@@ -93,7 +93,7 @@ namespace QuanLySinhVien
         {
             DataProvider.Instance.ExcuteQuery("Insert into SinhVien values(" +
                 " '" + cbLop.SelectedValue + "-" + SinhVienDAO.Instance.getMaxGV() + "'," +
-                " N'" + txtTenSV.Text + "', '"+txtSDT.Text+"', '"+cbLop.SelectedValue+"', N'"+txtDiaChi.Text+"', 0)");
+                " N'" + txtTenSV.Text + "', '"+txtSDT.Text+"', '"+txtEmail.Text+"', '"+cbLop.SelectedValue+"', N'"+txtDiaChi.Text+"', 0)");
             loadSV();
         }
 
@@ -106,7 +106,7 @@ namespace QuanLySinhVien
         private void btnSua_Click(object sender, EventArgs e)
         {
             DataProvider.Instance.ExcuteQuery("Update SinhVien set " +
-                " TenSV=N'" + txtTenSV.Text + "', SDT='" + txtSDT.Text + "', DiaCHi=N'" + txtDiaChi.Text + "' " +
+                " TenSV=N'" + txtTenSV.Text + "', SDT='" + txtSDT.Text + "', Email='" + txtEmail.Text + "', DiaCHi=N'" + txtDiaChi.Text + "' " +
                 "where MaSV='"+ dtgvSV.CurrentRow.Cells["MaSV"].Value.ToString()+"'");
             loadSV();
         }
@@ -121,6 +121,7 @@ namespace QuanLySinhVien
         {
             txtTenSV.Text = dtgvSV.CurrentRow.Cells["TenSV"].Value.ToString();
             txtSDT.Text = dtgvSV.CurrentRow.Cells["SDT"].Value.ToString();
+            txtEmail.Text = dtgvSV.CurrentRow.Cells["Email"].Value.ToString();
             txtDiaChi.Text = dtgvSV.CurrentRow.Cells["DiaChi"].Value.ToString();
             cbKhoa.SelectedValue = LopDAO.Instance.getMaKhoabyMaLop(dtgvSV.CurrentRow.Cells["MaLop"].Value.ToString());
             cbLop.SelectedValue = dtgvSV.CurrentRow.Cells["MaLop"].Value.ToString();
@@ -136,7 +137,7 @@ namespace QuanLySinhVien
 
         private void cbSheet_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dtgv.DataSource = dsSV.Tables[cbSheet.SelectedIndex];
+            dtgvExcel.DataSource = dsSV.Tables[cbSheet.SelectedIndex];
         }
 
         private void btnNhapExel_Click(object sender, EventArgs e)
@@ -176,21 +177,21 @@ namespace QuanLySinhVien
                 }
             }
 
-            dtgv.Visible = true; cbSheet.Visible = true; btnThoatExcel.Visible = true;
+            dtgvExcel.Visible = true; cbSheet.Visible = true; btnThoatExcel.Visible = true;
         }
 
         private void dtgv_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtTenSV.Text = dtgv.CurrentRow.Cells[0].Value.ToString();
-            txtSDT.Text = dtgv.CurrentRow.Cells[1].Value.ToString();
-            cbKhoa.SelectedValue = LopDAO.Instance.getKhoafromLop(dtgv.CurrentRow.Cells[2].Value.ToString());
-            cbLop.SelectedValue = dtgv.CurrentRow.Cells[2].Value.ToString();
-            txtDiaChi.Text = dtgv.CurrentRow.Cells[3].Value.ToString();
+            txtTenSV.Text = dtgvExcel.CurrentRow.Cells[0].Value.ToString();
+            txtSDT.Text = dtgvExcel.CurrentRow.Cells[1].Value.ToString();
+            cbKhoa.SelectedValue = LopDAO.Instance.getKhoafromLop(dtgvExcel.CurrentRow.Cells[2].Value.ToString());
+            cbLop.SelectedValue = dtgvExcel.CurrentRow.Cells[2].Value.ToString();
+            txtDiaChi.Text = dtgvExcel.CurrentRow.Cells[3].Value.ToString();
         }
 
         private void btnThoatExcel_Click(object sender, EventArgs e)
         {
-            dtgv.Visible = false; cbSheet.Visible = false; btnThoatExcel.Visible = false;
+            dtgvExcel.Visible = false; cbSheet.Visible = false; btnThoatExcel.Visible = false;
         }
 
         private void btnDangKyMon_Click(object sender, EventArgs e)

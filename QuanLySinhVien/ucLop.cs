@@ -16,6 +16,8 @@ namespace QuanLySinhVien
         public Panel pn { get { return panel1; } }
         public Panel pn2 { get { return panel2; } }
         public Panel pn3 { get { return panel3; } }
+        public Label lblsv { get { return lblSoSV; } }
+        public DataGridView dtgv { get { return dtgvLop; } }
         public string mgv;
         public ucLop(string gv)
         {
@@ -118,6 +120,9 @@ namespace QuanLySinhVien
             txtTenLop.Text = dtgvLop.CurrentRow.Cells["TenLop"].Value.ToString();
             cbKhoa.SelectedValue = dtgvLop.CurrentRow.Cells["MaKhoa"].Value.ToString();
             cbGV.SelectedValue = dtgvLop.CurrentRow.Cells["MaGV"].Value.ToString();
+
+            lblSoSV.Text = "Số sinh viên:  " + DataProvider.Instance.ExcuteQuery("Select count(*) from SinhVien " +
+                "where MaLop = '" + dtgvLop.CurrentRow.Cells["MaLop"].Value.ToString() + "'").Rows[0][0].ToString();
         }
 
         private void cbKhoa_SelectedValueChanged(object sender, EventArgs e)

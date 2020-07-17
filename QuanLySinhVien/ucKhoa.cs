@@ -35,6 +35,11 @@ namespace QuanLySinhVien
         public Panel pn { get { return panel1; }  }
         public Panel pn2 { get { return panel2; }  }
         public Panel pn3 { get { return panel3; }  }
+        public Label lbltenkhoa { get { return lblTenKhoa; }  }
+        public Label lblsv { get { return lblSoSV; }  }
+        public Label lblgv { get { return lblSoGV; }  }
+        public Label lbllop { get { return lblSoLop; }  }
+        public DataGridView dtgv { get { return dtgvKhoa; } }
         public ucKhoa()
         {
             InitializeComponent();
@@ -44,16 +49,26 @@ namespace QuanLySinhVien
         {
             dtgvKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa");
         }
-        private void thongbao()
-        {
-            guna2Transition1.ShowSync(lblError);
-            timer1.Enabled = true;
-        }
+        //private void thongbao()
+        //{
+        //    guna2Transition1.ShowSync(lblError);
+        //    timer1.Enabled = true;
+        //}
 
         private void dtgvKhoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtMaKhoa.Text = dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString();
             txtTenKhoa.Text = dtgvKhoa.CurrentRow.Cells["TenKhoa"].Value.ToString();
+            lblTenKhoa.Text= "Tên khoa:  " + dtgvKhoa.CurrentRow.Cells["TenKhoa"].Value.ToString();
+            lblSoLop.Text = "Số lớp:  " + DataProvider.Instance.ExcuteQuery
+                ("Select count(*) from Lop " +
+                "where MaKhoa='" + dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString() + "'").Rows[0][0].ToString();
+            lblSoGV.Text = "Số giảng viên:  " + DataProvider.Instance.ExcuteQuery
+                ("Select count(*) from GiangVien " +
+                "where MaKhoa='" + dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString() + "'").Rows[0][0].ToString();
+            lblSoSV.Text = "Số sinh viên:  " + DataProvider.Instance.ExcuteQuery
+                ("Select count(*) from Lop, SinhVien " +
+                "where SinhVien.MaLop=Lop.MaLop and MaKhoa='" + dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString() + "'").Rows[0][0].ToString();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -61,8 +76,8 @@ namespace QuanLySinhVien
             DataProvider.Instance.ExcuteNonQuery("Insert into Khoa values" +
                 "('" + txtMaKhoa.Text + "', N'" + txtTenKhoa.Text + "', '" + dtp.Value.ToString("yyyy/MM/dd") + "')");
             
-            lblError.Text = "Thêm thành công khoa " + txtTenKhoa.Text;
-            thongbao();
+            //lblError.Text = "Thêm thành công khoa " + txtTenKhoa.Text;
+            //thongbao();
             loadKhoa();
         }
 
@@ -70,8 +85,8 @@ namespace QuanLySinhVien
         {
             DataProvider.Instance.ExcuteNonQuery("Update Khoa " +
                 "set TenKhoa=N'"+txtTenKhoa.Text+"' where MaKhoa='"+ dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString() + "'");
-            lblError.Text = "Sửa thành công khoa " + txtTenKhoa.Text;
-            thongbao();
+            //lblError.Text = "Sửa thành công khoa " + txtTenKhoa.Text;
+            //thongbao();
             loadKhoa();
         }
 
@@ -79,15 +94,15 @@ namespace QuanLySinhVien
         {
             DataProvider.Instance.ExcuteNonQuery("Delete from Khoa " +
                 "where MaKhoa='"+ dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString() + "'");
-            lblError.Text = "Xoá thành công khoa " + txtTenKhoa.Text;
-            thongbao();
+            //lblError.Text = "Xoá thành công khoa " + txtTenKhoa.Text;
+            //thongbao();
             loadKhoa();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Enabled = false;
-            guna2Transition1.HideSync(lblError);
+        //    timer1.Enabled = false;
+        //    guna2Transition1.HideSync(lblError);
         }
     }
 }

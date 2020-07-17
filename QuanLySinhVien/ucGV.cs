@@ -16,6 +16,8 @@ namespace QuanLySinhVien
         public Panel pn { get { return panel1; } }
         public Panel pn2 { get { return panel2; } }
         public Panel pn3 { get { return panel3; } }
+        public CheckBox chktk { get { return chkTruongKhoa; } }
+        public DataGridView dtgv { get { return dtgvGV; } }
 
         public string mgv;
         public ucGV(string gv)
