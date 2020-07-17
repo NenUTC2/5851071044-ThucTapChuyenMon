@@ -22,5 +22,10 @@ namespace QuanLySinhVien.DAO
         {
             return DataProvider.Instance.ExcuteQuery("Select TenKhoa from Khoa where MaKhoa='" + id + "'").Rows[0][0].ToString();
         }
+
+        public string getKhoaByNganh(string nganh)
+        {
+            return DataProvider.Instance.ExcuteQuery("Select MaKhoa from Nganh where MaNganh='" + nganh + "'").Rows[0][0].ToString();
+        }
     }
 }

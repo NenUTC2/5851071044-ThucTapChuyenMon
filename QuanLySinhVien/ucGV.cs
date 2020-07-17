@@ -77,7 +77,7 @@ namespace QuanLySinhVien
                 }
                 DataProvider.Instance.ExcuteNonQuery("Insert into GiangVien values" +
                    "('" + cbKhoa.SelectedValue.ToString() + (GiangVienDAO.Instance.getMaxGV(cbKhoa.SelectedValue.ToString()) + 1).ToString() + "', N'" + txtTenGV.Text + "'," +
-                   "'" + txtSDT.Text + "', '" + cbKhoa.SelectedValue.ToString() + "', '" + truongkhoa + "', N'" + txtDiaChi.Text + "' , '" + dtpNgayDay.Value.ToString("yyyy/MM/dd") + "')");
+                   "'" + txtSDT.Text + "', '" + cbKhoa.SelectedValue.ToString() + "', '" + truongkhoa + "', N'" + txtDiaChi.Text + "')");
 
                 loadGV(cbKhoa.SelectedValue.ToString());
             }

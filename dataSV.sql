@@ -7,23 +7,38 @@ GO
 ---------------------------------------------KHOA---------------------------------------------------
 CREATE TABLE Khoa(
 	MaKhoa VARCHAR(50) PRIMARY KEY,
-	TenKhoa NVARCHAR(50) NOT NULL,
-	NgayLap DATE
+	TenKhoa NVARCHAR(50) NOT NULL
 )
 GO 
 INSERT INTO dbo.Khoa
 (
     MaKhoa,
-    TenKhoa,
-    NgayLap
+    TenKhoa
+)
+VALUES
+(   'BM-CNTT',
+    N'Bộ môn Công nghệ thông tin'
+    )
+GO 
+---------------------------------------------KHOA---------------------------------------------------
+--DROP TABLE Nganh
+CREATE TABLE Nganh(
+	MaNganh VARCHAR(50) PRIMARY KEY,
+	TenNganh NVARCHAR(50),
+	MaKhoa VARCHAR(50)
+)
+INSERT INTO dbo.Nganh
+(
+    MaNganh,
+	TenNganh,
+	MaKhoa
 )
 VALUES
 (   'CNTT',
-    N'Bộ môn Công nghệ thông tin',
-    '2016/08/01' 
+    N'Công nghệ thông tin',
+	'BM-CNTT'
     )
 GO 
-
 ---------------------------------------------GIANGVIEN--------------------------------------------------
 --DROP TABLE dbo.GiangVien
 CREATE TABLE GiangVien(
@@ -32,9 +47,9 @@ CREATE TABLE GiangVien(
 	SDT VARCHAR(20),
 	MaKhoa VARCHAR(50) NOT NULL,
 	TruongKhoa VARCHAR(50),
-	DiaChi NVARCHAR(MAX),
-	NgayDay DATE
+	DiaChi NVARCHAR(MAX)
 )
+Select MaKhoa from Nganh where MaNganh='CNTT'
 --SELECT * FROM dbo.GiangVien
 INSERT INTO dbo.GiangVien
 (
@@ -43,20 +58,17 @@ INSERT INTO dbo.GiangVien
 	SDT,
 	MaKhoa,
 	TruongKhoa,
-	DiaChi,
-	NgayDay
+	DiaChi
 )
 VALUES
 (   'CNTT-1',       -- MaGV - varchar(50)
 	N'Nguyễn Văn A',      -- TenGV - nvarchar(50)
 	'0808088776',       -- SDT - varchar(20)
-	'CNTT',       -- MaKhoa - varchar(50)
-	'CNTT',       -- TruongKhoa - varchar(50)
-	N'909 abcvvđ',      -- DiaChi - nvarchar(max)
-	GETDATE() -- NgayDay - date
+	'BM-CNTT',       -- MaKhoa - varchar(50)
+	'BM-CNTT',       -- TruongKhoa - varchar(50)
+	N'909 abcvvđ'      -- DiaChi - nvarchar(max)
 	)
 GO 
-SELECT TenGV FROM 
 ---------------------------------------------LOP--------------------------------------------------
 --DROP TABLE dbo.Lop
 CREATE TABLE Lop(
@@ -64,7 +76,7 @@ CREATE TABLE Lop(
 	TenLop NVARCHAR(50),
 	NgayLap DATE,
 	GVCN VARCHAR(50),
-	Makhoa VARCHAR(50)
+	MaNganh VARCHAR(50)
 )
 INSERT INTO dbo.Lop
 (
@@ -72,7 +84,7 @@ INSERT INTO dbo.Lop
     TenLop,
     NgayLap,
     GVCN,
-	MaKhoa
+	MaNganh
 )
 VALUES
 (   'CNTT-K58',        -- MaLop - varchar(50)
@@ -92,7 +104,8 @@ CREATE TABLE SinhVien(
 	Email VARCHAR(50),
 	MaLop NVARCHAR(50) NOT NULL,
 	DiaChi NVARCHAR(MAX),
-	TichLuy FLOAT
+	TichLuy FLOAT,
+	SoKy INT 
 )
 INSERT INTO dbo.SinhVien
 (
@@ -102,7 +115,8 @@ INSERT INTO dbo.SinhVien
 	Email,
     MaLop,
     DiaChi,
-	TichLuy
+	TichLuy,
+	SoKy
 )
 VALUES
 (   '20201',  -- MaSV - varchar(50)
@@ -111,22 +125,24 @@ VALUES
 	'5851071044@st.utc2.edu.vn',
     N'CNTT-K58', -- MaLop - nvarchar(50)
     N'999 Le Van Viet',  -- DiaChi - nvarchar(max)
+	0,
 	0
     ) 
 	GO 
 	--SELECT * FROM dbo.SinhVien
 ---------------------------------------------HocKy--------------------------------------------------
-
+--DROP TABLE dbo.HocKy
 CREATE TABLE HocKy(
 	MaHK VARCHAR(20) PRIMARY KEY,
-	TenHocKy NVARCHAR(50)
+	TenHocKy NVARCHAR(50),
+	TrangThai INT
 )
 
+--DROP TABLE dbo.CTHocKy
 CREATE TABLE CTHocKy(
 	MaHK VARCHAR(20),
 	MaSV VARCHAR(50),
-	DiemTichLuy FLOAT,
-	id INT
+	DiemTichLuy FLOAT
 
 	PRIMARY KEY(MaHK,MaSV)
 )
@@ -141,28 +157,31 @@ CREATE TABLE CTHocKy(
 CREATE TABLE MonHoc(
 	MaMon VARCHAR(50) PRIMARY KEY,
 	TenMon NVARCHAR(50),
-	MaKhoa VARCHAR(50) NOT NULL,
-	TinChi INT
+	MaNganh VARCHAR(50) NOT NULL,
+	TinChi INT,
+	SoKy INT 
 )
 INSERT INTO dbo.MonHoc
 (
     MaMon,
     TenMon,
-    MaKhoa,
-    TinChi
+    MaNganh,
+    TinChi,
+	SoKy
 )
 VALUES
 (   'CNTT-ThucTapChuyenMon',  -- MaMon - varchar(50)
     N'Thực tập chuyên môn', -- TenMon - nvarchar(50)
     'CNTT',  -- MaKhoa - varchar(50)
-    3    -- TinChi - int
+    3,   -- TinChi - int
+	1
     )
 	GO
-    SELECT MaCTMon,LopHoc.MaMon,MaGV,MaLop,phong,HocKy,TrangThai FROM dbo.LopHoc, dbo.MonHoc WHERE LopHoc.MaMon=MonHoc.MaMon AND MaKhoa='cntt'
----------------------------------------------LOPMON--------------------------------------------------
---DROP TABLE LopHoc
-CREATE TABLE LopHoc(
-	MaCTMon VARCHAR(60) PRIMARY KEY,
+    --SELECT MaCTMon,LopHoc.MaMon,MaGV,MaLop,phong,HocKy,TrangThai FROM dbo.LopHoc, dbo.MonHoc WHERE LopHoc.MaMon=MonHoc.MaMon AND MaKhoa='cntt'
+---------------------------------------------LopHocPhan--------------------------------------------------
+--DROP TABLE LopHocPhan
+CREATE TABLE LopHocPhan(
+	MaHP VARCHAR(50) PRIMARY KEY,
 	MaMon VARCHAR(50),
 	MaGV VARCHAR(50),
 	MaLop VARCHAR(50),
@@ -170,21 +189,26 @@ CREATE TABLE LopHoc(
 	HocKy VARCHAR(20),
 	TrangThai INT
 )
-SELECT * FROM dbo.LopHoc
----------------------------------------------DIEM LOPHOC--------------------------------------------------
---DROP TABLE dbo.DiemLopHoc
-CREATE TABLE DiemLopHoc(
-	MaCTMon VARCHAR(50),
+--SELECT * FROM dbo.LopHoc
+---------------------------------------------DIEMHOCPHAN--------------------------------------------------
+--DROP TABLE dbo.DiemHocPhan
+CREATE TABLE DiemHocPhan(
+	MaHP VARCHAR(50),
 	MaSV VARCHAR(50),
 	ChuyenCan FLOAT,
 	DiemGiuaKy FLOAT,
 	DiemTP FLOAT,
 	DiemThi FLOAT,
 	DiemKT FLOAT,
-	KTxTC FLOAT
+	KTxTC FLOAT,
+	Tra INT
 
-	PRIMARY KEY(MaSV,MaCTMon)
+	PRIMARY KEY(MaSV,MaHP)
 )
+--SELECT * FROM dbo.LopHocPhan
+--Select MonHoc.MaMon,TenMon from MonHoc where MaNganh='CNTT' and SoKy=1  
+--UNION ALL
+--Select MonHoc.MaMon,TenMon from MonHoc,dbo.LopHocPhan,dbo.DiemHocPhan WHERE DiemKT<4 AND DiemHocPhan.MaHP=LopHocPhan.MaHP AND LopHocPhan.MaMon=MonHoc.MaMon AND Tra=0 AND MaSV='20201';
 --SELECT HocKy, TenMon, DiemKT FROM dbo.DiemLopHoc, dbo.LopHoc, dbo.MonHoc WHERE DiemLopHoc.MaCTMon=LopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND MaSV='20201'
 --SELECT TenMon, TinChi,TenGV, Phong FROM dbo.DiemLopHoc, dbo.LopHoc, dbo.MonHoc, dbo.GiangVien 
 --WHERE DiemLopHoc.MaCTMon=LopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND LopHoc.MaGV=GiangVien.MaGV AND MaSV='20201'
@@ -193,6 +217,7 @@ CREATE TABLE DiemLopHoc(
 --SELECT SUM(TinChi) FROM dbo.MonHoc, dbo.LopHoc, dbo.DiemLopHoc WHERE LopHoc.MaCTMon=DiemLopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND MaSV='20201'
 ---------------------------------------------ACCOUNT--------------------------------------------------
 --DROP TABLE dbo.Account
+--DELETE FROM dbo.DiemHocPhan
 CREATE TABLE Account(
 	TenDN VARCHAR(50) PRIMARY KEY,
 	MatKhau VARCHAR(50),
@@ -214,7 +239,7 @@ VALUES
     )
 GO 
 ---------------------------------------------END TABLE--------------------------------------------------
-
-Select TenSV, Email, DiemTP, DiemKT, TenMon from DiemLopHoc, SinhVien, dbo.MonHoc,dbo.LopHoc WHERE DiemLopHoc.MaCTMon=LopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon and DiemLopHoc.MaSV=SinhVien.MaSV and DiemLopHoc.MaCTMon='CNTT-API-1'
-Select TenMon FROM dbo.MonHoc,dbo.LopHoc WHERE LopHoc.MaMon=MonHoc.MaMon AND LopHoc.MaCTMon='CNTT-API-1'
-Select MaHK, DiemTichLuy from CTHocKy where MaSV='20201'
+--DELETE FROM dbo.Account
+--Select TenSV, Email, DiemTP, DiemKT, TenMon from DiemLopHoc, SinhVien, dbo.MonHoc,dbo.LopHoc WHERE DiemLopHoc.MaCTMon=LopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon and DiemLopHoc.MaSV=SinhVien.MaSV and DiemLopHoc.MaCTMon='CNTT-API-1'
+--Select TenMon FROM dbo.MonHoc,dbo.LopHoc WHERE LopHoc.MaMon=MonHoc.MaMon AND LopHoc.MaCTMon='CNTT-API-1'
+--Select MaHK, DiemTichLuy from CTHocKy where MaSV='20201'

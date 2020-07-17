@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvDiem = new System.Windows.Forms.DataGridView();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaCTMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChuyenCan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemGiuaKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemTP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,9 +49,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.chkKT = new System.Windows.Forms.CheckBox();
             this.cbGV = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cbKhoa = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnKTHP = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.cbLop = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbLopHP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnReset = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnLuuDIem = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -69,6 +68,7 @@
             this.txtGiuaKy = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtChuyenCan = new Guna.UI2.WinForms.Guna2TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnXuatExcel = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDiem)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -85,18 +85,18 @@
             this.dtgvDiem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvDiem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvDiem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvDiem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvDiem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSV,
-            this.MaCTMon,
+            this.MaHP,
             this.ChuyenCan,
             this.DiemGiuaKy,
             this.DiemTP,
@@ -109,12 +109,12 @@
             this.dtgvDiem.Name = "dtgvDiem";
             this.dtgvDiem.ReadOnly = true;
             this.dtgvDiem.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgvDiem.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgvDiem.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgvDiem.RowTemplate.Height = 40;
             this.dtgvDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDiem.Size = new System.Drawing.Size(1180, 328);
@@ -128,12 +128,12 @@
             this.MaSV.Name = "MaSV";
             this.MaSV.ReadOnly = true;
             // 
-            // MaCTMon
+            // MaHP
             // 
-            this.MaCTMon.DataPropertyName = "MaCTMon";
-            this.MaCTMon.HeaderText = "Mã học phần";
-            this.MaCTMon.Name = "MaCTMon";
-            this.MaCTMon.ReadOnly = true;
+            this.MaHP.DataPropertyName = "MaHP";
+            this.MaHP.HeaderText = "Mã học phần";
+            this.MaHP.Name = "MaHP";
+            this.MaHP.ReadOnly = true;
             // 
             // ChuyenCan
             // 
@@ -180,6 +180,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnXuatExcel);
             this.panel1.Controls.Add(this.lblLoi);
             this.panel1.Controls.Add(this.chkGuiEmail);
             this.panel1.Controls.Add(this.btnGuiDiem);
@@ -229,7 +230,7 @@
             // chkGuiEmail
             // 
             this.chkGuiEmail.AutoSize = true;
-            this.chkGuiEmail.Location = new System.Drawing.Point(1068, 62);
+            this.chkGuiEmail.Location = new System.Drawing.Point(1031, 29);
             this.chkGuiEmail.Name = "chkGuiEmail";
             this.chkGuiEmail.Size = new System.Drawing.Size(91, 21);
             this.chkGuiEmail.TabIndex = 143;
@@ -248,7 +249,7 @@
             this.btnGuiDiem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGuiDiem.ImageOffset = new System.Drawing.Point(8, 0);
             this.btnGuiDiem.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnGuiDiem.Location = new System.Drawing.Point(1027, 89);
+            this.btnGuiDiem.Location = new System.Drawing.Point(1031, 56);
             this.btnGuiDiem.Name = "btnGuiDiem";
             this.btnGuiDiem.ShadowDecoration.Parent = this.btnGuiDiem;
             this.btnGuiDiem.Size = new System.Drawing.Size(179, 43);
@@ -281,9 +282,8 @@
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.chkKT);
             this.panel4.Controls.Add(this.cbGV);
-            this.panel4.Controls.Add(this.cbKhoa);
             this.panel4.Controls.Add(this.btnKTHP);
-            this.panel4.Controls.Add(this.cbLop);
+            this.panel4.Controls.Add(this.cbLopHP);
             this.panel4.Controls.Add(this.btnReset);
             this.panel4.Controls.Add(this.btnLuuDIem);
             this.panel4.Location = new System.Drawing.Point(26, 14);
@@ -294,7 +294,7 @@
             // chkKT
             // 
             this.chkKT.AutoSize = true;
-            this.chkKT.Location = new System.Drawing.Point(19, 143);
+            this.chkKT.Location = new System.Drawing.Point(19, 118);
             this.chkKT.Name = "chkKT";
             this.chkKT.Size = new System.Drawing.Size(131, 21);
             this.chkKT.TabIndex = 142;
@@ -317,35 +317,12 @@
             this.cbGV.HoverState.Parent = this.cbGV;
             this.cbGV.ItemHeight = 35;
             this.cbGV.ItemsAppearance.Parent = this.cbGV;
-            this.cbGV.Location = new System.Drawing.Point(19, 81);
+            this.cbGV.Location = new System.Drawing.Point(19, 61);
             this.cbGV.Name = "cbGV";
             this.cbGV.ShadowDecoration.Parent = this.cbGV;
             this.cbGV.Size = new System.Drawing.Size(313, 41);
             this.cbGV.TabIndex = 141;
             this.cbGV.SelectedValueChanged += new System.EventHandler(this.cbGV_SelectedValueChanged);
-            // 
-            // cbKhoa
-            // 
-            this.cbKhoa.BackColor = System.Drawing.Color.Transparent;
-            this.cbKhoa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbKhoa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKhoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.cbKhoa.FocusedColor = System.Drawing.Color.Empty;
-            this.cbKhoa.FocusedState.Parent = this.cbKhoa;
-            this.cbKhoa.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbKhoa.ForeColor = System.Drawing.Color.White;
-            this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.HoverState.Parent = this.cbKhoa;
-            this.cbKhoa.ItemHeight = 35;
-            this.cbKhoa.ItemsAppearance.Parent = this.cbKhoa;
-            this.cbKhoa.Location = new System.Drawing.Point(19, 11);
-            this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.ShadowDecoration.Parent = this.cbKhoa;
-            this.cbKhoa.Size = new System.Drawing.Size(313, 41);
-            this.cbKhoa.TabIndex = 140;
-            this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbKhoa_SelectedIndexChanged);
-            this.cbKhoa.SelectedValueChanged += new System.EventHandler(this.cbKhoa_SelectedValueChanged);
             // 
             // btnKTHP
             // 
@@ -354,34 +331,34 @@
             this.btnKTHP.HoverState.Parent = this.btnKTHP;
             this.btnKTHP.Image = global::QuanLySinhVien.Properties.Resources.checked_checkbox_60px;
             this.btnKTHP.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnKTHP.Location = new System.Drawing.Point(275, 230);
+            this.btnKTHP.Location = new System.Drawing.Point(237, 221);
             this.btnKTHP.Name = "btnKTHP";
             this.btnKTHP.PressedState.Parent = this.btnKTHP;
             this.btnKTHP.Size = new System.Drawing.Size(59, 43);
             this.btnKTHP.TabIndex = 139;
             this.btnKTHP.Click += new System.EventHandler(this.btnKTHP_Click);
             // 
-            // cbLop
+            // cbLopHP
             // 
-            this.cbLop.BackColor = System.Drawing.Color.Transparent;
-            this.cbLop.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbLop.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLop.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.cbLop.FocusedColor = System.Drawing.Color.Empty;
-            this.cbLop.FocusedState.Parent = this.cbLop;
-            this.cbLop.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbLop.ForeColor = System.Drawing.Color.White;
-            this.cbLop.FormattingEnabled = true;
-            this.cbLop.HoverState.Parent = this.cbLop;
-            this.cbLop.ItemHeight = 35;
-            this.cbLop.ItemsAppearance.Parent = this.cbLop;
-            this.cbLop.Location = new System.Drawing.Point(19, 170);
-            this.cbLop.Name = "cbLop";
-            this.cbLop.ShadowDecoration.Parent = this.cbLop;
-            this.cbLop.Size = new System.Drawing.Size(313, 41);
-            this.cbLop.TabIndex = 137;
-            this.cbLop.SelectedValueChanged += new System.EventHandler(this.cbLop_SelectedValueChanged);
+            this.cbLopHP.BackColor = System.Drawing.Color.Transparent;
+            this.cbLopHP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbLopHP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbLopHP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLopHP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.cbLopHP.FocusedColor = System.Drawing.Color.Empty;
+            this.cbLopHP.FocusedState.Parent = this.cbLopHP;
+            this.cbLopHP.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbLopHP.ForeColor = System.Drawing.Color.White;
+            this.cbLopHP.FormattingEnabled = true;
+            this.cbLopHP.HoverState.Parent = this.cbLopHP;
+            this.cbLopHP.ItemHeight = 35;
+            this.cbLopHP.ItemsAppearance.Parent = this.cbLopHP;
+            this.cbLopHP.Location = new System.Drawing.Point(19, 145);
+            this.cbLopHP.Name = "cbLopHP";
+            this.cbLopHP.ShadowDecoration.Parent = this.cbLopHP;
+            this.cbLopHP.Size = new System.Drawing.Size(313, 41);
+            this.cbLopHP.TabIndex = 137;
+            this.cbLopHP.SelectedValueChanged += new System.EventHandler(this.cbLop_SelectedValueChanged);
             // 
             // btnReset
             // 
@@ -389,7 +366,7 @@
             this.btnReset.CheckedState.Parent = this.btnReset;
             this.btnReset.HoverState.Parent = this.btnReset;
             this.btnReset.Image = global::QuanLySinhVien.Properties.Resources.reset_48px;
-            this.btnReset.Location = new System.Drawing.Point(19, 230);
+            this.btnReset.Location = new System.Drawing.Point(19, 0);
             this.btnReset.Name = "btnReset";
             this.btnReset.PressedState.Parent = this.btnReset;
             this.btnReset.Size = new System.Drawing.Size(65, 43);
@@ -408,7 +385,7 @@
             this.btnLuuDIem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLuuDIem.ImageOffset = new System.Drawing.Point(10, 0);
             this.btnLuuDIem.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnLuuDIem.Location = new System.Drawing.Point(90, 230);
+            this.btnLuuDIem.Location = new System.Drawing.Point(39, 221);
             this.btnLuuDIem.Name = "btnLuuDIem";
             this.btnLuuDIem.ShadowDecoration.Parent = this.btnLuuDIem;
             this.btnLuuDIem.Size = new System.Drawing.Size(179, 43);
@@ -771,6 +748,25 @@
             this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnXuatExcel
+            // 
+            this.btnXuatExcel.CheckedState.Parent = this.btnXuatExcel;
+            this.btnXuatExcel.CustomImages.Parent = this.btnXuatExcel;
+            this.btnXuatExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnXuatExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatExcel.ForeColor = System.Drawing.Color.Lime;
+            this.btnXuatExcel.HoverState.Parent = this.btnXuatExcel;
+            this.btnXuatExcel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnXuatExcel.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnXuatExcel.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnXuatExcel.Location = new System.Drawing.Point(1031, 122);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.ShadowDecoration.Parent = this.btnXuatExcel;
+            this.btnXuatExcel.Size = new System.Drawing.Size(179, 43);
+            this.btnXuatExcel.TabIndex = 143;
+            this.btnXuatExcel.Text = "Xuất Excel";
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
+            // 
             // ucDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -797,14 +793,6 @@
 
         private System.Windows.Forms.DataGridView dtgvDiem;
         private Guna.UI2.WinForms.Guna2ImageButton btnReset;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaCTMon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChuyenCan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiemGiuaKy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiemTP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiemThi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiemKT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KTxTC;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2TextBox txtKT;
@@ -812,7 +800,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTP;
         private Guna.UI2.WinForms.Guna2TextBox txtGiuaKy;
         private Guna.UI2.WinForms.Guna2TextBox txtChuyenCan;
-        private Guna.UI2.WinForms.Guna2ComboBox cbLop;
+        private Guna.UI2.WinForms.Guna2ComboBox cbLopHP;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblTenSV;
         private System.Windows.Forms.Label lblLop;
@@ -825,7 +813,6 @@
         private System.Windows.Forms.Panel panel4;
         private Guna.UI2.WinForms.Guna2ImageButton btnKTHP;
         private Guna.UI2.WinForms.Guna2ComboBox cbGV;
-        private Guna.UI2.WinForms.Guna2ComboBox cbKhoa;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chkGuiEmail;
@@ -833,5 +820,14 @@
         private Guna.UI2.WinForms.Guna2TextBox lblLoi;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckBox chkKT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaHP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChuyenCan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemGiuaKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemTP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemThi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiemKT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KTxTC;
+        private Guna.UI2.WinForms.Guna2Button btnXuatExcel;
     }
 }

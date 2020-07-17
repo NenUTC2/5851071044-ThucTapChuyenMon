@@ -10,12 +10,16 @@ namespace QuanLySinhVien.DAO
 {
     class DataProvider
     {
+        private static DataProvider constr;
         private static DataProvider instance;
         public static DataProvider Instance
         {
             get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
             private set { DataProvider.instance = value; }
         }
+
+        internal static DataProvider Constr { get => constr; set => constr = value; }
+
         private DataProvider() { }
         private string con = @"Data Source=NenPhan;Initial Catalog=dataSV;Integrated Security=True";
         // private object parameter;

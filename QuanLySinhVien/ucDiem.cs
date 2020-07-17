@@ -35,13 +35,13 @@ namespace QuanLySinhVien
 
             if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
             {
-                loadCBKhoa("*");
+                //loadCBNganh("*");
+                loadCBGV("*");
             }
             else
             {
-                loadLop(mgv);
                 loadCBGV(mgv);
-                loadCBKhoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                //loadCBNganh(GiangVienDAO.Instance.getKhoabyMGV(mgv));
             }
         }
         public void loadLop(string a)
@@ -54,42 +54,42 @@ namespace QuanLySinhVien
         }
         public void loadDiem(string mon)
         {
-            dtgvDiem.DataSource = DataProvider.Instance.ExcuteQuery("Select * from DiemLopHoc");
+            dtgvDiem.DataSource = DataProvider.Instance.ExcuteQuery("Select * from DiemHocPhan");
             if (mon.Equals("*"))
-                dtgvDiem.DataSource = DataProvider.Instance.ExcuteQuery("Select * from DiemLopHoc");
+                dtgvDiem.DataSource = DataProvider.Instance.ExcuteQuery("Select * from DiemHocPhan");
             else
-                dtgvDiem.DataSource = DataProvider.Instance.ExcuteQuery("Select * from DiemLopHoc where MaCTMon='" + mon + "'");
+                dtgvDiem.DataSource = DataProvider.Instance.ExcuteQuery("Select * from DiemHocPhan where MaHP='" + mon + "'");
         }
 
         public void loadCBLop(string gv)
         {
             if (gv.Equals("*"))
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHoc where TrangThai=0");
+                cbLopHP.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHocPhan where TrangThai=0");
             else
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHoc where TrangThai=0 and MaGV='" + gv + "'");
-            cbLop.DisplayMember = "MaCTMon";
-            cbLop.ValueMember = "MaCTMon";
+                cbLopHP.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHocPhan where TrangThai=0 and MaGV='" + gv + "'");
+            cbLopHP.DisplayMember = "MaHP";
+            cbLopHP.ValueMember = "MaHP";
         }
 
         public void loadCBLopKT(string gv)
         {
             if (gv.Equals("*"))
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHoc TrangThai=1");
+                cbLopHP.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHocPhan TrangThai=1");
             else
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHoc where TrangThai=1 and MaGV='" + gv + "'");
-            cbLop.DisplayMember = "MaCTMon";
-            cbLop.ValueMember = "MaCTMon";
+                cbLopHP.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHocPhan where TrangThai=1 and MaGV='" + gv + "'");
+            cbLopHP.DisplayMember = "MaHP";
+            cbLopHP.ValueMember = "MaHP";
         }
 
-        public void loadCBKhoa(string khoa)
-        {
-            if (khoa.Equals("*"))
-                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa");
-            else
-                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa where MaKhoa='" + khoa + "'");
-            cbKhoa.DisplayMember = "TenKhoa";
-            cbKhoa.ValueMember = "MaKhoa";
-        }
+        //public void loadCBNganh(string khoa)
+        //{
+        //    if (khoa.Equals("*"))
+        //        cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa");
+        //    else
+        //        cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa where MaKhoa='" + khoa + "'");
+        //    cbKhoa.DisplayMember = "TenKhoa";
+        //    cbKhoa.ValueMember = "MaKhoa";
+        //}
 
         public void loadCBGV(string khoa)
         {
@@ -103,7 +103,7 @@ namespace QuanLySinhVien
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            loadDiem(cbLop.SelectedValue.ToString());
+            try { loadCBGV("*"); loadDiem(cbLopHP.SelectedValue.ToString()); } catch { }
             txtChuyenCan.ResetText();
             txtGiuaKy.ResetText();
             txtTP.ResetText();
@@ -113,12 +113,12 @@ namespace QuanLySinhVien
             if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
             {
                 loadLop("*");
-                loadDiem(cbLop.SelectedValue.ToString());
+                loadDiem(cbLopHP.SelectedValue.ToString());
             }
             else
             {
                 loadLop(mgv);
-                loadDiem(cbLop.SelectedValue.ToString());
+                loadDiem(cbLopHP.SelectedValue.ToString());
             }
         }
 
@@ -192,8 +192,8 @@ namespace QuanLySinhVien
             {
                 DiemDAO.Instance.suaDiem(Convert.ToDecimal(txtChuyenCan.Text), Convert.ToDecimal(txtGiuaKy.Text), Convert.ToDecimal(txtTP.Text),
                     Convert.ToDecimal(txtThi.Text), Convert.ToDecimal(txtKT.Text),
-                    dtgvDiem.CurrentRow.Cells["MaCTMon"].Value.ToString(), dtgvDiem.CurrentRow.Cells["MaSV"].Value.ToString());
-                loadDiem(cbLop.SelectedValue.ToString());
+                    dtgvDiem.CurrentRow.Cells["MaHP"].Value.ToString(), dtgvDiem.CurrentRow.Cells["MaSV"].Value.ToString());
+                loadDiem(cbLopHP.SelectedValue.ToString());
                 
             }
             else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin điểm"; timer1.Enabled = true; }
@@ -247,7 +247,7 @@ namespace QuanLySinhVien
         {
             try
             {
-                loadDiem(cbLop.SelectedValue.ToString());
+                loadDiem(cbLopHP.SelectedValue.ToString());
             }
             catch { }
         }
@@ -257,19 +257,19 @@ namespace QuanLySinhVien
 
         }
 
-        private void cbKhoa_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
-            {
-                try
-                {
-                    cbGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien where MaKhoa='" + cbKhoa.SelectedValue.ToString() + "'");
-                    cbGV.DisplayMember = "TenGV";
-                    cbGV.ValueMember = "MaGV";
-                }
-                catch { }
-            }
-        }
+        //private void cbKhoa_SelectedValueChanged(object sender, EventArgs e)
+        //{
+        //    if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+        //    {
+        //        try
+        //        {
+        //            cbGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien where MaKhoa='" + cbKhoa.SelectedValue.ToString() + "'");
+        //            cbGV.DisplayMember = "TenGV";
+        //            cbGV.ValueMember = "MaGV";
+        //        }
+        //        catch { }
+        //    }
+        //}
 
         private void cbGV_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -316,12 +316,12 @@ namespace QuanLySinhVien
                 DataTable dt = DataProvider.Instance.ExcuteQuery("Select TenSV, Email, DiemTP, DiemKT, TenMon " +
                     "from DiemLopHoc, SinhVien, dbo.MonHoc,dbo.LopHoc " +
                     "WHERE DiemLopHoc.MaCTMon=LopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon and DiemLopHoc.MaSV=SinhVien.MaSV " +
-                    "and DiemLopHoc.MaCTMon='" + cbLop.SelectedValue.ToString() + "'");
+                    "and DiemLopHoc.MaCTMon='" + cbLopHP.SelectedValue.ToString() + "'");
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     sendMail(dt.Rows[i][1].ToString(), dt.Rows[i][0].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][3].ToString(), dt.Rows[i][4].ToString());
                 }
-                MessageBox.Show("Đã gửi điểm đến tất cả sinh viên trong lớp học phần "+ cbLop.SelectedValue.ToString());
+                MessageBox.Show("Đã gửi điểm đến tất cả sinh viên trong lớp học phần "+ cbLopHP.SelectedValue.ToString());
             }
             else
             {
@@ -344,8 +344,8 @@ namespace QuanLySinhVien
 
         private void btnKTHP_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("update LopHoc set TrangThai=1 where MaCTMon='" + cbLop.SelectedValue.ToString() + "'");
-            loadDiem(cbLop.SelectedValue.ToString());
+            DataProvider.Instance.ExcuteNonQuery("update LopHoc set TrangThai=1 where MaCTMon='" + cbLopHP.SelectedValue.ToString() + "'");
+            loadDiem(cbLopHP.SelectedValue.ToString());
             txtChuyenCan.ResetText();
             txtGiuaKy.ResetText();
             txtTP.ResetText();
@@ -355,18 +355,49 @@ namespace QuanLySinhVien
             if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
             {
                 loadLop("*");
-                loadDiem(cbLop.SelectedValue.ToString());
+                loadDiem(cbLopHP.SelectedValue.ToString());
             }
             else
             {
                 loadLop(mgv);
-                loadDiem(cbLop.SelectedValue.ToString());
+                loadDiem(cbLopHP.SelectedValue.ToString());
             }
         }
 
         private void chkKT_Click(object sender, EventArgs e)
         {
             loadLop(cbGV.SelectedValue.ToString());
+        }
+
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+            // creating Excel Application  
+            Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+            // creating new WorkBook within Excel application  
+            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+            // creating new Excelsheet in workbook  
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+            // see the excel sheet behind the program  
+            app.Visible = true;
+            // get the reference of first sheet. By default its name is Sheet1.  
+            // store its reference to worksheet  
+            worksheet = workbook.Sheets["Sheet1"];
+            worksheet = workbook.ActiveSheet;
+            // changing the name of active sheet  
+            worksheet.Name = "Exported from gridview";
+            // storing header part in Excel  
+            for (int i = 1; i < dtgvDiem.Columns.Count; i++)
+            {
+                worksheet.Cells[1, i] = dtgvDiem.Columns[i - 1].HeaderText;
+            }
+            // storing Each row and column value to excel sheet  
+            for (int i = 0; i < dtgvDiem.Rows.Count; i++)
+            {
+                for (int j = 0; j < dtgvDiem.Columns.Count-1; j++)
+                {
+                    worksheet.Cells[i + 2, j + 1] = dtgvDiem.Rows[i].Cells[j].Value.ToString();
+                }
+            }
         }
     }
 }

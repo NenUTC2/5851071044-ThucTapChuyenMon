@@ -17,7 +17,7 @@ namespace QuanLySinhVien
         public ucThongKe()
         {
             InitializeComponent();
-            loadCBKhoa(); loadCBLop(cbKhoa.SelectedValue.ToString());
+            loadCBNganh(); loadCBLop(cbKhoa.SelectedValue.ToString());
             loadSV();
         }
 
@@ -31,16 +31,16 @@ namespace QuanLySinhVien
             if (khoa.Equals("*"))
                 cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop");
             else
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where MaKhoa='" + khoa + "'");
+                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where MaNganh='" + khoa + "'");
             cbLop.DisplayMember = "TenLop";
             cbLop.ValueMember = "MaLop";
         }
 
-        public void loadCBKhoa()
+        public void loadCBNganh()
         {
-            cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa");
-            cbKhoa.DisplayMember = "TenKhoa";
-            cbKhoa.ValueMember = "MaKhoa";
+            cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh");
+            cbKhoa.DisplayMember = "TenNganh";
+            cbKhoa.ValueMember = "MaNganh";
         }
 
         private void cbKhoa_SelectedValueChanged(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace QuanLySinhVien
 
         private void guna2ImageButton3_Click(object sender, EventArgs e)
         {
-            loadCBKhoa(); loadCBLop(cbKhoa.SelectedValue.ToString());
+            loadCBNganh(); loadCBLop(cbKhoa.SelectedValue.ToString());
             loadSV();
         }
 

@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLoi = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ImageButton3 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
@@ -41,19 +42,18 @@
             this.lblSoSV = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbKhoa = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbNganh = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbGV = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
             this.txtMaLop = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTenLop = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtgvLop = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaKhoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblLoi = new Guna.UI2.WinForms.Guna2TextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.MaNganh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -74,6 +74,38 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1232, 682);
             this.panel1.TabIndex = 1;
+            // 
+            // lblLoi
+            // 
+            this.lblLoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.lblLoi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.lblLoi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblLoi.DefaultText = "Lỗi";
+            this.lblLoi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lblLoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lblLoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblLoi.DisabledState.Parent = this.lblLoi;
+            this.lblLoi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblLoi.FillColor = System.Drawing.Color.OrangeRed;
+            this.lblLoi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblLoi.FocusedState.Parent = this.lblLoi;
+            this.lblLoi.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoi.ForeColor = System.Drawing.Color.White;
+            this.lblLoi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblLoi.HoverState.Parent = this.lblLoi;
+            this.lblLoi.Location = new System.Drawing.Point(413, 11);
+            this.lblLoi.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.lblLoi.Name = "lblLoi";
+            this.lblLoi.PasswordChar = '\0';
+            this.lblLoi.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.lblLoi.PlaceholderText = "";
+            this.lblLoi.ReadOnly = true;
+            this.lblLoi.SelectedText = "";
+            this.lblLoi.ShadowDecoration.Parent = this.lblLoi;
+            this.lblLoi.Size = new System.Drawing.Size(393, 38);
+            this.lblLoi.TabIndex = 146;
+            this.lblLoi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblLoi.Visible = false;
             // 
             // guna2ImageButton3
             // 
@@ -167,7 +199,7 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.lblSoSV);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Controls.Add(this.cbKhoa);
+            this.panel2.Controls.Add(this.cbNganh);
             this.panel2.Controls.Add(this.cbGV);
             this.panel2.Controls.Add(this.dtpNgayLap);
             this.panel2.Controls.Add(this.txtMaLop);
@@ -206,27 +238,27 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Thông tin";
             // 
-            // cbKhoa
+            // cbNganh
             // 
-            this.cbKhoa.BackColor = System.Drawing.Color.Transparent;
-            this.cbKhoa.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cbKhoa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKhoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.cbKhoa.FocusedColor = System.Drawing.Color.Empty;
-            this.cbKhoa.FocusedState.Parent = this.cbKhoa;
-            this.cbKhoa.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbKhoa.ForeColor = System.Drawing.Color.White;
-            this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.HoverState.Parent = this.cbKhoa;
-            this.cbKhoa.ItemHeight = 35;
-            this.cbKhoa.ItemsAppearance.Parent = this.cbKhoa;
-            this.cbKhoa.Location = new System.Drawing.Point(33, 44);
-            this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.ShadowDecoration.Parent = this.cbKhoa;
-            this.cbKhoa.Size = new System.Drawing.Size(334, 41);
-            this.cbKhoa.TabIndex = 115;
-            this.cbKhoa.SelectedValueChanged += new System.EventHandler(this.cbKhoa_SelectedValueChanged);
+            this.cbNganh.BackColor = System.Drawing.Color.Transparent;
+            this.cbNganh.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cbNganh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbNganh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNganh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.cbNganh.FocusedColor = System.Drawing.Color.Empty;
+            this.cbNganh.FocusedState.Parent = this.cbNganh;
+            this.cbNganh.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbNganh.ForeColor = System.Drawing.Color.White;
+            this.cbNganh.FormattingEnabled = true;
+            this.cbNganh.HoverState.Parent = this.cbNganh;
+            this.cbNganh.ItemHeight = 35;
+            this.cbNganh.ItemsAppearance.Parent = this.cbNganh;
+            this.cbNganh.Location = new System.Drawing.Point(33, 44);
+            this.cbNganh.Name = "cbNganh";
+            this.cbNganh.ShadowDecoration.Parent = this.cbNganh;
+            this.cbNganh.Size = new System.Drawing.Size(334, 41);
+            this.cbNganh.TabIndex = 115;
+            this.cbNganh.SelectedValueChanged += new System.EventHandler(this.cbKhoa_SelectedValueChanged);
             // 
             // cbGV
             // 
@@ -325,38 +357,43 @@
             this.dtgvLop.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvLop.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvLop.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvLop.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvLop.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaLop,
             this.TenLop,
             this.NgayLap,
             this.MaGV,
-            this.MaKhoa});
+            this.MaNganh});
             this.dtgvLop.EnableHeadersVisualStyles = false;
             this.dtgvLop.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dtgvLop.Location = new System.Drawing.Point(41, 288);
             this.dtgvLop.Name = "dtgvLop";
             this.dtgvLop.ReadOnly = true;
             this.dtgvLop.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgvLop.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgvLop.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvLop.RowTemplate.Height = 40;
             this.dtgvLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvLop.Size = new System.Drawing.Size(1160, 366);
             this.dtgvLop.TabIndex = 113;
             this.dtgvLop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvLop_CellClick);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MaLop
             // 
@@ -386,49 +423,12 @@
             this.MaGV.Name = "MaGV";
             this.MaGV.ReadOnly = true;
             // 
-            // MaKhoa
+            // MaNganh
             // 
-            this.MaKhoa.DataPropertyName = "MaKhoa";
-            this.MaKhoa.HeaderText = "Khoa";
-            this.MaKhoa.Name = "MaKhoa";
-            this.MaKhoa.ReadOnly = true;
-            // 
-            // lblLoi
-            // 
-            this.lblLoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.lblLoi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.lblLoi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lblLoi.DefaultText = "Lỗi";
-            this.lblLoi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.lblLoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.lblLoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lblLoi.DisabledState.Parent = this.lblLoi;
-            this.lblLoi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.lblLoi.FillColor = System.Drawing.Color.OrangeRed;
-            this.lblLoi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lblLoi.FocusedState.Parent = this.lblLoi;
-            this.lblLoi.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoi.ForeColor = System.Drawing.Color.White;
-            this.lblLoi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lblLoi.HoverState.Parent = this.lblLoi;
-            this.lblLoi.Location = new System.Drawing.Point(413, 11);
-            this.lblLoi.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
-            this.lblLoi.Name = "lblLoi";
-            this.lblLoi.PasswordChar = '\0';
-            this.lblLoi.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.lblLoi.PlaceholderText = "";
-            this.lblLoi.ReadOnly = true;
-            this.lblLoi.SelectedText = "";
-            this.lblLoi.ShadowDecoration.Parent = this.lblLoi;
-            this.lblLoi.Size = new System.Drawing.Size(393, 38);
-            this.lblLoi.TabIndex = 146;
-            this.lblLoi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.lblLoi.Visible = false;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 2000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.MaNganh.DataPropertyName = "MaNganh";
+            this.MaNganh.HeaderText = "Ngành";
+            this.MaNganh.Name = "MaNganh";
+            this.MaNganh.ReadOnly = true;
             // 
             // ucLop
             // 
@@ -461,19 +461,19 @@
         private Guna.UI2.WinForms.Guna2Button btnThem;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2ComboBox cbGV;
-        private Guna.UI2.WinForms.Guna2ComboBox cbKhoa;
+        private Guna.UI2.WinForms.Guna2ComboBox cbNganh;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaKhoa;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton3;
         private System.Windows.Forms.Label lblSoSV;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox lblLoi;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNganh;
     }
 }

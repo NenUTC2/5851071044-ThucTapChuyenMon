@@ -62,14 +62,14 @@ namespace QuanLySinhVien
 
         public void loadDiem(string msv)
         {
-            dtgvDiem.DataSource = DataProvider.Instance.ExcuteQuery("SELECT HocKy, TenMon, DiemKT FROM dbo.DiemLopHoc, dbo.LopHoc, dbo.MonHoc " +
-                "WHERE DiemLopHoc.MaCTMon=LopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND MaSV='" + msv + "'");
+            dtgvDiem.DataSource = DataProvider.Instance.ExcuteQuery("SELECT HocKy, TenMon, DiemKT FROM dbo.DiemHocPhan, dbo.LopHocPhan, dbo.MonHoc " +
+                "WHERE DiemHocPhan.MaHP=LopHocPhan.MaHP AND LopHocPhan.MaMon=MonHoc.MaMon AND MaSV='" + msv + "'");
         }
 
         public void loadMon(string msv)
         {
-            dtgvMon.DataSource = DataProvider.Instance.ExcuteQuery("SELECT TenMon, TinChi,TenGV, Phong FROM dbo.DiemLopHoc, dbo.LopHoc, dbo.MonHoc, dbo.GiangVien " +
-                "WHERE DiemLopHoc.MaCTMon = LopHoc.MaCTMon AND LopHoc.MaMon = MonHoc.MaMon AND LopHoc.MaGV = GiangVien.MaGV and TrangThai=0 AND MaSV = '" + msv + "'");
+            dtgvMon.DataSource = DataProvider.Instance.ExcuteQuery("SELECT TenMon, TinChi,TenGV, Phong FROM dbo.DiemHocPhan, dbo.LopHocPhan, dbo.MonHoc, dbo.GiangVien " +
+                "WHERE DiemHocPhan.MaHP = LopHocPhan.MaHP AND LopHocPhan.MaMon = MonHoc.MaMon AND LopHocPhan.MaGV = GiangVien.MaGV and TrangThai=0 AND MaSV = '" + msv + "'");
         }
 
         private void txtMSV_TextChanged(object sender, EventArgs e)
@@ -157,26 +157,36 @@ namespace QuanLySinhVien
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-
             if(txtResUser.Text == "") { lblResError.Text = "Bạn phải nhập tên đăng nhập!";lblResError.Visible = true; }
             else if(txtResPass.Text == "") { lblResError.Text = "Bạn phải nhập mật khẩu!"; lblResError.Visible = true; }
             else if(txtResPass2.Text == "") { lblResError.Text = "Vui lòng nhập lại mật khẩu!"; lblResError.Visible = true; }
             else if (txtResPass.Text.Equals(txtResPass2.Text))
             {
-                if (GiangVienDAO.Instance.checkMGV(txtResUser.Text) == 1)
+                if (DataProvider.Instance.ExcuteQuery("Select * from Account").Rows.Count <= 0)
                 {
-                    if (AccountDAO.Instance.checkTenDN(txtResUser.Text) == 0)
+                    DataProvider.Instance.ExcuteNonQuery("Insert into Account values('" + txtResUser.Text + "', '" + txtResPass.Text + "','admin', 'white')");
+                    lblResError.Visible = false;
+                    guna2ShadowPanel1.Width = 320;
+                    guna2ShadowPanel1.Left += 140;
+                }
+                else
+                {
+                    if (GiangVienDAO.Instance.checkMGV(txtResUser.Text) == 1)
                     {
-                        if (GiangVienDAO.Instance.getTKbyMGV(txtResUser.Text).Equals("None"))
-                            DataProvider.Instance.ExcuteNonQuery("Insert into Account values('" + txtResUser.Text + "', '" + txtResPass.Text + "','gv', 'white')");
-                        else
-                            DataProvider.Instance.ExcuteNonQuery("Insert into Account values('" + txtResUser.Text + "', '" + txtResPass.Text + "','tk', 'white')");
-                        lblResError.Visible = false;
-                        guna2ShadowPanel1.Width = 320;
-                        guna2ShadowPanel1.Left += 140;
+                        if (AccountDAO.Instance.checkTenDN(txtResUser.Text) == 0)
+                        {
+                            if (GiangVienDAO.Instance.getTKbyMGV(txtResUser.Text).Equals("None"))
+                                DataProvider.Instance.ExcuteNonQuery("Insert into Account values('" + txtResUser.Text + "', '" + txtResPass.Text + "','gv', 'white')");
+                            else
+                                DataProvider.Instance.ExcuteNonQuery("Insert into Account values('" + txtResUser.Text + "', '" + txtResPass.Text + "','tk', 'white')");
+                            lblResError.Visible = false;
+                            guna2ShadowPanel1.Width = 320;
+                            guna2ShadowPanel1.Left += 140;
+                        }
+                        else { lblResError.Text = "Mã giáo viên đã được đăng ký tài khoản!"; lblResError.Visible = true; }
                     }
-                    else { lblResError.Text = "Mã giáo viên đã được đăng ký tài khoản!"; lblResError.Visible = true; }
-                }else { lblResError.Text = "Mã giảng viên không tồn tại!"; lblResError.Visible = true; }
+                    else { lblResError.Text = "Mã giảng viên không tồn tại!"; lblResError.Visible = true; }
+                }
             }
             else { lblResError.Text = "Nhập lại mật khẩu không đúng!"; lblResError.Visible = true; }
         }

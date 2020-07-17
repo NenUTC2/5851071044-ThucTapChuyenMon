@@ -203,6 +203,16 @@ namespace QuanLySinhVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap forward_52px {
+            get {
+                object obj = ResourceManager.GetObject("forward_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap horizontal_line_48px {
             get {
                 object obj = ResourceManager.GetObject("horizontal_line_48px", resourceCulture);

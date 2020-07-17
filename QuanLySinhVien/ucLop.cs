@@ -26,11 +26,13 @@ namespace QuanLySinhVien
 
             if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
             {
-                loadCBKHoa("*");
+                loadCBNganh("*");
+                loadCBGV("*");
             }
             else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
             {
-                loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                loadCBNganh(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                loadCBGV(GiangVienDAO.Instance.getKhoabyMGV(mgv));
             }
         }
 
@@ -39,31 +41,31 @@ namespace QuanLySinhVien
             
         }
 
-        public void loadLop(string khoa)
+        public void loadLop(string nganh)
         {
-            if (khoa.Equals("*"))
+            if (nganh.Equals("*"))
                 dtgvLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop");
             else
-                dtgvLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where MaKhoa='" + khoa + "'");
+                dtgvLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where MaNganh='" + nganh + "'");
         }
 
-        public void loadCBKHoa(string khoa)
+        public void loadCBNganh(string nganh)
         {
             
-            if (khoa.Equals("*"))
-                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa");
+            if (nganh.Equals("*"))
+                cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh");
             else
-                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa where MaKhoa='" + khoa + "'");
-            cbKhoa.DisplayMember = "TenKhoa";
-            cbKhoa.ValueMember = "MaKhoa";
+                cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh where MaKhoa='" + nganh + "'");
+            cbNganh.DisplayMember = "TenNganh";
+            cbNganh.ValueMember = "MaNganh";
         }
 
-        public void loadCBGV(string MaKhoa)
+        public void loadCBGV(string khoa)
         {
-            if(MaKhoa.Equals("*"))
+            if(khoa.Equals("*"))
                 cbGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien");
             else
-                cbGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien where MaKhoa='"+MaKhoa+"'");
+                cbGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien where MaKhoa='"+khoa+"'");
             cbGV.DisplayMember = "TenGV";
             cbGV.ValueMember = "MaGV";
         }
@@ -74,15 +76,16 @@ namespace QuanLySinhVien
             {
                 DataProvider.Instance.ExcuteNonQuery("Insert into Lop values(" +
                     "'" + txtMaLop.Text + "', N'" + txtTenLop.Text + "', '" + dtpNgayLap.Value.ToString("yyyy/MM/dd") + "'," +
-                    " '" + cbGV.SelectedValue + "', '" + cbKhoa.SelectedValue + "')");
+                    " '" + cbGV.SelectedValue + "', '" + cbNganh.SelectedValue + "')");
+
                 if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
                 {
-                    loadCBKHoa("*"); loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+                    loadCBNganh("*"); loadLop(cbNganh.SelectedValue.ToString()); loadCBGV(cbNganh.SelectedValue.ToString());
                 }
                 else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
                 {
-                    loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
-                    loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+                    loadCBNganh(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                    loadLop(cbNganh.SelectedValue.ToString()); loadCBGV(cbNganh.SelectedValue.ToString());
                 }
             }
             else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin lớp"; timer1.Enabled = true; }
@@ -94,15 +97,15 @@ namespace QuanLySinhVien
             {
                 DataProvider.Instance.ExcuteNonQuery("Update Lop set" +
                     " TenLop= N'" + txtTenLop.Text + "'," +
-                    " GVCN='" + cbGV.SelectedValue + "', MaKhoa='" + cbKhoa.SelectedValue + "' where MaLop='" + dtgvLop.CurrentRow.Cells["MaLop"].Value.ToString() + "'");
+                    " GVCN='" + cbGV.SelectedValue + "', MaNganh='" + cbNganh.SelectedValue + "' where MaLop='" + dtgvLop.CurrentRow.Cells["MaLop"].Value.ToString() + "'");
                 if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
                 {
-                    loadCBKHoa("*"); loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+                    loadCBNganh("*"); loadLop(cbNganh.SelectedValue.ToString()); loadCBGV(cbNganh.SelectedValue.ToString());
                 }
                 else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
                 {
-                    loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
-                    loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+                    loadCBNganh(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                    loadLop(cbNganh.SelectedValue.ToString()); loadCBGV(cbNganh.SelectedValue.ToString());
                 }
             }
             else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin lớp"; timer1.Enabled = true; }
@@ -113,12 +116,12 @@ namespace QuanLySinhVien
             DataProvider.Instance.ExcuteNonQuery("Delete from Lop where MaLop='"+dtgvLop.CurrentRow.Cells["MaLop"].Value.ToString()+"'");
             if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
             {
-                loadCBKHoa("*"); loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+                loadCBNganh("*"); loadLop(cbNganh.SelectedValue.ToString()); loadCBGV(cbNganh.SelectedValue.ToString());
             }
             else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
             {
-                loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
-                loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+                loadCBNganh(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                loadLop(cbNganh.SelectedValue.ToString()); loadCBGV(cbNganh.SelectedValue.ToString());
             }
         }
 
@@ -126,7 +129,7 @@ namespace QuanLySinhVien
         {
             txtMaLop.Text = dtgvLop.CurrentRow.Cells["MaLop"].Value.ToString();
             txtTenLop.Text = dtgvLop.CurrentRow.Cells["TenLop"].Value.ToString();
-            cbKhoa.SelectedValue = dtgvLop.CurrentRow.Cells["MaKhoa"].Value.ToString();
+            cbNganh.SelectedValue = dtgvLop.CurrentRow.Cells["MaNganh"].Value.ToString();
             cbGV.SelectedValue = dtgvLop.CurrentRow.Cells["MaGV"].Value.ToString();
 
             lblSoSV.Text = "Số sinh viên:  " + DataProvider.Instance.ExcuteQuery("Select count(*) from SinhVien " +
@@ -137,8 +140,8 @@ namespace QuanLySinhVien
         {
             try
             {
-                loadCBGV(cbKhoa.SelectedValue.ToString());
-                loadLop(cbKhoa.SelectedValue.ToString());
+                loadCBGV(KhoaDAO.Instance.getKhoaByNganh(cbNganh.SelectedValue.ToString()));
+                loadLop(cbNganh.SelectedValue.ToString());
             }
             catch { }
         }
@@ -152,12 +155,13 @@ namespace QuanLySinhVien
         {
             if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
             {
-                loadCBKHoa("*"); loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+                loadCBNganh("*");
+                loadCBGV("*");
             }
             else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
             {
-                loadCBKHoa(GiangVienDAO.Instance.getKhoabyMGV(mgv));
-                loadLop(cbKhoa.SelectedValue.ToString()); loadCBGV(cbKhoa.SelectedValue.ToString());
+                loadCBNganh(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                loadCBGV(GiangVienDAO.Instance.getKhoabyMGV(mgv));
             }
         }
 

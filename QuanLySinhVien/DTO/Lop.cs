@@ -12,13 +12,13 @@ namespace QuanLySinhVien.DTO
         private string maLop;
         private string tenLop;
         private string ngayLap;
-        private string maKhoa;
+        private string maNganh;
         private string maGV;
 
         public string MaLop { get => maLop; set => maLop = value; }
         public string TenLop { get => tenLop; set => tenLop = value; }
         public string NgayLap { get => ngayLap; set => ngayLap = value; }
-        public string MaKhoa { get => maKhoa; set => maKhoa = value; }
+        public string MaNganh { get => maNganh; set => maNganh = value; }
         public string MaGV { get => maGV; set => maGV = value; }
 
         public Lop() { }
@@ -28,7 +28,7 @@ namespace QuanLySinhVien.DTO
             this.MaLop = row["MaLop"].ToString();
             this.TenLop = row["TenLop"].ToString();
             this.NgayLap = row["NgayLap"].ToString();
-            this.MaKhoa = row["MaKhoa"].ToString();
+            this.MaNganh = row["MaNganh"].ToString();
             this.MaGV = row["MaGV"].ToString();
         }
     }

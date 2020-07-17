@@ -49,6 +49,7 @@ namespace QuanLySinhVien
                 uck.pn.BackColor = Color.FromArgb(21, 24, 31);
                 uck.pn2.BackColor = Color.FromArgb(31, 34, 41);
                 uck.pn3.BackColor = Color.FromArgb(31, 34, 41);
+                uck.pn5.BackColor = Color.FromArgb(31, 34, 41);
                 uck.lbltenkhoa.ForeColor = Color.White;
                 uck.lbllop.ForeColor = Color.White;
                 uck.lblgv.ForeColor = Color.White;
@@ -72,6 +73,9 @@ namespace QuanLySinhVien
                 ucm.pn.BackColor = Color.FromArgb(21, 24, 31);
                 ucm.pn2.BackColor = Color.FromArgb(31, 34, 41);
                 ucm.pn3.BackColor = Color.FromArgb(31, 34, 41);
+                ucm.lbl1.ForeColor = Color.White;
+                ucm.lbl2.ForeColor = Color.White;
+                ucm.lbl3.ForeColor = Color.White;
 
                 ucd.pn.BackColor = Color.FromArgb(21, 24, 31);
                 ucd.pn2.BackColor = Color.FromArgb(31, 34, 41);
@@ -101,6 +105,7 @@ namespace QuanLySinhVien
                 uck.pn.BackColor = Color.FromArgb(230, 230, 230);
                 uck.pn2.BackColor = Color.White;
                 uck.pn3.BackColor = Color.White;
+                uck.pn5.BackColor = Color.White;
                 uck.lbltenkhoa.ForeColor = Color.Black;
                 uck.lbllop.ForeColor = Color.Black;
                 uck.lblgv.ForeColor = Color.Black;
@@ -124,6 +129,9 @@ namespace QuanLySinhVien
                 ucm.pn.BackColor = Color.FromArgb(230, 230, 230);
                 ucm.pn2.BackColor = Color.White;
                 ucm.pn3.BackColor = Color.White;
+                ucm.lbl1.ForeColor = Color.Black;
+                ucm.lbl2.ForeColor = Color.Black;
+                ucm.lbl3.ForeColor = Color.Black;
 
                 ucd.pn.BackColor = Color.FromArgb(230, 230, 230);
                 ucd.pn2.BackColor = Color.White;
@@ -141,7 +149,7 @@ namespace QuanLySinhVien
 
             showControl(ucd);
             line.Top = btnDiem.Top + 4;
-            
+
             if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin")) { lblUser.Text = mgv; }
 
             else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
@@ -156,6 +164,8 @@ namespace QuanLySinhVien
                 btnGV.Visible = false;
                 btnLop.Visible = false;
                 btnMon.Visible = false;
+                if (DataProvider.Instance.ExcuteQuery("Select * from Lop where GVCN='" + mgv + "'").Rows.Count <= 0)
+                    btnSV.Visible = false;
             }
         }
 
@@ -314,6 +324,7 @@ namespace QuanLySinhVien
                 uck.pn.BackColor = Color.FromArgb(21, 24, 31);
                 uck.pn2.BackColor = Color.FromArgb(31, 34, 41);
                 uck.pn3.BackColor = Color.FromArgb(31, 34, 41);
+                uck.pn5.BackColor = Color.FromArgb(31, 34, 41);
                 uck.lbltenkhoa.ForeColor = Color.White;
                 uck.lbllop.ForeColor = Color.White;
                 uck.lblgv.ForeColor = Color.White;
@@ -337,6 +348,9 @@ namespace QuanLySinhVien
                 ucm.pn.BackColor = Color.FromArgb(21, 24, 31);
                 ucm.pn2.BackColor = Color.FromArgb(31, 34, 41);
                 ucm.pn3.BackColor = Color.FromArgb(31, 34, 41);
+                ucm.lbl1.ForeColor = Color.White;
+                ucm.lbl2.ForeColor = Color.White;
+                ucm.lbl3.ForeColor = Color.White;
 
                 ucd.pn.BackColor = Color.FromArgb(21, 24, 31);
                 ucd.pn2.BackColor = Color.FromArgb(31, 34, 41);
@@ -369,6 +383,7 @@ namespace QuanLySinhVien
                 uck.pn.BackColor = Color.FromArgb(230, 230, 230);
                 uck.pn2.BackColor = Color.White;
                 uck.pn3.BackColor = Color.White;
+                uck.pn5.BackColor = Color.White;
                 uck.lbltenkhoa.ForeColor = Color.Black;
                 uck.lbllop.ForeColor = Color.Black;
                 uck.lblgv.ForeColor = Color.Black;
@@ -392,6 +407,9 @@ namespace QuanLySinhVien
                 ucm.pn.BackColor = Color.FromArgb(230, 230, 230);
                 ucm.pn2.BackColor = Color.White;
                 ucm.pn3.BackColor = Color.White;
+                ucm.lbl1.ForeColor = Color.Black;
+                ucm.lbl2.ForeColor = Color.Black;
+                ucm.lbl3.ForeColor = Color.Black;
 
                 ucd.pn.BackColor = Color.FromArgb(230, 230, 230);
                 ucd.pn2.BackColor = Color.White;
@@ -434,6 +452,7 @@ namespace QuanLySinhVien
             ucm.dtgvMon.DataSource = DataProvider.Instance.ExcuteQuery("select * from MonHoc where concat(MaMon,MaKhoa,TenMon,TinChi) like '%" + txtTimKiem.Text + "%'");
             ucm.dtgvHP.DataSource = DataProvider.Instance.ExcuteQuery("select * from LopHoc where concat(MaMon,MaGV,MaLop,Phong,HocKy,MaCTMon) like '%" + txtTimKiem.Text + "%'");
             uck.dtgv.DataSource = DataProvider.Instance.ExcuteQuery("select * from Khoa where concat(MaKhoa,TenKhoa) like '%" + txtTimKiem.Text + "%'");
+            uck.dtgvN.DataSource = DataProvider.Instance.ExcuteQuery("select * from Nganh where concat(MaNganh,TenNganh,MaKHoa) like '%" + txtTimKiem.Text + "%'");
         }
         public ucThongKe uctk = new ucThongKe();
         private void btnThongKe_Click(object sender, EventArgs e)
