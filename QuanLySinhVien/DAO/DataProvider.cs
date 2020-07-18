@@ -10,7 +10,7 @@ namespace QuanLySinhVien.DAO
 {
     class DataProvider
     {
-        private static DataProvider constr;
+        private static string constr;
         private static DataProvider instance;
         public static DataProvider Instance
         {
@@ -18,10 +18,10 @@ namespace QuanLySinhVien.DAO
             private set { DataProvider.instance = value; }
         }
 
-        internal static DataProvider Constr { get => constr; set => constr = value; }
+        public static string Constr { get => constr; set => constr = value; }
 
         private DataProvider() { }
-        private string con = @"Data Source=NenPhan;Initial Catalog=dataSV;Integrated Security=True";
+        private string con = @""+constr;
         // private object parameter;
         public DataTable ExcuteQuery(string query, object[] parameter = null)
         {

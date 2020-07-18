@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -32,6 +33,11 @@ namespace QuanLySinhVien
         private void formTraCuu_Load(object sender, EventArgs e)
         {
             guna2ShadowPanel1.Width = 320;
+            try
+            {
+                DataProvider.Constr = ConfigurationManager.AppSettings["constr"];
+            }
+            catch { }
         }
 
         private void dtgvDiem_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -220,6 +226,12 @@ namespace QuanLySinhVien
                 txtPass.UseSystemPasswordChar = false;
             else
                 txtPass.UseSystemPasswordChar = true;
+        }
+
+        private void btnKetNoi_Click(object sender, EventArgs e)
+        {
+            formKetNoi kn = new formKetNoi();
+            kn.ShowDialog();
         }
     }
 }
