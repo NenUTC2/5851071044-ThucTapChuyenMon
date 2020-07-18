@@ -151,13 +151,20 @@ namespace QuanLySinhVien
 
         private void btnTaoMon_Click(object sender, EventArgs e)
         {
-            if (txtMaMonTao.Text != "" && txtTenMon.Text != "" && nbrTinChi.Value>0)
+            if (DataProvider.Instance.ExcuteQuery("Select * from MonHoc where Mamon='" + txtMaMonTao.Text + "'").Rows.Count > 0)
             {
-                DataProvider.Instance.ExcuteNonQuery("Insert into MonHoc values(" +
-                    " '" + txtMaMonTao.Text + "', N'" + txtTenMon.Text + "', '" + cbNganh.SelectedValue + "', " + nbrTinChi.Value + ", "+nbrKy.Value+")");
-                loadMon("*");
+                lblLoi.Visible = true; lblLoi.Text = "Mã môn đã tồn tại"; timer1.Enabled = true;
             }
-            else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin môn"; timer1.Enabled = true; }
+            else
+            {
+                if (txtMaMonTao.Text != "" && txtTenMon.Text != "" && nbrTinChi.Value > 0)
+                {
+                    DataProvider.Instance.ExcuteNonQuery("Insert into MonHoc values(" +
+                        " '" + txtMaMonTao.Text + "', N'" + txtTenMon.Text + "', '" + cbNganh.SelectedValue + "', " + nbrTinChi.Value + ", " + nbrKy.Value + ")");
+                    loadMon("*");
+                }
+                else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin môn"; timer1.Enabled = true; }
+            }
         }
 
         private void btnSuaMon_Click(object sender, EventArgs e)
@@ -165,7 +172,7 @@ namespace QuanLySinhVien
             if (txtTenMon.Text != "" && txtMaMonTao.Text != "" && nbrTinChi.Value > 0)
             {
                 DataProvider.Instance.ExcuteNonQuery("Update MonHoc set " +
-                    "TenMon = N'" + txtTenMon.Text + "', MaKhoa = '" + cbNganh.SelectedValue + "', TinChi = " + nbrTinChi.Value + ", SoKy="+nbrKy.Value+" where MaMon = '" + txtMaMonTao.Text + "'");
+                    "TenMon = N'" + txtTenMon.Text + "', MaNganh = '" + cbNganh.SelectedValue + "', TinChi = " + nbrTinChi.Value + ", SoKy="+nbrKy.Value+" where MaMon = '" + txtMaMonTao.Text + "'");
                 loadMon("*");
             }
             else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin môn"; timer1.Enabled = true; }

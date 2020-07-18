@@ -315,8 +315,8 @@ namespace QuanLySinhVien
             {
                 DataTable dt = DataProvider.Instance.ExcuteQuery("Select TenSV, Email, DiemTP, DiemKT, TenMon " +
                     "from DiemLopHoc, SinhVien, dbo.MonHoc,dbo.LopHoc " +
-                    "WHERE DiemLopHoc.MaCTMon=LopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon and DiemLopHoc.MaSV=SinhVien.MaSV " +
-                    "and DiemLopHoc.MaCTMon='" + cbLopHP.SelectedValue.ToString() + "'");
+                    "WHERE DiemLopHoc.MaHP=LopHoc.MaHP AND LopHoc.MaMon=MonHoc.MaMon and DiemLopHoc.MaSV=SinhVien.MaSV " +
+                    "and DiemLopHoc.MaHP='" + cbLopHP.SelectedValue.ToString() + "'");
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     sendMail(dt.Rows[i][1].ToString(), dt.Rows[i][0].ToString(), dt.Rows[i][2].ToString(), dt.Rows[i][3].ToString(), dt.Rows[i][4].ToString());
@@ -329,8 +329,8 @@ namespace QuanLySinhVien
                 string hoten = DataProvider.Instance.ExcuteQuery("select TenSV from sinhvien where masv='" + dtgvDiem.CurrentRow.Cells["MaSV"].Value.ToString() + "'").Rows[0][0].ToString();
                 string tp = dtgvDiem.CurrentRow.Cells["DiemTP"].Value.ToString();
                 string kt = dtgvDiem.CurrentRow.Cells["DiemKT"].Value.ToString();
-                string mon = DataProvider.Instance.ExcuteQuery("Select TenMon FROM dbo.MonHoc,dbo.LopHoc " +
-                    "WHERE LopHoc.MaMon=MonHoc.MaMon AND LopHoc.MaCTMon='" + dtgvDiem.CurrentRow.Cells["MaCTMon"].Value.ToString() + "'").Rows[0][0].ToString();
+                string mon = DataProvider.Instance.ExcuteQuery("Select TenMon FROM dbo.MonHoc,dbo.LopHocPhan " +
+                    "WHERE LopHocPhan.MaMon=MonHoc.MaMon AND LopHoc.MaHP='" + dtgvDiem.CurrentRow.Cells["MaHP"].Value.ToString() + "'").Rows[0][0].ToString();
                 sendMail(email, hoten, tp, kt, mon);
                 MessageBox.Show("Đã gửi điểm đến mail sinh viên " + hoten);
             }
@@ -344,7 +344,7 @@ namespace QuanLySinhVien
 
         private void btnKTHP_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("update LopHoc set TrangThai=1 where MaCTMon='" + cbLopHP.SelectedValue.ToString() + "'");
+            DataProvider.Instance.ExcuteNonQuery("update LopHoc set TrangThai=1 where MaHP='" + cbLopHP.SelectedValue.ToString() + "'");
             loadDiem(cbLopHP.SelectedValue.ToString());
             txtChuyenCan.ResetText();
             txtGiuaKy.ResetText();
