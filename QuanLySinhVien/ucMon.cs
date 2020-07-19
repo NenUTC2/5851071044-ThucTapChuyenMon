@@ -267,7 +267,7 @@ namespace QuanLySinhVien
         {
             cbGV.SelectedValue = dtgvLopHoc.CurrentRow.Cells["MaGV"].Value.ToString();
             cbLop.SelectedValue = dtgvLopHoc.CurrentRow.Cells["MaLop"].Value.ToString();
-            txtHocKy.Text = dtgvLopHoc.CurrentRow.Cells["HocKy"].Value.ToString();
+           // txtHocKy.Text = dtgvLopHoc.CurrentRow.Cells["HocKy"].Value.ToString();
             txtMaMon.Text = dtgvLopHoc.CurrentRow.Cells["MaMonHoc"].Value.ToString();
             txtPhong.Text = dtgvLopHoc.CurrentRow.Cells["Phong"].Value.ToString();
         }

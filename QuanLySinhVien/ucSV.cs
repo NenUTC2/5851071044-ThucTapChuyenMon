@@ -84,8 +84,7 @@ namespace QuanLySinhVien
             else
                 cbMonHoc.DataSource = DataProvider.Instance.ExcuteQuery("Select MonHoc.MaMon,TenMon from MonHoc where MaNganh='"+khoa+"' and SoKy="+ky+" " +
                     "UNION ALL " +
-                    "Select MonHoc.MaMon, TenMon from MonHoc, dbo.LopHocPhan, dbo.DiemHocPhan " +
-                    "WHERE DiemKT < 4 AND DiemHocPhan.MaHP = LopHocPhan.MaHP AND LopHocPhan.MaMon = MonHoc.MaMon AND MaSV = '"+msv+"'");
+                    "Select MonHoc.MaMon, TenMon from MonHoc, NoMon where MonHoc.MaMon=NoMon.MaMon AND MaSV = '"+msv+"'");
             cbMonHoc.DisplayMember = "TenMon";
             cbMonHoc.ValueMember = "MaMon";
         }

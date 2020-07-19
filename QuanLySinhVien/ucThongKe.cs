@@ -72,6 +72,8 @@ namespace QuanLySinhVien
         {
             try
             {
+                dtgvSV.Visible = true;
+                dtgvNo.Visible = false;
                 dtgvSV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from SinhVien where TichLuy>=8 and MaLop='" + cbLop.SelectedValue.ToString() + "'");
             }
             catch { }
@@ -81,6 +83,8 @@ namespace QuanLySinhVien
         {
             try
             {
+                dtgvSV.Visible = true;
+                dtgvNo.Visible = false;
                 dtgvSV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from SinhVien where TichLuy<=4 and MaLop='" + cbLop.SelectedValue.ToString() + "'");
             }
             catch { }
@@ -90,6 +94,8 @@ namespace QuanLySinhVien
         {
             try
             {
+                dtgvSV.Visible = false;
+                dtgvNo.Visible = true;
                 dtgvNo.DataSource = DataProvider.Instance.ExcuteQuery("Select NoMon.MaSV,TenSV,NoMon.MaMon,MaHK,Tra from NoMon, SinhVien where NoMon.MaSV=SinhVien.MaSV and  MaLop='" + cbLop.SelectedValue.ToString() + "'");
             }
             catch { }
