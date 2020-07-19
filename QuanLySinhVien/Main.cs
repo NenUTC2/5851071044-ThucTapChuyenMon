@@ -75,7 +75,7 @@ namespace QuanLySinhVien
                 ucm.pn3.BackColor = Color.FromArgb(31, 34, 41);
                 ucm.lbl1.ForeColor = Color.White;
                 ucm.lbl2.ForeColor = Color.White;
-                ucm.lbl3.ForeColor = Color.White;
+                //ucm.lbl3.ForeColor = Color.White;
 
                 ucd.pn.BackColor = Color.FromArgb(21, 24, 31);
                 ucd.pn2.BackColor = Color.FromArgb(31, 34, 41);
@@ -131,7 +131,7 @@ namespace QuanLySinhVien
                 ucm.pn3.BackColor = Color.White;
                 ucm.lbl1.ForeColor = Color.Black;
                 ucm.lbl2.ForeColor = Color.Black;
-                ucm.lbl3.ForeColor = Color.Black;
+                //ucm.lbl3.ForeColor = Color.Black;
 
                 ucd.pn.BackColor = Color.FromArgb(230, 230, 230);
                 ucd.pn2.BackColor = Color.White;
@@ -350,7 +350,7 @@ namespace QuanLySinhVien
                 ucm.pn3.BackColor = Color.FromArgb(31, 34, 41);
                 ucm.lbl1.ForeColor = Color.White;
                 ucm.lbl2.ForeColor = Color.White;
-                ucm.lbl3.ForeColor = Color.White;
+                //ucm.lbl3.ForeColor = Color.White;
 
                 ucd.pn.BackColor = Color.FromArgb(21, 24, 31);
                 ucd.pn2.BackColor = Color.FromArgb(31, 34, 41);
@@ -409,7 +409,7 @@ namespace QuanLySinhVien
                 ucm.pn3.BackColor = Color.White;
                 ucm.lbl1.ForeColor = Color.Black;
                 ucm.lbl2.ForeColor = Color.Black;
-                ucm.lbl3.ForeColor = Color.Black;
+                //ucm.lbl3.ForeColor = Color.Black;
 
                 ucd.pn.BackColor = Color.FromArgb(230, 230, 230);
                 ucd.pn2.BackColor = Color.White;
@@ -445,14 +445,14 @@ namespace QuanLySinhVien
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            ucl.dtgv.DataSource = DataProvider.Instance.ExcuteQuery("select * from Lop where concat(MaLop,Makhoa,TenLop) like '%" + txtTimKiem.Text + "%'");
-            ucd.dtgv.DataSource = DataProvider.Instance.ExcuteQuery("select * from DiemLopHoc where concat(MaCTMon,MaSV) like '%" + txtTimKiem.Text + "%'");
+            ucl.dtgv.DataSource = DataProvider.Instance.ExcuteQuery("select * from Lop where concat(MaLop,MaNganh,TenLop) like '%" + txtTimKiem.Text + "%'");
+            ucd.dtgv.DataSource = DataProvider.Instance.ExcuteQuery("select * from DiemHocPhan where concat(MaHP,MaSV) like '%" + txtTimKiem.Text + "%'");
             ucsv.dtgv.DataSource = DataProvider.Instance.ExcuteQuery("select * from SinhVien where concat(MaSV,TenSV,SDT,DiaChi,MaLop) like '%" + txtTimKiem.Text + "%'");
             ucgv.dtgv.DataSource = DataProvider.Instance.ExcuteQuery("select * from GiangVien where concat(MaGV,TenGV,SDT,MaKhoa,DiaChi) like '%" + txtTimKiem.Text + "%'");
-            ucm.dtgvMon.DataSource = DataProvider.Instance.ExcuteQuery("select * from MonHoc where concat(MaMon,MaKhoa,TenMon,TinChi) like '%" + txtTimKiem.Text + "%'");
-            ucm.dtgvHP.DataSource = DataProvider.Instance.ExcuteQuery("select * from LopHoc where concat(MaMon,MaGV,MaLop,Phong,HocKy,MaCTMon) like '%" + txtTimKiem.Text + "%'");
+            ucm.dtgvMon.DataSource = DataProvider.Instance.ExcuteQuery("select * from MonHoc where concat(MaMon,MaNganh,TenMon,TinChi) like '%" + txtTimKiem.Text + "%'");
+            ucm.dtgvHP.DataSource = DataProvider.Instance.ExcuteQuery("select * from LopHocPhan where concat(MaMon,MaGV,MaLop,Phong,HocKy,MaHP) like '%" + txtTimKiem.Text + "%'");
             uck.dtgv.DataSource = DataProvider.Instance.ExcuteQuery("select * from Khoa where concat(MaKhoa,TenKhoa) like '%" + txtTimKiem.Text + "%'");
-            uck.dtgvN.DataSource = DataProvider.Instance.ExcuteQuery("select * from Nganh where concat(MaNganh,TenNganh,MaKHoa) like '%" + txtTimKiem.Text + "%'");
+            uck.dtgvN.DataSource = DataProvider.Instance.ExcuteQuery("select * from Nganh where concat(MaNganh,TenNganh,MaKhoa) like '%" + txtTimKiem.Text + "%'");
         }
         public ucThongKe uctk = new ucThongKe();
         private void btnThongKe_Click(object sender, EventArgs e)

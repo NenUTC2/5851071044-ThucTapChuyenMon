@@ -21,7 +21,7 @@ namespace QuanLySinhVien.DAO
         public static string Constr { get => constr; set => constr = value; }
 
         private DataProvider() { }
-        private string con = @""+constr;
+        private string con = @""+Constr;
         // private object parameter;
         public DataTable ExcuteQuery(string query, object[] parameter = null)
         {

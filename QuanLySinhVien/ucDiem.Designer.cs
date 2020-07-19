@@ -34,16 +34,24 @@
             this.dtgvDiem = new System.Windows.Forms.DataGridView();
             this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChuyenCan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemGiuaKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemTP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiemKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KTxTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblLoi = new Guna.UI2.WinForms.Guna2TextBox();
-            this.chkGuiEmail = new System.Windows.Forms.CheckBox();
+            this.txtMess = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSendMess = new Guna.UI2.WinForms.Guna2Button();
+            this.pnFunc = new System.Windows.Forms.Panel();
+            this.btnDiemDanh = new Guna.UI2.WinForms.Guna2Button();
             this.btnGuiDiem = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXuatExcel = new Guna.UI2.WinForms.Guna2Button();
+            this.chkGuiEmail = new System.Windows.Forms.CheckBox();
+            this.btnPNFunc = new Guna.UI2.WinForms.Guna2Button();
+            this.lblLoi = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -54,6 +62,7 @@
             this.btnReset = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnLuuDIem = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblVang = new System.Windows.Forms.Label();
             this.lblTenSV = new System.Windows.Forms.Label();
             this.lblLop = new System.Windows.Forms.Label();
             this.lblDiemTL = new System.Windows.Forms.Label();
@@ -68,9 +77,10 @@
             this.txtGiuaKy = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtChuyenCan = new Guna.UI2.WinForms.Guna2TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnXuatExcel = new Guna.UI2.WinForms.Guna2Button();
+            this.chkMess = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDiem)).BeginInit();
             this.panel1.SuspendLayout();
+            this.pnFunc.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -97,15 +107,17 @@
             this.dtgvDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSV,
             this.MaHP,
+            this.Vang,
             this.ChuyenCan,
             this.DiemGiuaKy,
             this.DiemTP,
             this.DiemThi,
             this.DiemKT,
-            this.KTxTC});
+            this.KTxTC,
+            this.tra});
             this.dtgvDiem.EnableHeadersVisualStyles = false;
             this.dtgvDiem.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dtgvDiem.Location = new System.Drawing.Point(26, 339);
+            this.dtgvDiem.Location = new System.Drawing.Point(26, 348);
             this.dtgvDiem.Name = "dtgvDiem";
             this.dtgvDiem.ReadOnly = true;
             this.dtgvDiem.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -117,7 +129,7 @@
             this.dtgvDiem.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgvDiem.RowTemplate.Height = 40;
             this.dtgvDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvDiem.Size = new System.Drawing.Size(1180, 328);
+            this.dtgvDiem.Size = new System.Drawing.Size(1180, 319);
             this.dtgvDiem.TabIndex = 136;
             this.dtgvDiem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDiem_CellClick);
             // 
@@ -134,6 +146,14 @@
             this.MaHP.HeaderText = "Mã học phần";
             this.MaHP.Name = "MaHP";
             this.MaHP.ReadOnly = true;
+            // 
+            // Vang
+            // 
+            this.Vang.DataPropertyName = "Vang";
+            this.Vang.HeaderText = "Vang";
+            this.Vang.Name = "Vang";
+            this.Vang.ReadOnly = true;
+            this.Vang.Visible = false;
             // 
             // ChuyenCan
             // 
@@ -178,12 +198,22 @@
             this.KTxTC.ReadOnly = true;
             this.KTxTC.Visible = false;
             // 
+            // tra
+            // 
+            this.tra.DataPropertyName = "Tra";
+            this.tra.HeaderText = "tra";
+            this.tra.Name = "tra";
+            this.tra.ReadOnly = true;
+            this.tra.Visible = false;
+            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnXuatExcel);
+            this.panel1.Controls.Add(this.chkMess);
+            this.panel1.Controls.Add(this.txtMess);
+            this.panel1.Controls.Add(this.txtSendMess);
+            this.panel1.Controls.Add(this.pnFunc);
+            this.panel1.Controls.Add(this.btnPNFunc);
             this.panel1.Controls.Add(this.lblLoi);
-            this.panel1.Controls.Add(this.chkGuiEmail);
-            this.panel1.Controls.Add(this.btnGuiDiem);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
@@ -194,6 +224,157 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1232, 682);
             this.panel1.TabIndex = 138;
+            // 
+            // txtMess
+            // 
+            this.txtMess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtMess.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtMess.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMess.DefaultText = "";
+            this.txtMess.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMess.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMess.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMess.DisabledState.Parent = this.txtMess;
+            this.txtMess.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMess.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtMess.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMess.FocusedState.Parent = this.txtMess;
+            this.txtMess.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMess.ForeColor = System.Drawing.Color.White;
+            this.txtMess.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMess.HoverState.Parent = this.txtMess;
+            this.txtMess.Location = new System.Drawing.Point(943, 47);
+            this.txtMess.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtMess.Multiline = true;
+            this.txtMess.Name = "txtMess";
+            this.txtMess.PasswordChar = '\0';
+            this.txtMess.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtMess.PlaceholderText = "Tin nhắn";
+            this.txtMess.SelectedText = "";
+            this.txtMess.ShadowDecoration.Parent = this.txtMess;
+            this.txtMess.Size = new System.Drawing.Size(205, 151);
+            this.txtMess.TabIndex = 143;
+            // 
+            // txtSendMess
+            // 
+            this.txtSendMess.CheckedState.Parent = this.txtSendMess;
+            this.txtSendMess.CustomImages.Parent = this.txtSendMess;
+            this.txtSendMess.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtSendMess.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSendMess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(53)))));
+            this.txtSendMess.HoverState.Parent = this.txtSendMess;
+            this.txtSendMess.Image = global::QuanLySinhVien.Properties.Resources.send_48px;
+            this.txtSendMess.ImageSize = new System.Drawing.Size(35, 35);
+            this.txtSendMess.Location = new System.Drawing.Point(1147, 47);
+            this.txtSendMess.Name = "txtSendMess";
+            this.txtSendMess.ShadowDecoration.Parent = this.txtSendMess;
+            this.txtSendMess.Size = new System.Drawing.Size(59, 151);
+            this.txtSendMess.TabIndex = 145;
+            this.txtSendMess.TextOffset = new System.Drawing.Point(21, 0);
+            this.txtSendMess.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // pnFunc
+            // 
+            this.pnFunc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            this.pnFunc.Controls.Add(this.btnDiemDanh);
+            this.pnFunc.Controls.Add(this.btnGuiDiem);
+            this.pnFunc.Controls.Add(this.btnXuatExcel);
+            this.pnFunc.Controls.Add(this.chkGuiEmail);
+            this.pnFunc.Location = new System.Drawing.Point(688, 85);
+            this.pnFunc.Name = "pnFunc";
+            this.pnFunc.Size = new System.Drawing.Size(240, 197);
+            this.pnFunc.TabIndex = 165;
+            this.pnFunc.Visible = false;
+            // 
+            // btnDiemDanh
+            // 
+            this.btnDiemDanh.CheckedState.Parent = this.btnDiemDanh;
+            this.btnDiemDanh.CustomImages.Parent = this.btnDiemDanh;
+            this.btnDiemDanh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnDiemDanh.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiemDanh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
+            this.btnDiemDanh.HoverState.Parent = this.btnDiemDanh;
+            this.btnDiemDanh.Image = global::QuanLySinhVien.Properties.Resources.attendance_64px;
+            this.btnDiemDanh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnDiemDanh.ImageOffset = new System.Drawing.Point(8, 0);
+            this.btnDiemDanh.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnDiemDanh.Location = new System.Drawing.Point(29, 92);
+            this.btnDiemDanh.Name = "btnDiemDanh";
+            this.btnDiemDanh.ShadowDecoration.Parent = this.btnDiemDanh;
+            this.btnDiemDanh.Size = new System.Drawing.Size(179, 43);
+            this.btnDiemDanh.TabIndex = 144;
+            this.btnDiemDanh.Text = "Điểm danh";
+            this.btnDiemDanh.TextOffset = new System.Drawing.Point(21, 0);
+            this.btnDiemDanh.Click += new System.EventHandler(this.btnDiemDanh_Click);
+            // 
+            // btnGuiDiem
+            // 
+            this.btnGuiDiem.CheckedState.Parent = this.btnGuiDiem;
+            this.btnGuiDiem.CustomImages.Parent = this.btnGuiDiem;
+            this.btnGuiDiem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnGuiDiem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuiDiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(53)))));
+            this.btnGuiDiem.HoverState.Parent = this.btnGuiDiem;
+            this.btnGuiDiem.Image = global::QuanLySinhVien.Properties.Resources.send_48px;
+            this.btnGuiDiem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnGuiDiem.ImageOffset = new System.Drawing.Point(8, 0);
+            this.btnGuiDiem.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnGuiDiem.Location = new System.Drawing.Point(29, 43);
+            this.btnGuiDiem.Name = "btnGuiDiem";
+            this.btnGuiDiem.ShadowDecoration.Parent = this.btnGuiDiem;
+            this.btnGuiDiem.Size = new System.Drawing.Size(179, 43);
+            this.btnGuiDiem.TabIndex = 142;
+            this.btnGuiDiem.Text = "Gửi điểm";
+            this.btnGuiDiem.TextOffset = new System.Drawing.Point(21, 0);
+            this.btnGuiDiem.Click += new System.EventHandler(this.btnGuiDiem_Click);
+            // 
+            // btnXuatExcel
+            // 
+            this.btnXuatExcel.CheckedState.Parent = this.btnXuatExcel;
+            this.btnXuatExcel.CustomImages.Parent = this.btnXuatExcel;
+            this.btnXuatExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.btnXuatExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatExcel.ForeColor = System.Drawing.Color.Lime;
+            this.btnXuatExcel.HoverState.Parent = this.btnXuatExcel;
+            this.btnXuatExcel.Image = global::QuanLySinhVien.Properties.Resources.microsoft_excel_52px;
+            this.btnXuatExcel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnXuatExcel.ImageOffset = new System.Drawing.Point(8, 0);
+            this.btnXuatExcel.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnXuatExcel.Location = new System.Drawing.Point(29, 141);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.ShadowDecoration.Parent = this.btnXuatExcel;
+            this.btnXuatExcel.Size = new System.Drawing.Size(179, 43);
+            this.btnXuatExcel.TabIndex = 143;
+            this.btnXuatExcel.Text = "Xuất Excel";
+            this.btnXuatExcel.TextOffset = new System.Drawing.Point(20, 0);
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
+            // 
+            // chkGuiEmail
+            // 
+            this.chkGuiEmail.AutoSize = true;
+            this.chkGuiEmail.Location = new System.Drawing.Point(29, 16);
+            this.chkGuiEmail.Name = "chkGuiEmail";
+            this.chkGuiEmail.Size = new System.Drawing.Size(91, 21);
+            this.chkGuiEmail.TabIndex = 143;
+            this.chkGuiEmail.Text = "Gửi tất cả";
+            this.chkGuiEmail.UseVisualStyleBackColor = true;
+            // 
+            // btnPNFunc
+            // 
+            this.btnPNFunc.CheckedState.Parent = this.btnPNFunc;
+            this.btnPNFunc.CustomImages.Parent = this.btnPNFunc;
+            this.btnPNFunc.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            this.btnPNFunc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPNFunc.ForeColor = System.Drawing.Color.Black;
+            this.btnPNFunc.HoverState.Parent = this.btnPNFunc;
+            this.btnPNFunc.Image = global::QuanLySinhVien.Properties.Resources.pull_down_60px;
+            this.btnPNFunc.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnPNFunc.Location = new System.Drawing.Point(886, 47);
+            this.btnPNFunc.Name = "btnPNFunc";
+            this.btnPNFunc.ShadowDecoration.Parent = this.btnPNFunc;
+            this.btnPNFunc.Size = new System.Drawing.Size(42, 40);
+            this.btnPNFunc.TabIndex = 164;
+            this.btnPNFunc.Click += new System.EventHandler(this.btnPNFunc_Click);
             // 
             // lblLoi
             // 
@@ -213,7 +394,7 @@
             this.lblLoi.ForeColor = System.Drawing.Color.White;
             this.lblLoi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.lblLoi.HoverState.Parent = this.lblLoi;
-            this.lblLoi.Location = new System.Drawing.Point(443, 300);
+            this.lblLoi.Location = new System.Drawing.Point(461, 4);
             this.lblLoi.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.lblLoi.Name = "lblLoi";
             this.lblLoi.PasswordChar = '\0';
@@ -227,44 +408,13 @@
             this.lblLoi.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.lblLoi.Visible = false;
             // 
-            // chkGuiEmail
-            // 
-            this.chkGuiEmail.AutoSize = true;
-            this.chkGuiEmail.Location = new System.Drawing.Point(1031, 29);
-            this.chkGuiEmail.Name = "chkGuiEmail";
-            this.chkGuiEmail.Size = new System.Drawing.Size(91, 21);
-            this.chkGuiEmail.TabIndex = 143;
-            this.chkGuiEmail.Text = "Gửi tất cả";
-            this.chkGuiEmail.UseVisualStyleBackColor = true;
-            // 
-            // btnGuiDiem
-            // 
-            this.btnGuiDiem.CheckedState.Parent = this.btnGuiDiem;
-            this.btnGuiDiem.CustomImages.Parent = this.btnGuiDiem;
-            this.btnGuiDiem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.btnGuiDiem.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuiDiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(53)))));
-            this.btnGuiDiem.HoverState.Parent = this.btnGuiDiem;
-            this.btnGuiDiem.Image = global::QuanLySinhVien.Properties.Resources.send_48px;
-            this.btnGuiDiem.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnGuiDiem.ImageOffset = new System.Drawing.Point(8, 0);
-            this.btnGuiDiem.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnGuiDiem.Location = new System.Drawing.Point(1031, 56);
-            this.btnGuiDiem.Name = "btnGuiDiem";
-            this.btnGuiDiem.ShadowDecoration.Parent = this.btnGuiDiem;
-            this.btnGuiDiem.Size = new System.Drawing.Size(179, 43);
-            this.btnGuiDiem.TabIndex = 142;
-            this.btnGuiDiem.Text = "Gửi điểm";
-            this.btnGuiDiem.TextOffset = new System.Drawing.Point(21, 0);
-            this.btnGuiDiem.Click += new System.EventHandler(this.btnGuiDiem_Click);
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(387, 14);
+            this.panel5.Location = new System.Drawing.Point(387, 47);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(638, 25);
+            this.panel5.Size = new System.Drawing.Size(547, 25);
             this.panel5.TabIndex = 139;
             // 
             // label1
@@ -286,7 +436,7 @@
             this.panel4.Controls.Add(this.cbLopHP);
             this.panel4.Controls.Add(this.btnReset);
             this.panel4.Controls.Add(this.btnLuuDIem);
-            this.panel4.Location = new System.Drawing.Point(26, 14);
+            this.panel4.Location = new System.Drawing.Point(26, 47);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(343, 295);
             this.panel4.TabIndex = 142;
@@ -397,13 +547,24 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.lblVang);
             this.panel3.Controls.Add(this.lblTenSV);
             this.panel3.Controls.Add(this.lblLop);
             this.panel3.Controls.Add(this.lblDiemTL);
-            this.panel3.Location = new System.Drawing.Point(387, 19);
+            this.panel3.Location = new System.Drawing.Point(387, 52);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(638, 146);
+            this.panel3.Size = new System.Drawing.Size(547, 146);
             this.panel3.TabIndex = 141;
+            // 
+            // lblVang
+            // 
+            this.lblVang.AutoSize = true;
+            this.lblVang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVang.Location = new System.Drawing.Point(286, 107);
+            this.lblVang.Name = "lblVang";
+            this.lblVang.Size = new System.Drawing.Size(132, 25);
+            this.lblVang.TabIndex = 141;
+            this.lblVang.Text = "Số buổi học:  ";
             // 
             // lblTenSV
             // 
@@ -447,7 +608,7 @@
             this.panel2.Controls.Add(this.txtTP);
             this.panel2.Controls.Add(this.txtGiuaKy);
             this.panel2.Controls.Add(this.txtChuyenCan);
-            this.panel2.Location = new System.Drawing.Point(367, 184);
+            this.panel2.Location = new System.Drawing.Point(367, 217);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(839, 125);
             this.panel2.TabIndex = 0;
@@ -602,7 +763,7 @@
             this.txtKT.ForeColor = System.Drawing.Color.White;
             this.txtKT.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtKT.HoverState.Parent = this.txtKT;
-            this.txtKT.Location = new System.Drawing.Point(672, 51);
+            this.txtKT.Location = new System.Drawing.Point(679, 51);
             this.txtKT.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.txtKT.Name = "txtKT";
             this.txtKT.PasswordChar = '\0';
@@ -748,24 +909,15 @@
             this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnXuatExcel
+            // chkMess
             // 
-            this.btnXuatExcel.CheckedState.Parent = this.btnXuatExcel;
-            this.btnXuatExcel.CustomImages.Parent = this.btnXuatExcel;
-            this.btnXuatExcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.btnXuatExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatExcel.ForeColor = System.Drawing.Color.Lime;
-            this.btnXuatExcel.HoverState.Parent = this.btnXuatExcel;
-            this.btnXuatExcel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnXuatExcel.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnXuatExcel.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnXuatExcel.Location = new System.Drawing.Point(1031, 122);
-            this.btnXuatExcel.Name = "btnXuatExcel";
-            this.btnXuatExcel.ShadowDecoration.Parent = this.btnXuatExcel;
-            this.btnXuatExcel.Size = new System.Drawing.Size(179, 43);
-            this.btnXuatExcel.TabIndex = 143;
-            this.btnXuatExcel.Text = "Xuất Excel";
-            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
+            this.chkMess.AutoSize = true;
+            this.chkMess.Location = new System.Drawing.Point(943, 21);
+            this.chkMess.Name = "chkMess";
+            this.chkMess.Size = new System.Drawing.Size(91, 21);
+            this.chkMess.TabIndex = 145;
+            this.chkMess.Text = "Gửi tất cả";
+            this.chkMess.UseVisualStyleBackColor = true;
             // 
             // ucDiem
             // 
@@ -778,6 +930,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDiem)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.pnFunc.ResumeLayout(false);
+            this.pnFunc.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -820,14 +974,23 @@
         private Guna.UI2.WinForms.Guna2TextBox lblLoi;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.CheckBox chkKT;
+        private Guna.UI2.WinForms.Guna2Button btnXuatExcel;
+        private Guna.UI2.WinForms.Guna2Button btnDiemDanh;
+        private Guna.UI2.WinForms.Guna2Button btnPNFunc;
+        private System.Windows.Forms.Panel pnFunc;
+        private System.Windows.Forms.Label lblVang;
+        private Guna.UI2.WinForms.Guna2Button txtSendMess;
+        private Guna.UI2.WinForms.Guna2TextBox txtMess;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSV;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Vang;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChuyenCan;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemGiuaKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemTP;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemThi;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiemKT;
         private System.Windows.Forms.DataGridViewTextBoxColumn KTxTC;
-        private Guna.UI2.WinForms.Guna2Button btnXuatExcel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tra;
+        private System.Windows.Forms.CheckBox chkMess;
     }
 }

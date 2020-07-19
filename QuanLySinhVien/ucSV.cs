@@ -139,7 +139,8 @@ namespace QuanLySinhVien
 
         private void cbMonHoc_SelectedValueChanged(object sender, EventArgs e)
         {
-            cbLopHoc.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHocPhan where MaMon='" + cbMonHoc.SelectedValue + "'");
+            string mhk = DataProvider.Instance.ExcuteQuery("Select MaHK from HocKy where TrangThai=0").Rows[0][0].ToString();
+            cbLopHoc.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHocPhan where HocKy='"+mhk+"' and MaMon='" + cbMonHoc.SelectedValue + "'");
             cbLopHoc.DisplayMember = "MaHP";
             cbLopHoc.ValueMember = "MaHP";
         }
@@ -205,12 +206,16 @@ namespace QuanLySinhVien
 
         private void btnDangKyMon_Click(object sender, EventArgs e)
         {
-            string msv = dtgvSV.CurrentRow.Cells["MaSV"].Value.ToString();
-            if (SinhVienDAO.Instance.checkSV(msv) == 1)
+            if (DataProvider.Instance.ExcuteQuery("Select * from DiemHocPhan where MaHP='" + cbLopHoc.SelectedValue.ToString() + "'").Rows.Count <= 0)
             {
-                DataProvider.Instance.ExcuteNonQuery("Insert into DiemHocPhan values('" + cbLopHoc.SelectedValue + "', '" + msv + "', 0,0,0,0,0,0,0)");
-                DiemDAO.Instance.themCTHocKy(cbLopHoc.SelectedValue.ToString(), msv);
+                string msv = dtgvSV.CurrentRow.Cells["MaSV"].Value.ToString();
+                if (SinhVienDAO.Instance.checkSV(msv) == 1)
+                {
+                    DataProvider.Instance.ExcuteNonQuery("Insert into DiemHocPhan values('" + cbLopHoc.SelectedValue + "', '" + msv + "', 0, 0,0,0,0,0,0,0)");
+                    DiemDAO.Instance.themCTHocKy(cbLopHoc.SelectedValue.ToString(), msv);
+                }
             }
+            else { lblLoi.Visible = true; lblLoi.Text = "Sinh viên đã đăng ký môn này"; timer1.Enabled = true; }
 
         }
 

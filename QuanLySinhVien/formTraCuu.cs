@@ -19,16 +19,16 @@ namespace QuanLySinhVien
             InitializeComponent();
         }
 
-        bool IsTheSameCellValue(int column, int row)
-        {
-            DataGridViewCell cell1 = dtgvDiem[column, row];
-            DataGridViewCell cell2 = dtgvDiem[column, row - 1];
-            if (cell1.Value == null || cell2.Value == null)
-            {
-                return false;
-            }
-            return cell1.Value.ToString() == cell2.Value.ToString();
-        }
+        //bool IsTheSameCellValue(int column, int row)
+        //{
+        //    DataGridViewCell cell1 = dtgvDiem[column, row];
+        //    DataGridViewCell cell2 = dtgvDiem[column, row - 1];
+        //    if (cell1.Value == null || cell2.Value == null)
+        //    {
+        //        return false;
+        //    }
+        //    return cell1.Value.ToString() == cell2.Value.ToString();
+        //}
 
         private void formTraCuu_Load(object sender, EventArgs e)
         {
@@ -42,28 +42,28 @@ namespace QuanLySinhVien
 
         private void dtgvDiem_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            e.AdvancedBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
-            if (e.RowIndex < 1 || e.ColumnIndex < 0)
-                return;
-            if (IsTheSameCellValue(e.ColumnIndex, e.RowIndex))
-            {
-                e.AdvancedBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
-            }
-            else
-            {
-                e.AdvancedBorderStyle.Top = dtgvDiem.AdvancedCellBorderStyle.Top;
-            }
+            //e.AdvancedBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
+            //if (e.RowIndex < 1 || e.ColumnIndex < 0)
+            //    return;
+            //if (IsTheSameCellValue(e.ColumnIndex, e.RowIndex))
+            //{
+            //    e.AdvancedBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
+            //}
+            //else
+            //{
+            //    e.AdvancedBorderStyle.Top = dtgvDiem.AdvancedCellBorderStyle.Top;
+            //}
         }
 
         private void dtgvDiem_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.RowIndex == 0)
-                return;
-            if (IsTheSameCellValue(e.ColumnIndex, e.RowIndex))
-            {
-                e.Value = "";
-                e.FormattingApplied = true;
-            }
+            //if (e.RowIndex == 0)
+            //    return;
+            //if (IsTheSameCellValue(e.ColumnIndex, e.RowIndex))
+            //{
+            //    e.Value = "";
+            //    e.FormattingApplied = true;
+            //}
         }
 
         public void loadDiem(string msv)
@@ -86,7 +86,7 @@ namespace QuanLySinhVien
                 picCheckSV.Image = Properties.Resources.checked_checkbox_60px;
                 lblTen.Text = SinhVienDAO.Instance.getTenformMa(msv);
                 lblLop.Text = SinhVienDAO.Instance.getLopformMa(msv);
-                lblTL.Text = SinhVienDAO.Instance.getdiemTL(msv);
+                lblTL.Text = Convert.ToDouble(SinhVienDAO.Instance.getdiemTL(msv)).ToString("#.##");
                 chrDiemHK.DataSource = DataProvider.Instance.ExcuteQuery("Select MaHK, DiemTichLuy from CTHocKy where MaSV='" + txtMSV.Text + "'");
                 chrDiemHK.Series[0].XValueMember = "MaHK";
                 chrDiemHK.Series[0].YValueMembers = "DiemTichLuy";
@@ -232,6 +232,11 @@ namespace QuanLySinhVien
         {
             formKetNoi kn = new formKetNoi();
             kn.ShowDialog();
+        }
+
+        private void guna2Button2_Click_1(object sender, EventArgs e)
+        {
+           
         }
     }
 }

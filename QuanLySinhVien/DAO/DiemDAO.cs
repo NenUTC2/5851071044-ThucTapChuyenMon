@@ -50,6 +50,11 @@ namespace QuanLySinhVien.DAO
             return DataProvider.Instance.ExcuteQuery("Select HocKy from LopHocPhan where MaHP='" + mact + "'").Rows[0][0].ToString();
         }
 
+        public string getMaMonbyCTMon(string mact)
+        {
+            return DataProvider.Instance.ExcuteQuery("Select MaMon from LopHocPhan where MaHP='" + mact + "'").Rows[0][0].ToString();
+        }
+
         public void themCTHocKy(string mact, string msv)
         {
             string hk = DataProvider.Instance.ExcuteQuery("Select HocKy from LopHocPhan where MaHP='" + mact + "'").Rows[0][0].ToString();

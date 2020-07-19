@@ -73,6 +73,16 @@ namespace QuanLySinhVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap attendance_64px {
+            get {
+                object obj = ResourceManager.GetObject("attendance_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap back_52px {
             get {
                 object obj = ResourceManager.GetObject("back_52px", resourceCulture);
@@ -263,9 +273,29 @@ namespace QuanLySinhVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap microsoft_excel_52px {
+            get {
+                object obj = ResourceManager.GetObject("microsoft_excel_52px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plus_60px {
             get {
                 object obj = ResourceManager.GetObject("plus_60px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pull_down_60px {
+            get {
+                object obj = ResourceManager.GetObject("pull_down_60px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

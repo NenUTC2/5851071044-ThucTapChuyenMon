@@ -19,7 +19,7 @@ namespace QuanLySinhVien
         public formKetNoi()
         {
             InitializeComponent();
-            txtServer.Text = Environment.MachineName.ToString();
+            txtServer.Text = SystemInformation.ComputerName.ToString();
             txtDatabase.Text = "dataSV";
             try
             {

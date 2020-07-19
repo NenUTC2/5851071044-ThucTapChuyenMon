@@ -148,8 +148,8 @@ CREATE TABLE CTHocKy(
 )
 
 --SELECT * FROM dbo.Lop WHERE CONCAT(MaLop,Makhoa,TenLop) LIKE '%CNTT%'
-
---SELECT * FROM dbo.CTHocKy
+UPDATE dbo.HocKy SET TrangThai=1 WHERE MaHK='HKI-2019-2020'
+--SELECT * FROM dbo.HocKy
 --SELECT SUM(DiemTichLuy) FROM dbo.CTHocKy WHERE MaSV='20201'
 --SELECT COUNT(*) FROM dbo.CTHocKy WHERE MaSV='20201'
 ---------------------------------------------MONHOC--------------------------------------------------
@@ -189,12 +189,14 @@ CREATE TABLE LopHocPhan(
 	HocKy VARCHAR(20),
 	TrangThai INT
 )
---SELECT * FROM dbo.LopHoc
+update LopHocPhan set TrangThai=1 where MaHP=''
+--SELECT * FROM dbo.nomon
 ---------------------------------------------DIEMHOCPHAN--------------------------------------------------
 --DROP TABLE dbo.DiemHocPhan
 CREATE TABLE DiemHocPhan(
 	MaHP VARCHAR(50),
 	MaSV VARCHAR(50),
+	Vang INT,
 	ChuyenCan FLOAT,
 	DiemGiuaKy FLOAT,
 	DiemTP FLOAT,
@@ -205,6 +207,24 @@ CREATE TABLE DiemHocPhan(
 
 	PRIMARY KEY(MaSV,MaHP)
 )
+
+CREATE TABLE DiemDanh(
+	id INT PRIMARY KEY IDENTITY,
+	MaHP VARCHAR(50),
+	Ngay VARCHAR(50)
+)
+--DROP TABLE ctdiemdanh
+CREATE TABLE CTDiemDanh(
+	idct INT PRIMARY KEY IDENTITY,
+	id INT,
+	MaSV NVARCHAR(50),
+	DiemDanh NVARCHAR(50)
+)
+--SELECT COUNT(*) FROM dbo.CTDiemDanh,dbo.DiemDanh WHERE CTDiemDanh.id=DiemDanh.id AND MaHP='' AND MaSV='' AND DiemDanh=N'Có'
+--SELECT COUNT(*) FROM dbo.DiemDanh WHERE MaHP=''
+--SELECT * FROM dbo.CTDiemDanh
+--DELETE FROM dbo.DiemDanh
+--SELECT id,CTDiemDanh.MaSV,TenSV,DiemDanh FROM dbo.CTDiemDanh,dbo.SinhVien WHERE CTDiemDanh.MaSV=SinhVien.MaSV and id=1
 --SELECT * FROM dbo.LopHocPhan
 --Select MonHoc.MaMon,TenMon from MonHoc where MaNganh='CNTT' and SoKy=1  
 --UNION ALL
@@ -215,6 +235,17 @@ CREATE TABLE DiemHocPhan(
 --SELECT * FROM dbo.DiemLopHoc
 --SELECT SUM(KTxTC) FROM dbo.DiemLopHoc WHERE MaSV='20201'
 --SELECT SUM(TinChi) FROM dbo.MonHoc, dbo.LopHoc, dbo.DiemLopHoc WHERE LopHoc.MaCTMon=DiemLopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND MaSV='20201'
+
+---------------------------------------------NO MON--------------------------------------------------
+CREATE TABLE NoMon(
+	MaSV VARCHAR(50),
+	MaMon VARCHAR(50),
+	MaHK VARCHAR(50),
+	Tra NVARCHAR(20)
+
+	PRIMARY KEY(MaSV,MaMon)
+)
+
 ---------------------------------------------ACCOUNT--------------------------------------------------
 --DROP TABLE dbo.Account
 --DELETE FROM dbo.DiemHocPhan

@@ -19,7 +19,7 @@ namespace QuanLySinhVien
         public DataGridView dtgv1 { get { return dtgvMonHoc; } }
         public DataGridView dtgvMon { get { return dtgvMonHoc; } }
         public DataGridView dtgvHP { get { return dtgvLopHoc; } }
-        public Label lbl3 { get { return label3; } }
+        //public Label lbl3 { get { return label3; } }
         public Label lbl1 { get { return label1; } }
         public Label lbl2 { get { return label2; } }
 
@@ -186,7 +186,7 @@ namespace QuanLySinhVien
 
         private void dtgvMonHoc_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            cbNganh.SelectedValue = dtgvMonHoc.CurrentRow.Cells["MaNganh"].Value.ToString();
+            //cbNganh.SelectedValue = dtgvMonHoc.CurrentRow.Cells["MaNganh"].Value.ToString();
             txtMaMonTao.Text = dtgvMonHoc.CurrentRow.Cells["MaMon"].Value.ToString();
             txtMaMon.Text = dtgvMonHoc.CurrentRow.Cells["MaMon"].Value.ToString();
             txtTenMon.Text = dtgvMonHoc.CurrentRow.Cells["TenMon"].Value.ToString();
@@ -238,6 +238,7 @@ namespace QuanLySinhVien
             else
             {
                 DataProvider.Instance.ExcuteNonQuery("Update SinhVien set SoKy+=1");
+                DataProvider.Instance.ExcuteNonQuery("Update HocKY set TrangThai=1 where MaHK='"+txtHocKy.Text+"'");
                 txtHocKy.ReadOnly = false;
                 btnKTHK.Visible = false;
                 btnTaoHK.Visible = true;

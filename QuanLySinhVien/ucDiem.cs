@@ -24,7 +24,7 @@ namespace QuanLySinhVien
         public Panel pn4 { get { return panel4; } }
         public DataGridView dtgv { get { return dtgvDiem; } }
         public CheckBox chk1 { get { return chkKT; } }
-        public CheckBox chk2 { get { return chkGuiEmail; } }
+        public CheckBox chk2 { get { return chkMess; } }
         public string mgv;
         public ucDiem(string gv)
         {
@@ -135,11 +135,14 @@ namespace QuanLySinhVien
             txtTP.Text = dtgvDiem.CurrentRow.Cells["DiemTP"].Value.ToString();
             txtKT.Text = dtgvDiem.CurrentRow.Cells["DiemKT"].Value.ToString();
             lblDiemTL.Text = "Điểm tích luỹ: ";
-            lblDiemTL.Text = "Điểm tích luỹ: " + SinhVienDAO.Instance.getdiemTL(dtgvDiem.CurrentRow.Cells["MaSV"].Value.ToString());
+            lblDiemTL.Text = "Điểm tích luỹ: " + Convert.ToDouble( SinhVienDAO.Instance.getdiemTL(dtgvDiem.CurrentRow.Cells["MaSV"].Value.ToString())).ToString("#.##"); 
             lblTenSV.Text = "Tên sinh viên: ";
             lblTenSV.Text = "Tên sinh viên: " + SinhVienDAO.Instance.getTenformMa(dtgvDiem.CurrentRow.Cells["MaSV"].Value.ToString());
             lblLop.Text = "Lớp: ";
             lblLop.Text = "Lớp: " + LopDAO.Instance.getTenfromID(SinhVienDAO.Instance.getLopformMa(dtgvDiem.CurrentRow.Cells["MaSV"].Value.ToString()));
+            lblVang.Text = "Số buổi học: " + DataProvider.Instance.ExcuteQuery("SELECT COUNT(*) FROM dbo.CTDiemDanh,dbo.DiemDanh " +
+                "WHERE CTDiemDanh.id=DiemDanh.id AND MaHP='"+cbLopHP.SelectedValue.ToString()+"' AND MaSV='"+ dtgvDiem.CurrentRow.Cells["MaSV"].Value.ToString() + "' AND DiemDanh=N'Có'").Rows[0][0].ToString()+"/"
+                + DataProvider.Instance.ExcuteQuery("SELECT COUNT(*) FROM dbo.DiemDanh WHERE MaHP='"+cbLopHP.SelectedValue.ToString()+"'").Rows[0][0].ToString();
         }
 
         private void txtChuyenCan_TextChanged(object sender, EventArgs e)
@@ -314,8 +317,8 @@ namespace QuanLySinhVien
             if (chkGuiEmail.Checked == true)
             {
                 DataTable dt = DataProvider.Instance.ExcuteQuery("Select TenSV, Email, DiemTP, DiemKT, TenMon " +
-                    "from DiemLopHoc, SinhVien, dbo.MonHoc,dbo.LopHoc " +
-                    "WHERE DiemLopHoc.MaHP=LopHoc.MaHP AND LopHoc.MaMon=MonHoc.MaMon and DiemLopHoc.MaSV=SinhVien.MaSV " +
+                    "from DiemLopHoc, SinhVien, dbo.MonHoc,dbo.LopHocPhan " +
+                    "WHERE DiemLopHoc.MaHP=LopHocPhan.MaHP AND LopHocPhan.MaMon=MonHoc.MaMon and DiemLopHoc.MaSV=SinhVien.MaSV " +
                     "and DiemLopHoc.MaHP='" + cbLopHP.SelectedValue.ToString() + "'");
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -330,9 +333,10 @@ namespace QuanLySinhVien
                 string tp = dtgvDiem.CurrentRow.Cells["DiemTP"].Value.ToString();
                 string kt = dtgvDiem.CurrentRow.Cells["DiemKT"].Value.ToString();
                 string mon = DataProvider.Instance.ExcuteQuery("Select TenMon FROM dbo.MonHoc,dbo.LopHocPhan " +
-                    "WHERE LopHocPhan.MaMon=MonHoc.MaMon AND LopHoc.MaHP='" + dtgvDiem.CurrentRow.Cells["MaHP"].Value.ToString() + "'").Rows[0][0].ToString();
+                    "WHERE LopHocPhan.MaMon=MonHoc.MaMon AND LopHocPhan.MaHP='" + dtgvDiem.CurrentRow.Cells["MaHP"].Value.ToString() + "'").Rows[0][0].ToString();
                 sendMail(email, hoten, tp, kt, mon);
                 MessageBox.Show("Đã gửi điểm đến mail sinh viên " + hoten);
+                int x = email.Length;
             }
         }
 
@@ -344,27 +348,56 @@ namespace QuanLySinhVien
 
         private void btnKTHP_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("update LopHoc set TrangThai=1 where MaHP='" + cbLopHP.SelectedValue.ToString() + "'");
-            loadDiem(cbLopHP.SelectedValue.ToString());
-            txtChuyenCan.ResetText();
-            txtGiuaKy.ResetText();
-            txtTP.ResetText();
-            txtThi.ResetText();
-            txtKT.ResetText();
+            try
+            {
+                for (int i = 0; i < dtgvDiem.Rows.Count; i++)
+                {
+                    string msv = dtgvDiem.Rows[i].Cells["MaSV"].Value.ToString();
+                    string mamon = DiemDAO.Instance.getMaMonbyCTMon(cbLopHP.SelectedValue.ToString());
+                    string hk = DiemDAO.Instance.getHKfromCTMon(cbLopHP.SelectedValue.ToString());
+                    if (dtgv.Rows[i].Cells["Tra"].Value.ToString().Equals("0"))
+                    {
+                        try
+                        {
+                            DataProvider.Instance.ExcuteNonQuery("Insert into NoMon " +
+                                "values('" + msv + "'," +
+                                "'" + mamon + "','" + hk + "',N'Chưa trả')");
+                        }
+                        catch { }
+                    }
+                    else if (dtgv.Rows[i].Cells["Tra"].Value.ToString().Equals("1"))
+                    {
+                        try
+                        {
+                            DataProvider.Instance.ExcuteNonQuery("Update NoMon set Tra=N'Đã trả' where MaSV='" + msv + "' and MaMon='" + mamon + "'");
+                        }
+                        catch { }
+                    }
 
-            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
-            {
-                loadLop("*");
+                }
+                DataProvider.Instance.ExcuteNonQuery("update LopHocPhan set TrangThai=1 where MaHP='" + cbLopHP.SelectedValue.ToString() + "'");
                 loadDiem(cbLopHP.SelectedValue.ToString());
+                txtChuyenCan.ResetText();
+                txtGiuaKy.ResetText();
+                txtTP.ResetText();
+                txtThi.ResetText();
+                txtKT.ResetText();
+
+                if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+                {
+                    loadLop("*");
+                    loadDiem(cbLopHP.SelectedValue.ToString());
+                }
+                else
+                {
+                    loadLop(mgv);
+                    loadDiem(cbLopHP.SelectedValue.ToString());
+                }
             }
-            else
-            {
-                loadLop(mgv);
-                loadDiem(cbLopHP.SelectedValue.ToString());
-            }
+            catch { }
         }
 
-        private void chkKT_Click(object sender, EventArgs e)
+            private void chkKT_Click(object sender, EventArgs e)
         {
             loadLop(cbGV.SelectedValue.ToString());
         }
@@ -397,6 +430,84 @@ namespace QuanLySinhVien
                 {
                     worksheet.Cells[i + 2, j + 1] = dtgvDiem.Rows[i].Cells[j].Value.ToString();
                 }
+            }
+        }
+
+        private void btnPNFunc_Click(object sender, EventArgs e)
+        {
+            if (pnFunc.Visible == false)
+                pnFunc.Visible = true;
+            else pnFunc.Visible = false;
+        }
+
+        private void btnDiemDanh_Click(object sender, EventArgs e)
+        {
+            DiemDanh d = new DiemDanh(cbLopHP.SelectedValue.ToString());
+            d.ShowDialog();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            DataTable dt = DataProvider.Instance.ExcuteQuery("Select TenSV, Email, DiemTP, DiemKT, TenMon " +
+                    "from DiemLopHoc, SinhVien, dbo.MonHoc,dbo.LopHocPhan " +
+                    "WHERE DiemLopHoc.MaHP=LopHocPhan.MaHP AND LopHocPhan.MaMon=MonHoc.MaMon and DiemLopHoc.MaSV=SinhVien.MaSV " +
+                    "and DiemLopHoc.MaHP='" + cbLopHP.SelectedValue.ToString() + "'");
+            if (chkGuiEmail.Checked == true)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    try
+                    {
+                        SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                        smtp.EnableSsl = true;
+                        string to, from, pass, content;
+                        to = dt.Rows[i][1].ToString();
+                        from = "thanhnen1360@gmail.com";
+                        pass = "01208853712sz";
+                        content = txtMess.Text;
+                        MailMessage message = new MailMessage();
+                        message.To.Add(to);
+                        message.From = new MailAddress(from);
+                        message.Body = content;
+                        message.Subject = "UTC2 thông báo";
+                        smtp.Port = 587;
+                        smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        smtp.UseDefaultCredentials = false;
+                        smtp.Credentials = new NetworkCredential(from, pass);
+                        smtp.EnableSsl = true;
+                        smtp.Send(message);
+                    }
+                    catch { MessageBox.Show("Vui lòng kiểm tra kết nối mạng và thử lại"); }
+                }
+                MessageBox.Show("Đã gửi điểm đến tất cả sinh viên trong lớp học phần " + cbLopHP.SelectedValue.ToString());
+            }
+            else
+            {
+                string email = DataProvider.Instance.ExcuteQuery("select Email from sinhvien where masv='" + dtgvDiem.CurrentRow.Cells["MaSV"].Value.ToString() + "'").Rows[0][0].ToString();
+                string hoten = DataProvider.Instance.ExcuteQuery("select TenSV from sinhvien where masv='" + dtgvDiem.CurrentRow.Cells["MaSV"].Value.ToString() + "'").Rows[0][0].ToString();
+                try
+                {
+                    SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                    smtp.EnableSsl = true;
+                    string to, from, pass, content;
+                    to = email;
+                    from = "thanhnen1360@gmail.com";
+                    pass = "01208853712sz";
+                    content = txtMess.Text;
+                    MailMessage message = new MailMessage();
+                    message.To.Add(to);
+                    message.From = new MailAddress(from);
+                    message.Body = content;
+                    message.Subject = "UTC2 thông báo";
+                    smtp.Port = 587;
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = new NetworkCredential(from, pass);
+                    smtp.EnableSsl = true;
+                    smtp.Send(message);
+                }
+                catch { MessageBox.Show("Vui lòng kiểm tra kết nối mạng và thử lại"); }
+                MessageBox.Show("Đã gửi điểm đến mail sinh viên " + hoten);
             }
         }
     }
