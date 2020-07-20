@@ -377,14 +377,14 @@
             this.chrDiemHK.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chrDiemHK.Legends.Add(legend1);
-            this.chrDiemHK.Location = new System.Drawing.Point(807, 21);
+            this.chrDiemHK.Location = new System.Drawing.Point(821, 37);
             this.chrDiemHK.Name = "chrDiemHK";
             this.chrDiemHK.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Điểm tích luỹ kỳ";
             this.chrDiemHK.Series.Add(series1);
-            this.chrDiemHK.Size = new System.Drawing.Size(611, 658);
+            this.chrDiemHK.Size = new System.Drawing.Size(598, 642);
             this.chrDiemHK.TabIndex = 151;
             this.chrDiemHK.Text = "Biểu đồ điểm số qua các kỳ";
             // 

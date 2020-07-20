@@ -21,6 +21,7 @@ namespace QuanLySinhVien
         public Label lbl1 { get { return lblTenSV; } }
         public Label lbl2 { get { return lblLop; } }
         public Label lbl3 { get { return lblDiemTL; } }
+        public Label lblvang { get { return lblVang; } }
         public Panel pn4 { get { return panel4; } }
         public DataGridView dtgv { get { return dtgvDiem; } }
         public CheckBox chk1 { get { return chkKT; } }

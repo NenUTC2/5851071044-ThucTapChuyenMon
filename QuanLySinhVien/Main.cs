@@ -84,6 +84,7 @@ namespace QuanLySinhVien
                 ucd.lbl1.ForeColor = Color.White;
                 ucd.lbl2.ForeColor = Color.White;
                 ucd.lbl3.ForeColor = Color.White;
+                ucd.lblvang.ForeColor = Color.White;
                 ucd.chk1.ForeColor = Color.White;
                 ucd.chk2.ForeColor = Color.White;
 
@@ -140,6 +141,7 @@ namespace QuanLySinhVien
                 ucd.lbl1.ForeColor = Color.Black;
                 ucd.lbl2.ForeColor = Color.Black;
                 ucd.lbl3.ForeColor = Color.Black;
+                ucd.lblvang.ForeColor = Color.Black;
                 ucd.chk1.ForeColor = Color.Black;
                 ucd.chk2.ForeColor = Color.Black;
 
@@ -359,6 +361,7 @@ namespace QuanLySinhVien
                 ucd.lbl1.ForeColor = Color.White;
                 ucd.lbl2.ForeColor = Color.White;
                 ucd.lbl3.ForeColor = Color.White;
+                ucd.lblvang.ForeColor = Color.White;
                 ucd.chk1.ForeColor = Color.White;
                 ucd.chk2.ForeColor = Color.White;
 
@@ -418,6 +421,7 @@ namespace QuanLySinhVien
                 ucd.lbl1.ForeColor = Color.Black;
                 ucd.lbl2.ForeColor = Color.Black;
                 ucd.lbl3.ForeColor = Color.Black;
+                ucd.lblvang.ForeColor = Color.Black;
                 ucd.chk1.ForeColor = Color.Black;
                 ucd.chk2.ForeColor = Color.Black;
 
