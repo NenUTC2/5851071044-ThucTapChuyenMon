@@ -205,7 +205,7 @@ namespace QuanLySinhVien
 
         private void btnDangKyMon_Click(object sender, EventArgs e)
         {
-            if (DataProvider.Instance.ExcuteQuery("Select * from DiemHocPhan where MaHP='" + cbLopHoc.SelectedValue.ToString() + "'").Rows.Count <= 0)
+            if (DataProvider.Instance.ExcuteQuery("Select * from DiemHocPhan where MaSV='"+dtgvSV.CurrentRow.Cells["MaSV"].Value.ToString()+"' and MaHP='" + cbLopHoc.SelectedValue.ToString() + "'").Rows.Count <= 0)
             {
                 string msv = dtgvSV.CurrentRow.Cells["MaSV"].Value.ToString();
                 if (SinhVienDAO.Instance.checkSV(msv) == 1)

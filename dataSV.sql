@@ -269,6 +269,9 @@ VALUES
     'white'   -- Theme - varchar(20)
     )
 GO 
+--Select MaHK,COUNT(*)as'SoSVNo' from NoMon group by MaHK
+--DELETE FROM dbo.NoMon WHERE MaHK='"+hk +"'
+--SELECT * FROM dbo.NoMon
 ---------------------------------------------END TABLE--------------------------------------------------
 --DELETE FROM dbo.Account
 --Select TenSV, Email, DiemTP, DiemKT, TenMon from DiemLopHoc, SinhVien, dbo.MonHoc,dbo.LopHoc WHERE DiemLopHoc.MaCTMon=LopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon and DiemLopHoc.MaSV=SinhVien.MaSV and DiemLopHoc.MaCTMon='CNTT-API-1'

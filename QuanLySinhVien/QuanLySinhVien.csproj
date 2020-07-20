@@ -92,11 +92,6 @@
     <Compile Include="DAO\KhoaDAO.cs" />
     <Compile Include="DAO\LopDAO.cs" />
     <Compile Include="DAO\SinhVienDAO.cs" />
-    <Compile Include="DataSVDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSVDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DiemDanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,17 +206,6 @@
     <EmbeddedResource Include="ucThongKe.resx">
       <DependentUpon>ucThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSVDataSet.xsc">
-      <DependentUpon>DataSVDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DataSVDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSVDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSVDataSet.xss">
-      <DependentUpon>DataSVDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -357,13 +341,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataSV.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DataSV_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DataSV.mdf</DependentUpon>
-    </Content>
     <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

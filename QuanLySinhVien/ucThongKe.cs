@@ -51,6 +51,8 @@ namespace QuanLySinhVien
         private void cbLop_SelectedValueChanged(object sender, EventArgs e)
         {
             dtgvSV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from SinhVien where MaLop='"+cbLop.SelectedValue+"'");
+            dtgvSV.Visible = true;
+            dtgvNo.Visible = false;
         }
 
         private void guna2ImageButton3_Click(object sender, EventArgs e)
@@ -97,8 +99,19 @@ namespace QuanLySinhVien
                 dtgvSV.Visible = false;
                 dtgvNo.Visible = true;
                 dtgvNo.DataSource = DataProvider.Instance.ExcuteQuery("Select NoMon.MaSV,TenSV,NoMon.MaMon,MaHK,Tra from NoMon, SinhVien where NoMon.MaSV=SinhVien.MaSV and  MaLop='" + cbLop.SelectedValue.ToString() + "'");
+                
             }
             catch { }
+            chrDiemHK.ChartAreas[0].AxisY.Maximum = 10;
+            chrDiemHK.DataSource = DataProvider.Instance.ExcuteQuery("Select MaHK,Count(*) as 'SoSVNo' from NoMon group by MaHK");
+            chrDiemHK.Series[0].XValueMember = "MaHK";
+            chrDiemHK.Series[0].YValueMembers = "SoSVNo";
+            chrDiemHK.DataBind();
+        }
+
+        private void dtgvNo_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }
