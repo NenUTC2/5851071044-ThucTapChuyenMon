@@ -101,7 +101,7 @@ namespace QuanLySinhVien
                     catch { }
                 }
             }
-            catch { MessageBox.Show("Hẫy kết nối trước khi đăng nhập"); }
+            catch { MessageBox.Show("Hãy kết nối trước khi đăng nhập"); }
         }
 
         private void guna2ImageButton1_MouseHover(object sender, EventArgs e)
@@ -153,7 +153,7 @@ namespace QuanLySinhVien
                     lblErrorLogin.Visible = true;
                 }
             }
-            catch { MessageBox.Show("Hẫy kết nối trước khi đăng nhập"); }
+            catch { MessageBox.Show("Hãy kết nối trước khi đăng nhập"); }
         }
 
         private void btnShowLogin_Click(object sender, EventArgs e)
@@ -211,7 +211,7 @@ namespace QuanLySinhVien
                 }
                 else { lblResError.Text = "Nhập lại mật khẩu không đúng!"; lblResError.Visible = true; }
             }
-            catch { MessageBox.Show("Hẫy kết nối trước khi đăng ký"); }
+            catch { MessageBox.Show("Hãy kết nối trước khi đăng ký"); }
         }
 
         private void lblRes_Click(object sender, EventArgs e)
