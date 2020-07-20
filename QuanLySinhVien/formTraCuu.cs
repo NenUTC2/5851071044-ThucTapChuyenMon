@@ -80,24 +80,28 @@ namespace QuanLySinhVien
 
         private void txtMSV_TextChanged(object sender, EventArgs e)
         {
-            string msv = txtMSV.Text;
-            if (SinhVienDAO.Instance.checkSV(msv) == 1)
+            try
             {
-                picCheckSV.Image = Properties.Resources.checked_checkbox_60px;
-                lblTen.Text = SinhVienDAO.Instance.getTenformMa(msv);
-                lblLop.Text = SinhVienDAO.Instance.getLopformMa(msv);
-                lblTL.Text = Convert.ToDouble(SinhVienDAO.Instance.getdiemTL(msv)).ToString("#.##");
-                chrDiemHK.DataSource = DataProvider.Instance.ExcuteQuery("Select MaHK, DiemTichLuy from CTHocKy where MaSV='" + txtMSV.Text + "'");
-                chrDiemHK.Series[0].XValueMember = "MaHK";
-                chrDiemHK.Series[0].YValueMembers = "DiemTichLuy";
-                chrDiemHK.DataBind();
-                try
+                string msv = txtMSV.Text;
+                if (SinhVienDAO.Instance.checkSV(msv) == 1)
                 {
-                    loadDiem(msv);
-                    loadMon(msv);
+                    picCheckSV.Image = Properties.Resources.checked_checkbox_60px;
+                    lblTen.Text = SinhVienDAO.Instance.getTenformMa(msv);
+                    lblLop.Text = SinhVienDAO.Instance.getLopformMa(msv);
+                    lblTL.Text = Convert.ToDouble(SinhVienDAO.Instance.getdiemTL(msv)).ToString("#.##");
+                    chrDiemHK.DataSource = DataProvider.Instance.ExcuteQuery("Select MaHK, DiemTichLuy from CTHocKy where MaSV='" + txtMSV.Text + "'");
+                    chrDiemHK.Series[0].XValueMember = "MaHK";
+                    chrDiemHK.Series[0].YValueMembers = "DiemTichLuy";
+                    chrDiemHK.DataBind();
+                    try
+                    {
+                        loadDiem(msv);
+                        loadMon(msv);
+                    }
+                    catch { }
                 }
-                catch { }
             }
+            catch { MessageBox.Show("Hẫy kết nối trước khi đăng nhập"); }
         }
 
         private void guna2ImageButton1_MouseHover(object sender, EventArgs e)
@@ -135,16 +139,21 @@ namespace QuanLySinhVien
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            if (AccountDAO.Instance.checkLogin(txtUser.Text, txtPass.Text)==1){
-                Main m = new Main(txtUser.Text);
-                this.Hide();
-                m.Show();
-            }
-            else
+            try
             {
-                lblErrorLogin.Text = "Sai tên đăng nhập hoặc mật khẩu";
-                lblErrorLogin.Visible = true;
+                if (AccountDAO.Instance.checkLogin(txtUser.Text, txtPass.Text) == 1)
+                {
+                    Main m = new Main(txtUser.Text);
+                    this.Hide();
+                    m.Show();
+                }
+                else
+                {
+                    lblErrorLogin.Text = "Sai tên đăng nhập hoặc mật khẩu";
+                    lblErrorLogin.Visible = true;
+                }
             }
+            catch { MessageBox.Show("Hẫy kết nối trước khi đăng nhập"); }
         }
 
         private void btnShowLogin_Click(object sender, EventArgs e)
@@ -163,44 +172,53 @@ namespace QuanLySinhVien
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            if(txtResUser.Text == "") { lblResError.Text = "Bạn phải nhập tên đăng nhập!";lblResError.Visible = true; }
-            else if(txtResPass.Text == "") { lblResError.Text = "Bạn phải nhập mật khẩu!"; lblResError.Visible = true; }
-            else if(txtResPass2.Text == "") { lblResError.Text = "Vui lòng nhập lại mật khẩu!"; lblResError.Visible = true; }
-            else if (txtResPass.Text.Equals(txtResPass2.Text))
+            try
             {
-                if (DataProvider.Instance.ExcuteQuery("Select * from Account").Rows.Count <= 0)
+                if (txtResUser.Text == "") { lblResError.Text = "Bạn phải nhập tên đăng nhập!"; lblResError.Visible = true; }
+                else if (txtResPass.Text == "") { lblResError.Text = "Bạn phải nhập mật khẩu!"; lblResError.Visible = true; }
+                else if (txtResPass2.Text == "") { lblResError.Text = "Vui lòng nhập lại mật khẩu!"; lblResError.Visible = true; }
+                else if (txtResPass.Text.Equals(txtResPass2.Text))
                 {
-                    DataProvider.Instance.ExcuteNonQuery("Insert into Account values('" + txtResUser.Text + "', '" + txtResPass.Text + "','admin', 'white')");
-                    lblResError.Visible = false;
-                    guna2ShadowPanel1.Width = 320;
-                    guna2ShadowPanel1.Left += 140;
-                }
-                else
-                {
-                    if (GiangVienDAO.Instance.checkMGV(txtResUser.Text) == 1)
+                    if (DataProvider.Instance.ExcuteQuery("Select * from Account").Rows.Count <= 0)
                     {
-                        if (AccountDAO.Instance.checkTenDN(txtResUser.Text) == 0)
-                        {
-                            if (GiangVienDAO.Instance.getTKbyMGV(txtResUser.Text).Equals("None"))
-                                DataProvider.Instance.ExcuteNonQuery("Insert into Account values('" + txtResUser.Text + "', '" + txtResPass.Text + "','gv', 'white')");
-                            else
-                                DataProvider.Instance.ExcuteNonQuery("Insert into Account values('" + txtResUser.Text + "', '" + txtResPass.Text + "','tk', 'white')");
-                            lblResError.Visible = false;
-                            guna2ShadowPanel1.Width = 320;
-                            guna2ShadowPanel1.Left += 140;
-                        }
-                        else { lblResError.Text = "Mã giáo viên đã được đăng ký tài khoản!"; lblResError.Visible = true; }
+                        DataProvider.Instance.ExcuteNonQuery("Insert into Account values('" + txtResUser.Text + "', '" + txtResPass.Text + "','admin', 'white')");
+                        lblResError.Visible = false;
+                        guna2ShadowPanel1.Width = 320;
+                        guna2ShadowPanel1.Left += 140;
+
+                        lblRes.Enabled = true;
                     }
-                    else { lblResError.Text = "Mã giảng viên không tồn tại!"; lblResError.Visible = true; }
+                    else
+                    {
+                        if (GiangVienDAO.Instance.checkMGV(txtResUser.Text) == 1)
+                        {
+                            if (AccountDAO.Instance.checkTenDN(txtResUser.Text) == 0)
+                            {
+                                if (GiangVienDAO.Instance.getTKbyMGV(txtResUser.Text).Equals("None"))
+                                    DataProvider.Instance.ExcuteNonQuery("Insert into Account values('" + txtResUser.Text + "', '" + txtResPass.Text + "','gv', 'white')");
+                                else
+                                    DataProvider.Instance.ExcuteNonQuery("Insert into Account values('" + txtResUser.Text + "', '" + txtResPass.Text + "','tk', 'white')");
+                                lblResError.Visible = false;
+                                guna2ShadowPanel1.Width = 320;
+                                guna2ShadowPanel1.Left += 140;
+
+                                lblRes.Enabled = true;
+                            }
+                            else { lblResError.Text = "Mã giáo viên đã được đăng ký tài khoản!"; lblResError.Visible = true; }
+                        }
+                        else { lblResError.Text = "Mã giảng viên không tồn tại!"; lblResError.Visible = true; }
+                    }
                 }
+                else { lblResError.Text = "Nhập lại mật khẩu không đúng!"; lblResError.Visible = true; }
             }
-            else { lblResError.Text = "Nhập lại mật khẩu không đúng!"; lblResError.Visible = true; }
+            catch { MessageBox.Show("Hẫy kết nối trước khi đăng ký"); }
         }
 
         private void lblRes_Click(object sender, EventArgs e)
         {
             guna2ShadowPanel1.Width = 598;
             guna2ShadowPanel1.Left -= 140;
+            lblRes.Enabled = false;
         }
 
         private void txtPass_Enter(object sender, EventArgs e)
@@ -212,6 +230,8 @@ namespace QuanLySinhVien
         {
             guna2ShadowPanel1.Width = 320;
             guna2ShadowPanel1.Left += 140;
+
+            lblRes.Enabled = true;
         }
 
         private void txtResPass_Enter(object sender, EventArgs e)
@@ -236,7 +256,7 @@ namespace QuanLySinhVien
 
         private void guna2Button2_Click_1(object sender, EventArgs e)
         {
-           
+
         }
     }
 }
