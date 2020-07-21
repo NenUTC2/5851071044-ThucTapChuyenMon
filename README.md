@@ -9,11 +9,6 @@ Lớp:
 - Ngôn ngữ c#, T-SQL
 - Framework Guna UI
 ## Phần 2: Các chức năng đã hoàn thành
-1. abc
-2. xyz
-...
-## Phần 3: Các chức năng chưa hoàn thành
-
 - Form tra cứu sinh viên: nhập mã sinh viên để xem bảng điểm, biểu đồ điểm trung qua các kỳ và các môn đang học trong kỳ.
 - Form Khoa ngành: thêm sửa xoá khoa và ngành học.
 - Form Giảng viên: thêm sửa xoá giảng viên.
@@ -23,6 +18,9 @@ Lớp:
 - Form nhập sửa điểm: thêm sửa điểm theo sv và ngành, Gửi mail, Gửi điểm, Xuất file excel,Điểm danh, chỉnh sửa phần trăm giữa các cột điểm.
 - Form thống kê: Thống kê điểm sinh viên theo ngành và lớp, xem sinh viên nợ môn theo lớp, thống kê biểu đồ điểm theo kỳ, sinh viên nợ theo kỳ.
 - Cho phép user đổi mật khẩu.
+## Phần 3: Các chức năng chưa hoàn thành
+- Quản lý và tra cứu thời khoá biểu.
+
 ## Hướng dẫn sử dụng
 - Khi chạy ứng dụng hahãy kết nối trước bằng cách ấn nút kết nối. Nhập tên server máy và tên database.
 - Form tra cứu sinh viên: nhập mã sinh viên để xem bảng điểm, biểu đồ điểm trung qua các kỳ và các môn đang học trong kỳ.
