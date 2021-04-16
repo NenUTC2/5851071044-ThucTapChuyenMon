@@ -60,40 +60,52 @@ namespace QuanLySinhVien
 
         public void loadCBGV(string khoa)
         {
-            if (khoa.Equals("*"))
-                cbGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien");
-            else
-                cbGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien where MaKhoa='" + khoa + "'");
-            cbGV.DisplayMember = "TenGV";
-            cbGV.ValueMember = "MaGV";
+            try
+            {
+                if (khoa.Equals("*"))
+                    cbGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien");
+                else
+                    cbGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien where MaKhoa='" + khoa + "'");
+                cbGV.DisplayMember = "TenGV";
+                cbGV.ValueMember = "MaGV";
+            }
+            catch { }
         }
 
         public void loadCBLop(string khoa)
         {
-            if (khoa.Equals("*"))
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop");
-            else
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where MaNganh='" + khoa + "'");
-            cbLop.DisplayMember = "TenLop";
-            cbLop.ValueMember = "MaLop";
+            try
+            {
+                if (khoa.Equals("*"))
+                    cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop");
+                else
+                    cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where MaNganh='" + khoa + "'");
+                cbLop.DisplayMember = "TenLop";
+                cbLop.ValueMember = "MaLop";
+            }
+            catch { }
         }
 
         public void loadCBNganh(string khoa)
         {
-            if (khoa.Equals("*"))
+            try
             {
-                cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh");
-                cbNganh2.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh");
+                if (khoa.Equals("*"))
+                {
+                    cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh");
+                    cbNganh2.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh");
+                }
+                else
+                {
+                    cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh where MaKhoa='" + khoa + "'");
+                    cbNganh2.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh where MaKhoa='" + khoa + "'");
+                }
+                cbNganh.DisplayMember = "TenNganh";
+                cbNganh2.DisplayMember = "TenNganh";
+                cbNganh.ValueMember = "MaNganh";
+                cbNganh2.ValueMember = "MaNganh";
             }
-            else
-            {
-                cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh where MaKhoa='" + khoa + "'");
-                cbNganh2.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh where MaKhoa='" + khoa + "'");
-            }
-            cbNganh.DisplayMember = "TenNganh";
-            cbNganh2.DisplayMember = "TenNganh";
-            cbNganh.ValueMember = "MaNganh";
-            cbNganh2.ValueMember = "MaNganh";
+            catch { }
         }
 
         //public void loadCBNganh2(string khoa)
@@ -180,8 +192,12 @@ namespace QuanLySinhVien
 
         private void btnXoaMon_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Delete from MonHoc where MaMon='"+ dtgvMonHoc.CurrentRow.Cells["MaMon"].Value.ToString() + "'");
-            loadMon("*");
+            try
+            {
+                DataProvider.Instance.ExcuteNonQuery("Delete from MonHoc where MaMon='" + dtgvMonHoc.CurrentRow.Cells["MaMon"].Value.ToString() + "'");
+                loadMon("*");
+            }
+            catch { lblLoi.Visible = true; lblLoi.Text = "Không được xoá môn này"; timer1.Enabled = true; }
         }
 
         private void dtgvMonHoc_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -247,8 +263,12 @@ namespace QuanLySinhVien
 
         private void btnXoaLop_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Delete from LopHocPhan where MaHP='"+dtgvLopHoc.CurrentRow.Cells["MaHP"].Value.ToString()+"'");
-            loadLopHoc("*");
+            try
+            {
+                DataProvider.Instance.ExcuteNonQuery("Delete from LopHocPhan where MaHP='" + dtgvLopHoc.CurrentRow.Cells["MaHP"].Value.ToString() + "'");
+                loadLopHoc("*");
+            }
+            catch { lblLoi.Visible = true; lblLoi.Text = "Không được xoá lớp học phần đã có sinh viên"; timer1.Enabled = true; }
         }
 
         private void btnSuaLop_Click(object sender, EventArgs e)

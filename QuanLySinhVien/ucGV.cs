@@ -40,20 +40,28 @@ namespace QuanLySinhVien
         
         public void loadGV(string khoa)
         {
-            if (khoa.Equals("*"))
-                dtgvGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien");
-            else
-                dtgvGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien where MaKhoa='" + khoa + "'");
+            try
+            {
+                if (khoa.Equals("*"))
+                    dtgvGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien");
+                else
+                    dtgvGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien where MaKhoa='" + khoa + "'");
+            }
+            catch { }
         }
 
         public void loadCBKhoa(string khoa)
         {
-            if (khoa.Equals("*"))
-                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa");
-            else
-                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa where MaKhoa='" + khoa + "'");
-            cbKhoa.DisplayMember = "TenKhoa";
-            cbKhoa.ValueMember = "MaKhoa";
+            try
+            {
+                if (khoa.Equals("*"))
+                    cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa");
+                else
+                    cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Khoa where MaKhoa='" + khoa + "'");
+                cbKhoa.DisplayMember = "TenKhoa";
+                cbKhoa.ValueMember = "MaKhoa";
+            }
+            catch { }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -118,11 +126,15 @@ namespace QuanLySinhVien
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Delete from GiangVien where MaGV='"+ dtgvGV.CurrentRow.Cells["MaGV"].Value.ToString() +"'");
+            try
+            {
+                DataProvider.Instance.ExcuteNonQuery("Delete from GiangVien where MaGV='" + dtgvGV.CurrentRow.Cells["MaGV"].Value.ToString() + "'");
 
-            //lblError.Text = "Thêm thành công khoa " + txtTenKhoa.Text;
-            //thongbao();
-            loadGV(cbKhoa.SelectedValue.ToString());
+                //lblError.Text = "Thêm thành công khoa " + txtTenKhoa.Text;
+                //thongbao();
+                loadGV(cbKhoa.SelectedValue.ToString());
+            } 
+            catch { lblLoi.Visible = true; lblLoi.Text = "Không được xoá giảng viên"; timer1.Enabled = true; }
         }
 
         private void dtgvGV_CellClick(object sender, DataGridViewCellEventArgs e)

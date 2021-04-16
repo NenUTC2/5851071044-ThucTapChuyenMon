@@ -78,6 +78,21 @@ namespace QuanLySinhVien
                 "WHERE DiemHocPhan.MaHP = LopHocPhan.MaHP AND LopHocPhan.MaMon = MonHoc.MaMon AND LopHocPhan.MaGV = GiangVien.MaGV and TrangThai=0 AND MaSV = '" + msv + "'");
         }
 
+        public void loadCBMon()
+        {
+            try
+            {
+                string msv = txtMSV.Text.Trim();
+                int ky = SinhVienDAO.Instance.getSoKy(msv)+1;
+                string nganh = LopDAO.Instance.getNganhfromLop(SinhVienDAO.Instance.getLopformMa(msv));
+                cbMonHoc.DataSource = DataProvider.Instance.ExcuteQuery("Select MonHoc.MaMon,TenMon from MonHoc where MaNganh='" + nganh + "' and SoKy=" + ky + " " +
+                        "UNION ALL " +
+                        "Select MonHoc.MaMon, TenMon from MonHoc, NoMon where MonHoc.MaMon=NoMon.MaMon AND MaSV = '" + msv + "'");
+                cbMonHoc.DisplayMember = "TenMon";
+                cbMonHoc.ValueMember = "MaMon";
+            }
+            catch { }
+        }
         private void txtMSV_TextChanged(object sender, EventArgs e)
         {
             try
@@ -97,6 +112,7 @@ namespace QuanLySinhVien
                     {
                         loadDiem(msv);
                         loadMon(msv);
+                        loadCBMon();
                     }
                     catch { }
                 }
@@ -139,8 +155,8 @@ namespace QuanLySinhVien
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 if (AccountDAO.Instance.checkLogin(txtUser.Text, txtPass.Text) == 1)
                 {
                     Main m = new Main(txtUser.Text);
@@ -152,8 +168,8 @@ namespace QuanLySinhVien
                     lblErrorLogin.Text = "Sai tên đăng nhập hoặc mật khẩu";
                     lblErrorLogin.Visible = true;
                 }
-            }
-            catch { MessageBox.Show("Hãy kết nối trước khi đăng nhập"); }
+            //}
+            //catch { MessageBox.Show("Hãy kết nối trước khi đăng nhập"); }
         }
 
         private void btnShowLogin_Click(object sender, EventArgs e)
@@ -172,8 +188,8 @@ namespace QuanLySinhVien
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 if (txtResUser.Text == "") { lblResError.Text = "Bạn phải nhập tên đăng nhập!"; lblResError.Visible = true; }
                 else if (txtResPass.Text == "") { lblResError.Text = "Bạn phải nhập mật khẩu!"; lblResError.Visible = true; }
                 else if (txtResPass2.Text == "") { lblResError.Text = "Vui lòng nhập lại mật khẩu!"; lblResError.Visible = true; }
@@ -210,8 +226,8 @@ namespace QuanLySinhVien
                     }
                 }
                 else { lblResError.Text = "Nhập lại mật khẩu không đúng!"; lblResError.Visible = true; }
-            }
-            catch { MessageBox.Show("Hãy kết nối trước khi đăng ký"); }
+            //}
+            //catch { MessageBox.Show("Hãy kết nối trước khi đăng ký"); }
         }
 
         private void lblRes_Click(object sender, EventArgs e)
@@ -257,6 +273,45 @@ namespace QuanLySinhVien
         private void guna2Button2_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDangKyMon_Click(object sender, EventArgs e)
+        {
+            string msv = txtMSV.Text;
+            if (DataProvider.Instance.ExcuteQuery("Select * from DiemHocPhan where MaSV='" + msv + "' and MaHP='" + cbLopHoc.SelectedValue.ToString() + "'").Rows.Count <= 0)
+            {
+                if (SinhVienDAO.Instance.checkSV(msv) == 1)
+                {
+                    DataProvider.Instance.ExcuteNonQuery("Insert into DiemHocPhan values('" + cbLopHoc.SelectedValue + "', '" + msv + "', 0, 0,0,0,0,0,0,0)");
+                    DiemDAO.Instance.themCTHocKy(cbLopHoc.SelectedValue.ToString(), msv);
+                    loadMon(txtMSV.Text.Trim());
+                }
+            }
+            else { /*lblLoi.Visible = true; lblLoi.Text = "Sinh viên đã đăng ký môn này"; timer1.Enabled = true;*/
+                MessageBox.Show("Sinh viên đã đăng ký môn này");
+            }
+        }
+
+        private void cbMonHoc_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string mhk = DataProvider.Instance.ExcuteQuery("Select MaHK from HocKy where TrangThai=0").Rows[0][0].ToString();
+                cbLopHoc.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHocPhan where HocKy='" + mhk + "' and MaMon='" + cbMonHoc.SelectedValue + "'");
+                cbLopHoc.DisplayMember = "MaHP";
+                cbLopHoc.ValueMember = "MaHP";
+            }
+            catch { }
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            panel6.Visible = false;
+        }
+
+        private void guna2Button2_Click_2(object sender, EventArgs e)
+        {
+            panel6.Visible = true;
         }
     }
 }

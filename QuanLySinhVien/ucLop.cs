@@ -43,31 +43,42 @@ namespace QuanLySinhVien
 
         public void loadLop(string nganh)
         {
-            if (nganh.Equals("*"))
-                dtgvLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop");
-            else
-                dtgvLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where MaNganh='" + nganh + "'");
+            try
+            {
+                if (nganh.Equals("*"))
+                    dtgvLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop");
+                else
+                    dtgvLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where MaNganh='" + nganh + "'");
+            }
+            catch { }
         }
 
         public void loadCBNganh(string nganh)
         {
-            
-            if (nganh.Equals("*"))
-                cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh");
-            else
-                cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh where MaKhoa='" + nganh + "'");
-            cbNganh.DisplayMember = "TenNganh";
-            cbNganh.ValueMember = "MaNganh";
+            try
+            {
+                if (nganh.Equals("*"))
+                    cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh");
+                else
+                    cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh where MaKhoa='" + nganh + "'");
+                cbNganh.DisplayMember = "TenNganh";
+                cbNganh.ValueMember = "MaNganh";
+            }
+            catch { }
         }
 
         public void loadCBGV(string khoa)
         {
-            if(khoa.Equals("*"))
-                cbGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien");
-            else
-                cbGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien where MaKhoa='"+khoa+"'");
-            cbGV.DisplayMember = "TenGV";
-            cbGV.ValueMember = "MaGV";
+            try
+            {
+                if (khoa.Equals("*"))
+                    cbGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien");
+                else
+                    cbGV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from GiangVien where MaKhoa='" + khoa + "'");
+                cbGV.DisplayMember = "TenGV";
+                cbGV.ValueMember = "MaGV";
+            }
+            catch { }
         }
 
         private void btnThem_Click_1(object sender, EventArgs e)
@@ -113,16 +124,20 @@ namespace QuanLySinhVien
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Delete from Lop where MaLop='"+dtgvLop.CurrentRow.Cells["MaLop"].Value.ToString()+"'");
-            if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+            try
             {
-                loadCBNganh("*"); loadLop(cbNganh.SelectedValue.ToString()); loadCBGV(cbNganh.SelectedValue.ToString());
+                DataProvider.Instance.ExcuteNonQuery("Delete from Lop where MaLop='" + dtgvLop.CurrentRow.Cells["MaLop"].Value.ToString() + "'");
+                if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
+                {
+                    loadCBNganh("*"); loadLop(cbNganh.SelectedValue.ToString()); loadCBGV(cbNganh.SelectedValue.ToString());
+                }
+                else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
+                {
+                    loadCBNganh(GiangVienDAO.Instance.getKhoabyMGV(mgv));
+                    loadLop(cbNganh.SelectedValue.ToString()); loadCBGV(cbNganh.SelectedValue.ToString());
+                }
             }
-            else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
-            {
-                loadCBNganh(GiangVienDAO.Instance.getKhoabyMGV(mgv));
-                loadLop(cbNganh.SelectedValue.ToString()); loadCBGV(cbNganh.SelectedValue.ToString());
-            }
+            catch { lblLoi.Visible = true; lblLoi.Text = "Không được xoá lớp này"; timer1.Enabled = true; }
         }
 
         private void dtgvLop_CellClick(object sender, DataGridViewCellEventArgs e)

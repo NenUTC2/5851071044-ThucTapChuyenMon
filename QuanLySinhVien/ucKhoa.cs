@@ -32,14 +32,14 @@ namespace QuanLySinhVien
         //        id = value;
         //    }
         //}
-        public Panel pn { get { return panel1; }  }
-        public Panel pn2 { get { return panel2; }  }
-        public Panel pn3 { get { return panel3; }  }
-        public Panel pn5 { get { return panel5; }  }
-        public Label lbltenkhoa { get { return lblTenKhoa; }  }
-        public Label lblsv { get { return lblSoSV; }  }
-        public Label lblgv { get { return lblSoGV; }  }
-        public Label lbllop { get { return lblSoLop; }  }
+        public Panel pn { get { return panel1; } }
+        public Panel pn2 { get { return panel2; } }
+        public Panel pn3 { get { return panel3; } }
+        public Panel pn5 { get { return panel5; } }
+        public Label lbltenkhoa { get { return lblTenKhoa; } }
+        public Label lblsv { get { return lblSoSV; } }
+        public Label lblgv { get { return lblSoGV; } }
+        public Label lbllop { get { return lblSoLop; } }
         public DataGridView dtgv { get { return dtgvKhoa; } }
         public DataGridView dtgvN { get { return dtgvNganh; } }
         public ucKhoa()
@@ -67,7 +67,7 @@ namespace QuanLySinhVien
         {
             txtMaKhoa.Text = dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString();
             txtTenKhoa.Text = dtgvKhoa.CurrentRow.Cells["TenKhoa"].Value.ToString();
-            lblTenKhoa.Text= "Tên khoa:  " + dtgvKhoa.CurrentRow.Cells["TenKhoa"].Value.ToString();
+            lblTenKhoa.Text = "Tên khoa:  " + dtgvKhoa.CurrentRow.Cells["TenKhoa"].Value.ToString();
             lblSoLop.Text = "Số ngành:  " + DataProvider.Instance.ExcuteQuery
                 ("Select count(*) from Nganh " +
                 "where MaKhoa='" + dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString() + "'").Rows[0][0].ToString();
@@ -105,10 +105,14 @@ namespace QuanLySinhVien
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Delete from Khoa " +
-                "where MaKhoa='"+ dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString() + "'");
-            loadKhoa();
-            pnEDKhoa.Visible = false;
+            try
+            {
+                DataProvider.Instance.ExcuteNonQuery("Delete from Khoa " +
+                "where MaKhoa='" + dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString() + "'");
+                loadKhoa();
+                pnEDKhoa.Visible = false;
+            }
+            catch { lblLoi.Visible = true; lblLoi.Text = "Không được xoá khoa này"; timer1.Enabled = true; }
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
@@ -138,7 +142,7 @@ namespace QuanLySinhVien
             if (txtMaNganh.Text != "" && txtTenNganh.Text != "")
             {
                 DataProvider.Instance.ExcuteNonQuery("Insert into Nganh values" +
-                    "('" + txtMaNganh.Text + "', N'" + txtTenNganh.Text + "','"+dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString()+"')");
+                    "('" + txtMaNganh.Text + "', N'" + txtTenNganh.Text + "','" + dtgvKhoa.CurrentRow.Cells["MaKhoa"].Value.ToString() + "')");
 
                 loadNganh();
             }
@@ -162,15 +166,19 @@ namespace QuanLySinhVien
                 loadNganh();
                 pnEDNganh.Visible = false;
             }
-            else { lblLoi.Visible = true; lblLoi.Text = "Vui lòng nhập đầy đủ thông tin ngành"; timer1.Enabled = true; }
+            else { lblLoi.Visible = true; lblLoi.Text = "Không được xoá khoa"; timer1.Enabled = true; }
         }
 
         private void btnXoaN_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Delete from Nganh " +
+            try
+            {
+                DataProvider.Instance.ExcuteNonQuery("Delete from Nganh " +
                 "where MaNganh='" + dtgvNganh.CurrentRow.Cells["MaNganh"].Value.ToString() + "'");
-            loadNganh();
-            pnEDNganh.Visible = false;
+                loadNganh();
+                pnEDNganh.Visible = false;
+            }
+            catch { lblLoi.Visible = true; lblLoi.Text = "Không được xoá sinh viên này"; timer1.Enabled = true; }
         }
     }
 }

@@ -29,10 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvDiem = new System.Windows.Forms.DataGridView();
+            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChuyenCan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemGiuaKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemTP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiemKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.KTxTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtMK = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtMailGV = new Guna.UI2.WinForms.Guna2TextBox();
             this.chkMess = new System.Windows.Forms.CheckBox();
             this.txtMess = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSendMess = new Guna.UI2.WinForms.Guna2Button();
@@ -68,18 +80,6 @@
             this.txtGiuaKy = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtChuyenCan = new Guna.UI2.WinForms.Guna2TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChuyenCan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiemGiuaKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiemTP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiemThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiemKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KTxTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtMailGV = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtMK = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDiem)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnFunc.SuspendLayout();
@@ -97,14 +97,14 @@
             this.dtgvDiem.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgvDiem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvDiem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvDiem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvDiem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSV,
@@ -123,17 +123,90 @@
             this.dtgvDiem.Name = "dtgvDiem";
             this.dtgvDiem.ReadOnly = true;
             this.dtgvDiem.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgvDiem.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(200)))), ((int)(((byte)(1)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgvDiem.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgvDiem.RowTemplate.Height = 40;
             this.dtgvDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDiem.Size = new System.Drawing.Size(1180, 319);
             this.dtgvDiem.TabIndex = 136;
             this.dtgvDiem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDiem_CellClick);
+            // 
+            // MaSV
+            // 
+            this.MaSV.DataPropertyName = "MaSV";
+            this.MaSV.HeaderText = "Mã Sinh viên";
+            this.MaSV.Name = "MaSV";
+            this.MaSV.ReadOnly = true;
+            // 
+            // MaHP
+            // 
+            this.MaHP.DataPropertyName = "MaHP";
+            this.MaHP.HeaderText = "Mã học phần";
+            this.MaHP.Name = "MaHP";
+            this.MaHP.ReadOnly = true;
+            // 
+            // ChuyenCan
+            // 
+            this.ChuyenCan.DataPropertyName = "ChuyenCan";
+            this.ChuyenCan.HeaderText = "Chuyên cần";
+            this.ChuyenCan.Name = "ChuyenCan";
+            this.ChuyenCan.ReadOnly = true;
+            // 
+            // DiemGiuaKy
+            // 
+            this.DiemGiuaKy.DataPropertyName = "DiemGiuaKy";
+            this.DiemGiuaKy.HeaderText = "Điểm giữa kì";
+            this.DiemGiuaKy.Name = "DiemGiuaKy";
+            this.DiemGiuaKy.ReadOnly = true;
+            // 
+            // DiemTP
+            // 
+            this.DiemTP.DataPropertyName = "DiemTP";
+            this.DiemTP.HeaderText = "Điểm thành phần";
+            this.DiemTP.Name = "DiemTP";
+            this.DiemTP.ReadOnly = true;
+            // 
+            // DiemThi
+            // 
+            this.DiemThi.DataPropertyName = "DiemThi";
+            this.DiemThi.HeaderText = "Điểm Thi";
+            this.DiemThi.Name = "DiemThi";
+            this.DiemThi.ReadOnly = true;
+            // 
+            // DiemKT
+            // 
+            this.DiemKT.DataPropertyName = "DiemKT";
+            this.DiemKT.HeaderText = "Điểm kết thúc";
+            this.DiemKT.Name = "DiemKT";
+            this.DiemKT.ReadOnly = true;
+            // 
+            // KTxTC
+            // 
+            this.KTxTC.DataPropertyName = "KTxTC";
+            this.KTxTC.HeaderText = "KTxTC";
+            this.KTxTC.Name = "KTxTC";
+            this.KTxTC.ReadOnly = true;
+            this.KTxTC.Visible = false;
+            // 
+            // Vang
+            // 
+            this.Vang.DataPropertyName = "Vang";
+            this.Vang.HeaderText = "Vang";
+            this.Vang.Name = "Vang";
+            this.Vang.ReadOnly = true;
+            this.Vang.Visible = false;
+            // 
+            // tra
+            // 
+            this.tra.DataPropertyName = "Tra";
+            this.tra.HeaderText = "tra";
+            this.tra.Name = "tra";
+            this.tra.ReadOnly = true;
+            this.tra.Visible = false;
             // 
             // panel1
             // 
@@ -156,10 +229,66 @@
             this.panel1.Size = new System.Drawing.Size(1232, 682);
             this.panel1.TabIndex = 138;
             // 
+            // txtMK
+            // 
+            this.txtMK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtMK.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtMK.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMK.DefaultText = "";
+            this.txtMK.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMK.DisabledState.Parent = this.txtMK;
+            this.txtMK.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtMK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMK.FocusedState.Parent = this.txtMK;
+            this.txtMK.ForeColor = System.Drawing.Color.White;
+            this.txtMK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMK.HoverState.Parent = this.txtMK;
+            this.txtMK.Location = new System.Drawing.Point(935, 81);
+            this.txtMK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMK.Name = "txtMK";
+            this.txtMK.PasswordChar = '\0';
+            this.txtMK.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtMK.PlaceholderText = "Mật khẩu mail giảng viên";
+            this.txtMK.SelectedText = "";
+            this.txtMK.ShadowDecoration.Parent = this.txtMK;
+            this.txtMK.Size = new System.Drawing.Size(262, 33);
+            this.txtMK.TabIndex = 167;
+            // 
+            // txtMailGV
+            // 
+            this.txtMailGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtMailGV.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txtMailGV.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMailGV.DefaultText = "";
+            this.txtMailGV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMailGV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMailGV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMailGV.DisabledState.Parent = this.txtMailGV;
+            this.txtMailGV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMailGV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
+            this.txtMailGV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMailGV.FocusedState.Parent = this.txtMailGV;
+            this.txtMailGV.ForeColor = System.Drawing.Color.White;
+            this.txtMailGV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMailGV.HoverState.Parent = this.txtMailGV;
+            this.txtMailGV.Location = new System.Drawing.Point(935, 45);
+            this.txtMailGV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMailGV.Name = "txtMailGV";
+            this.txtMailGV.PasswordChar = '\0';
+            this.txtMailGV.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtMailGV.PlaceholderText = "Mail giảng viên";
+            this.txtMailGV.SelectedText = "";
+            this.txtMailGV.ShadowDecoration.Parent = this.txtMailGV;
+            this.txtMailGV.Size = new System.Drawing.Size(262, 32);
+            this.txtMailGV.TabIndex = 166;
+            // 
             // chkMess
             // 
             this.chkMess.AutoSize = true;
-            this.chkMess.Location = new System.Drawing.Point(1106, 124);
+            this.chkMess.Location = new System.Drawing.Point(1115, 124);
             this.chkMess.Name = "chkMess";
             this.chkMess.Size = new System.Drawing.Size(91, 21);
             this.chkMess.TabIndex = 145;
@@ -354,9 +483,9 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(387, 47);
+            this.panel5.Location = new System.Drawing.Point(378, 47);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(547, 25);
+            this.panel5.Size = new System.Drawing.Size(556, 25);
             this.panel5.TabIndex = 139;
             // 
             // label1
@@ -495,7 +624,7 @@
             this.panel3.Controls.Add(this.lblDiemTL);
             this.panel3.Location = new System.Drawing.Point(378, 52);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(547, 168);
+            this.panel3.Size = new System.Drawing.Size(556, 168);
             this.panel3.TabIndex = 141;
             // 
             // lblVang
@@ -850,135 +979,6 @@
             // 
             this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // MaSV
-            // 
-            this.MaSV.DataPropertyName = "MaSV";
-            this.MaSV.HeaderText = "Mã Sinh viên";
-            this.MaSV.Name = "MaSV";
-            this.MaSV.ReadOnly = true;
-            // 
-            // MaHP
-            // 
-            this.MaHP.DataPropertyName = "MaHP";
-            this.MaHP.HeaderText = "Mã học phần";
-            this.MaHP.Name = "MaHP";
-            this.MaHP.ReadOnly = true;
-            // 
-            // ChuyenCan
-            // 
-            this.ChuyenCan.DataPropertyName = "ChuyenCan";
-            this.ChuyenCan.HeaderText = "Chuyên cần";
-            this.ChuyenCan.Name = "ChuyenCan";
-            this.ChuyenCan.ReadOnly = true;
-            // 
-            // DiemGiuaKy
-            // 
-            this.DiemGiuaKy.DataPropertyName = "DiemGiuaKy";
-            this.DiemGiuaKy.HeaderText = "Điểm giữa kì";
-            this.DiemGiuaKy.Name = "DiemGiuaKy";
-            this.DiemGiuaKy.ReadOnly = true;
-            // 
-            // DiemTP
-            // 
-            this.DiemTP.DataPropertyName = "DiemTP";
-            this.DiemTP.HeaderText = "Điểm thành phần";
-            this.DiemTP.Name = "DiemTP";
-            this.DiemTP.ReadOnly = true;
-            // 
-            // DiemThi
-            // 
-            this.DiemThi.DataPropertyName = "DiemThi";
-            this.DiemThi.HeaderText = "Điểm Thi";
-            this.DiemThi.Name = "DiemThi";
-            this.DiemThi.ReadOnly = true;
-            // 
-            // DiemKT
-            // 
-            this.DiemKT.DataPropertyName = "DiemKT";
-            this.DiemKT.HeaderText = "Điểm kết thúc";
-            this.DiemKT.Name = "DiemKT";
-            this.DiemKT.ReadOnly = true;
-            // 
-            // KTxTC
-            // 
-            this.KTxTC.DataPropertyName = "KTxTC";
-            this.KTxTC.HeaderText = "KTxTC";
-            this.KTxTC.Name = "KTxTC";
-            this.KTxTC.ReadOnly = true;
-            this.KTxTC.Visible = false;
-            // 
-            // Vang
-            // 
-            this.Vang.DataPropertyName = "Vang";
-            this.Vang.HeaderText = "Vang";
-            this.Vang.Name = "Vang";
-            this.Vang.ReadOnly = true;
-            this.Vang.Visible = false;
-            // 
-            // tra
-            // 
-            this.tra.DataPropertyName = "Tra";
-            this.tra.HeaderText = "tra";
-            this.tra.Name = "tra";
-            this.tra.ReadOnly = true;
-            this.tra.Visible = false;
-            // 
-            // txtMailGV
-            // 
-            this.txtMailGV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.txtMailGV.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtMailGV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMailGV.DefaultText = "";
-            this.txtMailGV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMailGV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMailGV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMailGV.DisabledState.Parent = this.txtMailGV;
-            this.txtMailGV.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMailGV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.txtMailGV.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMailGV.FocusedState.Parent = this.txtMailGV;
-            this.txtMailGV.ForeColor = System.Drawing.Color.White;
-            this.txtMailGV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMailGV.HoverState.Parent = this.txtMailGV;
-            this.txtMailGV.Location = new System.Drawing.Point(935, 5);
-            this.txtMailGV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMailGV.Name = "txtMailGV";
-            this.txtMailGV.PasswordChar = '\0';
-            this.txtMailGV.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtMailGV.PlaceholderText = "Mail giảng viên";
-            this.txtMailGV.SelectedText = "";
-            this.txtMailGV.ShadowDecoration.Parent = this.txtMailGV;
-            this.txtMailGV.Size = new System.Drawing.Size(262, 52);
-            this.txtMailGV.TabIndex = 166;
-            // 
-            // txtMK
-            // 
-            this.txtMK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.txtMK.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.txtMK.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMK.DefaultText = "";
-            this.txtMK.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMK.DisabledState.Parent = this.txtMK;
-            this.txtMK.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMK.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(14)))), ((int)(((byte)(21)))));
-            this.txtMK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMK.FocusedState.Parent = this.txtMK;
-            this.txtMK.ForeColor = System.Drawing.Color.White;
-            this.txtMK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMK.HoverState.Parent = this.txtMK;
-            this.txtMK.Location = new System.Drawing.Point(935, 59);
-            this.txtMK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMK.Name = "txtMK";
-            this.txtMK.PasswordChar = '\0';
-            this.txtMK.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtMK.PlaceholderText = "Mật khẩu mail giảng viên";
-            this.txtMK.SelectedText = "";
-            this.txtMK.ShadowDecoration.Parent = this.txtMK;
-            this.txtMK.Size = new System.Drawing.Size(262, 52);
-            this.txtMK.TabIndex = 167;
             // 
             // ucDiem
             // 

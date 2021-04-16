@@ -26,6 +26,8 @@ CREATE TABLE Nganh(
 	MaNganh VARCHAR(50) PRIMARY KEY,
 	TenNganh NVARCHAR(50),
 	MaKhoa VARCHAR(50)
+
+	FOREIGN KEY (MaKhoa) REFERENCES dbo.Khoa(MaKhoa)
 )
 INSERT INTO dbo.Nganh
 (
@@ -48,6 +50,8 @@ CREATE TABLE GiangVien(
 	MaKhoa VARCHAR(50) NOT NULL,
 	TruongKhoa VARCHAR(50),
 	DiaChi NVARCHAR(MAX)
+
+	FOREIGN KEY (MaKhoa) REFERENCES dbo.Khoa(MaKhoa)
 )
 Select MaKhoa from Nganh where MaNganh='CNTT'
 --SELECT * FROM dbo.GiangVien
@@ -77,6 +81,8 @@ CREATE TABLE Lop(
 	NgayLap DATE,
 	GVCN VARCHAR(50),
 	MaNganh VARCHAR(50)
+
+	FOREIGN KEY (MaNganh) REFERENCES dbo.Nganh(MaNganh)
 )
 INSERT INTO dbo.Lop
 (
@@ -102,10 +108,12 @@ CREATE TABLE SinhVien(
 	TenSV NVARCHAR(50) NOT NULL,
 	SDT VARCHAR(20),
 	Email VARCHAR(50),
-	MaLop NVARCHAR(50) NOT NULL,
+	MaLop VARCHAR(50) NOT NULL,
 	DiaChi NVARCHAR(MAX),
 	TichLuy FLOAT,
 	SoKy INT 
+
+	FOREIGN KEY (MaLop) REFERENCES dbo.Lop(MaLop)
 )
 INSERT INTO dbo.SinhVien
 (
@@ -144,11 +152,13 @@ CREATE TABLE CTHocKy(
 	MaSV VARCHAR(50),
 	DiemTichLuy FLOAT
 
-	PRIMARY KEY(MaHK,MaSV)
+	PRIMARY KEY(MaHK,MaSV),
+	FOREIGN KEY (MaSV) REFERENCES dbo.SinhVien(MaSV),
+	FOREIGN KEY (MaHK) REFERENCES dbo.HocKy(MaHK)
 )
 
 --SELECT * FROM dbo.Lop WHERE CONCAT(MaLop,Makhoa,TenLop) LIKE '%CNTT%'
-UPDATE dbo.HocKy SET TrangThai=1 WHERE MaHK='HKI-2019-2020'
+--UPDATE dbo.HocKy SET TrangThai=1 WHERE MaHK='HKI-2019-2020'
 --SELECT * FROM dbo.HocKy
 --SELECT SUM(DiemTichLuy) FROM dbo.CTHocKy WHERE MaSV='20201'
 --SELECT COUNT(*) FROM dbo.CTHocKy WHERE MaSV='20201'
@@ -160,6 +170,8 @@ CREATE TABLE MonHoc(
 	MaNganh VARCHAR(50) NOT NULL,
 	TinChi INT,
 	SoKy INT 
+
+	FOREIGN KEY (MaNganh) REFERENCES dbo.Nganh(MaNganh)
 )
 INSERT INTO dbo.MonHoc
 (
@@ -188,8 +200,12 @@ CREATE TABLE LopHocPhan(
 	Phong VARCHAR(20),
 	HocKy VARCHAR(20),
 	TrangThai INT
+
+	FOREIGN KEY (MaGV) REFERENCES dbo.GiangVien(MaGV),
+	FOREIGN KEY (MaLop) REFERENCES dbo.Lop(MaLop),
+	FOREIGN KEY (HocKy) REFERENCES dbo.HocKy(MaHK)
 )
-update LopHocPhan set TrangThai=1 where MaHP=''
+--update LopHocPhan set TrangThai=1 where MaHP=''
 --SELECT * FROM dbo.nomon
 ---------------------------------------------DIEMHOCPHAN--------------------------------------------------
 --DROP TABLE dbo.DiemHocPhan
@@ -205,20 +221,28 @@ CREATE TABLE DiemHocPhan(
 	KTxTC FLOAT,
 	Tra INT
 
-	PRIMARY KEY(MaSV,MaHP)
+	PRIMARY KEY(MaSV,MaHP),
+	FOREIGN KEY (MaSV) REFERENCES dbo.SinhVien(MaSV),
+	FOREIGN KEY (MaHP) REFERENCES dbo.LopHocPhan(MaHP)
 )
 
+--DROP TABLE dbo.DiemDanh
 CREATE TABLE DiemDanh(
 	id INT PRIMARY KEY IDENTITY,
 	MaHP VARCHAR(50),
 	Ngay VARCHAR(50)
+
+	FOREIGN KEY (MaHP) REFERENCES dbo.LopHocPhan(MaHP)
 )
 --DROP TABLE ctdiemdanh
 CREATE TABLE CTDiemDanh(
 	idct INT PRIMARY KEY IDENTITY,
 	id INT,
-	MaSV NVARCHAR(50),
+	MaSV VARCHAR(50),
 	DiemDanh NVARCHAR(50)
+
+	FOREIGN KEY (id) REFERENCES dbo.DiemDanh(id),
+	FOREIGN KEY (MaSV) REFERENCES dbo.SinhVien(MaSV)
 )
 --SELECT COUNT(*) FROM dbo.CTDiemDanh,dbo.DiemDanh WHERE CTDiemDanh.id=DiemDanh.id AND MaHP='' AND MaSV='' AND DiemDanh=N'Có'
 --SELECT COUNT(*) FROM dbo.DiemDanh WHERE MaHP=''
@@ -237,6 +261,7 @@ CREATE TABLE CTDiemDanh(
 --SELECT SUM(TinChi) FROM dbo.MonHoc, dbo.LopHoc, dbo.DiemLopHoc WHERE LopHoc.MaCTMon=DiemLopHoc.MaCTMon AND LopHoc.MaMon=MonHoc.MaMon AND MaSV='20201'
 
 ---------------------------------------------NO MON--------------------------------------------------
+--DROP TABLE dbo.NoMon
 CREATE TABLE NoMon(
 	MaSV VARCHAR(50),
 	MaMon VARCHAR(50),
@@ -244,11 +269,12 @@ CREATE TABLE NoMon(
 	Tra NVARCHAR(20)
 
 	PRIMARY KEY(MaSV,MaMon)
+	FOREIGN KEY (MaSV) REFERENCES dbo.SinhVien(MaSV),
+	FOREIGN KEY (MaMon) REFERENCES dbo.MonHoc(MaMon)
 )
 
 ---------------------------------------------ACCOUNT--------------------------------------------------
 --DROP TABLE dbo.Account
---DELETE FROM dbo.DiemHocPhan
 CREATE TABLE Account(
 	TenDN VARCHAR(50) PRIMARY KEY,
 	MatKhau VARCHAR(50),

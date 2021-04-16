@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.1082
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLySinhVien", "QuanLySinhVien\QuanLySinhVien.csproj", "{90ABBA12-A3AB-4A3A-94CE-2BEE931624BD}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup_QLSV_UTC2", "Setup_QLSV_UTC2\Setup_QLSV_UTC2.vdproj", "{739123DD-CE72-4DB9-809C-038CE0E15984}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupUTC2", "SetupUTC2\SetupUTC2.vdproj", "{DA6B0718-275D-4F98-9396-59F2A7DB25AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{90ABBA12-A3AB-4A3A-94CE-2BEE931624BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90ABBA12-A3AB-4A3A-94CE-2BEE931624BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90ABBA12-A3AB-4A3A-94CE-2BEE931624BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{739123DD-CE72-4DB9-809C-038CE0E15984}.Debug|Any CPU.ActiveCfg = Debug
-		{739123DD-CE72-4DB9-809C-038CE0E15984}.Release|Any CPU.ActiveCfg = Release
+		{DA6B0718-275D-4F98-9396-59F2A7DB25AF}.Debug|Any CPU.ActiveCfg = Debug
+		{DA6B0718-275D-4F98-9396-59F2A7DB25AF}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

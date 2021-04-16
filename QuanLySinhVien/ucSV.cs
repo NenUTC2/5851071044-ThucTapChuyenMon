@@ -29,64 +29,92 @@ namespace QuanLySinhVien
             
             if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("admin"))
             {
-                loadSV();
-                loadCBNganh();
-                loadCBLop(cbNganh.SelectedValue.ToString());
+                try
+                {
+                    loadSV();
+                    loadCBNganh();
+                    loadCBLop(cbNganh.SelectedValue.ToString());
+                }
+                catch { }
             }
 
             else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("tk"))
             {
-                cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh " +
-                    "where makhoa='" + GiangVienDAO.Instance.getKhoabyMGV(mgv) + "'");
-                cbNganh.DisplayMember = "TenNganh";
-                cbNganh.ValueMember = "MaNganh";
+                try
+                {
+                    cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh " +
+                        "where makhoa='" + GiangVienDAO.Instance.getKhoabyMGV(mgv) + "'");
+                    cbNganh.DisplayMember = "TenNganh";
+                    cbNganh.ValueMember = "MaNganh";
 
-                loadCBLop(cbNganh.SelectedValue.ToString());
+                    loadCBLop(cbNganh.SelectedValue.ToString());
+                }
+                catch { }
             }
             else if (AccountDAO.Instance.getQuyenByUser(mgv).Equals("gv"))
             {
-                cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh " +
-                    "where makhoa='" + GiangVienDAO.Instance.getKhoabyMGV(mgv) + "'");
-                cbNganh.DisplayMember = "TenNganh";
-                cbNganh.ValueMember = "MaNganh";
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where GVCN='" + mgv + "'");
-                cbLop.DisplayMember = "TenLop";
-                cbLop.ValueMember = "MaLop";
+                try
+                {
+                    cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh " +
+                        "where makhoa='" + GiangVienDAO.Instance.getKhoabyMGV(mgv) + "'");
+                    cbNganh.DisplayMember = "TenNganh";
+                    cbNganh.ValueMember = "MaNganh";
+                    cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where GVCN='" + mgv + "'");
+                    cbLop.DisplayMember = "TenLop";
+                    cbLop.ValueMember = "MaLop";
+                }
+                catch { }
             }
         }
         public void loadSV()
         {
-            dtgvSV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from SinhVien");
+            try
+            {
+                dtgvSV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from SinhVien");
+            }
+            catch { }
         }
 
         public void loadCBLop(string nganh)
         {
-            if (nganh.Equals("*"))
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop");
-            else
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where MaNganh='"+nganh+"'");
-            cbLop.DisplayMember = "TenLop";
-            cbLop.ValueMember = "MaLop";
+            try
+            {
+                if (nganh.Equals("*"))
+                    cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop");
+                else
+                    cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where MaNganh='" + nganh + "'");
+                cbLop.DisplayMember = "TenLop";
+                cbLop.ValueMember = "MaLop";
+            }
+            catch { }
         }
 
         public void loadCBNganh()
         {
-            cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh");
-            cbNganh.DisplayMember = "TenNganh";
-            cbNganh.ValueMember = "MaNganh";
+            try
+            {
+                cbNganh.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh");
+                cbNganh.DisplayMember = "TenNganh";
+                cbNganh.ValueMember = "MaNganh";
+            }
+            catch { }
         }
 
         public void loadCBMonHoc(string khoa, string soky, string msv)
         {
-            int ky = Convert.ToInt32(soky)+1;
-            if (khoa.Equals("*"))
-                cbMonHoc.DataSource = DataProvider.Instance.ExcuteQuery("Select * from MonHoc where SoKy=" + ky);
-            else
-                cbMonHoc.DataSource = DataProvider.Instance.ExcuteQuery("Select MonHoc.MaMon,TenMon from MonHoc where MaNganh='"+khoa+"' and SoKy="+ky+" " +
-                    "UNION ALL " +
-                    "Select MonHoc.MaMon, TenMon from MonHoc, NoMon where MonHoc.MaMon=NoMon.MaMon AND MaSV = '"+msv+"'");
-            cbMonHoc.DisplayMember = "TenMon";
-            cbMonHoc.ValueMember = "MaMon";
+            try
+            {
+                int ky = Convert.ToInt32(soky) + 1;
+                if (khoa.Equals("*"))
+                    cbMonHoc.DataSource = DataProvider.Instance.ExcuteQuery("Select * from MonHoc where SoKy=" + ky);
+                else
+                    cbMonHoc.DataSource = DataProvider.Instance.ExcuteQuery("Select MonHoc.MaMon,TenMon from MonHoc where MaNganh='" + khoa + "' and SoKy=" + ky + " " +
+                        "UNION ALL " +
+                        "Select MonHoc.MaMon, TenMon from MonHoc, NoMon where MonHoc.MaMon=NoMon.MaMon AND MaSV = '" + msv + "'");
+                cbMonHoc.DisplayMember = "TenMon";
+                cbMonHoc.ValueMember = "MaMon";
+            }
+            catch { }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -120,8 +148,12 @@ namespace QuanLySinhVien
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DataProvider.Instance.ExcuteNonQuery("Delete from SinhVien where MaSV='" + dtgvSV.CurrentRow.Cells["MaSV"].Value.ToString() + "'");
-            loadSV();
+            try
+            {
+                DataProvider.Instance.ExcuteNonQuery("Delete from SinhVien where MaSV='" + dtgvSV.CurrentRow.Cells["MaSV"].Value.ToString() + "'");
+                loadSV();
+            }
+            catch { lblLoi.Visible = true; lblLoi.Text = "Không được xoá sinh viên này"; timer1.Enabled = true; }
         }
 
         private void dtgvSV_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -132,16 +164,23 @@ namespace QuanLySinhVien
             txtDiaChi.Text = dtgvSV.CurrentRow.Cells["DiaChi"].Value.ToString();
             cbNganh.SelectedValue = LopDAO.Instance.getNganhfromLop(dtgvSV.CurrentRow.Cells["MaLop"].Value.ToString());
             cbLop.SelectedValue = dtgvSV.CurrentRow.Cells["MaLop"].Value.ToString();
-
-            loadCBMonHoc(LopDAO.Instance.getNganhfromLop(dtgvSV.CurrentRow.Cells["MaLop"].Value.ToString()), dtgvSV.CurrentRow.Cells["SoKy"].Value.ToString(), dtgvSV.CurrentRow.Cells["MaSV"].Value.ToString());
+            try
+            {
+                loadCBMonHoc(LopDAO.Instance.getNganhfromLop(dtgvSV.CurrentRow.Cells["MaLop"].Value.ToString()), dtgvSV.CurrentRow.Cells["SoKy"].Value.ToString(), dtgvSV.CurrentRow.Cells["MaSV"].Value.ToString());
+            }
+            catch { MessageBox.Show("Chưa mở học kỳ mới"); }
         }
 
         private void cbMonHoc_SelectedValueChanged(object sender, EventArgs e)
         {
-            string mhk = DataProvider.Instance.ExcuteQuery("Select MaHK from HocKy where TrangThai=0").Rows[0][0].ToString();
-            cbLopHoc.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHocPhan where HocKy='"+mhk+"' and MaMon='" + cbMonHoc.SelectedValue + "'");
-            cbLopHoc.DisplayMember = "MaHP";
-            cbLopHoc.ValueMember = "MaHP";
+            try
+            {
+                string mhk = DataProvider.Instance.ExcuteQuery("Select MaHK from HocKy where TrangThai=0").Rows[0][0].ToString();
+                cbLopHoc.DataSource = DataProvider.Instance.ExcuteQuery("Select * from LopHocPhan where HocKy='" + mhk + "' and MaMon='" + cbMonHoc.SelectedValue + "'");
+                cbLopHoc.DisplayMember = "MaHP";
+                cbLopHoc.ValueMember = "MaHP";
+            }
+            catch { MessageBox.Show("Chưa mở học kỳ mới"); }
         }
 
         private void cbSheet_SelectedIndexChanged(object sender, EventArgs e)

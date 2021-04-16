@@ -51,5 +51,10 @@ namespace QuanLySinhVien.DAO
         {
             return DataProvider.Instance.ExcuteQuery("Select TichLuy from SinhVien where MaSV='" + id + "'").Rows[0][0].ToString();
         }
+
+        public int getSoKy(string id)
+        {
+            return Convert.ToInt16(DataProvider.Instance.ExcuteQuery("Select SoKy from SinhVien where MaSV='" + id + "'").Rows[0][0].ToString());
+        }
     }
 }

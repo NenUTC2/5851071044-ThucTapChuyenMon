@@ -17,8 +17,12 @@ namespace QuanLySinhVien
         public ucThongKe()
         {
             InitializeComponent();
-            loadCBNganh(); loadCBLop(cbKhoa.SelectedValue.ToString());
-            loadSV();
+            try
+            {
+                loadCBNganh(); loadCBLop(cbKhoa.SelectedValue.ToString());
+                loadSV();
+            }
+            catch { }
         }
 
         public void loadSV()
@@ -28,31 +32,43 @@ namespace QuanLySinhVien
 
         public void loadCBLop(string khoa)
         {
-            if (khoa.Equals("*"))
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop");
-            else
-                cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where MaNganh='" + khoa + "'");
-            cbLop.DisplayMember = "TenLop";
-            cbLop.ValueMember = "MaLop";
+            try
+            {
+                if (khoa.Equals("*"))
+                    cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop");
+                else
+                    cbLop.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Lop where MaNganh='" + khoa + "'");
+                cbLop.DisplayMember = "TenLop";
+                cbLop.ValueMember = "MaLop";
+            }
+            catch { }
         }
 
         public void loadCBNganh()
         {
-            cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh");
-            cbKhoa.DisplayMember = "TenNganh";
-            cbKhoa.ValueMember = "MaNganh";
+            try
+            {
+                cbKhoa.DataSource = DataProvider.Instance.ExcuteQuery("Select * from Nganh");
+                cbKhoa.DisplayMember = "TenNganh";
+                cbKhoa.ValueMember = "MaNganh";
+            }
+            catch { }
         }
 
         private void cbKhoa_SelectedValueChanged(object sender, EventArgs e)
         {
-            loadCBLop(cbKhoa.SelectedValue.ToString());
+            try { loadCBLop(cbKhoa.SelectedValue.ToString()); } catch { }
         }
 
         private void cbLop_SelectedValueChanged(object sender, EventArgs e)
         {
-            dtgvSV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from SinhVien where MaLop='"+cbLop.SelectedValue+"'");
-            dtgvSV.Visible = true;
-            dtgvNo.Visible = false;
+            try
+            {
+                dtgvSV.DataSource = DataProvider.Instance.ExcuteQuery("Select * from SinhVien where MaLop='" + cbLop.SelectedValue + "'");
+                dtgvSV.Visible = true;
+                dtgvNo.Visible = false;
+            }
+            catch { }
         }
 
         private void guna2ImageButton3_Click(object sender, EventArgs e)
